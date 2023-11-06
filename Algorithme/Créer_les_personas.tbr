@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
+<?xml version="1.1"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Créer les personas</nom>
-  <date_creation>6/11/2023 08:33</date_creation>
+  <date_creation>6/11/2023 11:19</date_creation>
   <Elements>
     <Action>
       <Position>489;29</Position>
@@ -14,11 +14,11 @@
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>28;202</Position>
+          <Position>26;201</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>récuperer les données</Titre>
+          <Titre>récupérer les données</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
@@ -38,26 +38,26 @@
           <StyleLien>2</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>ecrire un persona pour chaque structure</Titre>
+          <Titre>écrire un persona pour chaque structure</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>423;352</Position>
+              <Position>368;352</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>definir un nom</Titre>
+              <Titre>définir un nom</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
             </Action>
             <Action>
-              <Position>383;457</Position>
+              <Position>381;457</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>definir les choix succeptible de se joindre à ce persona</Titre>
+              <Titre>définir les choix succeptible de se joindre à ce persona</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
@@ -67,7 +67,7 @@
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>definir les lieu et période relatif a la persona</Titre>
+              <Titre>définir les lieux et périodes relatives à la persona</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
@@ -77,7 +77,7 @@
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>verifier si la persona est appliquable et coherente</Titre>
+              <Titre>vérifier si la persona est appliquable et cohérente</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
@@ -97,5 +97,4 @@
       </Enfants>
     </Action>
   </Elements>
-  <Dictionary/>
 </Algorithme>

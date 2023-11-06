@@ -1,15 +1,15 @@
-<?xml version="1.0"?>
+<?xml version="1.1"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Recommendation</nom>
-  <date_creation>6/11/2023 09:08</date_creation>
+  <date_creation>6/11/2023 11:18</date_creation>
   <Elements>
     <Action>
       <Position>579;14</Position>
       <StyleLien>2</StyleLien>
       <PreAssertion>∅</PreAssertion>
       <PostAssertion>∅</PostAssertion>
-      <Titre>Algorithme de recommendation</Titre>
+      <Titre>Algorithme de recommandation</Titre>
       <DetailsVisible>0</DetailsVisible>
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
@@ -59,7 +59,7 @@
           <StyleLien>2</StyleLien>
           <PreAssertion>Profils types</PreAssertion>
           <PostAssertion>Profils types</PostAssertion>
-          <Titre>Après lancement
+          <Titre>Après lancement&#xd;
 (un utilisateur se connecte)</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
@@ -121,11 +121,11 @@
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants>
                 <Action>
-                  <Position>953;564</Position>
+                  <Position>952;565</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>∅</PreAssertion>
                   <PostAssertion>∅</PostAssertion>
-                  <Titre>Afficher les recommendations à l'utilisateur</Titre>
+                  <Titre>Afficher les recommandations à l'utilisateur</Titre>
                   <DetailsVisible>0</DetailsVisible>
                   <DetailsVideVisible>1</DetailsVideVisible>
                   <Enfants/>
@@ -147,7 +147,7 @@
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>Mettre à jour des personar</Titre>
+              <Titre>Mettre à jour des persona</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
@@ -157,5 +157,4 @@
       </Enfants>
     </Action>
   </Elements>
-  <Dictionary/>
 </Algorithme>
