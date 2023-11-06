@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Récupérer les offres que l'utilisateur a "aimé"</nom>
-  <date_creation>6/11/2023 10:41</date_creation>
+  <date_creation>6/11/2023 10:46</date_creation>
   <Elements>
     <Action>
       <Position>507;28</Position>

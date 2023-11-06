@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
+<?xml version="1.1"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Proposer un questionnaire d'arrivée</nom>
-  <date_creation>6/11/2023 09:08</date_creation>
+  <date_creation>6/11/2023 10:45</date_creation>
   <Elements>
     <Action>
       <Position>615;23</Position>
@@ -38,7 +38,7 @@
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>mettre les resultat base de données(texte)</Titre>
+          <Titre>mettre les resultat dans la base de données (fichier texte)</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
@@ -46,5 +46,4 @@
       </Enfants>
     </Action>
   </Elements>
-  <Dictionary/>
 </Algorithme>

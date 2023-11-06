@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>algo_tri_des_donner</nom>
-  <date_creation>6/11/2023 09:22</date_creation>
+  <date_creation>6/11/2023 10:47</date_creation>
   <Elements>
     <Action>
       <Position>655;85</Position>
