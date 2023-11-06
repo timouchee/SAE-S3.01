@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
+<?xml version="1.1"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>algo_tri_des_donner</nom>
-  <date_creation>6/11/2023 08:35</date_creation>
+  <date_creation>6/11/2023 09:22</date_creation>
   <Elements>
     <Action>
       <Position>655;85</Position>
@@ -28,7 +28,7 @@
           <StyleLien>2</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>verification des données</Titre>
+          <Titre>vérification des données</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
@@ -37,7 +37,7 @@
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>vérifier que les données sont complète</Titre>
+              <Titre>vérifier que les données sont complètes</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
@@ -47,7 +47,7 @@
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>verifier les données sont trier pour utilisation</Titre>
+              <Titre>vérifier les données sont triées pour utilisation</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
@@ -59,7 +59,7 @@
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>verification du bon fonctionement</Titre>
+          <Titre>vérification du bon fonctionnement</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
@@ -69,7 +69,7 @@
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>insertion de données tests</Titre>
+          <Titre>insertion de données testes</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
@@ -77,5 +77,4 @@
       </Enfants>
     </Action>
   </Elements>
-  <Dictionary/>
 </Algorithme>

@@ -1,15 +1,15 @@
-<?xml version="1.0"?>
+<?xml version="1.1"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Lui attribuer une persona en focntion de ses réponses</nom>
-  <date_creation>6/11/2023 09:08</date_creation>
+  <date_creation>6/11/2023 09:23</date_creation>
   <Elements>
     <Action>
       <Position>236;28</Position>
       <StyleLien>2</StyleLien>
       <PreAssertion>∅</PreAssertion>
       <PostAssertion>∅</PostAssertion>
-      <Titre>Lui attribuer une persona en focntion de ses réponses</Titre>
+      <Titre>Lui attribuer une persona en fonction de ses réponses</Titre>
       <DetailsVisible>0</DetailsVisible>
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
@@ -18,7 +18,7 @@
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>recuperer les persona de la base (texte)</Titre>
+          <Titre>récupérer les persona de la base (texte)</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
@@ -28,7 +28,7 @@
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>lui attribuer une personas corespondante</Titre>
+          <Titre>lui attribuer une persona correspondante</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
@@ -38,7 +38,7 @@
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>comparer les persona avec les info questionnaire (preference)</Titre>
+          <Titre>comparer les persona avec les info questionnaire (préférence)</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
@@ -46,5 +46,4 @@
       </Enfants>
     </Action>
   </Elements>
-  <Dictionary/>
 </Algorithme>

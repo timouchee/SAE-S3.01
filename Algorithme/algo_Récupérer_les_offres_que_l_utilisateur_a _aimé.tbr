@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
+<?xml version="1.1"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Récupérer les offres que l'utilisateur a "aimé"</nom>
-  <date_creation>6/11/2023 09:01</date_creation>
+  <date_creation>6/11/2023 10:41</date_creation>
   <Elements>
     <Action>
       <Position>507;28</Position>
@@ -14,16 +14,16 @@
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>130;200</Position>
+          <Position>217;175</Position>
           <StyleLien>2</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>recuperer les choix de l'utilisateur</Titre>
+          <Titre>recupérer les choix de l'utilisateur</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>12;344</Position>
+              <Position>157;305</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
@@ -33,7 +33,7 @@
               <Enfants/>
             </Action>
             <Action>
-              <Position>100;346</Position>
+              <Position>334;304</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
@@ -43,7 +43,7 @@
               <Enfants/>
             </Action>
             <Action>
-              <Position>44;466</Position>
+              <Position>239;305</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
@@ -53,7 +53,7 @@
               <Enfants/>
             </Action>
             <Action>
-              <Position>224;484</Position>
+              <Position>539;306</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
@@ -65,7 +65,7 @@
           </Enfants>
         </Action>
         <Action>
-          <Position>776;202</Position>
+          <Position>1108;175</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
@@ -75,30 +75,30 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>518;207</Position>
+          <Position>812;178</Position>
           <StyleLien>2</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>affectation a ses preference</Titre>
+          <Titre>affectation à ses préfèrences</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>308;351</Position>
+              <Position>701;304</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>dans un pile classer par frequence  d'interaction</Titre>
+              <Titre>dans un pile classée par frequence  d'interaction</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
             </Action>
             <Action>
-              <Position>480;465</Position>
+              <Position>930;309</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>ne pas oublier de laisser la place au nouvelle recherche</Titre>
+              <Titre>ne pas oublier de laisser la place aux nouvelles recherches</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
@@ -108,5 +108,4 @@
       </Enfants>
     </Action>
   </Elements>
-  <Dictionary/>
 </Algorithme>

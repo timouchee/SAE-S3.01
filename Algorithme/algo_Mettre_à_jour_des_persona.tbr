@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
+<?xml version="1.1"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Mettre à jour les préférences de l'utilisateur</nom>
-  <date_creation>6/11/2023 09:08</date_creation>
+  <date_creation>6/11/2023 10:34</date_creation>
   <Elements>
     <Action>
       <Position>461;28</Position>
@@ -18,7 +18,7 @@
           <StyleLien>2</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>mise a jour des persona</Titre>
+          <Titre>mise à jour des persona</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
@@ -28,15 +28,15 @@
               <estUnique>1</estUnique>
               <operationsLogiques>
                 <operation>
-                  <Titre>regarder si plusieur utilisateur on
- des preference simiaire (meme pile)</Titre>
+                  <Titre>regarder si plusieurs utilisateurs ont
+des préfèrences similaires (même pile)</Titre>
                   <Enfants>
                     <Action>
-                      <Position>180;433</Position>
+                      <Position>180;431</Position>
                       <StyleLien>1</StyleLien>
                       <PreAssertion>∅</PreAssertion>
                       <PostAssertion>∅</PostAssertion>
-                      <Titre>crée une nouvelle persona correspondant</Titre>
+                      <Titre>crée une nouvelle persona correspondante</Titre>
                       <DetailsVisible>0</DetailsVisible>
                       <DetailsVideVisible>1</DetailsVideVisible>
                       <Enfants/>
@@ -52,21 +52,21 @@
           </Enfants>
         </Action>
         <Action>
-          <Position>801;176</Position>
+          <Position>803;176</Position>
           <StyleLien>2</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>mise a jour de la persona de l'utilisateur</Titre>
+          <Titre>mise à jour de la persona de l'utilisateur</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Condition>
-              <Position>801.5;313</Position>
-              <StyleLien>0</StyleLien>
-              <estUnique>0</estUnique>
+              <Position>801.5;316</Position>
+              <StyleLien>1</StyleLien>
+              <estUnique>1</estUnique>
               <operationsLogiques>
                 <operation>
-                  <Titre>?</Titre>
+                  <Titre>similtude avec une persona ?</Titre>
                   <Enfants>
                     <Action>
                       <Position>682;437</Position>
@@ -78,11 +78,6 @@
                       <DetailsVideVisible>1</DetailsVideVisible>
                       <Enfants/>
                     </Action>
-                  </Enfants>
-                </operation>
-                <operation>
-                  <Titre>similtude avec une persona ?</Titre>
-                  <Enfants>
                     <Action>
                       <Position>911;438</Position>
                       <StyleLien>1</StyleLien>
@@ -95,6 +90,10 @@
                     </Action>
                   </Enfants>
                 </operation>
+                <operation>
+                  <Titre>similtude avec une persona ?</Titre>
+                  <Enfants/>
+                </operation>
               </operationsLogiques>
             </Condition>
           </Enfants>
@@ -102,5 +101,4 @@
       </Enfants>
     </Action>
   </Elements>
-  <Dictionary/>
 </Algorithme>
