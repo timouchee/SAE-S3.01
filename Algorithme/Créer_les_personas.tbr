@@ -2,14 +2,14 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Créer les personas</nom>
-  <date_creation>1/11/2023 16:29</date_creation>
+  <date_creation>6/11/2023 08:33</date_creation>
   <Elements>
     <Action>
       <Position>489;29</Position>
       <StyleLien>2</StyleLien>
       <PreAssertion>∅</PreAssertion>
       <PostAssertion>∅</PostAssertion>
-      <Titre>Créer les personas</Titre>
+      <Titre>Créer des profils types</Titre>
       <DetailsVisible>0</DetailsVisible>
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
@@ -24,45 +24,14 @@
           <Enfants/>
         </Action>
         <Action>
-          <Position>235;196</Position>
-          <StyleLien>2</StyleLien>
+          <Position>233;195</Position>
+          <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>rassembler les choix</Titre>
+          <Titre>rassembler les similitudes</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
-          <Enfants>
-            <Action>
-              <Position>85;352</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>∅</PreAssertion>
-              <PostAssertion>∅</PostAssertion>
-              <Titre>rassembler par fréquence</Titre>
-              <DetailsVisible>0</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-            <Action>
-              <Position>249;352</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>∅</PreAssertion>
-              <PostAssertion>∅</PostAssertion>
-              <Titre>par lieu</Titre>
-              <DetailsVisible>0</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-            <Action>
-              <Position>318;352</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>∅</PreAssertion>
-              <PostAssertion>∅</PostAssertion>
-              <Titre>par période</Titre>
-              <DetailsVisible>0</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-          </Enfants>
+          <Enfants/>
         </Action>
         <Action>
           <Position>458;204</Position>
@@ -88,7 +57,7 @@
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>definir les acte succeptible de se joindre a se persona</Titre>
+              <Titre>definir les choix succeptible de se joindre à ce persona</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>

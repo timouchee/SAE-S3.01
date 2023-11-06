@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Recommendation</nom>
-  <date_creation>6/11/2023 08:19</date_creation>
+  <date_creation>6/11/2023 09:08</date_creation>
   <Elements>
     <Action>
       <Position>579;14</Position>
@@ -14,7 +14,7 @@
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>161;158</Position>
+          <Position>160;158</Position>
           <StyleLien>2</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>Profils types</PostAssertion>
@@ -23,7 +23,7 @@
           <DetailsVideVisible>0</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>-23;369</Position>
+              <Position>-3;368</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
@@ -33,7 +33,7 @@
               <Enfants/>
             </Action>
             <Action>
-              <Position>320;367</Position>
+              <Position>343;361</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
@@ -65,7 +65,7 @@
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>686;311</Position>
+              <Position>594;294</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>Profils types</PreAssertion>
               <PostAssertion>?</PostAssertion>
@@ -74,7 +74,7 @@
               <DetailsVideVisible>0</DetailsVideVisible>
               <Enfants>
                 <Condition>
-                  <Position>818.5;420</Position>
+                  <Position>713.5;414</Position>
                   <StyleLien>1</StyleLien>
                   <estUnique>1</estUnique>
                   <operationsLogiques>
@@ -82,7 +82,7 @@
                       <Titre>Nouveau utilisateur</Titre>
                       <Enfants>
                         <Action>
-                          <Position>623;542</Position>
+                          <Position>462;558</Position>
                           <StyleLien>1</StyleLien>
                           <PreAssertion>∅</PreAssertion>
                           <PostAssertion>∅</PostAssertion>
@@ -92,7 +92,7 @@
                           <Enfants/>
                         </Action>
                         <Action>
-                          <Position>888;545</Position>
+                          <Position>706;563</Position>
                           <StyleLien>1</StyleLien>
                           <PreAssertion>∅</PreAssertion>
                           <PostAssertion>∅</PostAssertion>
@@ -112,7 +112,7 @@
               </Enfants>
             </Action>
             <Action>
-              <Position>1168;510</Position>
+              <Position>1099;331</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
@@ -121,7 +121,7 @@
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants>
                 <Action>
-                  <Position>1045;666</Position>
+                  <Position>953;564</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>∅</PreAssertion>
                   <PostAssertion>∅</PostAssertion>
@@ -131,7 +131,7 @@
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>1335;667</Position>
+                  <Position>1239;559</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>∅</PreAssertion>
                   <PostAssertion>∅</PostAssertion>
@@ -143,11 +143,11 @@
               </Enfants>
             </Action>
             <Action>
-              <Position>1405;347</Position>
+              <Position>1459;321</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>Mettre à jour les préférences de l'utilisateur</Titre>
+              <Titre>Mettre à jour des personar</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>

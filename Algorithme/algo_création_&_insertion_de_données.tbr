@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>algo_tri_des_donner</nom>
-  <date_creation>6/11/2023 08:19</date_creation>
+  <date_creation>6/11/2023 08:35</date_creation>
   <Elements>
     <Action>
       <Position>655;85</Position>
@@ -14,52 +14,11 @@
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>98;265</Position>
+          <Position>143;389</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>création de la base de donner</Titre>
-          <DetailsVisible>0</DetailsVisible>
-          <DetailsVideVisible>1</DetailsVideVisible>
-          <Enfants/>
-        </Action>
-        <Action>
-          <Position>502;263</Position>
-          <StyleLien>2</StyleLien>
-          <PreAssertion>∅</PreAssertion>
-          <PostAssertion>∅</PostAssertion>
-          <Titre>insertion de données</Titre>
-          <DetailsVisible>0</DetailsVisible>
-          <DetailsVideVisible>1</DetailsVideVisible>
-          <Enfants>
-            <Action>
-              <Position>377;399</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>∅</PreAssertion>
-              <PostAssertion>∅</PostAssertion>
-              <Titre>insertion de donner testes</Titre>
-              <DetailsVisible>0</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-            <Action>
-              <Position>544;397</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>∅</PreAssertion>
-              <PostAssertion>∅</PostAssertion>
-              <Titre>insertion par questionnaire</Titre>
-              <DetailsVisible>0</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-          </Enfants>
-        </Action>
-        <Action>
-          <Position>291;265</Position>
-          <StyleLien>1</StyleLien>
-          <PreAssertion>∅</PreAssertion>
-          <PostAssertion>∅</PostAssertion>
-          <Titre>verification du bon fonctionement</Titre>
+          <Titre>création de la base de données(fichier texte)</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
@@ -94,6 +53,26 @@
               <Enfants/>
             </Action>
           </Enfants>
+        </Action>
+        <Action>
+          <Position>320;265</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>verification du bon fonctionement</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+        <Action>
+          <Position>456;394</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>insertion de données tests</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
         </Action>
       </Enfants>
     </Action>

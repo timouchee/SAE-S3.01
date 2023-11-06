@@ -1,44 +1,44 @@
 <?xml version="1.0"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
-  <nom>Lui attribuer une persona en focntion de ses réponses</nom>
+  <nom>Proposer un questionnaire d'arrivée</nom>
   <date_creation>6/11/2023 09:08</date_creation>
   <Elements>
     <Action>
-      <Position>236;28</Position>
+      <Position>615;23</Position>
       <StyleLien>2</StyleLien>
       <PreAssertion>∅</PreAssertion>
       <PostAssertion>∅</PostAssertion>
-      <Titre>Lui attribuer une persona en focntion de ses réponses</Titre>
-      <DetailsVisible>0</DetailsVisible>
+      <Titre>Proposer un questionnaire d'arrivée</Titre>
+      <DetailsVisible>1</DetailsVisible>
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>69;214</Position>
+          <Position>364;212</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>recuperer les persona de la base (texte)</Titre>
+          <Titre>afficher le questionnaire</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
         </Action>
         <Action>
-          <Position>450;214</Position>
+          <Position>585;211</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>lui attribuer une personas corespondante</Titre>
+          <Titre>recupérer le resultat du questionnaire</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
         </Action>
         <Action>
-          <Position>236;317</Position>
+          <Position>898;209</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>
-          <Titre>comparer les persona avec les info questionnaire (preference)</Titre>
+          <Titre>mettre les resultat base de données(texte)</Titre>
           <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
