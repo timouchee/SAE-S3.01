@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>Afficher un questionnaire de demande de préférences</nom>
+  <date_creation>1/11/2023 17:07</date_creation>
+  <Elements>
+    <Action>
+      <Position>474;137</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>∅</PreAssertion>
+      <PostAssertion>∅</PostAssertion>
+      <Titre>Afficher un questionnaire de demande de préférences</Titre>
+      <DetailsVisible>0</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Action>
+          <Position>357;272</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>afficher le questionnaire
+</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+        <Action>
+          <Position>528;274</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>recuperer les resultats</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+        <Action>
+          <Position>695;271</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>envoyer les donner a la base de données</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+      </Enfants>
+    </Action>
+  </Elements>
+  <Dictionary/>
+</Algorithme>

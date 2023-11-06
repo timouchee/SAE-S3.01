@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>Lui attribuer une persona en focntion de ses réponses</nom>
+  <date_creation>1/11/2023 17:19</date_creation>
+  <Elements>
+    <Action>
+      <Position>364;39</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>∅</PreAssertion>
+      <PostAssertion>∅</PostAssertion>
+      <Titre>Lui attribuer une persona en focntion de ses réponses</Titre>
+      <DetailsVisible>0</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Action>
+          <Position>123;208</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>demander a la base les persona corespondant avec les reponse</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Action>
+              <Position>94;337</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>∅</PreAssertion>
+              <PostAssertion>∅</PostAssertion>
+              <Titre>ouvrir connexion avec la base</Titre>
+              <DetailsVisible>0</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>292;340</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>∅</PreAssertion>
+              <PostAssertion>∅</PostAssertion>
+              <Titre>faire corespondre les reponse avec les élément de chaque persona</Titre>
+              <DetailsVisible>0</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>531;209</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>choisir une des persona</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+        <Action>
+          <Position>730;210</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>lui attribuer</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+      </Enfants>
+    </Action>
+  </Elements>
+  <Dictionary/>
+</Algorithme>

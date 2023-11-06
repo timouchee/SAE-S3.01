@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>Créer les personas</nom>
+  <date_creation>1/11/2023 16:29</date_creation>
+  <Elements>
+    <Action>
+      <Position>489;29</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>∅</PreAssertion>
+      <PostAssertion>∅</PostAssertion>
+      <Titre>Créer les personas</Titre>
+      <DetailsVisible>0</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Action>
+          <Position>28;202</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>récuperer les données</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+        <Action>
+          <Position>235;196</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>rassembler les choix</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Action>
+              <Position>85;352</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>∅</PreAssertion>
+              <PostAssertion>∅</PostAssertion>
+              <Titre>rassembler par fréquence</Titre>
+              <DetailsVisible>0</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>249;352</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>∅</PreAssertion>
+              <PostAssertion>∅</PostAssertion>
+              <Titre>par lieu</Titre>
+              <DetailsVisible>0</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>318;352</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>∅</PreAssertion>
+              <PostAssertion>∅</PostAssertion>
+              <Titre>par période</Titre>
+              <DetailsVisible>0</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>458;204</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>ecrire un persona pour chaque structure</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Action>
+              <Position>423;352</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>∅</PreAssertion>
+              <PostAssertion>∅</PostAssertion>
+              <Titre>definir un nom</Titre>
+              <DetailsVisible>0</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>383;457</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>∅</PreAssertion>
+              <PostAssertion>∅</PostAssertion>
+              <Titre>definir les acte succeptible de se joindre a se persona</Titre>
+              <DetailsVisible>0</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>557;354</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>∅</PreAssertion>
+              <PostAssertion>∅</PostAssertion>
+              <Titre>definir les lieu et période relatif a la persona</Titre>
+              <DetailsVisible>0</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>727;458</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>∅</PreAssertion>
+              <PostAssertion>∅</PostAssertion>
+              <Titre>verifier si la persona est appliquable et coherente</Titre>
+              <DetailsVisible>0</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>821;213</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>rentrer la persona dans la base de données</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+      </Enfants>
+    </Action>
+  </Elements>
+  <Dictionary/>
+</Algorithme>

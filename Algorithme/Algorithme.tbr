@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Recommendation</nom>
-  <date_creation>26/10/2023 13:50</date_creation>
+  <date_creation>6/11/2023 08:19</date_creation>
   <Elements>
     <Action>
       <Position>579;14</Position>
@@ -23,7 +23,7 @@
           <DetailsVideVisible>0</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>-10;364</Position>
+              <Position>-23;369</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
@@ -33,7 +33,7 @@
               <Enfants/>
             </Action>
             <Action>
-              <Position>310;367</Position>
+              <Position>320;367</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
@@ -43,11 +43,11 @@
               <Enfants/>
             </Action>
             <Action>
-              <Position>166;492</Position>
+              <Position>166;481</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
-              <Titre>Analyser les résultats manuellement</Titre>
+              <Titre>création &amp; insertion de données</Titre>
               <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
@@ -143,26 +143,16 @@
               </Enfants>
             </Action>
             <Action>
-              <Position>1365;348</Position>
+              <Position>1405;347</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>∅</PreAssertion>
               <PostAssertion>∅</PostAssertion>
               <Titre>Mettre à jour les préférences de l'utilisateur</Titre>
-              <DetailsVisible>1</DetailsVisible>
+              <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
             </Action>
           </Enfants>
-        </Action>
-        <Action>
-          <Position>518;166</Position>
-          <StyleLien>1</StyleLien>
-          <PreAssertion>∅</PreAssertion>
-          <PostAssertion>∅</PostAssertion>
-          <Titre>Initialisation des profils types</Titre>
-          <DetailsVisible>0</DetailsVisible>
-          <DetailsVideVisible>1</DetailsVideVisible>
-          <Enfants/>
         </Action>
       </Enfants>
     </Action>
