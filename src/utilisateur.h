@@ -1,6 +1,7 @@
 #ifndef UTILISATEUR_H
 #define UTILISATEUR_H
 #include <iostream>
+#include "persona.h"
 using namespace std;
 
 class Utilisateur
@@ -15,6 +16,7 @@ private:
      * dateNaiss : date de naissance de l'utilisateur (type : jj/mm/aaaa)
      */
     string ID, nom, prenom, motDePasse, mail, dateNaiss;
+    
 public:
     Utilisateur(/* args */);
     ~Utilisateur();
@@ -22,7 +24,28 @@ public:
     //SETTER ET GETTER
     //Setter et Getter de l'ID de l'utilisateur
     string getID() const;
-    void setID(string ID);
+    void setID(string id);
+
+    //Setter et Getter du nom de l'utilisateur
+    string getNom() const;
+    void setNom(string numUser);
+
+    //Setter et Getter du prenom de l'utilisateur
+    string getPrenom() const;
+    void setPrenom(string prenomUser);
+
+    //Setter et Getter du mot de passe de l'utilisateur
+    string getMotDePasse() const;
+    void setMotDePasse(string motDePasseUser);
+
+    //Setter et Getter du mail de l'utilisateur
+    string getMail() const;
+    void setMail(string mailUser);
+
+    //Setter et Getter de la date de naissance de l'utilisateur
+    string getDateNaiss() const;
+    void setDateNaiss(string dateNaissUser);
+
 
 };
 
