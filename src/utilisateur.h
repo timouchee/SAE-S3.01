@@ -16,12 +16,13 @@ private:
      * dateNaiss : date de naissance de l'utilisateur (type : jj/mm/aaaa)
      */
     string ID, nom, prenom, motDePasse, mail, dateNaiss;
-    
+
 public:
+    //  CONSTRUCTEUR
     Utilisateur(/* args */);
     ~Utilisateur();
 
-    //SETTER ET GETTER
+    //  SETTER ET GETTER
     //Setter et Getter de l'ID de l'utilisateur
     string getID() const;
     void setID(string id);

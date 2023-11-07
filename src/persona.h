@@ -8,7 +8,6 @@
     /**
      * DICO : 
      * thème: => correspond à un centre d'intérêt lié à une persona (nourriture, musique...)
-     *
      */
 
     class Persona
