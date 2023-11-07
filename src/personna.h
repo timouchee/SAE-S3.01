@@ -40,7 +40,7 @@
          * liste préférence activité [(activité, degré_de_préférence), (...)]
          * 
          */
-        typedef map<string, int> listPreference;
+        typedef map<int, pair<int, string>> listPreference;
         listPreference lstPrefMusique;
         listPreference lstPrefNourriture;
         listPreference lstPrefActivite;
