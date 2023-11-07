@@ -67,3 +67,21 @@ Persona::tranchebudget Persona::getRessourceBudget() const {
 void Persona::setRessourceBudget(tranchebudget budget) {
     ressourcebudget = budget;
 }
+
+const Persona::lstUtilisateur& Persona::getUneListeUtilisateur() const {
+    return uneListeUtilisateur;
+}
+
+// Définition du setter pour uneListeUtilisateur
+void Persona::setUneListeUtilisateur(const lstUtilisateur& listeUtilisateur) {
+    uneListeUtilisateur = listeUtilisateur;
+}
+
+// Définition de la méthode pour parcourir la liste et effectuer des opérations
+void Persona::parcourirListeUtilisateur() const {
+    for (const auto& utilisateur : uneListeUtilisateur) {
+        cout << utilisateur.getID() << endl;
+    }
+}
+
+

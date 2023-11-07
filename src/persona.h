@@ -2,7 +2,8 @@
 #define PERSONA_H
     #include <iostream>
     #include <map>
-    #include <utility>
+    #include <list>
+    #include "utilisateur.h"
     using namespace std;
     /**
      * DICO : 
@@ -13,7 +14,14 @@
     class Persona
     {
     private:
+        /**
+         * liste des utilisateurs associées à cette persona
+         * 
+         */
+        typedef list<Utilisateur> lstUtilisateur; 
+        lstUtilisateur uneListeUtilisateur;
 
+        
         /** 
          * action: => correspond à une interaction avec une recommendation présentée sur le site (click, like ...)
          * action :
@@ -52,7 +60,8 @@
          */
         bool possedeVoiture = false;
         /**
-         * 
+         * liste des tranches de budget auquels les étudiants seraient affectées afin de proposer des activités apropriées 
+         * (pas trop cher pour budget restraint)
          * 
          */
         enum tranchebudget {gratuit, restraint, moyen, large};
@@ -71,7 +80,6 @@
 
         // Getter et Setter pour degre_de_preference
         int getDegreDePreference() const;
-
         void setDegreDePreference(int degreDePreference);
 
         // Getter et Setter pour lstPrefMusique
@@ -80,23 +88,25 @@
 
         // Getter et Setter pour lstPrefNourriture
         const listPreference& getLstPrefNourriture() const;
-
         void setLstPrefNourriture(const listPreference& lstPref);
 
         // Getter et Setter pour lstPrefActivite
         const listPreference& getLstPrefActivite() const;
-
         void setLstPrefActivite(const listPreference& lstPref);
 
         // Getter et Setter pour possedeVoiture
         bool getPossedeVoiture() const;
-
         void setPossedeVoiture(bool possede);
 
         // Getter et Setter pour ressourcebudget
         tranchebudget getRessourceBudget() const;
-
         void setRessourceBudget(tranchebudget budget);
+
+        // Getter et setter pour uneListeUtilisateur
+        const lstUtilisateur& getUneListeUtilisateur() const;
+        void setUneListeUtilisateur(const lstUtilisateur& listeUtilisateur); 
+        // Parcours de la liste et effectuer certaines opérations
+        void parcourirListeUtilisateur() const;
 
         //METHODE
         bool estOKPourCovoiturage(bool possedeVoiture);
