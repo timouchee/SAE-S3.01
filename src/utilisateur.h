@@ -74,3 +74,11 @@ public:
 };
 
 #endif
+
+
+/**
+ * enum action {musique, nourriture...}
+ * lstPref[pair<action[0], map<style musicale, degre pref>
+ *         pair<action[1], map<style nourriture, degre pref>...]
+ * 
+ */

@@ -1,25 +1,58 @@
 #include "persona.h"
 #include "utilisateur.h"
+#include "traitementQuestionnaire.h"
 #include <iostream>
 using namespace std;
 int main(void)
 {
-    //création d'un utilisateur pour l'exemple
-    Utilisateur utilisateur1;
+    string IDUser, nomUser, prenomUser, motDePasseUser, mailUser, dateNaissUser, adresseUser, etudeUser;
+    string moyenDeTransport; 
 
-    /* mise en place de liste pour récupérer les réponses du questionnaire
-    lstReponseQuestionnaire = [ligne[domaine[string]]]*/
-    typedef list<string> domaine;
-    typedef list<domaine> ligne;
-    typedef list<ligne> lstReponseQuestionnaire;
-    //lst de pref du questionnaire
+    while (true)
+    {
+        // appelle du questionnaire 
 
-    // appelle du questionnaire 
+        //PARTIE UTILISATEUR
+        /*demande du nom*/
+        cout << "nom: ";
+        cin >> nomUser;
+        cout << endl;
+        /*demande du prenom*/
+        cout << "prenom: ";
+        cin >> prenomUser;
+        cout << endl;
+        /*demande dateNaiss*/
+        cout << "date de naissance: ";
+        cin >> dateNaissUser;
+        cout << endl;
+        /*demande du mail*/
+        cout << "mail: ";
+        cin >> mailUser;
+        cout << endl;
+        /*demande son adresse*/
+        cout << "adresse: ";
+        cin >> adresseUser;
+        cout << endl;
+        /*demande son type et niveau d'étude*/
+        cout << "etude: ";
+        cin >> etudeUser;
+        cout << endl;
+        /*demande comment il se déplace*/
+        cout << "etude: ";
+        cin >> moyenDeTransport;
+        cout << endl;
 
-    // récupère les réponses
+        // PARTIE PREFERENCE
+    
+    
+
+    // récupèrer les réponses
 
     // traiter les données
 
-    // crée les persona à partir du tout
+    // créer les persona à partir du tout
+    }
+    
+    
     return 0;
 }
