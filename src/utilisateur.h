@@ -14,8 +14,18 @@ private:
      * motDePasse : mot de passe utilisée à la connection de l'utilisateur
      * mail : adresse mail renseignée par l'utilisateur 
      * dateNaiss : date de naissance de l'utilisateur (type : jj/mm/aaaa)
+     * adresse : adresse du domicile de l'utilisateur (type: Ville, mum rue)
+     * etude : représente le niveau d'étude ainsi que la formation suivie
      */
-    string ID, nom, prenom, motDePasse, mail, dateNaiss;
+    string ID, nom, prenom, motDePasse, mail, dateNaiss, adresse, etude;
+    /**
+     * mise en place des différents types de transport pour l'option de trajet
+     */
+    enum moyenDeTransport {pied, velo, moto, voiture};
+    /**
+     * Un utilisateur est lié à une seule persona
+     */
+    Persona maPersona; 
 
 public:
     //  CONSTRUCTEUR
@@ -46,6 +56,19 @@ public:
     //Setter et Getter de la date de naissance de l'utilisateur
     string getDateNaiss() const;
     void setDateNaiss(string dateNaissUser);
+
+    //Setter et Getter de l'adresse de l'utilisateur
+    string getAdresse() const;
+    void setAdresse(string adresseUser);
+
+
+    //Setter et Getter de la date de naissance de l'utilisateur
+    string getEtude() const;
+    void setEtude(string etudeUser);
+
+    //Setter et Getter de la persona liée à l'utilisateur
+    Persona getPersona() const;
+    void setPersona(Persona personaUser);
 
 
 };
