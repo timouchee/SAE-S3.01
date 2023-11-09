@@ -3,13 +3,13 @@
     #include <iostream>
     #include <map>
     #include <list>
-    #include "utilisateur.h"
+    //#include "utilisateur.h"
     using namespace std;
     /**
      * DICO : 
      * thème: => correspond à un centre d'intérêt lié à une persona (nourriture, musique...)
      */
-
+    class Utilisateur;
     class Persona
     {
     private:
@@ -19,8 +19,6 @@
          */
         typedef list<Utilisateur> lstUtilisateur; 
         lstUtilisateur uneListeUtilisateur;
-
-        
         /** 
          * action: => correspond à une interaction avec une recommendation présentée sur le site (click, like ...)
          * action :

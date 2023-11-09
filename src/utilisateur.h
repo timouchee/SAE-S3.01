@@ -1,7 +1,7 @@
 #ifndef UTILISATEUR_H
 #define UTILISATEUR_H
-#include <iostream>
 #include "persona.h"
+#include <iostream>
 using namespace std;
 
 class Utilisateur
@@ -72,7 +72,10 @@ public:
 
     // METHODE
     //pour la vérification de la saisie de la date de naissance
-    bool estDateValide(const string& dateNaissUser);
+    bool estDateValide(string dateNaissUser);
+
+    //pour la vérification de la saisie du mail de l'utilisateur
+    bool estMailValide(string mailUser);
 
 
 };

@@ -79,7 +79,7 @@ void Utilisateur::setPersona(Persona personaUser){
 }
 
 /*------------------------------------------ METHODE -----------------------------------------*/
-bool estDateValide(const string& dateNaissUser) {
+bool Utilisateur::estDateValide(string dateNaissUser) {
     // Vérifier la longueur de la chaîne (jj/mm/aaaa)
     if (dateNaissUser.length() != 10) {
         return false;
@@ -109,4 +109,24 @@ bool estDateValide(const string& dateNaissUser) {
     }
 
     return false;
+}
+
+bool Utilisateur::estMailValide(string mailUser){
+    // Vérifie s'il y a le '@'
+    size_t posArobase = mailUser.find('@');
+    if (posArobase == string::npos || posArobase == 0 || posArobase == mailUser.length() - 1) {
+        return false;
+    }
+
+    // Séparer le pseudo de l'utilisateur et le domaine
+    string nmailPseudo = mailUser.substr(0, posArobase);
+    string domaine = mailUser.substr(posArobase + 1);
+
+    // Vérifier le domaine contient un seul caractère '.'
+    size_t posPoint = domaine.find('.');
+    if (posPoint == string::npos || posPoint == 0 || posPoint == domaine.length() - 1) {
+        return false;
+    }
+
+    return true;
 }

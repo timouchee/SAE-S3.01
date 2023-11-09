@@ -1,4 +1,5 @@
 #include "persona.h"
+#include "utilisateur.h"
 #include <iostream>
 
 using namespace std;
