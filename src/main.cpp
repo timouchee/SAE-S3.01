@@ -51,10 +51,18 @@ int main(void)
             }
         }
         
-        /*demande son adresse*/
-        cout << "adresse: ";
-        cin >> adresseUser;
-        cout << endl;
+        /*demande son adresse, type: Ville, numRue nomRue */
+        while (true) {
+            cout << "Adresse (Ville, numeroRue nomRue): ";
+            cin >> adresseUser;
+            User1.setAdresse(adresseUser);
+            if (User1.estMailValide(adresseUser)) {
+                cout << "L'adresse est valide." << endl;
+                break;
+            } else {
+                cout << "L'adresse n'est pas valide. Veuillez réessayer." << endl;
+            }
+        }
         /*demande son type et niveau d'étude*/
         cout << "etude: ";
         cin >> etudeUser;

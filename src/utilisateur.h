@@ -77,6 +77,9 @@ public:
     //pour la vérification de la saisie du mail de l'utilisateur
     bool estMailValide(string mailUser);
 
+    //pour la vérification de la saisie de l'adresse de l'utilisateur
+    bool estAdresseValide(string adresseUser);
+
 
 };
 

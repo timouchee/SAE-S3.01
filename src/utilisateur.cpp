@@ -130,3 +130,38 @@ bool Utilisateur::estMailValide(string mailUser){
 
     return true;
 }
+
+bool Utilisateur::estAdresseValide(string adresseUser){
+    // Séparer le ville/village et la rue
+    size_t posVirgule = adresseUser.find(',');
+    if (posVirgule == string::npos || posVirgule == 0 || posVirgule == adresseUser.length() - 1){
+        return false;
+    }
+    string villeUser = adresseUser.substr(0, posVirgule);
+    string rueUser = adresseUser.substr(posVirgule + 1);
+
+    // Séparer le numéro de la rue et nom de la rue
+    size_t posEspace = rueUser.find(' ');
+    if (posEspace == string::npos || posEspace == 0 || posEspace == rueUser.length() - 1){
+        return false;
+    }
+    string numRue = rueUser.substr(0,posEspace);
+    string nomRue = rueUser.substr(posEspace + 1);
+
+    //vérifie si le numero de la rue est uniquement composée de nombres
+    for (char caractere : numRue) {
+        if (!isdigit(caractere)) {
+            return false;
+        }
+    }
+
+    //vérifie si le nom de la rue est correct
+    for (char caractere : nomRue) {
+        if (!isalpha(caractere) && !isspace(caractere)) {
+            return false;
+        }
+    }
+    // Tout est OK
+    return true;
+
+}
