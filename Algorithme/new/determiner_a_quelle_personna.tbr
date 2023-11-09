@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>determiner a quelle personna</nom>
-  <date_creation>9/11/2023 09:36</date_creation>
+  <date_creation>9/11/2023 10:31</date_creation>
   <Elements>
     <Action>
       <Position>599;13</Position>
@@ -35,58 +35,114 @@
                   <IterationFixe>1</IterationFixe>
                   <Enfants>
                     <Action>
-                      <Position>19;467</Position>
+                      <Position>43;519</Position>
                       <StyleLien>1</StyleLien>
                       <PreAssertion>∅</PreAssertion>
                       <PostAssertion>∅</PostAssertion>
-                      <Titre>listCoresp= une liste dynamique 
-d'int pour la correspondance
-des personas</Titre>
+                      <Titre>compteur1</Titre>
                       <DetailsVisible>0</DetailsVisible>
                       <DetailsVideVisible>1</DetailsVideVisible>
                       <Enfants/>
                     </Action>
                     <Iteration>
-                      <Position>418.5;434.5</Position>
-                      <StyleLien>0</StyleLien>
-                      <Titre>pour tous element de utilisateur</Titre>
+                      <Position>321.5;438.5</Position>
+                      <StyleLien>1</StyleLien>
+                      <Titre>pour tous  el de partie de persona</Titre>
                       <IterationFixe>1</IterationFixe>
                       <Enfants>
-                        <Condition>
-                          <Position>310.5;506</Position>
+                        <Action>
+                          <Position>140;515</Position>
                           <StyleLien>1</StyleLien>
-                          <estUnique>1</estUnique>
-                          <operationsLogiques>
-                            <operation>
-                              <Titre>el de persona existe dans persona
-</Titre>
+                          <PreAssertion>∅</PreAssertion>
+                          <PostAssertion>∅</PostAssertion>
+                          <Titre>compteur1++</Titre>
+                          <DetailsVisible>0</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Iteration>
+                          <Position>357.5;539.5</Position>
+                          <StyleLien>1</StyleLien>
+                          <Titre>pour tous categorie de utilisateur</Titre>
+                          <IterationFixe>1</IterationFixe>
+                          <Enfants>
+                            <Iteration>
+                              <Position>397.5;617.5</Position>
+                              <StyleLien>1</StyleLien>
+                              <Titre>pour tous element de categorie utilisateur</Titre>
+                              <IterationFixe>1</IterationFixe>
                               <Enfants>
+                                <Condition>
+                                  <Position>288.5;700</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <estUnique>1</estUnique>
+                                  <operationsLogiques>
+                                    <operation>
+                                      <Titre>el de persona existe dans persona
+</Titre>
+                                      <Enfants>
+                                        <Action>
+                                          <Position>200;814</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <PreAssertion>∅</PreAssertion>
+                                          <PostAssertion>∅</PostAssertion>
+                                          <Titre>listCoresp[persona actuell] += compteur1+nb el - compteur2</Titre>
+                                          <DetailsVisible>0</DetailsVisible>
+                                          <DetailsVideVisible>1</DetailsVideVisible>
+                                          <Enfants/>
+                                        </Action>
+                                      </Enfants>
+                                    </operation>
+                                    <operation>
+                                      <Titre>?</Titre>
+                                      <Enfants/>
+                                    </operation>
+                                    <operation>
+                                      <Titre>Sinon</Titre>
+                                      <Enfants/>
+                                    </operation>
+                                  </operationsLogiques>
+                                </Condition>
                                 <Action>
-                                  <Position>311;602</Position>
+                                  <Position>153;720</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>∅</PreAssertion>
                                   <PostAssertion>∅</PostAssertion>
-                                  <Titre>listCoresp[persona actuell] += point</Titre>
+                                  <Titre>compteur2++</Titre>
                                   <DetailsVisible>0</DetailsVisible>
                                   <DetailsVideVisible>1</DetailsVideVisible>
                                   <Enfants/>
                                 </Action>
                               </Enfants>
-                            </operation>
-                            <operation>
-                              <Titre>?</Titre>
+                            </Iteration>
+                            <Action>
+                              <Position>60;646</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>∅</PreAssertion>
+                              <PostAssertion>∅</PostAssertion>
+                              <Titre>compteur2</Titre>
+                              <DetailsVisible>0</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
                               <Enfants/>
-                            </operation>
-                            <operation>
-                              <Titre>Sinon</Titre>
-                              <Enfants/>
-                            </operation>
-                          </operationsLogiques>
-                        </Condition>
+                            </Action>
+                          </Enfants>
+                        </Iteration>
                       </Enfants>
                     </Iteration>
                   </Enfants>
                 </Iteration>
+                <Action>
+                  <Position>18;363</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>∅</PreAssertion>
+                  <PostAssertion>∅</PostAssertion>
+                  <Titre>listCoresp= une liste dynamique 
+d'int pour la correspondance
+des personas</Titre>
+                  <DetailsVisible>0</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
               </Enfants>
             </Iteration>
           </Enfants>
@@ -101,7 +157,7 @@ des personas</Titre>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Condition>
-              <Position>869.5;279</Position>
+              <Position>921.5;282</Position>
               <StyleLien>0</StyleLien>
               <estUnique>0</estUnique>
               <operationsLogiques>

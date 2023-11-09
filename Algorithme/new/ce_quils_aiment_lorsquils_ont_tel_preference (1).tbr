@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>ce qu'ils aiment lorsqu'ils ont tel préférence</nom>
-  <date_creation>8/11/2023 16:47</date_creation>
+  <date_creation>9/11/2023 10:30</date_creation>
   <Elements>
     <Action>
       <Position>546;2</Position>
@@ -60,17 +60,42 @@ reponseUtilisateur</Titre>
                             <operation>
                               <Titre>categoriepref == categorie</Titre>
                               <Enfants>
-                                <Action>
-                                  <Position>382;632</Position>
+                                <Iteration>
+                                  <Position>356.5;632.5</Position>
                                   <StyleLien>1</StyleLien>
-                                  <PreAssertion>∅</PreAssertion>
-                                  <PostAssertion>listGroupPref</PostAssertion>
-                                  <Titre>listeutilisateurElempref ajouter 
+                                  <Titre>pour tous  element 
+dans categorie</Titre>
+                                  <IterationFixe>1</IterationFixe>
+                                  <Enfants>
+                                    <Condition>
+                                      <Position>284.5;715</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <estUnique>1</estUnique>
+                                      <operationsLogiques>
+                                        <operation>
+                                          <Titre>si elemnPref == element</Titre>
+                                          <Enfants>
+                                            <Action>
+                                              <Position>294;821</Position>
+                                              <StyleLien>1</StyleLien>
+                                              <PreAssertion>∅</PreAssertion>
+                                              <PostAssertion>listGroupPref</PostAssertion>
+                                              <Titre>listeutilisateurElempref ajouter 
 reponse utilisateur</Titre>
-                                  <DetailsVisible>0</DetailsVisible>
-                                  <DetailsVideVisible>1</DetailsVideVisible>
-                                  <Enfants/>
-                                </Action>
+                                              <DetailsVisible>0</DetailsVisible>
+                                              <DetailsVideVisible>1</DetailsVideVisible>
+                                              <Enfants/>
+                                            </Action>
+                                          </Enfants>
+                                        </operation>
+                                        <operation>
+                                          <Titre>Sinon</Titre>
+                                          <Enfants/>
+                                        </operation>
+                                      </operationsLogiques>
+                                    </Condition>
+                                  </Enfants>
+                                </Iteration>
                               </Enfants>
                             </operation>
                             <operation>

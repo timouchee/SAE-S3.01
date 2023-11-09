@@ -1,8 +1,8 @@
-<?xml version="1.1"?>
+<?xml version="1.0"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>7/11/2023 19:13</date_creation>
+  <date_creation>9/11/2023 10:30</date_creation>
   <Elements>
     <Action>
       <Position>711;34</Position>
@@ -68,4 +68,5 @@ préférencesUtilisateurs</PreAssertion>
       </Enfants>
     </Action>
   </Elements>
+  <Dictionary/>
 </Algorithme>
