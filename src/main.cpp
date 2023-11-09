@@ -14,17 +14,26 @@ int main(void)
 
         //PARTIE UTILISATEUR
         /*demande du nom*/
-        cout << "nom: ";
+        cout << "Nom: ";
         cin >> nomUser;
         cout << endl;
         /*demande du prenom*/
-        cout << "prenom: ";
+        cout << "Prenom: ";
         cin >> prenomUser;
         cout << endl;
         /*demande dateNaiss*/
-        cout << "date de naissance: ";
+        while (true) {
+        cout << "Date de naissance (jj/mm/aaaa) : ";
         cin >> dateNaissUser;
-        cout << endl;
+
+        if (estDateValide(dateNaissUser)) {
+            cout << "La date de naissance est valide." << endl;
+            break;
+        } else {
+            cout << "La date de naissance n'est pas valide. Veuillez réessayer." << endl;
+        }
+    }
+        
         /*demande du mail*/
         cout << "mail: ";
         cin >> mailUser;

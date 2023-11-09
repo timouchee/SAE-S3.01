@@ -79,3 +79,34 @@ void Utilisateur::setPersona(Persona personaUser){
 }
 
 /*------------------------------------------ METHODE -----------------------------------------*/
+bool estDateValide(const string& dateNaissUser) {
+    // Vérifier la longueur de la chaîne (jj/mm/aaaa)
+    if (dateNaissUser.length() != 10) {
+        return false;
+    }
+
+    // Vérifier si les caractères aux positions spécifiques sont des chiffres et '/'
+    for (int i = 0; i < 10; ++i) {
+        if (i == 2 || i == 5) {
+            if (dateNaissUser[i] != '/') {
+                return false;
+            }
+        } else {
+            if (!isdigit(dateNaissUser[i])) {
+                return false;
+            }
+        }
+    }
+
+    // Extraire le jour, le mois et l'année de la chaîne
+    int jour = stoi(dateNaissUser.substr(0, 2));
+    int mois = stoi(dateNaissUser.substr(3, 2));
+    int annee = stoi(dateNaissUser.substr(6, 4));
+
+    // Vérifier si le jour, le mois et l'année sont dans des plages valides
+    if (jour >= 1 && jour <= 31 && mois >= 1 && mois <= 12 && annee >= 1700 && annee <= 9999) {
+        return true;
+    }
+
+    return false;
+}

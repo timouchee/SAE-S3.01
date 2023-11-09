@@ -70,15 +70,12 @@ public:
     Persona getPersona() const;
     void setPersona(Persona personaUser);
 
+    // METHODE
+    //pour la vérification de la saisie de la date de naissance
+    bool estDateValide(const string& dateNaissUser);
+
 
 };
 
 #endif
 
-
-/**
- * enum action {musique, nourriture...}
- * lstPref[pair<action[0], map<style musicale, degre pref>
- *         pair<action[1], map<style nourriture, degre pref>...]
- * 
- */
