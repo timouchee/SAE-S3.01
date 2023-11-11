@@ -78,6 +78,14 @@ void Utilisateur::setPersona(Persona personaUser){
     maPersona = personaUser;
 }
 
+//Setter et Getter de moyen de transport
+void Utilisateur::setMoyenDeTransport(moyenDeTransport nouveauTransport) {
+    transport = nouveauTransport;
+}
+moyenDeTransport Utilisateur::getMoyenDeTransport() const {
+    return transport;
+}
+
 /*------------------------------------------ METHODE -----------------------------------------*/
 bool Utilisateur::estDateValide(string dateNaissUser) {
     // Vérifier la longueur de la chaîne (jj/mm/aaaa)

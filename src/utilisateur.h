@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std;
 
+enum moyenDeTransport {pied, velo, moto, voiture};
 class Utilisateur
 {
 private:
@@ -21,12 +22,12 @@ private:
     /**
      * mise en place des différents types de transport pour l'option de trajet
      */
-    enum moyenDeTransport {pied, velo, moto, voiture};
+    moyenDeTransport transport;
     /**
      * Un utilisateur est lié à une seule persona
      */
     Persona maPersona; 
-
+    
 public:
     //  CONSTRUCTEUR
     Utilisateur(/* args */);
@@ -70,6 +71,10 @@ public:
     Persona getPersona() const;
     void setPersona(Persona personaUser);
 
+    //Setter et Getter du moyen de transport de l'utilisateur
+    void setMoyenDeTransport(moyenDeTransport nouveauTransport);
+    moyenDeTransport getMoyenDeTransport() const;
+
     // METHODE
     //pour la vérification de la saisie de la date de naissance
     bool estDateValide(string dateNaissUser);
@@ -79,6 +84,9 @@ public:
 
     //pour la vérification de la saisie de l'adresse de l'utilisateur
     bool estAdresseValide(string adresseUser);
+
+    //pour la vérification du moyen de déplacement utilisé par l'utilisateur
+    bool estTransportValide(string transportUser);
 
 
 };

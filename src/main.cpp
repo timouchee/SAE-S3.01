@@ -8,7 +8,7 @@ int main(void)
 {
     Utilisateur User1;
     string IDUser, nomUser, prenomUser, motDePasseUser, mailUser, dateNaissUser, adresseUser, etudeUser;
-    string moyenDeTransport; 
+    int choixMoyenTransport; 
 
     while (true)
     {
@@ -64,13 +64,24 @@ int main(void)
             }
         }
         /*demande son type et niveau d'étude*/
-        cout << "etude: ";
+        cout << "Niveau d'étude: ";
         cin >> etudeUser;
         cout << endl;
         /*demande comment il se déplace*/
-        cout << "etude: ";
-        cin >> moyenDeTransport;
-        cout << endl;
+        cout << "Choisissez le moyen de transport (0: pied, 1: velo, 2: moto, 3: voiture): ";
+        cin >> choixMoyenTransport;
+
+        // Validation de l'entrée
+        if (choixMoyenTransport >= 0 && choixMoyenTransport <= 3) {
+            // Convertir l'entier en énuméré MoyenDeTransport
+            moyenDeTransport moyenTransportChoisi = static_cast<moyenDeTransport>(choixMoyenTransport);
+
+            // Utilisation du setter pour définir le moyen de transport
+            User1.setMoyenDeTransport(moyenTransportChoisi);
+        } 
+        else {
+            cout << "Choix invalide. Veuillez saisir un nombre entre 0 et 3." << endl;
+        }
 
         // PARTIE PREFERENCE
     
