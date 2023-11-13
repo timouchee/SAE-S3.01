@@ -30,7 +30,8 @@ private:
     
 public:
     //  CONSTRUCTEUR
-    Utilisateur(/* args */);
+    Utilisateur();
+    Utilisateur(string id, string n, string pren, string mdp, string m, string dateN, string adr, string etd, moyenDeTransport trans);
     ~Utilisateur();
 
     //  SETTER ET GETTER
