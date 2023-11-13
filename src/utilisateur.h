@@ -30,9 +30,10 @@ private:
     
 public:
     //  CONSTRUCTEUR
-    Utilisateur();
+    Utilisateur(); // Constructeur par défaut
     Utilisateur(string id, string n, string pren, string mdp, string m, string dateN, string adr, string etd, moyenDeTransport trans);
-    ~Utilisateur();
+    Utilisateur(const Utilisateur& autreUtilisateur); // Constructeur copieur
+    ~Utilisateur(); // Destructeur
 
     //  SETTER ET GETTER
     //Setter et Getter de l'ID de l'utilisateur

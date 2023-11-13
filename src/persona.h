@@ -67,7 +67,11 @@
     public:
 
         //CONSTRUCTEURS
-        Persona(/* args */);
+        Persona();
+        // Constructeur avec des paramètres
+        Persona(int sommeAction, int degreDePreference, bool possedeVoiture, tranchebudget budget);
+        // Constructeur copieur
+        Persona(const Persona& autrePersona);
         ~Persona();
 
         //SETTER ET GETTER

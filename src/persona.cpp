@@ -5,6 +5,27 @@
 using namespace std;
 
 // CONSTRUCTEUR (s'il y en a un, assurez-vous de l'implémenter)
+// Constructeur par défaut
+Persona::Persona() : somme_action(0), degre_de_preference(0), possedeVoiture(false), ressourcebudget(gratuit) {
+}
+
+// Constructeur avec des paramètres
+Persona::Persona(int sommeAction, int degreDePreference, bool possedeVoiture, tranchebudget budget)
+    : somme_action(sommeAction), degre_de_preference(degreDePreference), possedeVoiture(possedeVoiture), ressourcebudget(budget) {
+    // Initialisation des autres membres si nécessaire
+}
+
+// Constructeur copieur
+Persona::Persona(const Persona& autrePersona)
+    : somme_action(autrePersona.somme_action), degre_de_preference(autrePersona.degre_de_preference),
+      possedeVoiture(autrePersona.possedeVoiture), ressourcebudget(autrePersona.ressourcebudget),
+      lstPrefMusique(autrePersona.lstPrefMusique), lstPrefNourriture(autrePersona.lstPrefNourriture),
+      lstPrefActivite(autrePersona.lstPrefActivite), uneListeUtilisateur(autrePersona.uneListeUtilisateur) {
+    // Copiez les autres membres si nécessaire
+}
+
+// Destructeur
+Persona::~Persona() {}
 
 // Getter et Setter pour somme_action
 int Persona::getSommeAction() const {

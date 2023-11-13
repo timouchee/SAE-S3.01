@@ -5,7 +5,7 @@ using namespace std;
 /*------------------------------- CONSTRUCTEUR ---------------------------------------------*/
 
 // Constructeur par défaut
-Utilisateur::Utilisateur() {
+Utilisateur::Utilisateur() : transport(pied), maPersona() {
     ID = "";
     nom = "";
     prenom = "";
@@ -14,11 +14,10 @@ Utilisateur::Utilisateur() {
     dateNaiss = "";
     adresse = "";
     etude = "";
-    transport = pied; // Initialise le moyen de transport par défaut (pied)
 }
 
 // Constructeur avec des paramètres
-Utilisateur::Utilisateur(string id, string n, string pren, string mdp, string m, string dateN, string adr, string etd, moyenDeTransport trans) {
+Utilisateur::Utilisateur(string id, string n, string pren, string mdp, string m, string dateN, string adr, string etd, moyenDeTransport trans) : transport(trans), maPersona() {
     ID = id;
     nom = n;
     prenom = pren;
@@ -27,11 +26,10 @@ Utilisateur::Utilisateur(string id, string n, string pren, string mdp, string m,
     dateNaiss = dateN;
     adresse = adr;
     etude = etd;
-    transport = trans;
 }
 
-// Constructeur de copie
-Utilisateur::Utilisateur(const Utilisateur& autreUtilisateur) {
+// Constructeur copieur
+Utilisateur::Utilisateur(const Utilisateur& autreUtilisateur) : transport(autreUtilisateur.transport), maPersona(autreUtilisateur.maPersona) {
     ID = autreUtilisateur.ID;
     nom = autreUtilisateur.nom;
     prenom = autreUtilisateur.prenom;
@@ -40,13 +38,10 @@ Utilisateur::Utilisateur(const Utilisateur& autreUtilisateur) {
     dateNaiss = autreUtilisateur.dateNaiss;
     adresse = autreUtilisateur.adresse;
     etude = autreUtilisateur.etude;
-    transport = autreUtilisateur.transport;
 }
 
 // Destructeur
-Utilisateur::~Utilisateur() {
-    // Si vous avez besoin d'effectuer des opérations de nettoyage à la destruction de l'objet, ajoutez-les ici.
-}
+Utilisateur::~Utilisateur() {}
 
 /*------------------------------- SETTER ET GETTER -----------------------------------------*/
 

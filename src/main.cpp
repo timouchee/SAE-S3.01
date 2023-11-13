@@ -1,8 +1,6 @@
 #include "persona.h"
 #include "utilisateur.h"
-#include "traitementQuestionnaire.h"
-//#include <iostream>
-//using namespace std;
+#include "preference.h"
 
 int main(void)
 {
@@ -84,6 +82,8 @@ int main(void)
         }
 
         // PARTIE PREFERENCE
+        preference();
+        
     
     
 

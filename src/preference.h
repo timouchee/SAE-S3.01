@@ -6,7 +6,7 @@
 using namespace std;
 
 
-int main (void)
+int preference(void)
 {
     //Formulaire
 
