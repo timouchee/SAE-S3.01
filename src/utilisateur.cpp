@@ -177,37 +177,49 @@ bool Utilisateur::estMailValide(string mailUser){
     return true;
 }
 
-bool Utilisateur::estAdresseValide(string adresseUser){
+bool Utilisateur::estAdresseValide(string adresseUser) {
     // Séparer le ville/village et la rue
     size_t posVirgule = adresseUser.find(',');
-    if (posVirgule == string::npos || posVirgule == 0 || posVirgule == adresseUser.length() - 1){
+    if (posVirgule == string::npos || posVirgule == 0 || posVirgule == adresseUser.length() - 1) {
+        cout << "Erreur: virgule" << endl;
         return false;
     }
+
     string villeUser = adresseUser.substr(0, posVirgule);
     string rueUser = adresseUser.substr(posVirgule + 1);
 
+    // Si la rue commence par un espace, le supprimer
+    if (!rueUser.empty() && rueUser[0] == ' ') {
+        rueUser = rueUser.substr(1);
+    }
+
     // Séparer le numéro de la rue et nom de la rue
     size_t posEspace = rueUser.find(' ');
-    if (posEspace == string::npos || posEspace == 0 || posEspace == rueUser.length() - 1){
+    if (posEspace == string::npos || posEspace == 0 || posEspace == rueUser.length() - 1) {
+        cout << "Erreur: espace" << endl;
         return false;
     }
-    string numRue = rueUser.substr(0,posEspace);
+
+    string numRue = rueUser.substr(0, posEspace);
     string nomRue = rueUser.substr(posEspace + 1);
 
-    //vérifie si le numero de la rue est uniquement composée de nombres
+    // Vérifie si le numéro de la rue est composé de chiffres
     for (char caractere : numRue) {
         if (!isdigit(caractere)) {
+            cout << "Erreur: numRue" << endl;
             return false;
         }
     }
 
-    //vérifie si le nom de la rue est correct
+    // Vérifie si le nom de la rue est correct
     for (char caractere : nomRue) {
         if (!isalpha(caractere) && !isspace(caractere)) {
+            cout << "Erreur: nomRue" << endl;
             return false;
         }
     }
-    // Tout est OK
-    return true;
 
+    // Tout est OK
+    cout << "Adresse OK" << endl;
+    return true;
 }
