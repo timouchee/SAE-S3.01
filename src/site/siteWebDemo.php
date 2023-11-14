@@ -16,32 +16,32 @@
     <!-- Conteneur principal pour aligner en colonne -->
     <div class="info-utilisateur-container">
         <!-- Nom -->
-        <label for="nom">Nom: </label>
+        <label class="label-utilisateur" for="nom">Nom: </label>
         <input type="text" id="nom" name="nom" class="info-utilisateur" type="texte" required>
         <br>
         <!-- Prenom -->
-        <label for="prenom">Prénom: </label>
-        <input type="text" id="prenom" name="prenom" class="info-utilisateur" type="texte" required>
+        <label class="label-utilisateur" for="prenom">Prénom: </label>
+        <input type="text" id="prenom" name="prenom" class="info-utilisateur" required>
         <br>
         <!-- date de naissance -->
-        <label for="dateNaiss">Date de naissance (jj/mm/aaaa): </label>
-        <input type="text" id="dateNaiss" name="dateNaiss" class="info-utilisateur" type="texte" required>
+        <label class="label-utilisateur" for="dateNaiss">Date de naissance (jj/mm/aaaa): </label>
+        <input type="text" id="dateNaiss" name="dateNaiss" class="info-utilisateur" required>
         <br>
         <!-- mail -->
-        <label for="mail">Mail: </label>
-        <input type="email" id="mail" name="mail" class="info-utilisateur" type="texte" required>
+        <label class="label-utilisateur" for="mail">Mail: </label>
+        <input type="email" id="mail" name="mail" class="info-utilisateur" required>
         <br>
         <!-- adresse -->
-        <label for="adresse">Adresse (Ville, numeroRue nomRue): </label>
-        <input type="text" id="adresse" name="adresse" class="info-utilisateur" type="texte" required>
+        <label class="label-utilisateur" for="adresse">Adresse (Ville, numeroRue nomRue): </label>
+        <input type="text" id="adresse" name="adresse" class="info-utilisateur" required>
         <br>
         <!-- niveau d'etude -->
-        <label for="etude">Niveau d'étude: </label>
-        <input type="text" id="etude" name="etude" class="info-utilisateur" type="texte" required>
+        <label class="label-utilisateur" for="etude">Niveau d'étude: </label>
+        <input type="text" id="etude" name="etude" class="info-utilisateur" required>
         <br>
         <!-- moyen de transport -->
         <label for="choixMoyenTransport">Choisissez le moyen de transport: </label>
-        <select id="choixMoyenTransport" name="choixMoyenTransport" class="info-utilisateur" required>
+        <select id="choixMoyenTransport" name="choixMoyenTransport" class="info-utilisateur-select" required>
             <option value="0">Pied</option>
             <option value="1">Vélo</option>
             <option value="2">Moto</option>
@@ -102,6 +102,7 @@
             $mail = $_POST["mail"];
             $adresse = $_POST["adresse"];
             $etude = $_POST["etude"];
+            $choixMoyenTransport = $_POST["choixMoyenTransport"];
             $reponseMusique = $_POST["reponseMusique"];
             $reponseSport = $_POST["reponseSport"];
             $reponseActivitesCulturelles = $_POST["reponseActivitesCulturelles"];
@@ -109,8 +110,27 @@
             $reponseRestaurants = $_POST["reponseRestaurants"];
             $reponseSorties = $_POST["reponseSorties"];
 
+            /* liste des info utilisateurs renseignées par l'utilisateur */
+            $formDonneUtilisateur = array(
+                "nom" => $nom,
+                "prenom" => $prenom,
+                "dateNaiss" => $dateNaiss,
+                "mail" => $mail,
+                "adresse" => $adresse,
+                "etude" => $etude
+            );
+            /* liste des listes de préférences de l'utilisateur */
+            $formDonnePreference = array(
+                "reponseMusique" => $reponseMusique,
+                "reponseSport" => $reponseSport,
+                "reponseActivitesCulturelles" => $reponseActivitesCulturelles,
+                "reponseActivitesOrganisees" => $reponseActivitesOrganisees,
+                "reponseRestaurants" => $reponseRestaurants,
+                "reponseSorties" => $reponseSorties
+            );
 
-            $concat =" $nom|$prenom|$dateNaiss|$mail|$adresse|$etude|$reponseMusique|$reponseSport|$reponseActivitesCulturelles|$reponseActivitesOrganisees|$reponseRestaurants|$reponseSorties". PHP_EOL;
+
+            $concat ="$nom|$prenom|$dateNaiss|$mail|$adresse|$etude|$choixMoyenTransport|$reponseMusique|$reponseSport|$reponseActivitesCulturelles|$reponseActivitesOrganisees|$reponseRestaurants|$reponseSorties". PHP_EOL;
 
             file_put_contents($cheminFichier, $concat, FILE_APPEND);
 
@@ -128,3 +148,5 @@
 
 </body>
 </html>
+
+
