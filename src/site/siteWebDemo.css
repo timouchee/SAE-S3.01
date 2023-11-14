@@ -2,21 +2,27 @@
 .info-utilisateur-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Ajustez cela selon vos besoins */
+
+
 }
 
 /* Styles pour les labels de la partie "Informations Utilisateur" */
-.info-utilisateur label {
+.label-utilisateur {
     display: inline-block;
     width: 150px;
-    text-align: right;
+    text-align: left;
     margin-right: 10px;
 }
 
 /* Styles pour les champs de saisie et le menu déroulant de la partie "Informations Utilisateur" */
-.info-utilisateur input,
-.info-utilisateur select {
+.info-utilisateur {
     width: 200px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+/* Styles pour le champs de sélection pour la partie transport utilisateur de la partie "Informations Utilisateur" */
+.info-utilisateur-select{
+    width: 100px;
     box-sizing: border-box;
     margin-bottom: 10px;
 }
