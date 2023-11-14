@@ -1,3 +1,4 @@
+#include "reponseQuestionnaire.txt"
 #include "persona.h"
 #include "utilisateur.h"
 #include "preference.h"
@@ -30,6 +31,7 @@ int main(void)
             cout << endl;
             break;
         } else {
+            // appelle message d'erreur
             cout << "La date de naissance n'est pas valide. Veuillez réessayer." << endl;
         }
     }
@@ -43,6 +45,7 @@ int main(void)
             cout << endl;
             break;
         } else {
+            // appelle message d'erreur
             cout << "L'adresse mail n'est pas valide. Veuillez réessayer." << endl;
         }
     }
@@ -57,6 +60,7 @@ int main(void)
             cout << endl;
             break;
         } else {
+            // appelle message d'erreur
             cout << "L'adresse n'est pas valide. Veuillez réessayer." << endl;
         }
     }
@@ -77,6 +81,7 @@ int main(void)
         User1.setMoyenDeTransport(moyenTransportChoisi);
     } 
     else {
+        // appelle message d'erreur
         cout << "Choix invalide. Veuillez saisir un nombre entre 0 et 3." << endl;
     }
 
