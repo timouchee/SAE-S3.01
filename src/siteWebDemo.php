@@ -15,6 +15,23 @@
     <h2>Informations Utilisateur</h2>
     <!-- Conteneur principal pour aligner en colonne -->
     <div class="info-utilisateur-container">
+        <!-- Sexe -->
+        <label class="label-utilisateur" for="sexe">En tant que: </label>
+        <ul>
+            <li>
+                <label for="title_1">
+                <input type="radio" id="sexe" name="title" value="M." />
+                Monsieur
+                </label>
+            </li>
+            <li>
+                <label for="title_2">
+                <input type="radio" id="sexe" name="title" value="Mme." />
+                Madame
+                </label>
+            </li>
+        </ul>
+        <br>
         <!-- Nom -->
         <label class="label-utilisateur" for="nom">Nom: </label>
         <input type="text" id="nom" name="nom" class="info-utilisateur" type="texte" required>
@@ -93,9 +110,39 @@
 
 <?php
 
+
+        /* // Fonction pour traiter les réponses utilisateur
+        function traiterFormulaireUtilisateur($formData) {
+            $command = './traitementUtilisateur ' . escapeshellarg(json_encode($formData));
+            exec($command);
+        }
+
+        // Fonction pour traiter les préférences
+        function traiterFormulairePreference($formData) {
+            $command = './traitementPreference ' . escapeshellarg(json_encode($formData));
+            exec($command);
+        } */
+
+        // Fonction pour récupérer et incrémenter l'ID à partir d'un fichier
+        function getNextId() {
+            $idFile = 'lastId.txt'; // Nom du fichier pour stocker l'ID
+            $currentId = file_get_contents($idFile); // Lire l'ID actuel depuis le fichier
+
+            // Incrémenter l'ID
+            $nextId = $currentId + 1;
+
+            // Écrire le nouvel ID dans le fichier
+            file_put_contents($idFile, $nextId);
+
+            return $nextId;
+        }
+        $newId = getNextId();
+
         $cheminFichier = "reponseQuestionnaire.txt";
         $fichier = fopen($cheminFichier, 'r+');
         if ($_POST) {
+            $id = $newId;
+            $sexe = $_POST["sexe"];
             $nom = $_POST["nom"];
             $prenom = $_POST["prenom"];
             $dateNaiss = $_POST["dateNaiss"];
@@ -111,26 +158,26 @@
             $reponseSorties = $_POST["reponseSorties"];
 
             /* liste des info utilisateurs renseignées par l'utilisateur */
-            $formDonneUtilisateur = array(
+            /* $formDonneUtilisateur = array(
                 "nom" => $nom,
                 "prenom" => $prenom,
                 "dateNaiss" => $dateNaiss,
                 "mail" => $mail,
                 "adresse" => $adresse,
                 "etude" => $etude
-            );
+            ); */
             /* liste des listes de préférences de l'utilisateur */
-            $formDonnePreference = array(
+            /* $formDonnePreference = array(
                 "reponseMusique" => $reponseMusique,
                 "reponseSport" => $reponseSport,
                 "reponseActivitesCulturelles" => $reponseActivitesCulturelles,
                 "reponseActivitesOrganisees" => $reponseActivitesOrganisees,
                 "reponseRestaurants" => $reponseRestaurants,
                 "reponseSorties" => $reponseSorties
-            );
+            ); */
 
 
-            $concat ="$nom|$prenom|$dateNaiss|$mail|$adresse|$etude|$choixMoyenTransport|$reponseMusique|$reponseSport|$reponseActivitesCulturelles|$reponseActivitesOrganisees|$reponseRestaurants|$reponseSorties". PHP_EOL;
+            $concat ="$id|$sexe|$nom|$prenom|$dateNaiss|$mail|$adresse|$etude|$choixMoyenTransport|$reponseMusique|$reponseSport|$reponseActivitesCulturelles|$reponseActivitesOrganisees|$reponseRestaurants|$reponseSorties". PHP_EOL;
 
             file_put_contents($cheminFichier, $concat, FILE_APPEND);
 
@@ -145,6 +192,8 @@
         
         
     ?>
+
+
 
 </body>
 </html>

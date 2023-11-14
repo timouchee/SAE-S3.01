@@ -223,3 +223,40 @@ bool Utilisateur::estAdresseValide(string adresseUser) {
     cout << "Adresse OK" << endl;
     return true;
 }
+
+void Utilisateur::traiterFormulaireUtilisateur(const map<string, string>& formDonneUtilisateur) {
+    // vérification de l'accès aux clés
+    if (formDonneUtilisateur.find("nom") != formDonneUtilisateur.end()) {
+        setNom(formDonneUtilisateur.at("nom"));
+    }
+
+    if (formDonneUtilisateur.find("prenom") != formDonneUtilisateur.end()) {
+        setPrenom(formDonneUtilisateur.at("prenom"));
+    }
+
+    if (formDonneUtilisateur.find("dateNaiss") != formDonneUtilisateur.end()) {
+        setDateNaiss(formDonneUtilisateur.at("dateNaiss"));
+        // Vérification de la date de naissance
+        if (!estDateValide(formDonneUtilisateur.at("dateNaiss"))) {
+            // Gérer l'erreur, par exemple, afficher un message à l'utilisateur
+            // ou effectuer d'autres actions nécessaires
+        }
+    }
+
+    // Continuez de la même manière pour les autres champs du formulaire...
+
+    // Traitement du moyen de transport
+    if (formDonneUtilisateur.find("choixMoyenTransport") != formDonneUtilisateur.end()) {
+        int choixMoyenTransport = stoi(formDonneUtilisateur.at("choixMoyenTransport"));
+        // Validation de l'entrée
+        if (choixMoyenTransport >= 0 && choixMoyenTransport <= 3) {
+            moyenDeTransport moyenTransportChoisi = static_cast<moyenDeTransport>(choixMoyenTransport);
+            setMoyenDeTransport(moyenTransportChoisi);
+        } else {
+            // Gérer l'erreur, par exemple, afficher un message à l'utilisateur
+            // ou effectuer d'autres actions nécessaires
+        }
+    }
+
+    // Continuez de la même manière pour les autres champs du formulaire...
+}

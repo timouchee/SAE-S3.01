@@ -90,6 +90,9 @@ public:
     //pour la vérification du moyen de déplacement utilisé par l'utilisateur
     bool estTransportValide(string transportUser);
 
+    //pour traiter les données de l'utilisateur
+    void traiterFormulaireUtilisateur(const map<string, string>& formDonneUtilisateur);
+
 
 };
 
