@@ -112,5 +112,7 @@
         //METHODE
         bool estOKPourCovoiturage(bool possedeVoiture);
 
+        void traiterFormulairePreference(const map<string, string>& formDonnePreference);
+
     };
 #endif
