@@ -67,42 +67,43 @@
     </div>
     <!-- Partie Préférences -->
     <h2>Préférences</h2>
-
-
         <!-- Question 1 -->
-        <div>
-            <label for="reponseMusique">Question 1: Cochez les styles de musique que vous voulez voir. Sélectionnez les par ordre de préférence (ex: 1432)</label><br>
-            <input type="text" id="reponseMusique" name="reponseMusique" placeholder="Votre réponse" class="info-preference">
+        <div class="info-preference-container">
+            <label for="reponseMusique">Question 1: Glisser les styles de musique que vous voulez voir. Sélectionnez les par ordre de préférence (ex: 1432)</label><br>
+            <div id="container1" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="draggable1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
+                <div id="draggable2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
+            </div>
         </div>
 
         <!-- Question 2 -->
-        <div>
+        <div class="info-preference-container">
             <label for="reponseSport">Question 2: Cochez les sports que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseSport" name="reponseSport" placeholder="Votre réponse" class="info-preference">
+            <input type="text" id="reponseSport" name="reponseSport" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
         </div>
 
         <!-- Question 3 -->
-        <div>
+        <div class="info-preference-container">
             <label for="reponseActivitesCulturelles">Question 3: Cochez les activités culturelles que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseActivitesCulturelles" name="reponseActivitesCulturelles" placeholder="Votre réponse" class="info-preference">
+            <input type="text" id="reponseActivitesCulturelles" name="reponseActivitesCulturelles" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
         </div>
 
         <!-- Question 4 -->
-        <div>
+        <div class="info-preference-container">
             <label for="reponseActivitesOrganisees">Question 4: Cochez les activités organisées que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseActivitesOrganisees" name="reponseActivitesOrganisees" placeholder="Votre réponse" class="info-preference">
+            <input type="text" id="reponseActivitesOrganisees" name="reponseActivitesOrganisees" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
         </div>
 
         <!-- Question 5 -->
-        <div>
+        <div class="info-preference-container">
             <label for="reponseRestaurants">Question 5: Cochez les types de restaurants que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseRestaurants" name="reponseRestaurants" placeholder="Votre réponse" class="info-preference">
+            <input type="text" id="reponseRestaurants" name="reponseRestaurants" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
         </div>
 
         <!-- Question 6 -->
-        <div>
+        <div class="info-preference-container">
             <label for="reponseSorties">Question 6: Cochez les activités culturelles que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseSorties" name="reponseSorties" placeholder="Votre réponse" class="info-preference">
+            <input type="text" id="reponseSorties" name="reponseSorties" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
         </div>
 
     <input type="submit" value="Soumettre">
@@ -194,7 +195,42 @@
     ?>
 
 
+<script>
+    function allowDrop(event) {
+        event.preventDefault();
+    }
 
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("text");
+        var draggedElement = document.getElementById(data);
+        var dropTarget = event.target;
+
+        // Assurez-vous que l'élément est déposé dans un conteneur
+        if (dropTarget.classList.contains('info-preference-container')) {
+            dropTarget.appendChild(draggedElement);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var draggableElements = document.querySelectorAll('.info-preference');
+
+        draggableElements.forEach(function (draggable) {
+            draggable.addEventListener('dragstart', drag);
+        });
+
+        var dropContainers = document.querySelectorAll('.info-preference-container');
+
+        dropContainers.forEach(function (container) {
+            container.addEventListener('dragover', allowDrop);
+            container.addEventListener('drop', drop);
+        });
+    });
+</script>
 </body>
 </html>
 
