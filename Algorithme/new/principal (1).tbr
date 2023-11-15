@@ -2,10 +2,10 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>9/11/2023 10:30</date_creation>
+  <date_creation>13/11/2023 10:45</date_creation>
   <Elements>
     <Action>
-      <Position>711;34</Position>
+      <Position>610;22</Position>
       <StyleLien>2</StyleLien>
       <PreAssertion>préférencesUtilisateurs</PreAssertion>
       <PostAssertion>personnas</PostAssertion>
@@ -14,7 +14,7 @@
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>202;136</Position>
+          <Position>185;174</Position>
           <StyleLien>2</StyleLien>
           <PreAssertion>préférencesUtilisateurs</PreAssertion>
           <PostAssertion>personnas</PostAssertion>
@@ -23,7 +23,7 @@
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>37;420</Position>
+              <Position>48;323</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>préférencesUtilisateurs</PreAssertion>
               <PostAssertion>préférencesPoid</PostAssertion>
@@ -33,30 +33,30 @@
               <Enfants/>
             </Action>
             <Action>
-              <Position>451;536</Position>
+              <Position>395;439</Position>
               <StyleLien>1</StyleLien>
-              <PreAssertion>,préférencesPoid,
+              <PreAssertion>,préférencesPoid,&#xd;
 préférencesUtilisateurs</PreAssertion>
               <PostAssertion>?</PostAssertion>
               <Titre>Ce qu'ils aiment lorsqu'ils ont tel préférence</Titre>
               <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
               <Enfants/>
             </Action>
             <Action>
-              <Position>807;432</Position>
+              <Position>755;311</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>?</PreAssertion>
               <PostAssertion>?</PostAssertion>
               <Titre>créer les personnas</Titre>
-              <DetailsVisible>1</DetailsVisible>
+              <DetailsVisible>0</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
             </Action>
           </Enfants>
         </Action>
         <Action>
-          <Position>1103;226</Position>
+          <Position>1054;176</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
