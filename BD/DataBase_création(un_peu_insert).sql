@@ -48,7 +48,6 @@ CREATE TABLE OffreEmploi (
 );
 
 
-
 CREATE TABLE Colocation (
    codeColocation VARCHAR(4),
    nombrePlaces INT NOT NULL,
@@ -83,8 +82,10 @@ CREATE TABLE Activité (
    adresseActivité VARCHAR(50) NOT NULL,
    etat VARCHAR(50),
    codeAdministrateur VARCHAR(6) NOT NULL,
+   codeCarteEtudiante VARCHAR(6) NOT NULL,
    PRIMARY KEY(codeActivité),
    FOREIGN KEY(codeAdministrateur) REFERENCES Administrateur(codeAdministrateur),
+   FOREIGN KEY(codeCarteEtudiante) REFERENCES Utilisateur(codeCarteEtudiante),
    CONSTRAINT check_typeActivité CHECK (typeActivité IN ('Sport', 'Musique', 'Restaurant', 'Sortie', 'ActiviteCulturelle', 'ActiviteOrganisee')),
    CONSTRAINT check_etat CHECK (etat IN ('ouvert', 'ferme'))
 );
@@ -98,8 +99,10 @@ CREATE TABLE Evenement (
    détailEvenement VARCHAR(500),
    dateEvenement DATE NOT NULL,
    codeAdministrateur VARCHAR(6) NOT NULL,
+   codeCarteEtudiante VARCHAR(6) NOT NULL,
    PRIMARY KEY(codeEvenement),
    FOREIGN KEY(codeAdministrateur) REFERENCES Administrateur(codeAdministrateur),
+  FOREIGN KEY(codeCarteEtudiante) REFERENCES Utilisateur(codeCarteEtudiante),
    CONSTRAINT check_typeEvenement CHECK (typeEvenement IN ('Sport', 'Musique', 'Restaurant', 'Sortie', 'ActiviteCulturelle', 'ActiviteOrganisee'))
 );
 
@@ -171,7 +174,7 @@ INSERT INTO Utilisateur (codeCarteEtudiante, nom, prenom, dateNaiss, moyenTransp
 VALUES ('123497', 'Doe', 'John', '01/01/2004', 'Vélo', 'Bus', '1234567890', 'john.doe@email.com', 'Homme', '123 Street, City');
 
 INSERT INTO OffreEmploi (codeOffre, typeOffre, detailOffre, nomEntreprise, mailEntreprise, horaires, salaire, dateDeb, dateFin, adresse, nbHeures, datePublication)
-VALUES ('O001', 'CDI', 'Description de l offre', 'Entreprise XYZ', 'contact@xyz.com', '9H00 / 18H00', 50000, '01/01/2023', '01/02/2023', '456 Avenue, City', 40, '01/12/2022');
+VALUES ('O001', 'CDI', 'Description de l offre', 'Entreprise XYZ', 'contact@xyz.com', '9H00 / 18H00', 50000.654, '01/01/2023', '01/02/2023', '456 Avenue, City', 40, '01/12/2022');
 
 INSERT INTO Administrateur (codeAdministrateur, nom, prenom, mail, numTel)
 VALUES ('A12345', 'Smith', 'Alice', 'alice.smith@email.com', '9876543210');
@@ -185,11 +188,11 @@ VALUES ('0001', 'CityA', 'CityB', 3, 20.50);
 INSERT INTO Administrateur (codeAdministrateur, nom, prenom, mail, numTel)
 VALUES ('00005', 'nom_admin1', 'prenom_admin1', 'admin1@gmail.com', 2043265750);
 
-INSERT INTO Activité (codeActivité, nomActivité, typeActivité, détailActivité, adresseActivité, etat, codeAdministrateur)
-VALUES ('A001', 'Yoga', 'Sport', 'Séance de yoga relaxant', '789 Street, City', 'ouvert', '00005');
+INSERT INTO Activité (codeActivité, nomActivité, typeActivité, détailActivité, adresseActivité, etat, codeAdministrateur,codeCarteEtudiante)
+VALUES ('A001', 'Yoga', 'Sport', 'Séance de yoga relaxant', '789 Street, City', 'ouvert', '00005','123497');
 
-INSERT INTO Evenement (codeEvenement, nomEvenement, typeEvenement, adresseEvenement, détailEvenement, dateEvenement, codeAdministrateur)
-VALUES ('00001', 'Concert', 'Musique', '456 Plaza, City', 'Concert en plein air', '15/03/2023', '00005');
+INSERT INTO Evenement (codeEvenement, nomEvenement, typeEvenement, adresseEvenement, détailEvenement, dateEvenement, codeAdministrateur,codeCarteEtudiante)
+VALUES ('00001', 'Concert', 'Musique', '456 Plaza, City', 'Concert en plein air', '15/03/2023', '00005','123497');
 
 INSERT INTO ParticiperActivite (codeCarteEtudiante, codeActivité)
 VALUES ('123497', 'A001');
