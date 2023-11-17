@@ -73,7 +73,10 @@
             <div id="container1" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div id="draggable1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
                 <div id="draggable2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
+                <div id="draggable3" class="draggable" draggable="true" ondragstart="drag(event)">rep3</div>
             </div>
+            <!-- Zone de dépôt des réponses glissantes -->
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
         </div>
 
         <!-- Question 2 -->
@@ -110,19 +113,6 @@
 </form>
 
 <?php
-
-
-        /* // Fonction pour traiter les réponses utilisateur
-        function traiterFormulaireUtilisateur($formData) {
-            $command = './traitementUtilisateur ' . escapeshellarg(json_encode($formData));
-            exec($command);
-        }
-
-        // Fonction pour traiter les préférences
-        function traiterFormulairePreference($formData) {
-            $command = './traitementPreference ' . escapeshellarg(json_encode($formData));
-            exec($command);
-        } */
 
         // Fonction pour récupérer et incrémenter l'ID à partir d'un fichier
         function getNextId() {
@@ -211,25 +201,46 @@
         var dropTarget = event.target;
 
         // Assurez-vous que l'élément est déposé dans un conteneur
+        if (dropTarget.classList.contains('zone-depot')) {
+            dropTarget.appendChild(draggedElement); // Déplacer l'élément vers la zone de réponse
+        }
+        // Assurez-vous que l'élément est déposé dans un conteneur
         if (dropTarget.classList.contains('info-preference-container')) {
-            dropTarget.appendChild(draggedElement);
+            dropTarget.appendChild(draggedElement); // Déplacer l'élément vers la zone de réponse
         }
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-        var draggableElements = document.querySelectorAll('.info-preference');
+    var zoneDepot = document.getElementById("zoneDepot");
 
-        draggableElements.forEach(function (draggable) {
-            draggable.addEventListener('dragstart', drag);
-        });
-
-        var dropContainers = document.querySelectorAll('.info-preference-container');
-
-        dropContainers.forEach(function (container) {
-            container.addEventListener('dragover', allowDrop);
-            container.addEventListener('drop', drop);
-        });
+    // Fonction appelée lorsque l'élément draggable entre dans la zone de dépôt
+    zoneDepot.addEventListener("dragenter", function(event) {
+        event.preventDefault();
+        zoneDepot.style.backgroundColor = "lightblue";
     });
+
+    // Fonction appelée lorsque l'élément draggable quitte la zone de dépôt
+    zoneDepot.addEventListener("dragleave", function(event) {
+        event.preventDefault();
+        zoneDepot.style.backgroundColor = ""; // Réinitialise la couleur par défaut
+    });
+
+    // Annulation de l'événement dragover pour permettre l'événement drop
+    zoneDepot.addEventListener("dragover", function(event) {
+        event.preventDefault();
+});
+
+/* // Fonction pour traiter les réponses utilisateur
+function traiterFormulaireUtilisateur($formData) {
+    $command = './traitementUtilisateur ' . escapeshellarg(json_encode($formData));
+    exec($command);
+}
+
+// Fonction pour traiter les préférences
+function traiterFormulairePreference($formData) {
+    $command = './traitementPreference ' . escapeshellarg(json_encode($formData));
+    exec($command);
+} */
+
 </script>
 </body>
 </html>
