@@ -71,9 +71,9 @@
         <div class="info-preference-container">
             <label for="reponseMusique">Question 1: Glisser les styles de musique que vous voulez voir. Sélectionnez les par ordre de préférence (ex: 1432)</label><br>
             <div id="container1" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div id="draggable1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
-                <div id="draggable2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
-                <div id="draggable3" class="draggable" draggable="true" ondragstart="drag(event)">rep3</div>
+                <div id="musique1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
+                <div id="musique2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
+                <div id="musique3" class="draggable" draggable="true" ondragstart="drag(event)">rep3</div>
             </div>
             <!-- Zone de dépôt des réponses glissantes -->
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
@@ -82,31 +82,61 @@
         <!-- Question 2 -->
         <div class="info-preference-container">
             <label for="reponseSport">Question 2: Cochez les sports que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseSport" name="reponseSport" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
+            <div id="container2" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="sport1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
+                <div id="sport2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
+                <div id="sport3" class="draggable" draggable="true" ondragstart="drag(event)">rep3</div>
+            </div>
+            <!-- Zone de dépôt des réponses glissantes -->
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
         </div>
 
         <!-- Question 3 -->
         <div class="info-preference-container">
             <label for="reponseActivitesCulturelles">Question 3: Cochez les activités culturelles que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseActivitesCulturelles" name="reponseActivitesCulturelles" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
+            <div id="container3" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="culture1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
+                <div id="culture2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
+                <div id="culture3" class="draggable" draggable="true" ondragstart="drag(event)">rep3</div>
+            </div>
+            <!-- Zone de dépôt des réponses glissantes -->
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
         </div>
 
         <!-- Question 4 -->
         <div class="info-preference-container">
             <label for="reponseActivitesOrganisees">Question 4: Cochez les activités organisées que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseActivitesOrganisees" name="reponseActivitesOrganisees" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
+            <div id="container4" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="orga1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
+                <div id="orga2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
+                <div id="orga3" class="draggable" draggable="true" ondragstart="drag(event)">rep3</div>
+            </div>
+            <!-- Zone de dépôt des réponses glissantes -->
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
         </div>
 
         <!-- Question 5 -->
         <div class="info-preference-container">
             <label for="reponseRestaurants">Question 5: Cochez les types de restaurants que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseRestaurants" name="reponseRestaurants" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
+            <div id="container5" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="resto1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
+                <div id="resto2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
+                <div id="resto3" class="draggable" draggable="true" ondragstart="drag(event)">rep3</div>
+            </div>
+            <!-- Zone de dépôt des réponses glissantes -->
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
         </div>
 
         <!-- Question 6 -->
         <div class="info-preference-container">
             <label for="reponseSorties">Question 6: Cochez les activités culturelles que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseSorties" name="reponseSorties" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
+            <div id="container6" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="sortie1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
+                <div id="sortie2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
+                <div id="sortie3" class="draggable" draggable="true" ondragstart="drag(event)">rep3</div>
+            </div>
+            <!-- Zone de dépôt des réponses glissantes -->
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
         </div>
 
     <input type="submit" value="Soumettre">
