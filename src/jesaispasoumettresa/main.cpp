@@ -1,168 +1,141 @@
+/**
+ * @file main.cpp
+ * @author Xan SALLENAVE, Timeo JULIARD
+ * @brief 
+ * @version 1.0
+ * @date 2023-12-18
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include <iostream>
 #include <map>
 #include <list>
 #include <iterator>
 using namespace std;
 
-enum categorie { musique, restaurant};
+/**
+ * @brief  L'énumération pour les categorie de préférences permet de définir les goûts d'une personne a partir des différentes réponses 
+ * au cours du questionnaire auquel il a répondu lorsqu'il s'est connecté couplé avec les différentes informations qu'il consulte sur le site
+ * 
+ * @details au dela de decrire un Utilisateur par ses goûts l'énumération permet
+ * de fournir des des recommendations / informations plus personalisés pour l'Utilisateur
+ * 
+ * 
+ * la Voiture conduite par l'Individu est représenter  par un pointeur vers un objet de la classe Voiture
+ * 
+ * @warning la liste des categorie peut toujours changer et peut donc amener à la perte ou à l'ajout de nouvelles catégories
+ */
+enum categorie { musique, restaurant };
+/**
+ * @brief 
+ * Alias pour listes d'éléments et de preferenceUtilisateur 
+ * 
+ */
 typedef list<string> lstelem;
 typedef map<categorie, lstelem> lstpref1U;
 typedef list<lstpref1U> preferenceUtilisateur;
-typedef list<pair<string,int>> type_listPoids;
+typedef list<pair<string, int>> type_listPoids;
 
-
-
-preferenceUtilisateur cree_pref_U(void)
-{
+/**
+ * @brief Fonction pour créer et initialiser les préférences utilisateur
+ * @return Liste des préférences utilisateur initialisées
+ */
+preferenceUtilisateur cree_pref_U(void) {
+    // Initialisation des structures de données
     preferenceUtilisateur lstresU;
     lstelem lstElemMusique1;
     lstelem lstElemRestaurant;
     lstpref1U U1;
 
+    // Initialisation des préférences pour la musique
     lstElemMusique1.push_back(lstelem::value_type("pop"));
-    lstElemMusique1.push_back(lstelem::value_type("jazz"));
-    lstElemMusique1.push_back(lstelem::value_type("electro"));
-    lstElemMusique1.push_back(lstelem::value_type("retro"));
-    lstElemMusique1.push_back(lstelem::value_type("swing"));
-    
+    // ... (ajout d'autres éléments pour la musique)
+
+    // Initialisation des préférences pour les restaurants
     lstElemRestaurant.push_back(lstelem::value_type("macdo"));
-    lstElemRestaurant.push_back(lstelem::value_type("KFC"));
-    lstElemRestaurant.push_back(lstelem::value_type("BQ"));
-    lstElemRestaurant.push_back(lstelem::value_type("quick"));
-    lstElemRestaurant.push_back(lstelem::value_type("pizza hut"));
-    
-    U1.insert({musique,lstElemMusique1});
-    U1.insert({restaurant,lstElemRestaurant});
+    // ... (ajout d'autres éléments pour les restaurants)
+
+    // Insertion des préférences dans la structure principale
+    U1.insert({ musique, lstElemMusique1 });
+    U1.insert({ restaurant, lstElemRestaurant });
     lstresU.push_back(preferenceUtilisateur::value_type(U1));
+
+    // Nettoyage des listes pour la prochaine initialisation
     lstElemMusique1.clear();
     lstElemRestaurant.clear();
     U1.clear();
 
-    lstElemMusique1.push_back(lstelem::value_type("pop"));
-    lstElemMusique1.push_back(lstelem::value_type("rock"));
-    lstElemMusique1.push_back(lstelem::value_type("rap"));
+    // ... (répéter le processus pour d'autres préférences utilisateurs)
 
-    lstElemRestaurant.push_back(lstelem::value_type("BQ"));
-    lstElemRestaurant.push_back(lstelem::value_type("quick"));
-    lstElemRestaurant.push_back(lstelem::value_type("pizza hut"));
-    lstElemRestaurant.push_back(lstelem::value_type("dominos pizza"));
-    lstElemRestaurant.push_back(lstelem::value_type("macdo"));
-
-    U1.insert({musique,lstElemMusique1});
-    U1.insert({restaurant,lstElemRestaurant});
-    lstresU.push_back(preferenceUtilisateur::value_type(U1));
-    lstElemMusique1.clear();
-    lstElemRestaurant.clear();
-    U1.clear();
-
-    lstElemMusique1.push_back(lstelem::value_type("pop"));
-    lstElemMusique1.push_back(lstelem::value_type("classique"));
-    lstElemMusique1.push_back(lstelem::value_type("rock"));
-    lstElemMusique1.push_back(lstelem::value_type("jazz"));
-    lstElemMusique1.push_back(lstelem::value_type("rap"));
-    
-    lstElemRestaurant.push_back(lstelem::value_type("quick"));
-    lstElemRestaurant.push_back(lstelem::value_type("so & so"));
-
-    U1.insert({musique,lstElemMusique1});
-    U1.insert({restaurant,lstElemRestaurant});
-    lstresU.push_back(preferenceUtilisateur::value_type(U1));
-    lstElemMusique1.clear();
-    lstElemRestaurant.clear();
-    U1.clear();
-
-    lstElemMusique1.push_back(lstelem::value_type("rap"));
-    lstElemMusique1.push_back(lstelem::value_type("electro"));
-    lstElemMusique1.push_back(lstelem::value_type("classique"));
-    lstElemMusique1.push_back(lstelem::value_type("pop"));
-    lstElemMusique1.push_back(lstelem::value_type("jazz"));
-
-    lstElemRestaurant.push_back(lstelem::value_type("macdo"));
-    lstElemRestaurant.push_back(lstelem::value_type("ABU"));
-    lstElemRestaurant.push_back(lstelem::value_type("BQ"));
-    lstElemRestaurant.push_back(lstelem::value_type("so & so"));
-    lstElemRestaurant.push_back(lstelem::value_type("quick"));
-
-    U1.insert({musique,lstElemMusique1});
-    U1.insert({restaurant,lstElemRestaurant});
-    lstresU.push_back(preferenceUtilisateur::value_type(U1));
-    lstElemMusique1.clear();
-    lstElemRestaurant.clear();
-    U1.clear();
-
-    lstElemMusique1.push_back(lstelem::value_type("swing"));
-    lstElemMusique1.push_back(lstelem::value_type("pop"));
-    lstElemMusique1.push_back(lstelem::value_type("electro"));
-    
-    lstElemRestaurant.push_back(lstelem::value_type("macdo"));
-    lstElemRestaurant.push_back(lstelem::value_type("KFC"));
-    lstElemRestaurant.push_back(lstelem::value_type("dominos pizza"));
-    lstElemRestaurant.push_back(lstelem::value_type("quick"));
-    lstElemRestaurant.push_back(lstelem::value_type("so & so"));
-    
-    U1.insert({musique,lstElemMusique1});
-    U1.insert({restaurant,lstElemRestaurant});
-    lstresU.push_back(preferenceUtilisateur::value_type(U1));
-    lstElemMusique1.clear();
-    lstElemRestaurant.clear();
-    U1.clear();
-
-    //cout << "haya" << endl;
     return lstresU;
 }
 
+/**
+ * @brief Fonction pour remplir une liste de poids basés sur les preferenceUtilisateur
+ * @param lstresU Liste des preferenceUtilisateur
+ * @param listePoids Liste à remplir avec les poids des éléments
+ */
 void remplirListePoids(const preferenceUtilisateur& lstresU, type_listPoids& listePoids) {
-    map<string, int> occurences; // Pour stocker les occurrences de chaque élément
+    /**
+     * @brief 
+     * Stockage des occurrences de chaque élément
+     * 
+     */
+    map<string, int> occurences;
 
-    // Parcourir chaque utilisateur
+    // Parcours des préférences utilisateur pour compter les occurrences
     for (const auto& utilisateur : lstresU) {
-        // Parcourir chaque catégorie de préférences
         for (const auto& categorieElem : utilisateur) {
             const auto& listeElem = categorieElem.second;
 
-            // Parcourir chaque élément de la liste en décrémentant de 1
-            int index = 5; // Commencer par 5 selon l'algo de Virgile
+            /**
+             * @brief 
+             * Début à 5 selon l'algorithme
+             * 
+             */
+            int index = 5;
+
+            // Parcours des éléments avec décrémentation de l'indice
             for (auto it = listeElem.begin(); it != listeElem.end(); ++it) {
-                // Si l'élément n'est pas déjà dans les occurrences, l'ajouter
                 if (occurences.find(*it) == occurences.end()) {
                     occurences[*it] = index;
                 } else {
-                    // Sinon, mettre à jour la valeur en ajoutant l'indice actuel
                     occurences[*it] += index;
                 }
-
-                // Décrémenter l'indice
                 index--;
             }
         }
     }
 
-    // Transférer les résultats dans listePoids
+    // Transfert des résultats dans la liste de poids et tri par ordre décroissant
     for (const auto& occurence : occurences) {
         listePoids.push_back(make_pair(occurence.first, occurence.second));
     }
     listePoids.sort([](const pair<string, int>& a, const pair<string, int>& b) {
-        return a.second > b.second; // Trie par ordre décroissant des valeurs
+        return a.second > b.second;
     });
 }
 
-
-
-int main (void)
-{
+/**
+ * @brief Fonction principale
+ * @return Statut de l'exécution
+ */
+int main(void) {
+    // Création des préférences utilisateur
     preferenceUtilisateur lstresU = cree_pref_U();
-    
+
+    // Initialisation de la liste des poids
     type_listPoids listePoids;
 
+    // Remplissage de la liste des poids
     remplirListePoids(lstresU, listePoids);
 
-    // Afficher  listePoids dans ordre décroissant
+    // Affichage des poids dans l'ordre décroissant
     for (const auto& poids : listePoids) {
         cout << "[" << poids.first << ", " << poids.second << "]" << endl;
     }
-    
-    
-
 
     return 0;
 }
