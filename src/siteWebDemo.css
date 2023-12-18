@@ -1,0 +1,66 @@
+/* Conteneur principal pour la partie "Informations Utilisateur" */
+.info-utilisateur-container {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+/* Styles pour les labels de la partie "Informations Utilisateur" */
+.label-utilisateur {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+    margin-right: 10px;
+}
+
+/* Styles pour les champs de saisie et le menu déroulant de la partie "Informations Utilisateur" */
+.info-utilisateur {
+    width: 200px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+/* Styles pour le champs de sélection pour la partie transport utilisateur de la partie "Informations Utilisateur" */
+.info-utilisateur-select{
+    width: 100px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.container {
+    width: 240px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+}
+
+.draggable {
+    width: 50px;
+    height: 20px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    cursor: move;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.zone-depot {
+<<<<<<< HEAD
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+=======
+    width: 200px;
+    height: 50px;
+    border: 1px dashed #ccc;
+    margin: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+>>>>>>> 2ee3ed5e5b2bb4622dfddd9fd46f8f2fb3e93c13
