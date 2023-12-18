@@ -74,36 +74,54 @@
                 <div id="draggable1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
                 <div id="draggable2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
             </div>
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                Déposez vos réponses ici
+            </div>
         </div>
 
         <!-- Question 2 -->
         <div class="info-preference-container">
             <label for="reponseSport">Question 2: Cochez les sports que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
             <input type="text" id="reponseSport" name="reponseSport" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                Déposez vos réponses ici
+            </div>
         </div>
 
         <!-- Question 3 -->
         <div class="info-preference-container">
             <label for="reponseActivitesCulturelles">Question 3: Cochez les activités culturelles que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
             <input type="text" id="reponseActivitesCulturelles" name="reponseActivitesCulturelles" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                Déposez vos réponses ici
+            </div>
         </div>
 
         <!-- Question 4 -->
         <div class="info-preference-container">
             <label for="reponseActivitesOrganisees">Question 4: Cochez les activités organisées que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
             <input type="text" id="reponseActivitesOrganisees" name="reponseActivitesOrganisees" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                Déposez vos réponses ici
+            </div>
         </div>
 
         <!-- Question 5 -->
         <div class="info-preference-container">
             <label for="reponseRestaurants">Question 5: Cochez les types de restaurants que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
             <input type="text" id="reponseRestaurants" name="reponseRestaurants" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
+                Déposez vos réponses ici
+            </div>
         </div>
 
         <!-- Question 6 -->
         <div class="info-preference-container">
             <label for="reponseSorties">Question 6: Cochez les activités culturelles que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
             <input type="text" id="reponseSorties" name="reponseSorties" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
+            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
+            Déposez vos réponses ici
+        </div>            
         </div>
 
     <input type="submit" value="Soumettre">
@@ -230,6 +248,10 @@
             container.addEventListener('drop', drop);
         });
     });
+    var zoneDepot = document.getElementById('zoneDepot');
+
+    zoneDepot.addEventListener('dragover', allowDrop);
+    zoneDepot.addEventListener('drop', drop);
 </script>
 </body>
 </html>

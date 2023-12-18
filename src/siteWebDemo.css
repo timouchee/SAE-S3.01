@@ -44,3 +44,10 @@
     line-height: 50px;
     cursor: move;
 }
+
+.zone-depot {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
