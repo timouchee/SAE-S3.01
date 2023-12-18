@@ -28,26 +28,39 @@
 }
 
 .container {
-    width: 200px;
-    height: 50px;
+    width: 240px;
     border: 1px solid #ccc;
     margin: 10px;
     padding: 10px;
-  }
+}
 
 .draggable {
-    width: 20px;
-    height: 50px;
-    background-color: #4285f4;
+    width: 50px;
+    height: 20px;
+    background-color: blue;
     color: white;
     text-align: center;
-    line-height: 50px;
+    line-height: 20px;
     cursor: move;
+    display: inline-block;
+    margin-right: 5px;
 }
 
 .zone-depot {
+<<<<<<< HEAD
     border: 2px dashed #ccc;
     padding: 20px;
     margin-top: 20px;
     text-align: center;
 }
+=======
+    width: 200px;
+    height: 50px;
+    border: 1px dashed #ccc;
+    margin: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+>>>>>>> 2ee3ed5e5b2bb4622dfddd9fd46f8f2fb3e93c13
