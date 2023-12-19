@@ -1,30 +1,33 @@
 var indexSectionsWithContent =
 {
-  0: "clmprt",
-  1: "m",
-  2: "cmr",
-  3: "lpt",
-  4: "c",
-  5: "mr"
+  0: "cdlmprt",
+  1: "p",
+  2: "cm",
+  3: "cdmrt",
+  4: "lpt",
+  5: "c",
+  6: "mr"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "files",
-  2: "functions",
-  3: "typedefs",
-  4: "enums",
-  5: "enumvalues"
+  1: "classes",
+  2: "files",
+  3: "functions",
+  4: "typedefs",
+  5: "enums",
+  6: "enumvalues"
 };
 
 var indexSectionLabels =
 {
   0: "Tout",
-  1: "Fichiers",
-  2: "Fonctions",
-  3: "Définitions de type",
-  4: "Énumérations",
-  5: "Valeurs énumérées"
+  1: "Classes",
+  2: "Fichiers",
+  3: "Fonctions",
+  4: "Définitions de type",
+  5: "Énumérations",
+  6: "Valeurs énumérées"
 };
 
