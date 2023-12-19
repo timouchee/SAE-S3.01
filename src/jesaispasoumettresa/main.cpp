@@ -1,7 +1,6 @@
 /**
  * @file main.cpp
  * @author Xan SALLENAVE, Timeo JULIARD
- * @brief 
  * @version 1.0
  * @date 2023-12-18
  * 

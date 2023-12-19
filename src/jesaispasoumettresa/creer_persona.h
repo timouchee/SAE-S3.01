@@ -18,6 +18,29 @@
 using namespace std;
 
 /**
+ * @brief  L'énumération pour les categorie de préférences permet de définir les goûts d'une personne a partir des différentes réponses 
+ * au cours du questionnaire auquel il a répondu lorsqu'il s'est connecté couplé avec les différentes informations qu'il consulte sur le site
+ * 
+ * @details au dela de decrire un Utilisateur par ses goûts l'énumération permet
+ * de fournir des des recommendations / informations plus personalisés pour l'Utilisateur
+ * 
+ * 
+ * la Voiture conduite par l'Individu est représenter  par un pointeur vers un objet de la classe Voiture
+ * 
+ * @warning la liste des categorie peut toujours changer et peut donc amener à la perte ou à l'ajout de nouvelles catégories
+ */
+enum categorie { musique, restaurant };
+/**
+ * @brief 
+ * Alias pour listes d'éléments et de preferenceUtilisateur 
+ * 
+ */
+typedef list<string> lstelem;
+typedef map<categorie, lstelem> lstpref1U;
+typedef list<lstpref1U> preferenceUtilisateur;
+typedef list<pair<string, int>> type_listPoids;
+
+/**
  * @brief  la classe Persona permet de representer une personne a partir de ses goûts
  * 
  * @details au dela de decrire un utlisateur par ses goûts
@@ -42,36 +65,13 @@ class Persona{
 
 };
 
-/**
- * @brief  L'énumération pour les categorie de préférences permet de définir les goûts d'une personne a partir des différentes réponses 
- * au cours du questionnaire auquel il a répondu lorsqu'il s'est connecté couplé avec les différentes informations qu'il consulte sur le site
- * 
- * @details au dela de decrire un Utilisateur par ses goûts l'énumération permet
- * de fournir des des recommendations / informations plus personalisés pour l'Utilisateur
- * 
- * 
- * la Voiture conduite par l'Individu est représenter  par un pointeur vers un objet de la classe Voiture
- * 
- * @warning la liste des categorie peut toujours changer et peut donc amener à la perte ou à l'ajout de nouvelles catégories
- */
-enum categorie { musique, restaurant };
-/**
- * @brief 
- * Alias pour listes d'éléments et de preferenceUtilisateur 
- * 
- */
-typedef list<string> lstelem;
-typedef map<categorie, lstelem> lstpref1U;
-typedef list<lstpref1U> preferenceUtilisateur;
-typedef list<pair<string, int>> type_listPoids;
+Persona creerPersona();
+
+type_listPoids defPrefUtilisateurs(lstpref1U );
 
 void remplirListePoids(const preferenceUtilisateur& lstresU, type_listPoids& listePoids);
 
 preferenceUtilisateur cree_pref_U();
-
-Persona creerPersona();
-
-type_listPoids defPrefUtilisateurs(lstpref1U );
 
 void trouverPersona(preferenceUtilisateur lstPref);
 
