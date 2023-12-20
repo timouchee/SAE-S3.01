@@ -141,8 +141,8 @@
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
             </div>
+            <input type="submit" value="Soumettre">
 </div>
-    <input type="submit" value="Soumettre">
 </form>
 
 <?php
