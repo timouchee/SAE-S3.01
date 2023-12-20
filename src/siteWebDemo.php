@@ -75,25 +75,20 @@
                 <div id="musique2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
                 <div id="musique3" class="draggable" draggable="true" ondragstart="drag(event)">rep3</div>
             </div>
-<<<<<<< HEAD
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
                 Déposez vos réponses ici
             </div>
-=======
             <!-- Zone de dépôt des réponses glissantes -->
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
->>>>>>> 2ee3ed5e5b2bb4622dfddd9fd46f8f2fb3e93c13
         </div>
 
         <!-- Question 2 -->
         <div class="info-preference-container">
             <label for="reponseSport">Question 2: Cochez les sports que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-<<<<<<< HEAD
             <input type="text" id="reponseSport" name="reponseSport" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
                 Déposez vos réponses ici
             </div>
-=======
             <div id="container2" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div id="sport1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
                 <div id="sport2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
@@ -101,7 +96,6 @@
             </div>
             <!-- Zone de dépôt des réponses glissantes -->
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
->>>>>>> 2ee3ed5e5b2bb4622dfddd9fd46f8f2fb3e93c13
         </div>
 
         <!-- Question 3 -->
@@ -126,12 +120,10 @@
         <!-- Question 4 -->
         <div class="info-preference-container">
             <label for="reponseActivitesOrganisees">Question 4: Cochez les activités organisées que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-<<<<<<< HEAD
             <input type="text" id="reponseActivitesOrganisees" name="reponseActivitesOrganisees" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
                 Déposez vos réponses ici
             </div>
-=======
             <div id="container4" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div id="orga1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
                 <div id="orga2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
@@ -139,18 +131,15 @@
             </div>
             <!-- Zone de dépôt des réponses glissantes -->
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
->>>>>>> 2ee3ed5e5b2bb4622dfddd9fd46f8f2fb3e93c13
         </div>
 
         <!-- Question 5 -->
         <div class="info-preference-container">
             <label for="reponseRestaurants">Question 5: Cochez les types de restaurants que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-<<<<<<< HEAD
             <input type="text" id="reponseRestaurants" name="reponseRestaurants" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
                 Déposez vos réponses ici
             </div>
-=======
             <div id="container5" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div id="resto1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
                 <div id="resto2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
@@ -158,18 +147,15 @@
             </div>
             <!-- Zone de dépôt des réponses glissantes -->
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
->>>>>>> 2ee3ed5e5b2bb4622dfddd9fd46f8f2fb3e93c13
         </div>
 
         <!-- Question 6 -->
         <div class="info-preference-container">
             <label for="reponseSorties">Question 6: Cochez les activités culturelles que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-<<<<<<< HEAD
             <input type="text" id="reponseSorties" name="reponseSorties" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
             Déposez vos réponses ici
         </div>            
-=======
             <div id="container6" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div id="sortie1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
                 <div id="sortie2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
@@ -177,7 +163,6 @@
             </div>
             <!-- Zone de dépôt des réponses glissantes -->
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">Déposez vos réponses ici</div>
->>>>>>> 2ee3ed5e5b2bb4622dfddd9fd46f8f2fb3e93c13
         </div>
 
     <input type="submit" value="Soumettre">
@@ -288,12 +273,10 @@
         event.preventDefault();
         zoneDepot.style.backgroundColor = "lightblue";
     });
-<<<<<<< HEAD
     var zoneDepot = document.getElementById('zoneDepot');
 
     zoneDepot.addEventListener('dragover', allowDrop);
     zoneDepot.addEventListener('drop', drop);
-=======
 
     // Fonction appelée lorsque l'élément draggable quitte la zone de dépôt
     zoneDepot.addEventListener("dragleave", function(event) {
@@ -318,7 +301,6 @@ function traiterFormulairePreference($formData) {
     exec($command);
 } */
 
->>>>>>> 2ee3ed5e5b2bb4622dfddd9fd46f8f2fb3e93c13
 </script>
 </body>
 </html>
