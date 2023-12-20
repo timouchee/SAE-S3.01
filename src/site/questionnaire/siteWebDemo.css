@@ -1,8 +1,14 @@
 /* Conteneur principal pour la partie "Informations Utilisateur" */
-.info-utilisateur-container {
+.info-utilisateur-container ,
+.info-preference-container
+{
+    position: relative;
     display: flex;
     flex-direction: column;
-
+    text-align:left;
+    width: auto;
+    align-items:center ;
+    
 
 }
 
@@ -55,4 +61,43 @@
     padding: 10px;
     text-align: center;
     transition: background-color 0.3s;
+}
+
+.div1 {
+    background-color: black; /* Couleur de la barre */
+    color: #fff; /* Couleur du texte dans la barre */
+    padding: 10px; /* Marge intérieure pour l'espace autour du contenu */
+    width: 100%; /* Prend toute la largeur de l'écran */
+    box-sizing: border-box; /* Inclut la bordure et le rembourrage dans la largeur totale */
+    position: relative; /* Position relative pour positionner div2 et div3 par rapport à div1 */
+}
+
+.div2 {
+    float: left; /* Pour aligner à gauche */
+}
+
+.div3 {
+    text-align: center; /* Pour centrer le contenu horizontalement */
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background-image: url('../vitrine/background.png');
+    background-size: cover; /* L'image de fond couvre tout l'élément */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    /* background-position: center center;
+    height: 160vh; */
+}
+
+.div_du_centre
+{
+    position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center; 
+    align-items: center;
+
+    
 }
