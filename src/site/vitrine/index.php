@@ -33,15 +33,16 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                </span>
+                </span> 
             </a> 
-            </div>
-            <div class="div3">
-                <img src="titre.jpg" alt="Image centrée">
-            </div>
         </div>
-
-        
+        <div class="div3">
+            <img src="titre.jpg" alt="Image centrée">
+            <a href="../newslater/newslater.php" class="sidebar-button">newslater</a>
+        </div>
+    </div>
+    
+    
         
         </div>
 
