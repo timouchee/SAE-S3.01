@@ -47,13 +47,6 @@
 }
 
 .zone-depot {
-<<<<<<< HEAD
-    border: 2px dashed #ccc;
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-}
-=======
     width: 200px;
     height: 50px;
     border: 1px dashed #ccc;
@@ -63,4 +56,3 @@
     text-align: center;
     transition: background-color 0.3s;
 }
->>>>>>> 2ee3ed5e5b2bb4622dfddd9fd46f8f2fb3e93c13
