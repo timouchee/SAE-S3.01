@@ -69,7 +69,7 @@
     <h2>Préférences</h2>
         <!-- Question 1 -->
         <div class="info-preference-container">
-            <label for="reponseMusique">Question 1: Glisser les styles de musique que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
+            <label for="reponseMusique">Question 1: Faites glisser les styles de musique que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
             <div id="container1" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div id="musique1" class="draggable" draggable="true" ondragstart="drag(event)">Jazz</div>
                 <div id="musique2" class="draggable" draggable="true" ondragstart="drag(event)">Pop</div>
@@ -83,12 +83,7 @@
 
         <!-- Question 2 -->
         <div class="info-preference-container">
-            <label for="reponseSport">Question 2: Cochez les sports que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseSport" name="reponseSport" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
-            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
-                Déposez vos réponses ici
-            </div>
-            <div id="container2" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <label for="reponseSport">Question 2: Faites glisser les sports que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
                 <div id="sport1" class="draggable" draggable="true" ondragstart="drag(event)">Football</div>
                 <div id="sport2" class="draggable" draggable="true" ondragstart="drag(event)">Tennis</div>
                 <div id="sport3" class="draggable" draggable="true" ondragstart="drag(event)">Pala</div>
@@ -101,12 +96,7 @@
 
         <!-- Question 3 -->
         <div class="info-preference-container">
-            <label for="reponseActivitesCulturelles">Question 3: Cochez les activités culturelles que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-
-            <input type="text" id="reponseActivitesCulturelles" name="reponseActivitesCulturelles" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
-            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
-                Déposez vos réponses ici
-            </div>
+            <label for="reponseActivitesCulturelles">Question 3: Faites glisser les activités culturelles que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
 
             <div id="container3" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div id="culture1" class="draggable" draggable="true" ondragstart="drag(event)">Cinéma</div>
@@ -120,11 +110,7 @@
 
         <!-- Question 4 -->
         <div class="info-preference-container">
-            <label for="reponseActivitesOrganisees">Question 4: Cochez les activités organisées que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseActivitesOrganisees" name="reponseActivitesOrganisees" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
-            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
-                Déposez vos réponses ici
-            </div>
+            <label for="reponseActivitesOrganisees">Question 4: Faites glisser les activités organisées que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
             <div id="container4" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div id="orga1" class="draggable" draggable="true" ondragstart="drag(event)">Tournoi de jeux vidéos</div>
                 <div id="orga2" class="draggable" draggable="true" ondragstart="drag(event)">Uno</div>
@@ -135,11 +121,7 @@
 
         <!-- Question 5 -->
         <div class="info-preference-container">
-            <label for="reponseRestaurants">Question 5: Cochez les types de restaurants que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-            <input type="text" id="reponseRestaurants" name="reponseRestaurants" placeholder="Votre réponse" class="info-preference" draggable="true" ondragstart="drag(event)">
-            <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
-                Déposez vos réponses ici
-            </div>
+            <label for="reponseRestaurants">Question 5: Faites glisser les types de restaurants que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
             <div id="container5" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div id="resto1" class="draggable" draggable="true" ondragstart="drag(event)">Fast food</div>
                 <div id="resto2" class="draggable" draggable="true" ondragstart="drag(event)">Street food</div>
