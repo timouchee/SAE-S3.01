@@ -112,7 +112,7 @@
             <div id="zoneDepot" class="zone-depot" ondrop="drop(event)" ondragover="allowDrop(event)">
                 Déposez vos réponses ici
             </div>
-=======
+======= 
             <div id="container3" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div id="culture1" class="draggable" draggable="true" ondragstart="drag(event)">rep1</div>
                 <div id="culture2" class="draggable" draggable="true" ondragstart="drag(event)">rep2</div>
