@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projet Bon Plan &amp; Co: Référence du fichier src/fonctionsRecupChoix.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projet Bon Plan &amp; Co
+   </div>
+   <div id="projectbrief">Un site par les étudiants pour les étudiants</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier fonctionsRecupChoix.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+</div>
+<p><a href="fonctions_recup_choix_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:a3239c1b1464773ce6f90afc4d27999b5" id="r_a3239c1b1464773ce6f90afc4d27999b5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#a3239c1b1464773ce6f90afc4d27999b5">LesMusiques</a> { <br />
+&#160;&#160;<a class="el" href="fonctions_recup_choix_8h.html#a3239c1b1464773ce6f90afc4d27999b5a0d4976edb620115e11cceac0c08fbf8e">Jazz</a> = 1
+, <a class="el" href="fonctions_recup_choix_8h.html#a3239c1b1464773ce6f90afc4d27999b5aa509f10c329f6cf15e25b50d2b7edfaa">classique</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#a3239c1b1464773ce6f90afc4d27999b5a46f4c92ee372bc7b4a6f434dece1a2da">rock</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#a3239c1b1464773ce6f90afc4d27999b5ad6767d2e1b501cd6485fff5026e311e0">pop</a>
+, <br />
+&#160;&#160;<a class="el" href="fonctions_recup_choix_8h.html#a3239c1b1464773ce6f90afc4d27999b5a36c98a913197d67b565edf194f105716">rap</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#a3239c1b1464773ce6f90afc4d27999b5a4fcebd4301183b61d2b3ef3ad249426c">electro</a>
+<br />
+ }</td></tr>
+<tr class="separator:a3239c1b1464773ce6f90afc4d27999b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93977bea11221347e611cc643d4038cf" id="r_a93977bea11221347e611cc643d4038cf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#a93977bea11221347e611cc643d4038cf">LesSports</a> { <br />
+&#160;&#160;<a class="el" href="fonctions_recup_choix_8h.html#a93977bea11221347e611cc643d4038cfa25f2acec027d4defce48674d39d14388">rugby</a> = 1
+, <a class="el" href="fonctions_recup_choix_8h.html#a93977bea11221347e611cc643d4038cfa4c216e7140cff96cf2b597ca15fb58ee">pala</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#a93977bea11221347e611cc643d4038cfaeee77fa0f249a7573d79d2be4bb60ec9">football</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#a93977bea11221347e611cc643d4038cfa1e307e25ff0e2689f56db82a33ae3635">tennis</a>
+, <br />
+&#160;&#160;<a class="el" href="fonctions_recup_choix_8h.html#a93977bea11221347e611cc643d4038cfa1749e6f6073fd7f49e9cf1b5497960ef">Tennis_de_table</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#a93977bea11221347e611cc643d4038cfa600640840fb8d4fd3927cd1d692c7c20">course</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#a93977bea11221347e611cc643d4038cfaa3972fcf3f8535606aa042d0fa0300f6">badminton</a>
+<br />
+ }</td></tr>
+<tr class="separator:a93977bea11221347e611cc643d4038cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1abc8f5274027669a2f4d032ab5034f" id="r_ab1abc8f5274027669a2f4d032ab5034f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#ab1abc8f5274027669a2f4d032ab5034f">LesActivitesCulturelles</a> { <br />
+&#160;&#160;<a class="el" href="fonctions_recup_choix_8h.html#ab1abc8f5274027669a2f4d032ab5034facc1d66fd8f28802be9ba376b7cc2b230">cinema</a> = 1
+, <a class="el" href="fonctions_recup_choix_8h.html#ab1abc8f5274027669a2f4d032ab5034fa8daef5a7f8b81553252a446af5b712a9">theatre</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#ab1abc8f5274027669a2f4d032ab5034fa94adaa1ebc60b9b66ba9371954ba8d64">musee</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#ab1abc8f5274027669a2f4d032ab5034fa8a4b5d65b8e19960d0e76bab4722f1bf">zoo</a>
+, <br />
+&#160;&#160;<a class="el" href="fonctions_recup_choix_8h.html#ab1abc8f5274027669a2f4d032ab5034fa0b42d04f75b018be1f7988a448c9460d">visite_guidee</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#ab1abc8f5274027669a2f4d032ab5034fa72d02e9c8e3fd39c979ae27eb43c0e46">galerie_art</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#ab1abc8f5274027669a2f4d032ab5034fa009f3758b42850749843a98d379131b3">mediatheque</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#ab1abc8f5274027669a2f4d032ab5034fae48bdce6eda744d39856d799cceccce0">corrida</a>
+<br />
+ }</td></tr>
+<tr class="separator:ab1abc8f5274027669a2f4d032ab5034f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeff6c1d05118d776b1635d89f662d29" id="r_abeff6c1d05118d776b1635d89f662d29"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#abeff6c1d05118d776b1635d89f662d29">LesActivitesOrganisees</a> { <a class="el" href="fonctions_recup_choix_8h.html#abeff6c1d05118d776b1635d89f662d29ad6e8e38a97fccbf8a5152e9e9d1cb9f0">tournoi_jeux_videos</a> = 1
+, <a class="el" href="fonctions_recup_choix_8h.html#abeff6c1d05118d776b1635d89f662d29a452a5ef3faaa0180e29237b401ac0419">loup_garoup</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#abeff6c1d05118d776b1635d89f662d29a0d61261788c798920c0750a67ddc767b">uno</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#abeff6c1d05118d776b1635d89f662d29aa8a50118ecf30b86f4d8723337574229">cricket</a>
+ }</td></tr>
+<tr class="separator:abeff6c1d05118d776b1635d89f662d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d4a688708ee767f605d1df21fc8ef6" id="r_a41d4a688708ee767f605d1df21fc8ef6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#a41d4a688708ee767f605d1df21fc8ef6">LesRestaurants</a> { <a class="el" href="fonctions_recup_choix_8h.html#a41d4a688708ee767f605d1df21fc8ef6a16f6fc18b504151ca58874b957609c72">fast_food</a> = 1
+, <a class="el" href="fonctions_recup_choix_8h.html#a41d4a688708ee767f605d1df21fc8ef6a9aadafe0a10b32df9b4e5c5ba9bb49ea">junk_food</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#a41d4a688708ee767f605d1df21fc8ef6a956b2aa7997106d4089b0fc416191959">restaurants_traditionnels</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#a41d4a688708ee767f605d1df21fc8ef6a4765b7406bb5d79770e2b0b5916e292c">restaurants_du_monde</a>
+ }</td></tr>
+<tr class="separator:a41d4a688708ee767f605d1df21fc8ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa558c2470168bd31fdf53c120794fe5e" id="r_aa558c2470168bd31fdf53c120794fe5e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#aa558c2470168bd31fdf53c120794fe5e">LesSorties</a> { <a class="el" href="fonctions_recup_choix_8h.html#aa558c2470168bd31fdf53c120794fe5ea381ec4a2fa41752a7a12cde35b7f180b">bar</a> = 1
+, <a class="el" href="fonctions_recup_choix_8h.html#aa558c2470168bd31fdf53c120794fe5ea3f441b4ad83ab8983de4983c6f79933a">soiree_etudiante</a>
+, <a class="el" href="fonctions_recup_choix_8h.html#aa558c2470168bd31fdf53c120794fe5ea3fead7274c822d0a8831d0ea5676b2e6">boite_de_nuit</a>
+ }</td></tr>
+<tr class="separator:aa558c2470168bd31fdf53c120794fe5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a324cd6b1b14646fca0064cc1a6880cf1" id="r_a324cd6b1b14646fca0064cc1a6880cf1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#a324cd6b1b14646fca0064cc1a6880cf1">recuperationsMusiques</a> (int choix)</td></tr>
+<tr class="separator:a324cd6b1b14646fca0064cc1a6880cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73a004c0375610976bf9da97b0b39c5" id="r_ae73a004c0375610976bf9da97b0b39c5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#ae73a004c0375610976bf9da97b0b39c5">recuperationsSport</a> (int choix)</td></tr>
+<tr class="separator:ae73a004c0375610976bf9da97b0b39c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d50219ddbca722c92643ac5795b630" id="r_ab2d50219ddbca722c92643ac5795b630"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#ab2d50219ddbca722c92643ac5795b630">recuperationsActivitesCulturelles</a> (int choix)</td></tr>
+<tr class="separator:ab2d50219ddbca722c92643ac5795b630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93dd0479188abd439f699331ff5bb2a6" id="r_a93dd0479188abd439f699331ff5bb2a6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#a93dd0479188abd439f699331ff5bb2a6">recuperationsActivitesOrganisees</a> (int choix)</td></tr>
+<tr class="separator:a93dd0479188abd439f699331ff5bb2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3833bf274d3b0f33f511740e40bc372" id="r_ab3833bf274d3b0f33f511740e40bc372"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#ab3833bf274d3b0f33f511740e40bc372">recuperationsRestaurants</a> (int choix)</td></tr>
+<tr class="separator:ab3833bf274d3b0f33f511740e40bc372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ae73f9778aebe50cadc305c0e33f0b" id="r_a88ae73f9778aebe50cadc305c0e33f0b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_recup_choix_8h.html#a88ae73f9778aebe50cadc305c0e33f0b">recuperationsSorties</a> (int choix)</td></tr>
+<tr class="separator:a88ae73f9778aebe50cadc305c0e33f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="ab1abc8f5274027669a2f4d032ab5034f" name="ab1abc8f5274027669a2f4d032ab5034f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1abc8f5274027669a2f4d032ab5034f">&#9670;&#160;</a></span>LesActivitesCulturelles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="fonctions_recup_choix_8h.html#ab1abc8f5274027669a2f4d032ab5034f">LesActivitesCulturelles</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ab1abc8f5274027669a2f4d032ab5034facc1d66fd8f28802be9ba376b7cc2b230" name="ab1abc8f5274027669a2f4d032ab5034facc1d66fd8f28802be9ba376b7cc2b230"></a>cinema&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1abc8f5274027669a2f4d032ab5034fa8daef5a7f8b81553252a446af5b712a9" name="ab1abc8f5274027669a2f4d032ab5034fa8daef5a7f8b81553252a446af5b712a9"></a>theatre&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1abc8f5274027669a2f4d032ab5034fa94adaa1ebc60b9b66ba9371954ba8d64" name="ab1abc8f5274027669a2f4d032ab5034fa94adaa1ebc60b9b66ba9371954ba8d64"></a>musee&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1abc8f5274027669a2f4d032ab5034fa8a4b5d65b8e19960d0e76bab4722f1bf" name="ab1abc8f5274027669a2f4d032ab5034fa8a4b5d65b8e19960d0e76bab4722f1bf"></a>zoo&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1abc8f5274027669a2f4d032ab5034fa0b42d04f75b018be1f7988a448c9460d" name="ab1abc8f5274027669a2f4d032ab5034fa0b42d04f75b018be1f7988a448c9460d"></a>visite_guidee&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1abc8f5274027669a2f4d032ab5034fa72d02e9c8e3fd39c979ae27eb43c0e46" name="ab1abc8f5274027669a2f4d032ab5034fa72d02e9c8e3fd39c979ae27eb43c0e46"></a>galerie_art&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1abc8f5274027669a2f4d032ab5034fa009f3758b42850749843a98d379131b3" name="ab1abc8f5274027669a2f4d032ab5034fa009f3758b42850749843a98d379131b3"></a>mediatheque&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1abc8f5274027669a2f4d032ab5034fae48bdce6eda744d39856d799cceccce0" name="ab1abc8f5274027669a2f4d032ab5034fae48bdce6eda744d39856d799cceccce0"></a>corrida&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="abeff6c1d05118d776b1635d89f662d29" name="abeff6c1d05118d776b1635d89f662d29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeff6c1d05118d776b1635d89f662d29">&#9670;&#160;</a></span>LesActivitesOrganisees</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="fonctions_recup_choix_8h.html#abeff6c1d05118d776b1635d89f662d29">LesActivitesOrganisees</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="abeff6c1d05118d776b1635d89f662d29ad6e8e38a97fccbf8a5152e9e9d1cb9f0" name="abeff6c1d05118d776b1635d89f662d29ad6e8e38a97fccbf8a5152e9e9d1cb9f0"></a>tournoi_jeux_videos&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abeff6c1d05118d776b1635d89f662d29a452a5ef3faaa0180e29237b401ac0419" name="abeff6c1d05118d776b1635d89f662d29a452a5ef3faaa0180e29237b401ac0419"></a>loup_garoup&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abeff6c1d05118d776b1635d89f662d29a0d61261788c798920c0750a67ddc767b" name="abeff6c1d05118d776b1635d89f662d29a0d61261788c798920c0750a67ddc767b"></a>uno&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abeff6c1d05118d776b1635d89f662d29aa8a50118ecf30b86f4d8723337574229" name="abeff6c1d05118d776b1635d89f662d29aa8a50118ecf30b86f4d8723337574229"></a>cricket&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a3239c1b1464773ce6f90afc4d27999b5" name="a3239c1b1464773ce6f90afc4d27999b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3239c1b1464773ce6f90afc4d27999b5">&#9670;&#160;</a></span>LesMusiques</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="fonctions_recup_choix_8h.html#a3239c1b1464773ce6f90afc4d27999b5">LesMusiques</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a3239c1b1464773ce6f90afc4d27999b5a0d4976edb620115e11cceac0c08fbf8e" name="a3239c1b1464773ce6f90afc4d27999b5a0d4976edb620115e11cceac0c08fbf8e"></a>Jazz&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3239c1b1464773ce6f90afc4d27999b5aa509f10c329f6cf15e25b50d2b7edfaa" name="a3239c1b1464773ce6f90afc4d27999b5aa509f10c329f6cf15e25b50d2b7edfaa"></a>classique&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3239c1b1464773ce6f90afc4d27999b5a46f4c92ee372bc7b4a6f434dece1a2da" name="a3239c1b1464773ce6f90afc4d27999b5a46f4c92ee372bc7b4a6f434dece1a2da"></a>rock&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3239c1b1464773ce6f90afc4d27999b5ad6767d2e1b501cd6485fff5026e311e0" name="a3239c1b1464773ce6f90afc4d27999b5ad6767d2e1b501cd6485fff5026e311e0"></a>pop&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3239c1b1464773ce6f90afc4d27999b5a36c98a913197d67b565edf194f105716" name="a3239c1b1464773ce6f90afc4d27999b5a36c98a913197d67b565edf194f105716"></a>rap&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3239c1b1464773ce6f90afc4d27999b5a4fcebd4301183b61d2b3ef3ad249426c" name="a3239c1b1464773ce6f90afc4d27999b5a4fcebd4301183b61d2b3ef3ad249426c"></a>electro&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a41d4a688708ee767f605d1df21fc8ef6" name="a41d4a688708ee767f605d1df21fc8ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d4a688708ee767f605d1df21fc8ef6">&#9670;&#160;</a></span>LesRestaurants</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="fonctions_recup_choix_8h.html#a41d4a688708ee767f605d1df21fc8ef6">LesRestaurants</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a41d4a688708ee767f605d1df21fc8ef6a16f6fc18b504151ca58874b957609c72" name="a41d4a688708ee767f605d1df21fc8ef6a16f6fc18b504151ca58874b957609c72"></a>fast_food&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a41d4a688708ee767f605d1df21fc8ef6a9aadafe0a10b32df9b4e5c5ba9bb49ea" name="a41d4a688708ee767f605d1df21fc8ef6a9aadafe0a10b32df9b4e5c5ba9bb49ea"></a>junk_food&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a41d4a688708ee767f605d1df21fc8ef6a956b2aa7997106d4089b0fc416191959" name="a41d4a688708ee767f605d1df21fc8ef6a956b2aa7997106d4089b0fc416191959"></a>restaurants_traditionnels&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a41d4a688708ee767f605d1df21fc8ef6a4765b7406bb5d79770e2b0b5916e292c" name="a41d4a688708ee767f605d1df21fc8ef6a4765b7406bb5d79770e2b0b5916e292c"></a>restaurants_du_monde&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="aa558c2470168bd31fdf53c120794fe5e" name="aa558c2470168bd31fdf53c120794fe5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa558c2470168bd31fdf53c120794fe5e">&#9670;&#160;</a></span>LesSorties</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="fonctions_recup_choix_8h.html#aa558c2470168bd31fdf53c120794fe5e">LesSorties</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="aa558c2470168bd31fdf53c120794fe5ea381ec4a2fa41752a7a12cde35b7f180b" name="aa558c2470168bd31fdf53c120794fe5ea381ec4a2fa41752a7a12cde35b7f180b"></a>bar&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa558c2470168bd31fdf53c120794fe5ea3f441b4ad83ab8983de4983c6f79933a" name="aa558c2470168bd31fdf53c120794fe5ea3f441b4ad83ab8983de4983c6f79933a"></a>soiree_etudiante&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa558c2470168bd31fdf53c120794fe5ea3fead7274c822d0a8831d0ea5676b2e6" name="aa558c2470168bd31fdf53c120794fe5ea3fead7274c822d0a8831d0ea5676b2e6"></a>boite_de_nuit&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a93977bea11221347e611cc643d4038cf" name="a93977bea11221347e611cc643d4038cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93977bea11221347e611cc643d4038cf">&#9670;&#160;</a></span>LesSports</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="fonctions_recup_choix_8h.html#a93977bea11221347e611cc643d4038cf">LesSports</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a93977bea11221347e611cc643d4038cfa25f2acec027d4defce48674d39d14388" name="a93977bea11221347e611cc643d4038cfa25f2acec027d4defce48674d39d14388"></a>rugby&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a93977bea11221347e611cc643d4038cfa4c216e7140cff96cf2b597ca15fb58ee" name="a93977bea11221347e611cc643d4038cfa4c216e7140cff96cf2b597ca15fb58ee"></a>pala&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a93977bea11221347e611cc643d4038cfaeee77fa0f249a7573d79d2be4bb60ec9" name="a93977bea11221347e611cc643d4038cfaeee77fa0f249a7573d79d2be4bb60ec9"></a>football&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a93977bea11221347e611cc643d4038cfa1e307e25ff0e2689f56db82a33ae3635" name="a93977bea11221347e611cc643d4038cfa1e307e25ff0e2689f56db82a33ae3635"></a>tennis&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a93977bea11221347e611cc643d4038cfa1749e6f6073fd7f49e9cf1b5497960ef" name="a93977bea11221347e611cc643d4038cfa1749e6f6073fd7f49e9cf1b5497960ef"></a>Tennis_de_table&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a93977bea11221347e611cc643d4038cfa600640840fb8d4fd3927cd1d692c7c20" name="a93977bea11221347e611cc643d4038cfa600640840fb8d4fd3927cd1d692c7c20"></a>course&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a93977bea11221347e611cc643d4038cfaa3972fcf3f8535606aa042d0fa0300f6" name="a93977bea11221347e611cc643d4038cfaa3972fcf3f8535606aa042d0fa0300f6"></a>badminton&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ab2d50219ddbca722c92643ac5795b630" name="ab2d50219ddbca722c92643ac5795b630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d50219ddbca722c92643ac5795b630">&#9670;&#160;</a></span>recuperationsActivitesCulturelles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string recuperationsActivitesCulturelles </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>choix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93dd0479188abd439f699331ff5bb2a6" name="a93dd0479188abd439f699331ff5bb2a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93dd0479188abd439f699331ff5bb2a6">&#9670;&#160;</a></span>recuperationsActivitesOrganisees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string recuperationsActivitesOrganisees </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>choix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a324cd6b1b14646fca0064cc1a6880cf1" name="a324cd6b1b14646fca0064cc1a6880cf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a324cd6b1b14646fca0064cc1a6880cf1">&#9670;&#160;</a></span>recuperationsMusiques()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string recuperationsMusiques </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>choix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3833bf274d3b0f33f511740e40bc372" name="ab3833bf274d3b0f33f511740e40bc372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3833bf274d3b0f33f511740e40bc372">&#9670;&#160;</a></span>recuperationsRestaurants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string recuperationsRestaurants </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>choix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a88ae73f9778aebe50cadc305c0e33f0b" name="a88ae73f9778aebe50cadc305c0e33f0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ae73f9778aebe50cadc305c0e33f0b">&#9670;&#160;</a></span>recuperationsSorties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string recuperationsSorties </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>choix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae73a004c0375610976bf9da97b0b39c5" name="ae73a004c0375610976bf9da97b0b39c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae73a004c0375610976bf9da97b0b39c5">&#9670;&#160;</a></span>recuperationsSport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string recuperationsSport </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>choix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

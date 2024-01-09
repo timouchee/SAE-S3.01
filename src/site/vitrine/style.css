@@ -5,9 +5,9 @@
     margin-right: 5%;
     margin-top: 3%;
     padding:15px;
-    border-radius: 50px; */
+    border-radius: 50px; */ 
     margin-left: 5%;
-    margin-right: 5%;
+    margin-right: 5%; 
     margin-top: 3%;
     padding: 10px; /* Réduire la hauteur du padding */
     border: none; /* Supprimer la bordure */
@@ -93,7 +93,8 @@ body {
     float: left; /* Pour aligner à gauche */
 }
 
-.div3 {
+.div3 
+{
     text-align: center; /* Pour centrer le contenu horizontalement */
 }
 
@@ -172,7 +173,24 @@ body {
     margin: 6px 0;
   }
 
-
+  .sidebar-button 
+  {
+    /* display: block; */
+    position: absolute;
+    width: auto;
+    right: 5px;
+    top: 10px;
+    padding: 5px; 
+    text-decoration: none;
+    color: yellow; /* Jaune */
+    background-color: rgb(31, 30, 30); /* Bleu (optionnel) */
+    /* border-radius: 8px; */
+    border-radius: 5px;
+  }
+  
+  .sidebar-button:hover {
+    background-color: #357ebd; /* Bleu foncé (optionnel) */
+  }
 
 
 
