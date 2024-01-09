@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['electro_0',['electro',['../fonctions_recup_choix_8h.html#a3239c1b1464773ce6f90afc4d27999b5a4fcebd4301183b61d2b3ef3ad249426c',1,'fonctionsRecupChoix.h']]],
-  ['estadressevalide_1',['estAdresseValide',['../class_utilisateur.html#aa3990a2139081611a527196fbd37fbcd',1,'Utilisateur']]],
-  ['estdatevalide_2',['estDateValide',['../class_utilisateur.html#a3ad381dd97042452f4da28811063406d',1,'Utilisateur']]],
-  ['estmailvalide_3',['estMailValide',['../class_utilisateur.html#ac85432be3a8bf8e5328ab50ecb2baeb2',1,'Utilisateur']]],
-  ['estokpourcovoiturage_4',['estOKPourCovoiturage',['../class_persona.html#aeab6da49fe8f8c41221766cb6834cefa',1,'Persona']]],
-  ['esttransportvalide_5',['estTransportValide',['../class_utilisateur.html#a932000d3110297ad363903b756ce1c55',1,'Utilisateur']]]
+  ['garder_5fque_5felem_0',['garder_que_elem',['../class_reponse__utilisateur__reduite.html#aa9fb70afa36f4534c6ade807e02210dd',1,'Reponse_utilisateur_reduite']]],
+  ['get_5flst_5felem_1',['get_lst_elem',['../class_reponse.html#aaf546b0347c6657c4a835503eb354865',1,'Reponse']]],
+  ['get_5flst_5fpoid_2',['get_lst_poid',['../class_liste__poids.html#a0dcf6383039bb182059b73631824a684',1,'Liste_poids']]],
+  ['get_5flst_5frep_5fu_3',['get_lst_rep_u',['../classlst__reponse__utilisateur.html#ad56378d63981d419fd5beb6939ea7db2',1,'lst_reponse_utilisateur\get_lst_rep_u()'],['../class_reponse__utilisateur__reduite.html#ad56378d63981d419fd5beb6939ea7db2',1,'Reponse_utilisateur_reduite\get_lst_rep_u()']]]
 ];
