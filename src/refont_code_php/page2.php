@@ -28,12 +28,14 @@ class lst_reponse_utilisateur
                 // Catégorie "musique"
                 $lst_cat = array($liste_categorie[$p], array());
                 $ensembleEl = array(); // Ensemble pour éviter les doublons
-                $nbel = rand(0,  sizeof($liste_liste_elem_categorie[$p]) );
-                for ($j = 0; $j < $nbel; $j++) {
-                    $possible_elements = $liste_liste_elem_categorie[$p];
+                $nbel = rand(0,  5 );
+                $possible_elements = $liste_liste_elem_categorie[$p];
+                for ($j = 0; $j < $nbel; $j++) 
+                {
                     $musiquePossible = array_diff($possible_elements, $ensembleEl);
-                    $lst_cat[1][] = $musiquePossible[array_rand($musiquePossible)];
-                    $ensembleEl[] = end($lst_cat[1]); // Ajouter la dernière valeur à l'ensemble
+                    $rajout = $musiquePossible[array_rand($musiquePossible)];
+                    $lst_cat[1][] = $rajout;
+                    $ensembleEl[] = $rajout;//end($lst_cat[1]); // Ajouter la dernière valeur à l'ensemble
                 }
                 $element[] = $lst_cat;
                 
@@ -415,18 +417,22 @@ class Persona
             foreach ($el[1] as  $elem) 
             {
                 $compteur_min_lst ++;
-                if ($nb_purcent >= 50) 
+                if(isset($this->rep[$compt_categorie][1][$compteur_min_lst]))
                 {
-                    
-                    unset($this->rep[$compt_categorie][1][$compteur_min_lst]);
-                    
+
+                    if ($nb_purcent >= 50) 
+                    {
+                        
+                        unset($this->rep[$compt_categorie][1][$compteur_min_lst]);
+                        
+                    }
+                    else
+                    {
+                        
+                        $nb_purcent += $this->rep[$compt_categorie][1][$compteur_min_lst][2];
+                        
+                    } 
                 }
-                else
-                {
-                    
-                    $nb_purcent += $this->rep[$compt_categorie][1][$compt_categorie][2];
-                    
-                } 
             }
         }
 
@@ -521,54 +527,73 @@ echo "<br>";
 
 $lst_musique_possible = array
 (   "Jazz",
-    "classique",
-    "rock",
-    "pop",
-    "rap",
-    "electro"
+    "Classique",
+    "Rock",
+    "Pop",
+    "Rap",
+    "Electro",
+    "Musiques_film",
+    "Musiques_manga"
 );
 
-
 $lst_sport_possible = array
-(   "rugby",
-    "pala",
-    "football",
-    "tennis",
+(   "Rugby",
+    "Pala",
+    "Football",
+    "Tennis",
     "Tennis_de_table",
-    "course",
-    "badminton"
+    "Course_a_pieds",
+    "Badminton",
+    "Athletisme",
+    "Basket",
+    "Handball",
+    "Esport",
+    "Equitation"
 );
 
 $lst_culture_possible = array
 (
-    "cinema",
-    "theatre",
-    "musee",
-    "zoo",
-    "visite_guidee",
-    "galerie_art",
-    "mediatheque",
-    "corrida"
+    "Cinema",
+    "Theatre",
+    "Musee",
+    "Zoo",
+    "Visite_guidee",
+    "Galerie_art",
+    "Mediatheque",
+    "Corrida",
+    "Lecture",
+    "Voyage",
+    "Numerique"
 );
+
 $lst_activitees_possible = array
 (
-    "tournoi_jeux_videos",
-    "loup_garoup",
-    "uno",
-    "cricket"
+    "Tournoi_jeux_videos",
+    "Loup_garoup",
+    "Uno",
+    "Cricket",
+    "Bowling",
+    "Plage"
 );
+
 $lst_restaurants_possible = array
 (
-    "fast_food","junk_food",
-    "restaurants_traditionnels",
-    "restaurants_du_monde",
-    "vegi"
+    "Fast_food",
+    "Junk_food",
+    "Pizzeria",
+    "Sushis",
+    "Restaurants_traditionnels",
+    "Restaurants_du_monde",
+    "Restaurants_vegetariens"
 );
+
 $lst_soirees_possible = array
 (
-    "bar",
-    "soiree_etudiante",
-    "boite_de_nuit"
+    "Bar",
+    "Soiree_etudiante",
+    "Soiree_jeux_Societe",
+    "Boite_de_nuit",
+    "Soirees_mousse"
 );
 
 
@@ -603,7 +628,7 @@ $lst_pois->toString();
 
 $lst_rep_U_restraint = new Reponse_utilisateur_reduite();
 //mettre la boucle sur la moitier des liste poid ici
-$elementPrecis = "pop";
+$elementPrecis = "Pop";
 
 //pour le teste c la boucle
 
