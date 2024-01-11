@@ -3,16 +3,32 @@
 /* 
 */
 
-
+/**
+ * @brief Classe représentant une liste de réponses utilisateur.
+ */
 class lst_reponse_utilisateur 
 {
+    /**
+     * @var array $lst_rep_U Liste des réponses utilisateur.
+     */
     public $lst_rep_U = array();
 
+    /**
+     * @brief Récupère la liste des réponses utilisateur.
+     * @return array La liste des réponses utilisateur.
+     */
     public function get_lst_rep_u()
     {
         return $this->lst_rep_U;
     }
         
+    /**
+     * @brief Remplit la liste de réponses utilisateur avec des éléments aléatoires de musique et de sport.
+     * 
+     * @param array $lst_musique_possible Liste des éléments musicaux possibles.
+     * @param array $lst_sport_possible Liste des éléments sportifs possibles.
+     * @return array La liste remplie de réponses utilisateur.
+     */
     function remplirListeReponseU($lst_musique_possible, $lst_sport_possible) 
     {
         $liste_categorie = ["musique","sport"];
@@ -21,42 +37,19 @@ class lst_reponse_utilisateur
             $element = array();
             foreach($liste_categorie as $cat)
             {
-                // Catégorie "musique"
-                $lst_cat = array("musique", array());
+                // Catégorie "musique" ou "sport"
+                $lst_cat = array($cat, array());
                 $ensembleEl = array(); // Ensemble pour éviter les doublons
                 $nbel = rand(1, 5);
                 for ($j = 0; $j < $nbel; $j++) {
-                    $musiquePossible = array_diff($lst_musique_possible, $ensembleEl);
-                    $lst_cat[1][] = $musiquePossible[array_rand($musiquePossible)];
+                    // Sélection aléatoire d'éléments possibles dans la catégorie
+                    $possible_elements = ($cat === "musique") ? $lst_musique_possible : $lst_sport_possible;
+                    $cat_elements = array_diff($possible_elements, $ensembleEl);
+                    $lst_cat[1][] = $cat_elements[array_rand($cat_elements)];
                     $ensembleEl[] = end($lst_cat[1]); // Ajouter la dernière valeur à l'ensemble
                 }
                 $element[] = $lst_cat;
             }
-            
-
-            /* // Catégorie "musique"
-            $musique = array("musique", array());
-            $ensembleMusique = array(); // Ensemble pour éviter les doublons
-            $nbMusique = rand(1, 5);
-            for ($j = 0; $j < $nbMusique; $j++) {
-                $musiquePossible = array_diff($lst_musique_possible, $ensembleMusique);
-                $musique[1][] = $musiquePossible[array_rand($musiquePossible)];
-                $ensembleMusique[] = end($musique[1]); // Ajouter la dernière valeur à l'ensemble
-            }
-
-            // Catégorie "sport"
-            $sport = array("sport", array());
-            $ensembleSport = array(); // Ensemble pour éviter les doublons
-            $nbSport = rand(1, 5);
-            for ($j = 0; $j < $nbSport; $j++) {
-                $sportPossible = array_diff($lst_sport_possible, $ensembleSport);
-                $sport[1][] = $sportPossible[array_rand($sportPossible)];
-                $ensembleSport[] = end($sport[1]); // Ajouter la dernière valeur à l'ensemble
-            }
-
-            // Ajouter les catégories à l'élément
-            $element[] = $musique;
-            $element[] = $sport; */
 
             // Ajouter l'élément à la liste
             $this->lst_rep_U[] = $element;
@@ -65,9 +58,12 @@ class lst_reponse_utilisateur
         return $this->lst_rep_U;
     }
 
+    /**
+     * @brief Convertit la liste de réponses utilisateur en chaîne de caractères.
+     */
     public function toString()
     {
-        echo "<br> les reponse utilisateur (il n'y a que musique et sport)";
+        echo "<br> les réponses utilisateur (il n'y a que musique et sport)";
         foreach ($this->lst_rep_U as $element) 
         {
             echo '<ul>';
@@ -77,21 +73,36 @@ class lst_reponse_utilisateur
             echo '</ul>';
         } 
     }
-
 }
+
+
+/**
+ * @brief Classe représentant une liste de poids.
+ */
 class Liste_poids 
 {
+    /**
+     * @var array $listePoids Liste des poids.
+     */
     public $listePoids = array();
 
+    /**
+     * @brief Récupère la liste des poids.
+     * @return array La liste des poids.
+     */
     public function get_lst_poid()
     {
         return $this->listePoids;
     }
 
-    // Initialiser le tableau des listePoids à zéro
+    /**
+     * @brief Remplit la liste des poids en fonction des éléments d'une liste de réponses utilisateur.
+     * 
+     * @param array $lst_rep_U Liste de réponses utilisateur.
+     */
     public function remplir_lst_poids($lst_rep_U)
     {
-       foreach ($lst_rep_U as $element) 
+        foreach ($lst_rep_U as $element) 
         {
             foreach ($element as $item) 
             {
@@ -99,105 +110,128 @@ class Liste_poids
                 foreach ($item[1] as $elem) 
                 {
                     $indice = -1;
-                    $exite = false;
+                    $existe = false;
                     foreach ($this->listePoids as $mini_elem) 
-                    //[ >["pop",5],["bad",2]  ]                  
                     {     
                         $indice++;
-                        //echo "elem : ".$elem."<br>";  
-                        //echo "mini elem  : ".$mini_elem[1]."<br>";
                         if($mini_elem[0]==$elem)   
                         {
-                            $exite=true;
+                            $existe=true;
                             break;
                         }  
                     }
-                    if($exite == true)
+                    if($existe == true)
                     {
                         $this->listePoids[$indice][1]+= $el_poids;
-
                     }
                     
-                    if($exite ==false)
+                    if($existe == false)
                     {
                         array_push($this->listePoids, [$elem,$el_poids]);
                     }
                     $el_poids --;
-
-                    //echo $elem." ";
                 }
             }
-            //echo "<br>";
         } 
     }
 
-    // Fonction de comparaison pour le tri
+    /**
+     * @brief Fonction de comparaison pour le tri des poids par valeur décroissante.
+     * 
+     * @param array $a Premier élément pour la comparaison.
+     * @param array $b Deuxième élément pour la comparaison.
+     * @return int Résultat de la comparaison.
+     */
     public function comparerParValeurDecroissante($a, $b) {
         return $b[1] - $a[1];
     }
+
+    /**
+     * @brief Trie la liste des poids en fonction des valeurs numériques (descendant).
+     */
     public function trier_decroissant_lst_poid()
     {
-        // Trier la liste en fonction des valeurs numériques (descendant)
-        //usort($this->listePoids, 'comparerParValeurDecroissante');
         usort($this->listePoids, array($this, 'comparerParValeurDecroissante'));
     }
     
+    /**
+     * @brief Convertit la liste des poids triée en chaîne de caractères.
+     */
     public function toString()
     {
-        echo "<br> <br> voici la liste des poids dans l'ordre décroissant";
+        echo "<br> <br> Voici la liste des poids dans l'ordre décroissant";
         // Afficher la liste triée
         foreach ($this->listePoids as $lst_elem)
         {
             echo $lst_elem[0] . " de valeur : ".$lst_elem[1]."<br>";
         }
     }
-    
 }
 
+/**
+ * @brief Classe représentant une version réduite des réponses utilisateur.
+ */
 class Reponse_utilisateur_reduite
 {
+    /**
+     * @var array $res Résultat des réponses utilisateur.
+     */
     public $res;
 
+    /**
+     * @brief Récupère la liste des réponses utilisateur.
+     * @return array La liste des réponses utilisateur.
+     */
     public function get_lst_rep_u()
     {
         return $this->res;
     }
 
-    public function garder_que_elem($lst_rep_U,$elementPrecis)
+    /**
+     * @brief Garde uniquement les éléments de la liste des réponses utilisateur correspondant à un élément précis.
+     * 
+     * @param array $lst_rep_U Liste des réponses utilisateur à filtrer.
+     * @param mixed $elementPrecis Élément spécifique à garder dans les réponses.
+     * @return array La liste des réponses utilisateur filtrée.
+     */
+    public function garder_que_elem($lst_rep_U, $elementPrecis)
     {
         $this->res = $lst_rep_U;
         $compteur_1reponse = -1;
-        foreach($this->res as $une_rep)
+        foreach ($this->res as $une_rep)
         {
-            $compteur_1reponse ++;
+            $compteur_1reponse++;
             $trouver = false;
-            foreach($une_rep as $categorie)
+            foreach ($une_rep as $categorie)
             {
-                foreach($categorie[1] as $elem)
-                {   
-                    if($elem === $elementPrecis)
+                foreach ($categorie[1] as $elem)
+                {
+                    if ($elem === $elementPrecis)
                     {
                         $trouver = true;
                         break;
                     }
                 }
-                if($trouver)
+                if ($trouver)
                 {
                     break;
                 }
             }
-            if(!$trouver)
+            if (!$trouver)
             {
                 unset($this->res[$compteur_1reponse]);
             }
-        } 
+        }
         return $this->res;
     }
 
+    /**
+     * @brief Convertit la liste filtrée des réponses utilisateur en une chaîne de caractères.
+     */
     public function toString()
     {
-        echo "<br> les rep U trier <br>";
-        foreach ($this->res as $element) 
+        echo "<br> Les réponses utilisateur triées <br>";
+        foreach ($this->res as $element)
         {
             echo '<ul>';
             foreach ($element as $categorie) {
@@ -206,15 +240,28 @@ class Reponse_utilisateur_reduite
             echo '</ul>';
         }
     }
-
 }
 
+/**
+ * @brief Classe représentant un Persona.
+ */
 class Persona
 {
+    /**
+     * @var array $rep Réponses du Persona dans les catégories "musique" et "sport".
+     */
     public $rep = [ ["musique",[]],["sport",[]] ]; 
+    /**
+     * @var array $lst_poid_totale Liste des poids totaux par catégorie.
+     */
     public $lst_poid_totale = [] ;
     
-
+    /**
+     * @brief Crée un Persona en utilisant les réponses utilisateur.
+     * 
+     * @param array $lst_rep_U Liste des réponses utilisateur.
+     * @return array Les réponses du Persona dans les catégories "musique" et "sport".
+     */
     public function persona_creer($lst_rep_U) 
     {
         foreach ($lst_rep_U as $element) 
@@ -259,7 +306,9 @@ class Persona
         return $this->rep;
     } 
     
-    
+    /**
+     * @brief Affiche les étapes initiales du Persona.
+     */
     public function afficher_perso_etape_0()
     {
         echo "liste des reponse utilisateur pour persona";
@@ -297,6 +346,9 @@ class Persona
         echo "<br>";
     }
 
+    /**
+     * @brief Calcule et affiche les pourcentages des éléments pour chaque catégorie.
+     */
     public function afficher_perso_etape_1()
     {
         echo "maitenant avec le calcule des pourcentage arondi a 2 chiffre apres la virgule ";
@@ -350,15 +402,16 @@ class Persona
 
     }
     
-
-
-
-
-    // Fonction de comparaison pour trier par la troisième valeur dans l'ordre décroissant
+    /**
+     * @brief Compare la troisième valeur pour trier les éléments dans chaque catégorie.
+     */
     function compareThirdValueDesc($a, $b) {
         return $b[2] - $a[2];
     }
 
+    /**
+     * @brief Trie les éléments de chaque catégorie en fonction de leur pourcentage (décroissant).
+     */
     public function trier_decroissant()
     {
         // Parcours des données pour trier les éléments
@@ -370,6 +423,9 @@ class Persona
         }
     }
 
+    /**
+     * @brief Affiche les éléments triés dans chaque catégorie.
+     */
     public function afficher_perso_etape_2()
     {
         echo "<br>";
@@ -419,6 +475,9 @@ class Persona
 
     }
 
+    /**
+     * @brief Supprime les éléments représentant 50% ou plus du poids total dans chaque catégorie.
+     */
     public function afficher_perso_etape_3()
     {
         
@@ -448,54 +507,74 @@ class Persona
             } 
 
     }
-
-
-
 }
 
+
+/**
+ * @brief Classe représentant une liste de réponses possibles pour différentes catégories.
+ */
 class Reponse
 {
-    public $lst_rep_possible_categorie = [ ["musique",[]],["sport",[]] ];
-    public $num_categorie = ["musique" => 0,"sport" => 1];
+    /**
+     * @var array $lst_rep_possible_categorie Liste des réponses possibles par catégorie.
+     */
+    public $lst_rep_possible_categorie = [["musique", []], ["sport", []]];
     
-    //ajoute 1 élément dans la categorie choisie
-    public function ajouter_elem_cat($categorie,$element) 
+    /**
+     * @var array $num_categorie Numéro associé à chaque catégorie.
+     */
+    public $num_categorie = ["musique" => 0, "sport" => 1];
+    
+    /**
+     * @brief Ajoute un élément dans la catégorie choisie.
+     * 
+     * @param string $categorie Catégorie où ajouter l'élément.
+     * @param mixed $element Élément à ajouter.
+     */
+    public function ajouter_elem_cat($categorie, $element)
     {
-        array_push($this->lst_rep_possible_categorie[$this->num_categorie[$categorie]][1],$element);
+        array_push($this->lst_rep_possible_categorie[$this->num_categorie[$categorie]][1], $element);
     }
 
-    //ajoute une liste d'élément dans la categorie choisie
-    public function ajouter_elem_cat_lst($categorie,$lst_a_ajouter) 
+    /**
+     * @brief Ajoute une liste d'éléments dans la catégorie choisie.
+     * 
+     * @param string $categorie Catégorie où ajouter les éléments.
+     * @param array $lst_a_ajouter Liste d'éléments à ajouter.
+     */
+    public function ajouter_elem_cat_lst($categorie, $lst_a_ajouter)
     {
-        foreach($lst_a_ajouter as $elem)
-        {
-            $this->ajouter_elem_cat($categorie,$elem); 
+        foreach ($lst_a_ajouter as $elem) {
+            $this->ajouter_elem_cat($categorie, $elem);
         }
     }
 
-    //retourn la liste des element d'une categorie choisie
-    public function get_lst_elem($categorie) 
+    /**
+     * @brief Récupère la liste des éléments d'une catégorie choisie.
+     * 
+     * @param string $categorie Catégorie dont on veut récupérer les éléments.
+     * @return array Liste des éléments de la catégorie spécifiée.
+     */
+    public function get_lst_elem($categorie)
     {
         return $this->lst_rep_possible_categorie[$this->num_categorie[$categorie]][1];
     }
 
-    //afficher tous
-    public function toString() 
+    /**
+     * @brief Affiche la liste des éléments possibles pour chaque catégorie.
+     */
+    public function toString()
     {
-        echo "liste des element possible choisissable : <br>";
-        foreach($this->lst_rep_possible_categorie as $cat)
-        {
-            echo $cat[0]."<br> <ul>";
-            foreach ($cat[1] as $elem)
-            {
-                echo "<li>".$elem."<br>";
+        echo "Liste des éléments possibles pour chaque catégorie : <br>";
+        foreach ($this->lst_rep_possible_categorie as $cat) {
+            echo $cat[0] . "<br> <ul>";
+            foreach ($cat[1] as $elem) {
+                echo "<li>" . $elem . "<br>";
             }
             echo "</ul>";
         }
     }
-
 }
-
 echo "<br>";
 echo "<br>";
 
