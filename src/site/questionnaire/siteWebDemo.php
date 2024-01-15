@@ -142,13 +142,9 @@
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div id="zoneDepotResto" class="zone-depot" ondrop="drop(event)">Déposez vos réponses ici</div>
             </div>
-<<<<<<< HEAD
 </div>
     <input type="submit" value="Soumettre">
-=======
-            <input type="submit" value="Soumettre">
 </div>
->>>>>>> 4ea4c5f165f97748f759c8e7106506c211646cac
 </form>
 
 <?php
