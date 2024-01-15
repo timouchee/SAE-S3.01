@@ -23,7 +23,7 @@
 <div class = "div_du_centre">
     <h1>Questionnaire</h1>
 
-    <form action="" method="post">
+    <!-- <form action="" method="post"> -->
         <!-- Partie Utilisateur -->
         <h2>Informations Utilisateur</h2>
         <!-- Conteneur principal pour aligner en colonne -->
@@ -177,9 +177,10 @@
                 </div>
 
             </div>
-            <input type="submit" value="Soumettre">
+            <!-- <input type="submit" value="Soumettre"> -->
+            <button onClick="submit_le_tout()">soumetre</button>
 </div>
-</form>
+<!-- </form> -->
 
 <?php
 
@@ -253,29 +254,7 @@
         
     ?>
 
-<script>
-    $(document).ready(function () {
-        $(".draggable").draggable({
-            revert: "invalid",
-            helper: "clone"
-        });
 
-        $(".droppable").droppable({
-            accept: ".draggable",
-            drop: function (event, ui) {
-                var draggable = ui.draggable;
-                var droppedId = draggable.data("id");
-                var targetId = $(this).data("id");
-
-                // Ajoutez le texte à la case
-                $(this).addClass("ui-state-highlight").html( droppedId);
-
-                // Ajoutez le texte à la liste en bas
-                $("#droppedItems").append("<p>Element " + droppedId + " dropped in " + targetId + "</p>");
-            }
-        });
-    });
-</script>
 
 
 
