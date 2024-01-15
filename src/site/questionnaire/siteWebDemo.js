@@ -17,17 +17,20 @@ function allowDrop(event) {
                 (draggedElement.classList.contains('actCultur') && dropTarget.id == 'container3') ||
                 (draggedElement.classList.contains('actOrg') && dropTarget.id == 'container4') ||
                 (draggedElement.classList.contains('resto') && dropTarget.id == 'container5') ||
-                (draggedElement.classList.contains('musique') && dropTarget.id == 'zoneDepotMusique') ||
-    
-                (draggedElement.classList.contains('sport') && dropTarget.id == 'zoneDepotSport') ||
-                (draggedElement.classList.contains('actCultur') && dropTarget.id == 'zoneDepotActCultur') ||
-                (draggedElement.classList.contains('actOrg') && dropTarget.id == 'zoneDepotActOrga') ||
-                (draggedElement.classList.contains('resto') && dropTarget.id == 'zoneDepotResto') 
+                (draggedElement.classList.contains('musique') && dropTarget.id.includes('zoneDepotMusique')) ||
+                (draggedElement.classList.contains('sport') && dropTarget.id.includes('zoneDepotSport')) ||
+                (draggedElement.classList.contains('actCultur') && dropTarget.id.includes('zoneDepotActCultur')) ||
+                (draggedElement.classList.contains('actOrg') && dropTarget.id.includes('zoneDepotActOrga')) ||
+                (draggedElement.classList.contains('resto') && dropTarget.id.includes('zoneDepotResto')) 
             ) {
                 // Autorisez le drop dans ce container
                 console.log('true')
                 return true;
-            } 
+            } else{
+
+                console.log('false')
+                return false
+            }
         }
     }
     return false;
