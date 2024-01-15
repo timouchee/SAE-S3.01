@@ -109,4 +109,5 @@ body
 .reponses
 {
     display: flex;
+    flex-flow: column wrap;
 }
