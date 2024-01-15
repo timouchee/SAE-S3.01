@@ -4,21 +4,36 @@
 */
   
 
+/**
+ * @brief Classe représentant une liste de réponses utilisateur.
+ */
 class lst_reponse_utilisateur 
 {
+    /**
+     * @var array $lst_rep_U Tableau contenant les réponses utilisateur.
+     */
     public $lst_rep_U = array();
 
+    /**
+     * @brief Obtient la liste des réponses utilisateur.
+     * @return array La liste des réponses utilisateur.
+     */
     public function get_lst_rep_u()
     {
         return $this->lst_rep_U;
     }
         
-    function remplirListeReponseU($liste_liste_elem_categorie,$nb_reponse_creer = 10) 
+    /**
+     * @brief Remplit la liste des réponses utilisateur avec des éléments aléatoires.
+     * @param array $liste_liste_elem_categorie Tableau contenant des listes d'éléments par catégorie.
+     * @param int $nb_reponse_creer Nombre de réponses à créer (par défaut 10).
+     * @return array La liste des réponses utilisateur remplie.
+     */
+    function remplirListeReponseU($liste_liste_elem_categorie, $nb_reponse_creer = 10) 
     {
         $nb_reponse_voulu = $nb_reponse_creer;
         $liste_categorie = ["musique","sport","culture","activitees","restaurants","soirees"];
         $taille = sizeof($liste_liste_elem_categorie);
-        //$liste_categorie = ["musique","sport"];
 
         for ($i = 0; $i < $nb_reponse_voulu; $i++) 
         {
@@ -35,11 +50,9 @@ class lst_reponse_utilisateur
                     $musiquePossible = array_diff($possible_elements, $ensembleEl);
                     $rajout = $musiquePossible[array_rand($musiquePossible)];
                     $lst_cat[1][] = $rajout;
-                    $ensembleEl[] = $rajout;//end($lst_cat[1]); // Ajouter la dernière valeur à l'ensemble
+                    $ensembleEl[] = $rajout;
                 }
                 $element[] = $lst_cat;
-                
-
             }
           
             // Ajouter l'élément à la liste
@@ -49,6 +62,9 @@ class lst_reponse_utilisateur
         return $this->lst_rep_U;
     }
 
+    /**
+     * @brief Affiche les réponses utilisateur sous forme de texte.
+     */
     public function toString()
     {
         echo "<br> les reponse utilisateur ";
@@ -62,11 +78,19 @@ class lst_reponse_utilisateur
         } 
     }
 
+    /**
+     * @brief Ajoute une réponse en dur à la liste.
+     * @param array $rep La réponse à ajouter.
+     */
     public function ajouter1_reponse_en_dur($rep)
     {
         $this->lst_rep_U[] = $rep;
     }
 
+    /**
+     * @brief Ajoute une liste de réponses en dur à la liste.
+     * @param array $lst_rep Liste des réponses à ajouter.
+     */
     public function ajouter_liste_reponse_en_dur($lst_rep)
     {
         foreach($lst_rep as $une_rep)
@@ -74,21 +98,34 @@ class lst_reponse_utilisateur
             $this->ajouter1_reponse_en_dur($une_rep);
         }
     }
-
 }
+
+/**
+ * @brief Classe représentant une liste de poids associés à des éléments.
+ */
 class Liste_poids 
 {
+    /**
+     * @var array $listePoids Tableau contenant les poids associés aux éléments.
+     */
     public $listePoids = array();
 
+    /**
+     * @brief Obtient la liste des poids.
+     * @return array La liste des poids associés aux éléments.
+     */
     public function get_lst_poid()
     {
         return $this->listePoids;
     }
 
-    // Initialiser le tableau des listePoids à zéro
+    /**
+     * @brief Remplit la liste des poids à partir d'une liste de réponses utilisateur.
+     * @param array $lst_rep_U Liste des réponses utilisateur.
+     */
     public function remplir_lst_poids($lst_rep_U)
     {
-       foreach ($lst_rep_U as $element) 
+        foreach ($lst_rep_U as $element) 
         {
             foreach ($element as $item) 
             {
@@ -96,49 +133,53 @@ class Liste_poids
                 foreach ($item[1] as $elem) 
                 {
                     $indice = -1;
-                    $exite = false;
+                    $existe = false;
                     foreach ($this->listePoids as $mini_elem) 
-                    //[ >["pop",5],["bad",2]  ]                  
                     {     
                         $indice++;
-                        //echo "elem : ".$elem."<br>";  
-                        //echo "mini elem  : ".$mini_elem[1]."<br>";
-                        if($mini_elem[0]==$elem)   
+                        if ($mini_elem[0] == $elem)   
                         {
-                            $exite=true;
+                            $existe = true;
                             break;
                         }  
                     }
-                    if($exite == true)
+                    if ($existe == true)
                     {
-                        $this->listePoids[$indice][1]+= $el_poids;
-
+                        $this->listePoids[$indice][1] += $el_poids;
                     }
                     
-                    if($exite ==false)
+                    if ($existe == false)
                     {
-                        array_push($this->listePoids, [$elem,$el_poids]);
+                        array_push($this->listePoids, [$elem, $el_poids]);
                     }
-                    $el_poids --;
+                    $el_poids--;
 
-                    //echo $elem." ";
                 }
             }
-            //echo "<br>";
         } 
     }
 
-    // Fonction de comparaison pour le tri
+    /**
+     * @brief Fonction de comparaison pour le tri descendant des poids.
+     * @param array $a Premier élément à comparer.
+     * @param array $b Deuxième élément à comparer.
+     * @return int Résultat de la comparaison.
+     */
     public function comparerParValeurDecroissante($a, $b) {
         return $b[1] - $a[1];
     }
+
+    /**
+     * @brief Trie la liste des poids de manière décroissante.
+     */
     public function trier_decroissant_lst_poid()
     {
-        // Trier la liste en fonction des valeurs numériques (descendant)
-        //usort($this->listePoids, 'comparerParValeurDecroissante');
         usort($this->listePoids, array($this, 'comparerParValeurDecroissante'));
     }
     
+    /**
+     * @brief Affiche la liste des poids dans l'ordre décroissant.
+     */
     public function toString()
     {
         echo "<br> <br> voici la liste des poids dans l'ordre décroissant : <br>";
@@ -148,44 +189,64 @@ class Liste_poids
             echo $lst_elem[0] . " de valeur : ".$lst_elem[1]."<br>";
         }
     }
-    
 }
 
+
+/**
+ * @brief Classe représentant une réponse utilisateur réduite, filtrée par un élément spécifique.
+ */
 class Reponse_utilisateur_reduite
 {
+    /**
+     * @var array $res Tableau contenant la réponse utilisateur réduite.
+     */
     public $res;
+
+    /**
+     * @var mixed $element_de_triage Élément spécifique utilisé pour le filtrage.
+     */
     public $element_de_triage;
 
+    /**
+     * @brief Obtient la liste des réponses utilisateur réduites.
+     * @return array La liste des réponses utilisateur réduites.
+     */
     public function get_lst_rep_u()
     {
         return $this->res;
     }
 
-    public function garder_que_elem($lst_rep_U,$elementPrecis)
+    /**
+     * @brief Filtre les réponses utilisateur pour ne conserver que celles contenant un élément précis.
+     * @param array $lst_rep_U Liste des réponses utilisateur.
+     * @param mixed $elementPrecis Élément précis à rechercher dans les réponses.
+     * @return array La liste des réponses utilisateur réduites.
+     */
+    public function garder_que_elem($lst_rep_U, $elementPrecis)
     {
         $this->element_de_triage = $elementPrecis; 
         $this->res = $lst_rep_U;
         $compteur_1reponse = -1;
-        foreach($this->res as $une_rep)
+        foreach ($this->res as $une_rep)
         {
-            $compteur_1reponse ++;
+            $compteur_1reponse++;
             $trouver = false;
-            foreach($une_rep as $categorie)
+            foreach ($une_rep as $categorie)
             {
-                foreach($categorie[1] as $elem)
+                foreach ($categorie[1] as $elem)
                 {   
-                    if($elem === $elementPrecis)
+                    if ($elem === $elementPrecis)
                     {
                         $trouver = true;
                         break;
                     }
                 }
-                if($trouver)
+                if ($trouver)
                 {
                     break;
                 }
             }
-            if(!$trouver)
+            if (!$trouver)
             {
                 unset($this->res[$compteur_1reponse]);
             }
@@ -193,6 +254,9 @@ class Reponse_utilisateur_reduite
         return $this->res;
     }
 
+    /**
+     * @brief Affiche les réponses utilisateur triées pour un élément spécifique.
+     */
     public function toString()
     {
         echo "<br> les rep U trier pour : ". $this->element_de_triage." <br>";
@@ -205,140 +269,157 @@ class Reponse_utilisateur_reduite
             echo '</ul>';
         }
     }
-
 }
 
+/**
+ * @brief Classe représentant un profil utilisateur (persona) basé sur les réponses utilisateur.
+ */
 class Persona
 {
     public $rep = [ ["musique",[]],["sport",[]],["culture",[]],["activitees",[]],["restaurants",[]],["soirees",[]] ]; 
     public $lst_poid_totale = [] ;
     
 
+    /**
+     * @brief Crée le profil d'un utilisateur (persona) en fonction des réponses utilisateur.
+     * @param array $lst_rep_U Liste des réponses utilisateur.
+     * @return array Le profil de l'utilisateur (persona) sous forme de tableau.
+     */
     public function persona_creer($lst_rep_U) 
     {
         foreach ($lst_rep_U as $element) 
-        {   //dans 1 reponse utilisateur
+        {   // Pour chaque réponse utilisateur
             $compteur_categorie = -1;
             foreach ($element as $categorie) 
-            {   //dans une categorie;
-                $compteur_categorie ++;
+            {   // Pour chaque catégorie dans une réponse utilisateur
+                $compteur_categorie++;
                 $place = 6;
-                foreach ( $categorie[1] as $elem) 
-                {   //dans un element
-                    $place --;
-                    //le if doit verifier que sa existe ou pas dans $rep
+                foreach ($categorie[1] as $elem) 
+                {   // Pour chaque élément dans une catégorie
+                    $place--;
+                    // Vérifier si l'élément existe déjà dans $rep
                     $compt_emplace_preference = -1;
                     $existe = false;
-                    foreach($this->rep as $preference)
-                    {   //dans une des preference la => ["musique",[["Pop", 8,0], ["Rap", 7],0]]
-                        $compt_emplace_preference ++;
-                        if($preference[0]==$categorie[0])
+                    foreach ($this->rep as $preference)
+                    {   // Pour chaque préférence dans la liste des préférences
+                        $compt_emplace_preference++;
+                        if ($preference[0] == $categorie[0])
                         {
                             $compt_emplace_elem = -1;
-                            foreach($preference[1] as $mini_lst_elem)
-                            {   //on est dans la liste de mini liste la => ["Pop", 8,0], ["Rap", 7],0]
-                                $compt_emplace_elem ++;
-                                if($mini_lst_elem[0]==$elem)
+                            foreach ($preference[1] as $mini_lst_elem)
+                            {   // Pour chaque élément dans la liste d'éléments
+                                $compt_emplace_elem++;
+                                if ($mini_lst_elem[0] == $elem)
                                 {
-                                    $this->rep[$compt_emplace_preference][1][$compt_emplace_elem][1] +=$place;
+                                    $this->rep[$compt_emplace_preference][1][$compt_emplace_elem][1] += $place;
                                     $existe = true;
                                 }
                             }
                         }
                     }
-                    if($existe == false)
+                    if ($existe == false)
                     {
-                        
-                        array_push($this->rep[$compteur_categorie][1], [$elem,$place,0]);
+                        // Ajouter l'élément à la catégorie actuelle
+                        array_push($this->rep[$compteur_categorie][1], [$elem, $place, 0]);
                     }
-                    
                 }
             }
         }
         return $this->rep;
-    } 
+    }
+
     
     
+    /**
+     * @brief Affiche les informations de l'étape 0 pour la création du profil utilisateur (persona).
+     * @param bool $affiche Indique si les informations doivent être affichées (par défaut false).
+     */
     public function afficher_perso_etape_0($affiche = false)
     {
-        if($affiche==true){echo "liste des reponse utilisateur pour persona : <br>";}
-        
+        if ($affiche == true) {
+            echo "liste des réponses utilisateur pour persona : <br>";
+        }
+
         $indic_cat = -1;
         foreach ($this->rep as $categorie) 
         {
-            $indic_cat ++;
-            if($affiche==true) {echo $categorie[0] . " :\n";}
-            
+            $indic_cat++;
+            if ($affiche == true) {
+                echo $categorie[0] . " :\n";
+            }
+
             if (!empty($categorie[1])) 
             {
-                //compteur  poid totale
+                // Compteur de poids total
                 foreach ($categorie[1] as $element) 
                 {
-                    if($affiche==true) {echo "  [\"{$element[0]}\", {$element[1]} , {$element[2]}     ]\n";}
-                    if(isset($this->lst_poid_totale[$indic_cat]))
+                    if ($affiche == true) {
+                        echo "  [\"{$element[0]}\", {$element[1]} , {$element[2]}     ]\n";
+                    }
+                    if (isset($this->lst_poid_totale[$indic_cat]))
                     {
-                        $this->lst_poid_totale[$indic_cat] +=$element[1];
+                        $this->lst_poid_totale[$indic_cat] += $element[1];
                     }
                     else
                     {
-                        array_push($this->lst_poid_totale,$element[1]);
+                        array_push($this->lst_poid_totale, $element[1]);
                     }
-    
+
                 }
             } 
             else 
             {
-                if($affiche==true) {echo "  (Aucun élément)\n";}
+                if ($affiche == true) {
+                    echo "  (Aucun élément)\n";
+                }
             }
-            
-            if($affiche==true) {echo "\n <br>";}
+
+            if ($affiche == true) {
+                echo "\n <br>";
+            }
         }
-        if($affiche==true){echo "<br>";
-        echo "<br>";}
-        
+        if ($affiche == true) {
+            echo "<br>";
+            echo "<br>";
+        }
     }
 
+
+    /**
+     * @brief Affiche les informations de l'étape 1 pour la création du profil utilisateur (persona).
+     * @param bool $affiche Indique si les informations doivent être affichées (par défaut false).
+     */
     public function afficher_perso_etape_1($affiche = false)
     {
-        if($affiche==true) {
-        echo "maitenant avec le calcule des pourcentage arondi a 2 chiffre apres la virgule ";
-        //print_r($this->lst_poid_totale);
-        echo "<br>";}
-    
+        if ($affiche == true) {
+            echo "Maintenant avec le calcul des pourcentages arrondis à 2 chiffres après la virgule.<br>";
+        }
+
         $compteur_categorie = -1;
         foreach ($this->rep as $categorie) 
-        {   //dans categorie
-            $compteur_categorie ++;
+        {   // Pour chaque catégorie
+            $compteur_categorie++;
             if (!empty($categorie[1])) 
             {
                 $compteur_emplacement_elem = -1;
                 foreach ($categorie[1] as $element) 
-                {   //dans la mini liste d'element
-                    $compteur_emplacement_elem ++;
-                    //faire un truce
-                    //echo $$this->rep[$compteur_categorie][1][$compteur_emplacement_elem][2];
-                    //echo "<br>";
-                    //echo $$this->rep[$compteur_categorie][1][$compteur_emplacement_elem][1];
-                    //echo "<br>";
-                    //echo $this->lst_poid_totale[$compteur_categorie];
-                    //echo "<br>";
-                    $this->rep[$compteur_categorie][1][$compteur_emplacement_elem][2] = round((($this->rep[$compteur_categorie][1][$compteur_emplacement_elem][1]/$this->lst_poid_totale[$compteur_categorie])*100),2) ;    
-                    //echo $this->rep[$compteur_categorie][1][$compteur_emplacement_elem][2];
+                {   // Pour chaque élément dans la mini liste d'éléments
+                    $compteur_emplacement_elem++;
+                    // Calculer le pourcentage arrondi à 2 chiffres après la virgule
+                    $this->rep[$compteur_categorie][1][$compteur_emplacement_elem][2] = round((($element[1]/$this->lst_poid_totale[$compteur_categorie])*100), 2);    
                 }
             } 
-            
         }
 
-        //afficher
-        if($affiche==true)
+        // Afficher les résultats
+        if ($affiche == true)
         {
-           foreach ($this->rep as $categorie) 
+            foreach ($this->rep as $categorie) 
             {
                 echo $categorie[0] . " :\n";
                 
                 if (!empty($categorie[1])) 
                 {
-                    //compteur  poid totale
                     foreach ($categorie[1] as $element) 
                     {
                         echo "  [\"{$element[0]}\", {$element[1]} , {$element[2]}     ]\n";
@@ -352,19 +433,23 @@ class Persona
                 echo "\n <br>";
             }  
         }
-        
-
     }
+
     
-
-
-
-
-    // Fonction de comparaison pour trier par la troisième valeur dans l'ordre décroissant
+    /**
+     * @brief Fonction de comparaison pour trier un tableau par la troisième valeur dans l'ordre décroissant.
+     * @param mixed $a Premier élément à comparer.
+     * @param mixed $b Deuxième élément à comparer.
+     * @return int Résultat de la comparaison (positif si $a est plus grand, négatif si $b est plus grand, 0 si égaux).
+     */
     function compareThirdValueDesc($a, $b) {
         return $b[2] - $a[2];
     }
 
+
+    /**
+     * @brief Trie les éléments de chaque catégorie par la troisième valeur dans l'ordre décroissant.
+     */
     public function trier_decroissant()
     {
         // Parcours des données pour trier les éléments
@@ -376,114 +461,130 @@ class Persona
         }
     }
 
+
+    /**
+     * @brief Affiche les informations de l'étape 2 pour la création du profil utilisateur (persona).
+     * @param bool $affiche Indique si les informations doivent être affichées (par défaut false).
+     */
     public function afficher_perso_etape_2($affiche = false)
     {
-        if($affiche==true){
-
+        if ($affiche == true) {
             echo "<br>";
             echo "<br>";
-            echo "maitenant trier dans l'ordre";
+            echo "Maintenant trié dans l'ordre";
             echo "<br>";
         }
-    
+
         foreach ($this->rep as $categorie) 
         {
-            if($affiche==true) {echo $categorie[0] . " :\n";}
+            if ($affiche == true) {
+                echo $categorie[0] . " :\n";
+            }
             
             if (!empty($categorie[1])) 
             {
-                //compteur  poid totale
+                // Compteur de poids total
                 foreach ($categorie[1] as $element) 
                 {
-                    if($affiche==true) {echo "  [\"{$element[0]}\", {$element[1]} , {$element[2]}     ]\n";}
+                    if ($affiche == true) {
+                        echo "  [\"{$element[0]}\", {$element[1]} , {$element[2]}     ]\n";
+                    }
                 }
             } 
             else 
             {
-                if($affiche==true) {echo "  (Aucun élément)\n";}
+                if ($affiche == true) {
+                    echo "  (Aucun élément)\n";
+                }
             }
             
-            if($affiche==true) {echo "\n <br>";}
+            if ($affiche == true) {
+                echo "\n <br>";
+            }
         } 
-    
+
         $compt_categorie = -1;
         foreach ($this->rep as $el) 
         {
-            $compt_categorie ++;
+            $compt_categorie++;
             $nb_purcent = 0;
             $compteur_min_lst = -1;
             foreach ($el[1] as  $elem) 
             {
-                $compteur_min_lst ++;
-                if(isset($this->rep[$compt_categorie][1][$compteur_min_lst]))
+                $compteur_min_lst++;
+                if (isset($this->rep[$compt_categorie][1][$compteur_min_lst]))
                 {
-
                     if ($nb_purcent >= 50) 
                     {
-                        
                         unset($this->rep[$compt_categorie][1][$compteur_min_lst]);
-                        
                     }
                     else
                     {
-                        
                         $nb_purcent += $this->rep[$compt_categorie][1][$compteur_min_lst][2];
-                        
                     } 
                 }
             }
         }
-
     }
 
+
+    /**
+     * @brief Affiche les informations de l'étape 3 pour la création du profil utilisateur (persona).
+     */
     public function afficher_perso_etape_3()
     {
-        
-            echo "<br>";
-            echo "<br>";
-            echo "<strong> maitenant sans les 50% premier </strong>";
-            echo "<br>";
-        
-            foreach ($this->rep as $categorie) 
+        echo "<br>";
+        echo "<br>";
+        echo "<strong> Maintenant sans les 50% premiers </strong>";
+        echo "<br>";
+
+        foreach ($this->rep as $categorie) 
+        {
+            echo $categorie[0] . " :\n";
+            
+            if (!empty($categorie[1])) 
             {
-                echo $categorie[0] . " :\n";
-                
-                if (!empty($categorie[1])) 
+                // Compteur de poids total
+                foreach ($categorie[1] as $element) 
                 {
-                    //compteur  poid totale
-                    foreach ($categorie[1] as $element) 
-                    {
-                        echo "  [\"{$element[0]}\", {$element[1]} , {$element[2]}     ]\n";
-                    }
-                } 
-                else 
-                {
-                    echo "  (Aucun élément)\n";
+                    echo "  [\"{$element[0]}\", {$element[1]} , {$element[2]}     ]\n";
                 }
-                
-                echo "\n <br>";
             } 
-
+            else 
+            {
+                echo "  (Aucun élément)\n";
+            }
+            
+            echo "\n <br>";
+        } 
     }
-
 
 
 }
 
+/**
+ * @brief Classe représentant une liste de réponses possibles pour différentes catégories.
+ */
 class Reponse
 {
     public $lst_rep_possible_categorie = [ ["musique",[]],["sport",[]],["culture",[]],["activitees",[]],["restaurants",[]],["soirees",[]] ];
     public $num_categorie = ["musique" => 0,"sport" => 1,"culture" => 2,"activitees" => 3,"restaurants" => 4,"soirees" => 5];
 
-
-    
-    //ajoute 1 élément dans la categorie choisie
+    /**
+     * @brief Ajoute un élément dans la catégorie choisie.
+     * @param string $categorie La catégorie dans laquelle ajouter l'élément.
+     * @param mixed $element L'élément à ajouter.
+     */
     public function ajouter_elem_cat($categorie,$element) 
     {
         array_push($this->lst_rep_possible_categorie[$this->num_categorie[$categorie]][1],$element);
     }
 
-    //ajoute une liste d'élément dans la categorie choisie
+    /**
+     * @brief Ajoute une liste d'éléments dans la catégorie choisie.
+     * @param string $categorie La catégorie dans laquelle ajouter les éléments.
+     * @param array $lst_a_ajouter La liste d'éléments à ajouter.
+     */
     public function ajouter_elem_cat_lst($categorie,$lst_a_ajouter) 
     {
         foreach($lst_a_ajouter as $elem)
@@ -492,16 +593,22 @@ class Reponse
         }
     }
 
-    //retourn la liste des element d'une categorie choisie
+    /**
+     * @brief Retourne la liste des éléments d'une catégorie choisie.
+     * @param string $categorie La catégorie pour laquelle obtenir la liste d'éléments.
+     * @return array La liste d'éléments de la catégorie.
+     */
     public function get_lst_elem($categorie) 
     {
         return $this->lst_rep_possible_categorie[$this->num_categorie[$categorie]][1];
     }
 
-    //afficher tous
+    /**
+     * @brief Affiche tous les éléments possibles par catégorie.
+     */
     public function toString() 
     {
-        echo "liste des element possible choisissable : <br>";
+        echo "Liste des éléments possibles choisisables : <br>";
         foreach($this->lst_rep_possible_categorie as $cat)
         {
             echo $cat[0]."<br> <ul>";
@@ -512,8 +619,8 @@ class Reponse
             echo "</ul>";
         }
     }
-
 }
+
 
 echo "<br>";
 echo "<br>";
@@ -753,29 +860,3 @@ foreach($lst_pois->get_lst_poid() as $elem)
     $persona_sans_chiffre->afficher_perso_etape_3();
     
 }    
- 
-
-
-/* $lst_rep_U_restraint->garder_que_elem($lst_rep_utilisateur->get_lst_rep_u(),$elementPrecis);
-$lst_rep_U_restraint->toString();
-
-$persona_sans_chiffre = new Persona();
-$persona_pas_calculer = $persona_sans_chiffre->persona_creer($lst_rep_U_restraint->get_lst_rep_u());
-$persona_sans_chiffre->afficher_perso_etape_0();
-$persona_sans_chiffre->afficher_perso_etape_1();
-$persona_sans_chiffre->trier_decroissant();
-$persona_sans_chiffre->afficher_perso_etape_2();
-$persona_sans_chiffre->afficher_perso_etape_3();
-
-
-
- */
-
-
-
-
-
-
-
-
-

@@ -89,17 +89,17 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a597482dbf2995307007186370697f5a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une liste d'éléments dans la catégorie choisie.  <br /></td></tr>
 <tr class="separator:a597482dbf2995307007186370697f5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf546b0347c6657c4a835503eb354865" id="r_aaf546b0347c6657c4a835503eb354865"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reponse.html#aaf546b0347c6657c4a835503eb354865">get_lst_elem</a> ($categorie)</td></tr>
-<tr class="memdesc:aaf546b0347c6657c4a835503eb354865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la liste des éléments d'une catégorie choisie.  <br /></td></tr>
+<tr class="memdesc:aaf546b0347c6657c4a835503eb354865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la liste des éléments d'une catégorie choisie.  <br /></td></tr>
 <tr class="separator:aaf546b0347c6657c4a835503eb354865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5558c5d549f41597377fa1ea8a1cefa3" id="r_a5558c5d549f41597377fa1ea8a1cefa3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reponse.html#a5558c5d549f41597377fa1ea8a1cefa3">toString</a> ()</td></tr>
-<tr class="memdesc:a5558c5d549f41597377fa1ea8a1cefa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la liste des éléments possibles pour chaque catégorie.  <br /></td></tr>
+<tr class="memdesc:a5558c5d549f41597377fa1ea8a1cefa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche tous les éléments possibles par catégorie.  <br /></td></tr>
 <tr class="separator:a5558c5d549f41597377fa1ea8a1cefa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Champs de données</h2></td></tr>
-<tr class="memitem:a9702ceb8306c8c9eaf35327ea0c9c7de" id="r_a9702ceb8306c8c9eaf35327ea0c9c7de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reponse.html#a9702ceb8306c8c9eaf35327ea0c9c7de">$lst_rep_possible_categorie</a> = [[&quot;musique&quot;, []], [&quot;sport&quot;, []]]</td></tr>
+<tr class="memitem:a9702ceb8306c8c9eaf35327ea0c9c7de" id="r_a9702ceb8306c8c9eaf35327ea0c9c7de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reponse.html#a9702ceb8306c8c9eaf35327ea0c9c7de">$lst_rep_possible_categorie</a> = [ [&quot;musique&quot;,[]],[&quot;sport&quot;,[]],[&quot;culture&quot;,[]],[&quot;activitees&quot;,[]],[&quot;restaurants&quot;,[]],[&quot;soirees&quot;,[]] ]</td></tr>
 <tr class="separator:a9702ceb8306c8c9eaf35327ea0c9c7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbb1d2d36924b7fa44132ac11e264de5" id="r_adbb1d2d36924b7fa44132ac11e264de5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reponse.html#adbb1d2d36924b7fa44132ac11e264de5">$num_categorie</a> = [&quot;musique&quot; =&gt; 0, &quot;sport&quot; =&gt; 1]</td></tr>
+<tr class="memitem:adbb1d2d36924b7fa44132ac11e264de5" id="r_adbb1d2d36924b7fa44132ac11e264de5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reponse.html#adbb1d2d36924b7fa44132ac11e264de5">$num_categorie</a> = [&quot;musique&quot; =&gt; 0,&quot;sport&quot; =&gt; 1,&quot;culture&quot; =&gt; 2,&quot;activitees&quot; =&gt; 3,&quot;restaurants&quot; =&gt; 4,&quot;soirees&quot; =&gt; 5]</td></tr>
 <tr class="separator:adbb1d2d36924b7fa44132ac11e264de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -134,8 +134,8 @@ Champs de données</h2></td></tr>
 <p>Ajoute un élément dans la catégorie choisie. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">string</td><td class="paramname">$categorie</td><td>Catégorie où ajouter l'élément. </td></tr>
-    <tr><td class="paramtype">mixed</td><td class="paramname">$element</td><td>Élément à ajouter. </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$categorie</td><td>La catégorie dans laquelle ajouter l'élément. </td></tr>
+    <tr><td class="paramtype">mixed</td><td class="paramname">$element</td><td>L'élément à ajouter. </td></tr>
   </table>
   </dd>
 </dl>
@@ -171,8 +171,8 @@ Champs de données</h2></td></tr>
 <p>Ajoute une liste d'éléments dans la catégorie choisie. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">string</td><td class="paramname">$categorie</td><td>Catégorie où ajouter les éléments. </td></tr>
-    <tr><td class="paramtype">array</td><td class="paramname">$lst_a_ajouter</td><td>Liste d'éléments à ajouter. </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$categorie</td><td>La catégorie dans laquelle ajouter les éléments. </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$lst_a_ajouter</td><td>La liste d'éléments à ajouter. </td></tr>
   </table>
   </dd>
 </dl>
@@ -195,14 +195,14 @@ Champs de données</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Récupère la liste des éléments d'une catégorie choisie. </p>
+<p>Retourne la liste des éléments d'une catégorie choisie. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">string</td><td class="paramname">$categorie</td><td>Catégorie dont on veut récupérer les éléments. </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$categorie</td><td>La catégorie pour laquelle obtenir la liste d'éléments. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>array Liste des éléments de la catégorie spécifiée. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>array La liste d'éléments de la catégorie. </dd></dl>
 
 </div>
 </div>
@@ -221,7 +221,7 @@ Champs de données</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Affiche la liste des éléments possibles pour chaque catégorie. </p>
+<p>Affiche tous les éléments possibles par catégorie. </p>
 
 </div>
 </div>
@@ -233,7 +233,7 @@ Champs de données</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$lst_rep_possible_categorie = [[&quot;musique&quot;, []], [&quot;sport&quot;, []]]</td>
+          <td class="memname">$lst_rep_possible_categorie = [ [&quot;musique&quot;,[]],[&quot;sport&quot;,[]],[&quot;culture&quot;,[]],[&quot;activitees&quot;,[]],[&quot;restaurants&quot;,[]],[&quot;soirees&quot;,[]] ]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -247,7 +247,7 @@ Champs de données</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$num_categorie = [&quot;musique&quot; =&gt; 0, &quot;sport&quot; =&gt; 1]</td>
+          <td class="memname">$num_categorie = [&quot;musique&quot; =&gt; 0,&quot;sport&quot; =&gt; 1,&quot;culture&quot; =&gt; 2,&quot;activitees&quot; =&gt; 3,&quot;restaurants&quot; =&gt; 4,&quot;soirees&quot; =&gt; 5]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -255,7 +255,7 @@ Champs de données</h2></td></tr>
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
-<li>src/refont_code_php/<a class="el" href="page1_8php.html">page1.php</a></li>
+<li>src/refont_code_php/<a class="el" href="page2_8php.html">page2.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

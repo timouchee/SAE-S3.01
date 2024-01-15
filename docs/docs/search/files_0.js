@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['page1_2ephp_0',['page1.php',['../page1_8php.html',1,'']]]
+  ['page2_2ephp_0',['page2.php',['../page2_8php.html',1,'']]]
 ];
