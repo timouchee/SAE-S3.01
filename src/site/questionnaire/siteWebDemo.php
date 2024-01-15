@@ -33,13 +33,13 @@
             <ul>
                 <li>
                     <label for="title_1">
-                    <input type="radio" id="sexe" name="title" value="M." />
+                    <input type="radio" id="sexe" name="title" value="M." required/>
                     Monsieur
                     </label>
                 </li>
                 <li>
                     <label for="title_2">
-                    <input type="radio" id="sexe" name="title" value="Mme." />
+                    <input type="radio" id="sexe" name="title" value="Mme." required/>
                     Madame
                     </label>
                 </li>
