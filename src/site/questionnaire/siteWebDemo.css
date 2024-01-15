@@ -41,8 +41,8 @@
 }
 
 .draggable {
-    width: auto;
-    height: auto;
+    width: 50px;
+    height: 20px;
     background-color: blue;
     color: white;
     text-align: center;
@@ -50,21 +50,17 @@
     cursor: move;
     display: inline-block;
     margin-right: 5px;
-    border: solid;
-    border-radius: 5px; 
-    border-color:black;
-    padding: 5px;     
 }
 
 .zone-depot {
-    width: 300px;
-    height: 100px;
+    width: 200px;
+    height: 50px;
     border: 1px dashed #ccc;
     margin: 10px;
     margin-top: 10px;
     padding: 10px;
     text-align: center;
-    /*transition: background-color 0.3s;*/
+    transition: background-color 0.3s;
 }
 
 .div1 {
@@ -104,4 +100,9 @@ body
     align-items: center;
 
     
+}
+
+.reponses
+{
+    display: flex;
 }
