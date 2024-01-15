@@ -134,7 +134,7 @@
             <!-- Question 5 -->
             <div class="info-preference-container">
                 <label for="reponseRestaurants">Question 5: Faites glisser les types de restaurants que vous voulez voir. Sélectionnez les par ordre de préférence</label><br>
-                <div id="container5" class="container" ondrop="drop(event)">
+                <div id="container5" class="zone-depot" ondrop="drop(event)">
                     <div id="resto1" class="draggable resto" draggable="true" ondragstart="drag(event)">Fast food</div>
                     <div id="resto2" class="draggable resto" draggable="true" ondragstart="drag(event)">Street food</div>
                     <div id="resto3" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurant traditionnel</div>
