@@ -75,27 +75,48 @@ for (let i = 0; i < zoneDepot.length; i++) {
     });
 }
 
-function soummetreForm(){
+function submit_le_tout()
+{
     var form = document.createElement("form");
     form.setAttribute("method", "post");
-    form.setAttribute("action", "test.php"); // Remplacez par le chemin de votre page de traitement
+    form.setAttribute("action", "page5.php"); // Remplacez par le chemin de votre page de traitement
+ 
+    var lst_div_contenaire = document.querySelectorAll(".reponses");
 
-    // Ajoutez des champs au formulaire
-    var inputUsername = document.createElement("input");
-    inputUsername.setAttribute("type", "hidden");
-    inputUsername.setAttribute("name", "login");
-    inputUsername.setAttribute("value", username);
 
-    var inputPassword = document.createElement("input");
-    inputPassword.setAttribute("type", "hidden");
-    inputPassword.setAttribute("name", "pwd");
-    inputPassword.setAttribute("value", password);
+    console.log("haya");
+    lst_div_contenaire.forEach(function (contenaire)
+    {
 
-    // Ajoutez les champs au formulaire
-    form.appendChild(inputUsername);
-    form.appendChild(inputPassword);
+        //contenaire = divi_lst_div_contenant_reponse
+        var input = document.createElement("input");
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", contenaire.children[0].id);
+        var la_lst_value = [];
+        for (let index = 0; index < 5; index++) 
+        {               
+            //divi_contenant_reponse ?
+            //console.log(contenaire.children[index]);
+            if(contenaire.children[index].childElementCount != 0)
+            {
+                la_lst_value.push(contenaire.children[index].children[0].textContent);
+            }
+            //la_lst_value.push(contenaire.children[index].textContent)
+        }
+        input.setAttribute("value", la_lst_value);
+        //console.log(la_lst_value);
+        form.appendChild(input);
+        
 
+        
+        //console.log(contenaire.textContent);
+         
+    });
     // Ajoutez le formulaire à la page et soumettez-le
     document.body.appendChild(form);
     form.submit();
+
+
+
+
 }
