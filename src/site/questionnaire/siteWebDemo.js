@@ -18,6 +18,7 @@ function allowDrop(event) {
                 (draggedElement.classList.contains('actOrg') && dropTarget.id == 'container4') ||
                 (draggedElement.classList.contains('resto') && dropTarget.id == 'container5') ||
                 (draggedElement.classList.contains('musique') && dropTarget.id == 'zoneDepotMusique') ||
+    
                 (draggedElement.classList.contains('sport') && dropTarget.id == 'zoneDepotSport') ||
                 (draggedElement.classList.contains('actCultur') && dropTarget.id == 'zoneDepotActCultur') ||
                 (draggedElement.classList.contains('actOrg') && dropTarget.id == 'zoneDepotActOrga') ||
@@ -26,11 +27,7 @@ function allowDrop(event) {
                 // Autorisez le drop dans ce container
                 console.log('true')
                 return true;
-            } else {
-                // Empêchez le drop dans les containers non autorisés
-                console.log('false')
-                return false;
-            }
+            } 
         }
     }
     return false;
@@ -73,4 +70,29 @@ for (let i = 0; i < zoneDepot.length; i++) {
     zoneDepot[i].addEventListener("dragover", function(event) {
         event.preventDefault();
     });
+}
+
+function soummetreForm(){
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "test.php"); // Remplacez par le chemin de votre page de traitement
+
+    // Ajoutez des champs au formulaire
+    var inputUsername = document.createElement("input");
+    inputUsername.setAttribute("type", "hidden");
+    inputUsername.setAttribute("name", "login");
+    inputUsername.setAttribute("value", username);
+
+    var inputPassword = document.createElement("input");
+    inputPassword.setAttribute("type", "hidden");
+    inputPassword.setAttribute("name", "pwd");
+    inputPassword.setAttribute("value", password);
+
+    // Ajoutez les champs au formulaire
+    form.appendChild(inputUsername);
+    form.appendChild(inputPassword);
+
+    // Ajoutez le formulaire à la page et soumettez-le
+    document.body.appendChild(form);
+    form.submit();
 }
