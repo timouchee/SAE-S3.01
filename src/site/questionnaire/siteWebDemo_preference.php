@@ -22,62 +22,21 @@
 </header>
 <div class = "div_du_centre">
     <h1>Questionnaire</h1>
+    <?php
 
-    <!-- <form action="" method="post"> -->
-        <!-- Partie Utilisateur -->
-        <h2>Informations Utilisateur</h2>
-        <!-- Conteneur principal pour aligner en colonne -->
-        <div class="info-utilisateur-container">
-            <!-- Sexe -->
-            <label class="label-utilisateur" for="sexe">En tant que: </label>
-            <ul>
-                <li>
-                    <label for="title_1">
-                    <input type="radio" id="sexe" name="title" value="M." required/>
-                    Monsieur
-                    </label>
-                </li>
-                <li>
-                    <label for="title_2">
-                    <input type="radio" id="sexe" name="title" value="Mme." required/>
-                    Madame
-                    </label>
-                </li>
-            </ul>
-            <br>
-            <!-- Nom -->
-            <label class="label-utilisateur" for="nom">Nom: </label>
-            <input type="text" id="nom" name="nom" class="info-utilisateur" type="texte" required>
-            <br>
-            <!-- Prenom -->
-            <label class="label-utilisateur" for="prenom">Prénom: </label>
-            <input type="text" id="prenom" name="prenom" class="info-utilisateur" required>
-            <br>
-            <!-- date de naissance -->
-            <label class="label-utilisateur" for="dateNaiss">Date de naissance (jj/mm/aaaa): </label>
-            <input type="text" id="dateNaiss" name="dateNaiss" class="info-utilisateur" required>
-            <br>
-            <!-- mail -->
-            <label class="label-utilisateur" for="mail">Mail: </label>
-            <input type="email" id="mail" name="mail" class="info-utilisateur" required>
-            <br>
-            <!-- adresse -->
-            <label class="label-utilisateur" for="adresse">Adresse (Ville, numeroRue nomRue): </label>
-            <input type="text" id="adresse" name="adresse" class="info-utilisateur" required>
-            <br>
-            <!-- niveau d'etude -->
-            <label class="label-utilisateur" for="etude">Niveau d'étude: </label>
-            <input type="text" id="etude" name="etude" class="info-utilisateur" required>
-            <br>
-            <!-- moyen de transport -->
-            <label for="choixMoyenTransport">Choisissez le moyen de transport: </label>
-            <select id="choixMoyenTransport" name="choixMoyenTransport" class="info-utilisateur-select" required>
-                <option value="0">Pied</option>
-                <option value="1">Vélo</option>
-                <option value="2">Moto</option>
-                <option value="3">Voiture</option>
-            </select>
-        </div>
+        //print_r($_POST);
+        echo "<span id='shadow_post'>";
+        echo "<input type='text' id='title' value=".$_POST['title']." hidden>";
+        echo "<input type='text' id='nom' value=".$_POST['nom']." hidden>";
+        echo "<input type='text' id='prenom' value=".$_POST['prenom']." hidden>";
+        echo "<input type='text' id='dateNaiss' value=".$_POST['dateNaiss']." hidden>";
+        echo "<input type='text' id='mail' value=".$_POST['mail']." hidden>";
+        echo "<input type='text' id='adresse' value=".$_POST['adresse']." hidden>";
+        echo "<input type='text' id='etude' value=".$_POST['etude']." hidden>";
+        echo "<input type='text' id='choixMoyenTransport' value=".$_POST['choixMoyenTransport']." hidden>";
+        echo "</span>";
+    ?>
+   
         <!-- Partie Préférences -->
         <h2>Préférences</h2>
         <label for ="ordreimportance">L'ordre d'importance des musique va de 1 étant le plus haut et 5 le moins.</label><br>
@@ -181,81 +140,6 @@
             <button onClick="submit_le_tout()">soumetre</button>
 </div>
 <!-- </form> -->
-
-<?php
-
-        // Fonction pour récupérer et incrémenter l'ID à partir d'un fichier
-        function getNextId() {
-            $idFile = 'lastId.txt'; // Nom du fichier pour stocker l'ID
-            $currentId = file_get_contents($idFile); // Lire l'ID actuel depuis le fichier
-
-            // Incrémenter l'ID
-            $nextId = $currentId + 1;
-
-            // Écrire le nouvel ID dans le fichier
-            file_put_contents($idFile, $nextId);
-
-            return $nextId;
-        }
-        $newId = getNextId();
-
-        $cheminFichier = "reponseQuestionnaire.txt";
-        $fichier = fopen($cheminFichier, 'r+');
-        if ($_POST) {
-            $id = $newId;
-            $sexe = $_POST["sexe"];
-            $nom = $_POST["nom"];
-            $prenom = $_POST["prenom"];
-            $dateNaiss = $_POST["dateNaiss"];
-            $mail = $_POST["mail"];
-            $adresse = $_POST["adresse"];
-            $etude = $_POST["etude"];
-            $choixMoyenTransport = $_POST["choixMoyenTransport"];
-            $reponseMusique = $_POST["reponseMusique"];
-            $reponseSport = $_POST["reponseSport"];
-            $reponseActivitesCulturelles = $_POST["reponseActivitesCulturelles"];
-            $reponseActivitesOrganisees = $_POST["reponseActivitesOrganisees"];
-            $reponseRestaurants = $_POST["reponseRestaurants"];
-            $reponseSorties = $_POST["reponseSorties"];
-
-            /* liste des info utilisateurs renseignées par l'utilisateur */
-            /* $formDonneUtilisateur = array(
-                "nom" => $nom,
-                "prenom" => $prenom,
-                "dateNaiss" => $dateNaiss,
-                "mail" => $mail,
-                "adresse" => $adresse,
-                "etude" => $etude
-            ); */
-            /* liste des listes de préférences de l'utilisateur */
-            /* $formDonnePreference = array(
-                "reponseMusique" => $reponseMusique,
-                "reponseSport" => $reponseSport,
-                "reponseActivitesCulturelles" => $reponseActivitesCulturelles,
-                "reponseActivitesOrganisees" => $reponseActivitesOrganisees,
-                "reponseRestaurants" => $reponseRestaurants,
-                "reponseSorties" => $reponseSorties
-            ); */
-
-
-            $concat ="$id|$sexe|$nom|$prenom|$dateNaiss|$mail|$adresse|$etude|$choixMoyenTransport|$reponseMusique|$reponseSport|$reponseActivitesCulturelles|$reponseActivitesOrganisees|$reponseRestaurants|$reponseSorties". PHP_EOL;
-
-            file_put_contents($cheminFichier, $concat, FILE_APPEND);
-
-            $affichage =  fread($fichier,filesize($cheminFichier));
-            $bang = explode(" ", $affichage);
-            foreach($bang as $el){
-                echo "<br>";
-                echo $el;
-            }
-
-        }
-        
-        
-    ?>
-
-
-
 
 
 <script src="siteWebDemo.js"></script>

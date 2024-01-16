@@ -109,12 +109,18 @@ function submit_le_tout()
         input.setAttribute("value", la_lst_value);
         //console.log(la_lst_value);
         form.appendChild(input);
-        
-
-        
         //console.log(contenaire.textContent);
          
     });
+    var shadow_post = document.querySelector("#shadow_post");
+    for (let index = 0; index < 8; index++) 
+        {    
+        var input = document.createElement("input");
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", shadow_post.children[index].id);
+        input.setAttribute("value", shadow_post.children[index].value);
+        form.appendChild(input);
+        }
     // Ajoutez le formulaire à la page et soumettez-le
     document.body.appendChild(form);
     form.submit();
