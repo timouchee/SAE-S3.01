@@ -22,15 +22,18 @@ function allowDrop(event) {
                 (draggedElement.classList.contains('actCultur') && dropTarget.id.includes('zoneDepotActCultur')) ||
                 (draggedElement.classList.contains('actOrg') && dropTarget.id.includes('zoneDepotActOrga')) ||
                 (draggedElement.classList.contains('resto') && dropTarget.id.includes('zoneDepotResto')) 
-            ) {
-                // Autorisez le drop dans ce container
-                console.log('true')
-                return true;
-            } else{
-
-                console.log('false')
-                return false
-            }
+            ) 
+            {
+                if (dropTarget.childElementCount>0 && dropTarget.classList.contains('rep')) {
+                    // Autorisez le drop dans ce container
+                    //console.log('ici')
+                    return false;
+                }
+                else{
+                    //console.log('wtf');
+                    return true;
+                }
+            } else{return false;}
         }
     }
     return false;

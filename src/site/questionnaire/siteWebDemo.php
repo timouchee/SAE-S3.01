@@ -93,11 +93,11 @@
             </div>
             <!-- Zone de dépôt des réponses glissantes -->
             <div class="reponses">
-                <div id="zoneDepotMusique1" class="zone-depot" ondrop="drop(event)">1</div>
-                <div id="zoneDepotMusique2" class="zone-depot" ondrop="drop(event)">2</div>
-                <div id="zoneDepotMusique3" class="zone-depot" ondrop="drop(event)">3</div>
-                <div id="zoneDepotMusique4" class="zone-depot" ondrop="drop(event)">4</div>
-                <div id="zoneDepotMusique5" class="zone-depot" ondrop="drop(event)">5</div>
+                <div id="zoneDepotMusique1" class="zone-depot rep" ondrop="drop(event)">1</div>
+                <div id="zoneDepotMusique2" class="zone-depot rep" ondrop="drop(event)">2</div>
+                <div id="zoneDepotMusique3" class="zone-depot rep" ondrop="drop(event)">3</div>
+                <div id="zoneDepotMusique4" class="zone-depot rep" ondrop="drop(event)">4</div>
+                <div id="zoneDepotMusique5" class="zone-depot rep" ondrop="drop(event)">5</div>
             </div>
 
         </div>
@@ -113,11 +113,11 @@
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
-                    <div id="zoneDepotSport1" class="zone-depot" ondrop="drop(event)">1</div>
-                    <div id="zoneDepotSport2" class="zone-depot" ondrop="drop(event)">2</div>
-                    <div id="zoneDepotSport3" class="zone-depot" ondrop="drop(event)">3</div>
-                    <div id="zoneDepotSport4" class="zone-depot" ondrop="drop(event)">4</div>
-                    <div id="zoneDepotSport5" class="zone-depot" ondrop="drop(event)">5</div>
+                    <div id="zoneDepotSport1" class="zone-depot rep" ondrop="drop(event)">1</div>
+                    <div id="zoneDepotSport2" class="zone-depot rep" ondrop="drop(event)">2</div>
+                    <div id="zoneDepotSport3" class="zone-depot rep" ondrop="drop(event)">3</div>
+                    <div id="zoneDepotSport4" class="zone-depot rep" ondrop="drop(event)">4</div>
+                    <div id="zoneDepotSport5" class="zone-depot rep" ondrop="drop(event)">5</div>
                 </div>
             </div>
 
@@ -132,11 +132,11 @@
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
-                    <div id="zoneDepotActCultur1" class="zone-depot" ondrop="drop(event)">1</div>
-                    <div id="zoneDepotActCultur2" class="zone-depot" ondrop="drop(event)">2</div>
-                    <div id="zoneDepotActCultur3" class="zone-depot" ondrop="drop(event)">3</div>
-                    <div id="zoneDepotActCultur4" class="zone-depot" ondrop="drop(event)">4</div>
-                    <div id="zoneDepotActCultur5" class="zone-depot" ondrop="drop(event)">5</div>
+                    <div id="zoneDepotActCultur1" class="zone-depot rep" ondrop="drop(event)">1</div>
+                    <div id="zoneDepotActCultur2" class="zone-depot rep" ondrop="drop(event)">2</div>
+                    <div id="zoneDepotActCultur3" class="zone-depot rep" ondrop="drop(event)">3</div>
+                    <div id="zoneDepotActCultur4" class="zone-depot rep" ondrop="drop(event)">4</div>
+                    <div id="zoneDepotActCultur5" class="zone-depot rep" ondrop="drop(event)">5</div>
                 </div>
 
             </div>
@@ -150,11 +150,11 @@
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
-                    <div id="zoneDepotActOrga1" class="zone-depot" ondrop="drop(event)">1</div>
-                    <div id="zoneDepotActOrga2" class="zone-depot" ondrop="drop(event)">2</div>
-                    <div id="zoneDepotActOrga3" class="zone-depot" ondrop="drop(event)">3</div>
-                    <div id="zoneDepotActOrga4" class="zone-depot" ondrop="drop(event)">4</div>
-                    <div id="zoneDepotActOrga5" class="zone-depot" ondrop="drop(event)">5</div>
+                    <div id="zoneDepotActOrga1" class="zone-depot rep" ondrop="drop(event)">1</div>
+                    <div id="zoneDepotActOrga2" class="zone-depot rep" ondrop="drop(event)">2</div>
+                    <div id="zoneDepotActOrga3" class="zone-depot rep" ondrop="drop(event)">3</div>
+                    <div id="zoneDepotActOrga4" class="zone-depot rep" ondrop="drop(event)">4</div>
+                    <div id="zoneDepotActOrga5" class="zone-depot rep" ondrop="drop(event)">5</div>
                 </div>
     
             </div>
@@ -162,18 +162,18 @@
             <!-- Question 5 -->
             <div class="info-preference-container">
                 <label for="reponseRestaurants"><U>Question 5: Faites glisser les types de restaurants que vous voulez voir. Sélectionnez les par ordre de préférence</U></label><br>
-                <div id="container5" class="container" ondrop="drop(event)">
+                <div id="container5" class="zone-depot" ondrop="drop(event)">
                     <div id="resto1" class="draggable resto" draggable="true" ondragstart="drag(event)">Fast food</div>
                     <div id="resto2" class="draggable resto" draggable="true" ondragstart="drag(event)">Street food</div>
                     <div id="resto3" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurant traditionnel</div>
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
-                    <div id="zoneDepotResto1" class="zone-depot" ondrop="drop(event)">1</div>
-                    <div id="zoneDepotResto2" class="zone-depot" ondrop="drop(event)">2</div>
-                    <div id="zoneDepotResto3" class="zone-depot" ondrop="drop(event)">3</div>
-                    <div id="zoneDepotResto4" class="zone-depot" ondrop="drop(event)">4</div>
-                    <div id="zoneDepotResto5" class="zone-depot" ondrop="drop(event)">5</div>
+                    <div id="zoneDepotResto1" class="zone-depot rep" ondrop="drop(event)">1</div>
+                    <div id="zoneDepotResto2" class="zone-depot rep" ondrop="drop(event)">2</div>
+                    <div id="zoneDepotResto3" class="zone-depot rep" ondrop="drop(event)">3</div>
+                    <div id="zoneDepotResto4" class="zone-depot rep" ondrop="drop(event)">4</div>
+                    <div id="zoneDepotResto5" class="zone-depot rep" ondrop="drop(event)">5</div>
                 </div>
 
             </div>
