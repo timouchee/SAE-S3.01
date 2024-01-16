@@ -49,6 +49,9 @@
                 <div id="musique3" class="draggable musique" draggable="true" data-id="element3" ondragstart="drag(event)">Electro</div>
                 <div id="musique4" class="draggable musique" draggable="true" data-id="element4" ondragstart="drag(event)">Rap</div>
                 <div id="musique5" class="draggable musique" draggable="true" data-id="element5" ondragstart="drag(event)">Classique</div>
+                <div id="musique6" class="draggable musique" draggable="true" data-id="element5" ondragstart="drag(event)">Rock</div>
+                <div id="musique7" class="draggable musique" draggable="true" data-id="element5" ondragstart="drag(event)">Musiques_film</div>
+                <div id="musique8" class="draggable musique" draggable="true" data-id="element5" ondragstart="drag(event)">Musiques_manga</div>
             </div>
             <!-- Zone de dépôt des réponses glissantes -->
             <div class="reponses">
@@ -67,8 +70,15 @@
                     <div id="sport1" class="draggable sport" draggable="true" ondragstart="drag(event)">Football</div>
                     <div id="sport2" class="draggable sport" draggable="true" ondragstart="drag(event)">Tennis</div>
                     <div id="sport3" class="draggable sport" draggable="true" ondragstart="drag(event)">Pala</div>  
-                    <div id="sport4" class="draggable sport" draggable="true" ondragstart="drag(event)">Course</div>
+                    <div id="sport4" class="draggable sport" draggable="true" ondragstart="drag(event)">Equitation</div>
                     <div id="sport5" class="draggable sport" draggable="true" ondragstart="drag(event)">Badminton</div>
+                    <div id="sport6" class="draggable sport" draggable="true" ondragstart="drag(event)">Rugby</div>
+                    <div id="sport7" class="draggable sport" draggable="true" ondragstart="drag(event)">Tennis_de_table</div>
+                    <div id="sport8" class="draggable sport" draggable="true" ondragstart="drag(event)">Course_a_pieds</div>
+                    <div id="sport9" class="draggable sport" draggable="true" ondragstart="drag(event)">Athletisme</div>
+                    <div id="sport10" class="draggable sport" draggable="true" ondragstart="drag(event)">Basket</div>
+                    <div id="sport11" class="draggable sport" draggable="true" ondragstart="drag(event)">Handball</div>
+                    <div id="sport12" class="draggable sport" draggable="true" ondragstart="drag(event)">Esport</div>
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
@@ -86,8 +96,16 @@
 
                 <div id="container3" class="zone-depot" ondrop="drop(event)">
                     <div id="culture1" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Cinéma</div>
-                    <div id="culture2" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Zoo</div>
-                    <div id="culture3" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Musée</div>
+                    <div id="culture2" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Theatre</div>
+                    <div id="culture3" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Musee</div>
+                    <div id="culture4" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Zoo</div>
+                    <div id="culture5" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Visite_guidee</div>
+                    <div id="culture6" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Galerie_art</div>
+                    <div id="culture7" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Mediatheque</div>
+                    <div id="culture8" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Corrida</div>
+                    <div id="culture9" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Lecture</div>
+                    <div id="culture10" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Voyage</div>
+                    <div id="culture11" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Numerique</div>
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
@@ -105,7 +123,11 @@
                 <label for="reponseActivitesOrganisees"><U>Question 4: Faites glisser les activités organisées que vous voulez voir. Sélectionnez les par ordre de préférence</U></label><br>
                 <div id="container4" class="zone-depot" ondrop="drop(event)">
                     <div id="orga1" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Tournoi de jeux vidéos</div>
-                    <div id="orga2" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Uno</div>
+                    <div id="orga2" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Loup_garoup</div>
+                    <div id="orga3" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Uno</div>
+                    <div id="orga4" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Cricket</div>
+                    <div id="orga5" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Bowling</div>
+                    <div id="orga6" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Plage</div>
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
@@ -123,8 +145,12 @@
                 <label for="reponseRestaurants"><U>Question 5: Faites glisser les types de restaurants que vous voulez voir. Sélectionnez les par ordre de préférence</U></label><br>
                 <div id="container5" class="zone-depot" ondrop="drop(event)">
                     <div id="resto1" class="draggable resto" draggable="true" ondragstart="drag(event)">Fast food</div>
-                    <div id="resto2" class="draggable resto" draggable="true" ondragstart="drag(event)">Street food</div>
-                    <div id="resto3" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurant traditionnel</div>
+                    <div id="resto2" class="draggable resto" draggable="true" ondragstart="drag(event)">Junk_food</div>
+                    <div id="resto3" class="draggable resto" draggable="true" ondragstart="drag(event)">Pizzeria</div>
+                    <div id="resto4" class="draggable resto" draggable="true" ondragstart="drag(event)">Sushis</div>
+                    <div id="resto5" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurant_traditionnel</div>
+                    <div id="resto6" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurants_du_monde</div>
+                    <div id="resto7" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurants_vegetariens</div>
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
