@@ -22,62 +22,21 @@
 </header>
 <div class = "div_du_centre">
     <h1>Questionnaire</h1>
+    <?php
 
-    <!-- <form action="" method="post"> -->
-        <!-- Partie Utilisateur -->
-        <h2>Informations Utilisateur</h2>
-        <!-- Conteneur principal pour aligner en colonne -->
-        <div class="info-utilisateur-container">
-            <!-- Sexe -->
-            <label class="label-utilisateur" for="sexe">En tant que: </label>
-            <ul>
-                <li>
-                    <label for="title_1">
-                    <input type="radio" id="sexe" name="title" value="M." required/>
-                    Monsieur
-                    </label>
-                </li>
-                <li>
-                    <label for="title_2">
-                    <input type="radio" id="sexe" name="title" value="Mme." required/>
-                    Madame
-                    </label>
-                </li>
-            </ul>
-            <br>
-            <!-- Nom -->
-            <label class="label-utilisateur" for="nom">Nom: </label>
-            <input type="text" id="nom" name="nom" class="info-utilisateur" type="texte" required>
-            <br>
-            <!-- Prenom -->
-            <label class="label-utilisateur" for="prenom">Prénom: </label>
-            <input type="text" id="prenom" name="prenom" class="info-utilisateur" required>
-            <br>
-            <!-- date de naissance -->
-            <label class="label-utilisateur" for="dateNaiss">Date de naissance (jj/mm/aaaa): </label>
-            <input type="text" id="dateNaiss" name="dateNaiss" class="info-utilisateur" required>
-            <br>
-            <!-- mail -->
-            <label class="label-utilisateur" for="mail">Mail: </label>
-            <input type="email" id="mail" name="mail" class="info-utilisateur" required>
-            <br>
-            <!-- adresse -->
-            <label class="label-utilisateur" for="adresse">Adresse (Ville, numeroRue nomRue): </label>
-            <input type="text" id="adresse" name="adresse" class="info-utilisateur" required>
-            <br>
-            <!-- niveau d'etude -->
-            <label class="label-utilisateur" for="etude">Niveau d'étude: </label>
-            <input type="text" id="etude" name="etude" class="info-utilisateur" required>
-            <br>
-            <!-- moyen de transport -->
-            <label for="choixMoyenTransport">Choisissez le moyen de transport: </label>
-            <select id="choixMoyenTransport" name="choixMoyenTransport" class="info-utilisateur-select" required>
-                <option value="0">Pied</option>
-                <option value="1">Vélo</option>
-                <option value="2">Moto</option>
-                <option value="3">Voiture</option>
-            </select>
-        </div>
+        //print_r($_POST);
+        echo "<span id='shadow_post'>";
+        echo "<input type='text' id='title' value=".$_POST['title']." hidden>";
+        echo "<input type='text' id='nom' value=".$_POST['nom']." hidden>";
+        echo "<input type='text' id='prenom' value=".$_POST['prenom']." hidden>";
+        echo "<input type='text' id='dateNaiss' value=".$_POST['dateNaiss']." hidden>";
+        echo "<input type='text' id='mail' value=".$_POST['mail']." hidden>";
+        echo "<input type='text' id='adresse' value=".$_POST['adresse']." hidden>";
+        echo "<input type='text' id='etude' value=".$_POST['etude']." hidden>";
+        echo "<input type='text' id='choixMoyenTransport' value=".$_POST['choixMoyenTransport']." hidden>";
+        echo "</span>";
+    ?>
+   
         <!-- Partie Préférences -->
         <h2>Préférences</h2>
         <label for ="ordreimportance">L'ordre d'importance des musique va de 1 étant le plus haut et 5 le moins.</label><br>
@@ -90,6 +49,9 @@
                 <div id="musique3" class="draggable musique" draggable="true" data-id="element3" ondragstart="drag(event)">Electro</div>
                 <div id="musique4" class="draggable musique" draggable="true" data-id="element4" ondragstart="drag(event)">Rap</div>
                 <div id="musique5" class="draggable musique" draggable="true" data-id="element5" ondragstart="drag(event)">Classique</div>
+                <div id="musique6" class="draggable musique" draggable="true" data-id="element5" ondragstart="drag(event)">Rock</div>
+                <div id="musique7" class="draggable musique" draggable="true" data-id="element5" ondragstart="drag(event)">Musiques_film</div>
+                <div id="musique8" class="draggable musique" draggable="true" data-id="element5" ondragstart="drag(event)">Musiques_manga</div>
             </div>
             <!-- Zone de dépôt des réponses glissantes -->
             <div class="reponses">
@@ -108,8 +70,15 @@
                     <div id="sport1" class="draggable sport" draggable="true" ondragstart="drag(event)">Football</div>
                     <div id="sport2" class="draggable sport" draggable="true" ondragstart="drag(event)">Tennis</div>
                     <div id="sport3" class="draggable sport" draggable="true" ondragstart="drag(event)">Pala</div>  
-                    <div id="sport4" class="draggable sport" draggable="true" ondragstart="drag(event)">Course</div>
+                    <div id="sport4" class="draggable sport" draggable="true" ondragstart="drag(event)">Equitation</div>
                     <div id="sport5" class="draggable sport" draggable="true" ondragstart="drag(event)">Badminton</div>
+                    <div id="sport6" class="draggable sport" draggable="true" ondragstart="drag(event)">Rugby</div>
+                    <div id="sport7" class="draggable sport" draggable="true" ondragstart="drag(event)">Tennis_de_table</div>
+                    <div id="sport8" class="draggable sport" draggable="true" ondragstart="drag(event)">Course_a_pieds</div>
+                    <div id="sport9" class="draggable sport" draggable="true" ondragstart="drag(event)">Athletisme</div>
+                    <div id="sport10" class="draggable sport" draggable="true" ondragstart="drag(event)">Basket</div>
+                    <div id="sport11" class="draggable sport" draggable="true" ondragstart="drag(event)">Handball</div>
+                    <div id="sport12" class="draggable sport" draggable="true" ondragstart="drag(event)">Esport</div>
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
@@ -127,8 +96,16 @@
 
                 <div id="container3" class="zone-depot" ondrop="drop(event)">
                     <div id="culture1" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Cinéma</div>
-                    <div id="culture2" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Zoo</div>
-                    <div id="culture3" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Musée</div>
+                    <div id="culture2" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Theatre</div>
+                    <div id="culture3" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Musee</div>
+                    <div id="culture4" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Zoo</div>
+                    <div id="culture5" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Visite_guidee</div>
+                    <div id="culture6" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Galerie_art</div>
+                    <div id="culture7" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Mediatheque</div>
+                    <div id="culture8" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Corrida</div>
+                    <div id="culture9" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Lecture</div>
+                    <div id="culture10" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Voyage</div>
+                    <div id="culture11" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Numerique</div>
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
@@ -146,7 +123,11 @@
                 <label for="reponseActivitesOrganisees"><U>Question 4: Faites glisser les activités organisées que vous voulez voir. Sélectionnez les par ordre de préférence</U></label><br>
                 <div id="container4" class="zone-depot" ondrop="drop(event)">
                     <div id="orga1" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Tournoi de jeux vidéos</div>
-                    <div id="orga2" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Uno</div>
+                    <div id="orga2" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Loup_garoup</div>
+                    <div id="orga3" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Uno</div>
+                    <div id="orga4" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Cricket</div>
+                    <div id="orga5" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Bowling</div>
+                    <div id="orga6" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Plage</div>
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
@@ -164,8 +145,12 @@
                 <label for="reponseRestaurants"><U>Question 5: Faites glisser les types de restaurants que vous voulez voir. Sélectionnez les par ordre de préférence</U></label><br>
                 <div id="container5" class="zone-depot" ondrop="drop(event)">
                     <div id="resto1" class="draggable resto" draggable="true" ondragstart="drag(event)">Fast food</div>
-                    <div id="resto2" class="draggable resto" draggable="true" ondragstart="drag(event)">Street food</div>
-                    <div id="resto3" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurant traditionnel</div>
+                    <div id="resto2" class="draggable resto" draggable="true" ondragstart="drag(event)">Junk_food</div>
+                    <div id="resto3" class="draggable resto" draggable="true" ondragstart="drag(event)">Pizzeria</div>
+                    <div id="resto4" class="draggable resto" draggable="true" ondragstart="drag(event)">Sushis</div>
+                    <div id="resto5" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurant_traditionnel</div>
+                    <div id="resto6" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurants_du_monde</div>
+                    <div id="resto7" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurants_vegetariens</div>
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
@@ -181,81 +166,6 @@
             <button onClick="submit_le_tout()">soumetre</button>
 </div>
 <!-- </form> -->
-
-<?php
-
-        // Fonction pour récupérer et incrémenter l'ID à partir d'un fichier
-        function getNextId() {
-            $idFile = 'lastId.txt'; // Nom du fichier pour stocker l'ID
-            $currentId = file_get_contents($idFile); // Lire l'ID actuel depuis le fichier
-
-            // Incrémenter l'ID
-            $nextId = $currentId + 1;
-
-            // Écrire le nouvel ID dans le fichier
-            file_put_contents($idFile, $nextId);
-
-            return $nextId;
-        }
-        $newId = getNextId();
-
-        $cheminFichier = "reponseQuestionnaire.txt";
-        $fichier = fopen($cheminFichier, 'r+');
-        if ($_POST) {
-            $id = $newId;
-            $sexe = $_POST["sexe"];
-            $nom = $_POST["nom"];
-            $prenom = $_POST["prenom"];
-            $dateNaiss = $_POST["dateNaiss"];
-            $mail = $_POST["mail"];
-            $adresse = $_POST["adresse"];
-            $etude = $_POST["etude"];
-            $choixMoyenTransport = $_POST["choixMoyenTransport"];
-            $reponseMusique = $_POST["reponseMusique"];
-            $reponseSport = $_POST["reponseSport"];
-            $reponseActivitesCulturelles = $_POST["reponseActivitesCulturelles"];
-            $reponseActivitesOrganisees = $_POST["reponseActivitesOrganisees"];
-            $reponseRestaurants = $_POST["reponseRestaurants"];
-            $reponseSorties = $_POST["reponseSorties"];
-
-            /* liste des info utilisateurs renseignées par l'utilisateur */
-            /* $formDonneUtilisateur = array(
-                "nom" => $nom,
-                "prenom" => $prenom,
-                "dateNaiss" => $dateNaiss,
-                "mail" => $mail,
-                "adresse" => $adresse,
-                "etude" => $etude
-            ); */
-            /* liste des listes de préférences de l'utilisateur */
-            /* $formDonnePreference = array(
-                "reponseMusique" => $reponseMusique,
-                "reponseSport" => $reponseSport,
-                "reponseActivitesCulturelles" => $reponseActivitesCulturelles,
-                "reponseActivitesOrganisees" => $reponseActivitesOrganisees,
-                "reponseRestaurants" => $reponseRestaurants,
-                "reponseSorties" => $reponseSorties
-            ); */
-
-
-            $concat ="$id|$sexe|$nom|$prenom|$dateNaiss|$mail|$adresse|$etude|$choixMoyenTransport|$reponseMusique|$reponseSport|$reponseActivitesCulturelles|$reponseActivitesOrganisees|$reponseRestaurants|$reponseSorties". PHP_EOL;
-
-            file_put_contents($cheminFichier, $concat, FILE_APPEND);
-
-            $affichage =  fread($fichier,filesize($cheminFichier));
-            $bang = explode(" ", $affichage);
-            foreach($bang as $el){
-                echo "<br>";
-                echo $el;
-            }
-
-        }
-        
-        
-    ?>
-
-
-
 
 
 <script src="siteWebDemo.js"></script>
