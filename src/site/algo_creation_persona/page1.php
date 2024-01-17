@@ -13,8 +13,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
+<<<<<<< HEAD
 <body>
 
+=======
+ 
+>>>>>>> 34cfaabe35f4982ec3b8cadb9aa06fedbf0d51b1
 <header>
         <div class="div1">
             <div class="div2">           
@@ -625,7 +629,15 @@ class Profil_type
      */
     public function affichage_finale()
     {
+<<<<<<< HEAD
         echo "<h2> <center> Profil type complet </h2> </strong>";
+=======
+
+      
+
+        echo "<strong> <center> Profil type complet </center> </strong>";
+
+>>>>>>> 34cfaabe35f4982ec3b8cadb9aa06fedbf0d51b1
         //echo "<br>";
         echo "<table class='table table-dark table-bordered'>";
         
@@ -948,16 +960,18 @@ $elementPrecis;
 //pour le teste c la boucle
 
 $compteur_persona = -1;
+
+
+
 foreach($lst_pois->get_lst_poids() as $elem)
 {
     $compteur_persona ++;
     if($compteur_persona >= 3)
     {break;}
-    $elementPrecis = $elem[0];
+    $elementPrecis = $elem[0]; 
 
+    
     $lst_rep_user_restraint->creer_la_liste_reduite_elem($lst_rep_utilisateur->get_lst_rep_user(),$elementPrecis);
-    //$lst_rep_user_restraint->toString();
-    //$lst_rep_pos->toString(); 
     
     $persona_sans_chiffre = new Profil_type();
     $persona_pas_calculer = $persona_sans_chiffre->profil_type_creer($lst_rep_user_restraint->get_lst_rep_reduite_user());
@@ -966,8 +980,74 @@ foreach($lst_pois->get_lst_poids() as $elem)
     $persona_sans_chiffre->trier_decroissant();
     $persona_sans_chiffre->suppr_elements_peu_significatifs();
     echo "<br> <br>";
+<<<<<<< HEAD
     echo "<h3> Elément à la base du profil type : ".$elementPrecis." </h3><br>";
+=======
+
+    echo "Elément à la base du profil type : ".$elementPrecis."<br>";
+
+>>>>>>> 34cfaabe35f4982ec3b8cadb9aa06fedbf0d51b1
     $persona_sans_chiffre->affichage_finale();
+    
+
+    /* switch ($compteur_persona) 
+    $elementPrecis = $elem[0];
+    {
+        case 0:
+            $lst_rep_user_restraint->creer_la_liste_reduite_elem($lst_rep_utilisateur->get_lst_rep_user(),$elementPrecis);
+            //$lst_rep_user_restraint->toString();
+            //$lst_rep_pos->toString(); 
+            
+            $persona_sans_chiffre = new Profil_type();
+            $persona_pas_calculer = $persona_sans_chiffre->profil_type_creer($lst_rep_user_restraint->get_lst_rep_reduite_user());
+            $persona_sans_chiffre->calculer_effectif_total();
+            $persona_sans_chiffre->affectation_pourcentage();
+            $persona_sans_chiffre->trier_decroissant();
+            $persona_sans_chiffre->suppr_elements_peu_significatifs();
+            echo "<br> <br>";
+            echo "<center> élément de base : ".$elementPrecis."</center><br>";
+            $persona_sans_chiffre->affichage_finale();
+            break;
+        case intdiv(sizeof($lst_pois->get_lst_poids()),2) :
+            $lst_rep_user_restraint->creer_la_liste_reduite_elem($lst_rep_utilisateur->get_lst_rep_user(),$elementPrecis);
+            //$lst_rep_user_restraint->toString();
+            //$lst_rep_pos->toString(); 
+            
+            $persona_sans_chiffre = new Profil_type();
+            $persona_pas_calculer = $persona_sans_chiffre->profil_type_creer($lst_rep_user_restraint->get_lst_rep_reduite_user());
+            $persona_sans_chiffre->calculer_effectif_total();
+            $persona_sans_chiffre->affectation_pourcentage();
+            $persona_sans_chiffre->trier_decroissant();
+            $persona_sans_chiffre->suppr_elements_peu_significatifs();
+            echo "<br> <br>";
+            echo "<center> élément de base : ".$elementPrecis."</center><br>";
+            $persona_sans_chiffre->affichage_finale();
+            break;
+        case sizeof($lst_pois->get_lst_poids())-1:
+            $lst_rep_user_restraint->creer_la_liste_reduite_elem($lst_rep_utilisateur->get_lst_rep_user(),$elementPrecis);
+            //$lst_rep_user_restraint->toString();
+            //$lst_rep_pos->toString(); 
+            
+            $persona_sans_chiffre = new Profil_type();
+            $persona_pas_calculer = $persona_sans_chiffre->profil_type_creer($lst_rep_user_restraint->get_lst_rep_reduite_user());
+            $persona_sans_chiffre->calculer_effectif_total();
+            $persona_sans_chiffre->affectation_pourcentage();
+            $persona_sans_chiffre->trier_decroissant();
+            $persona_sans_chiffre->suppr_elements_peu_significatifs();
+            echo "<br> <br>";
+            echo "<center> élément de base : ".$elementPrecis."</center><br>";
+            $persona_sans_chiffre->affichage_finale();
+            break;
+    
+        default:
+            # code...
+            break;
+            
+        }
+        */
+   
+
+   
     
 }    
 echo "</div>";
