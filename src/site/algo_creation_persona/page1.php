@@ -6,7 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
+ 
 <header>
         <div class="div1">
             <div class="div2">           
@@ -620,7 +620,7 @@ class Profil_type
      */
     public function affichage_finale()
     {
-        echo "<strong> persona complete </strong>";
+        echo "<strong><center> persona complete </center></strong>";
         //echo "<br>";
         echo "<table class='table table-dark table-bordered'>";
         
@@ -933,16 +933,18 @@ $elementPrecis;
 //pour le teste c la boucle
 
 $compteur_persona = -1;
+
+
+
 foreach($lst_pois->get_lst_poids() as $elem)
 {
     $compteur_persona ++;
     if($compteur_persona >= 3)
     {break;}
-    $elementPrecis = $elem[0];
+    $elementPrecis = $elem[0]; 
 
+    
     $lst_rep_user_restraint->creer_la_liste_reduite_elem($lst_rep_utilisateur->get_lst_rep_user(),$elementPrecis);
-    //$lst_rep_user_restraint->toString();
-    //$lst_rep_pos->toString(); 
     
     $persona_sans_chiffre = new Profil_type();
     $persona_pas_calculer = $persona_sans_chiffre->profil_type_creer($lst_rep_user_restraint->get_lst_rep_reduite_user());
@@ -951,8 +953,68 @@ foreach($lst_pois->get_lst_poids() as $elem)
     $persona_sans_chiffre->trier_decroissant();
     $persona_sans_chiffre->suppr_elements_peu_significatifs();
     echo "<br> <br>";
-    echo "élément de base : ".$elementPrecis."<br>";
+    echo "<center> élément de base : ".$elementPrecis."</center><br>";
     $persona_sans_chiffre->affichage_finale();
+    
+
+    /* switch ($compteur_persona) 
+    $elementPrecis = $elem[0];
+    {
+        case 0:
+            $lst_rep_user_restraint->creer_la_liste_reduite_elem($lst_rep_utilisateur->get_lst_rep_user(),$elementPrecis);
+            //$lst_rep_user_restraint->toString();
+            //$lst_rep_pos->toString(); 
+            
+            $persona_sans_chiffre = new Profil_type();
+            $persona_pas_calculer = $persona_sans_chiffre->profil_type_creer($lst_rep_user_restraint->get_lst_rep_reduite_user());
+            $persona_sans_chiffre->calculer_effectif_total();
+            $persona_sans_chiffre->affectation_pourcentage();
+            $persona_sans_chiffre->trier_decroissant();
+            $persona_sans_chiffre->suppr_elements_peu_significatifs();
+            echo "<br> <br>";
+            echo "<center> élément de base : ".$elementPrecis."</center><br>";
+            $persona_sans_chiffre->affichage_finale();
+            break;
+        case intdiv(sizeof($lst_pois->get_lst_poids()),2) :
+            $lst_rep_user_restraint->creer_la_liste_reduite_elem($lst_rep_utilisateur->get_lst_rep_user(),$elementPrecis);
+            //$lst_rep_user_restraint->toString();
+            //$lst_rep_pos->toString(); 
+            
+            $persona_sans_chiffre = new Profil_type();
+            $persona_pas_calculer = $persona_sans_chiffre->profil_type_creer($lst_rep_user_restraint->get_lst_rep_reduite_user());
+            $persona_sans_chiffre->calculer_effectif_total();
+            $persona_sans_chiffre->affectation_pourcentage();
+            $persona_sans_chiffre->trier_decroissant();
+            $persona_sans_chiffre->suppr_elements_peu_significatifs();
+            echo "<br> <br>";
+            echo "<center> élément de base : ".$elementPrecis."</center><br>";
+            $persona_sans_chiffre->affichage_finale();
+            break;
+        case sizeof($lst_pois->get_lst_poids())-1:
+            $lst_rep_user_restraint->creer_la_liste_reduite_elem($lst_rep_utilisateur->get_lst_rep_user(),$elementPrecis);
+            //$lst_rep_user_restraint->toString();
+            //$lst_rep_pos->toString(); 
+            
+            $persona_sans_chiffre = new Profil_type();
+            $persona_pas_calculer = $persona_sans_chiffre->profil_type_creer($lst_rep_user_restraint->get_lst_rep_reduite_user());
+            $persona_sans_chiffre->calculer_effectif_total();
+            $persona_sans_chiffre->affectation_pourcentage();
+            $persona_sans_chiffre->trier_decroissant();
+            $persona_sans_chiffre->suppr_elements_peu_significatifs();
+            echo "<br> <br>";
+            echo "<center> élément de base : ".$elementPrecis."</center><br>";
+            $persona_sans_chiffre->affichage_finale();
+            break;
+    
+        default:
+            # code...
+            break;
+            
+        }
+        */
+   
+
+   
     
 }    
 echo "</div>";
