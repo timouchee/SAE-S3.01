@@ -1,60 +1,26 @@
-<body id="all_body">
-
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-<header>
-        <div class="div1">
-            <div class="div2">           
-            
-            </div>
-                <div class="div3">
-                    <img src="../image/titre.jpg" alt="Image centrée">
-                </div>
-            </div>
-        </div>
-    </header>
-
 <?php
 //a changer :
 /* 
 */
   
- 
+
 /**
  * @brief Classe représentant une liste de réponses utilisateur.
  */
 class lst_reponse_utilisateur 
 {
-    private static $instance;
-    private function __construct()
-    {}
-    //singleton
-    public static function getInstance()
-    {
-        if (self::$instance === null) {
-            // Créer une nouvelle instance si elle n'existe pas encore
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
     /**
-     * @var array $lst_rep_user Tableau contenant les réponses utilisateur.
+     * @var array $lst_rep_U Tableau contenant les réponses utilisateur.
      */
-    public $lst_rep_user = array();
+    public $lst_rep_U = array();
 
     /**
      * @brief Obtient la liste des réponses utilisateur.
      * @return array La liste des réponses utilisateur.
      */
-    public function get_lst_rep_user()
+    public function get_lst_rep_u()
     {
-        return $this->lst_rep_user;
+        return $this->lst_rep_U;
     }
         
     /**
@@ -63,7 +29,7 @@ class lst_reponse_utilisateur
      * @param int $nb_reponse_creer Nombre de réponses à créer (par défaut 10).
      * @return array La liste des réponses utilisateur remplie.
      */
-    function remplirListeReponseUser($liste_liste_elem_categorie, $nb_reponse_creer = 10) 
+    function remplirListeReponseU($liste_liste_elem_categorie, $nb_reponse_creer = 10) 
     {
         $nb_reponse_voulu = $nb_reponse_creer;
         $liste_categorie = ["musique","sport","culture","activitees","restaurants","soirees"];
@@ -90,10 +56,10 @@ class lst_reponse_utilisateur
             }
           
             // Ajouter l'élément à la liste
-            $this->lst_rep_user[] = $element;
+            $this->lst_rep_U[] = $element;
         }
 
-        return $this->lst_rep_user;
+        return $this->lst_rep_U;
     }
 
     /**
@@ -101,29 +67,14 @@ class lst_reponse_utilisateur
      */
     public function toString()
     {
-        echo "<br> <strong> <center> les reponse utilisateur </center></strong>";
-        foreach ($this->lst_rep_user as $element) 
+        echo "<br> les reponse utilisateur ";
+        foreach ($this->lst_rep_U as $element) 
         {
-            echo "<table class='table table-dark table-bordered'>";
-            foreach ($element as $categorie)
-            {
-                echo    "<tr>";
-                echo        "<td>".$categorie[0]."</td>";
-                $compt = 5;
-                foreach ($categorie[1] as $elem)
-                {
-                    $compt --;
-                    echo "<td>".$elem."</td>";
-                }
-                for ($i=$compt; $i >0 ; $i--) 
-                { 
-                    echo "<td></td>";
-                }
-
-                echo    "</tr>";
+            echo '<ul>';
+            foreach ($element as $categorie) {
+                echo '<li>' . $categorie[0] . ': [' . implode(', ', $categorie[1]) . ']</li>';
             }
-            echo "</table>";
-            
+            echo '</ul>';
         } 
     }
 
@@ -133,7 +84,7 @@ class lst_reponse_utilisateur
      */
     public function ajouter1_reponse_en_dur($rep)
     {
-        $this->lst_rep_user[] = $rep;
+        $this->lst_rep_U[] = $rep;
     }
 
     /**
@@ -154,20 +105,6 @@ class lst_reponse_utilisateur
  */
 class Liste_poids 
 {
-    private static $instance;
-    private static $lst_rep_user;
-    private function __construct()
-    {}
-    //singleton
-    public static function getInstance()
-    {
-        if (self::$instance === null) {
-            // Créer une nouvelle instance si elle n'existe pas encore
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
     /**
      * @var array $listePoids Tableau contenant les poids associés aux éléments.
      */
@@ -177,18 +114,18 @@ class Liste_poids
      * @brief Obtient la liste des poids.
      * @return array La liste des poids associés aux éléments.
      */
-    public function get_lst_poids()
+    public function get_lst_poid()
     {
         return $this->listePoids;
     }
 
     /**
      * @brief Remplit la liste des poids à partir d'une liste de réponses utilisateur.
-     * @param array $lst_rep_user Liste des réponses utilisateur.
+     * @param array $lst_rep_U Liste des réponses utilisateur.
      */
-    public function remplir_lst_poids($lst_rep_user)
+    public function remplir_lst_poids($lst_rep_U)
     {
-        foreach ($lst_rep_user as $element) 
+        foreach ($lst_rep_U as $element) 
         {
             foreach ($element as $item) 
             {
@@ -245,23 +182,12 @@ class Liste_poids
      */
     public function toString()
     {
-        echo "<br> <br> <strong>voici la liste des poids dans l'ordre décroissant</strong>  <br>";
+        echo "<br> <br> voici la liste des poids dans l'ordre décroissant : <br>";
         // Afficher la liste triée
-        /* foreach ($this->listePoids as $lst_elem)
-        {
-            echo $lst_elem[0] . " de valeur : ".$lst_elem[1]."<br>";
-        } */
-        echo "<table class='table table-dark table-bordered'>";
-        echo "<th> nom  élément </th>";
-        echo "<th> valeur en poid </th>";
         foreach ($this->listePoids as $lst_elem)
         {
-            echo "<tr>";
-            echo "<td>".$lst_elem[0]."</td>";
-            echo "<td>".$lst_elem[1]."</td>";
-            echo "</tr>";
+            echo $lst_elem[0] . " de valeur : ".$lst_elem[1]."<br>";
         }
-        echo "</table>";
     }
 }
 
@@ -269,52 +195,39 @@ class Liste_poids
 /**
  * @brief Classe représentant une réponse utilisateur réduite, filtrée par un élément spécifique.
  */
-class Element_pref_choisi_par_utilisateur
+class Reponse_utilisateur_reduite
 {
-    private static $instance;
-    private function __construct()
-    {}
-    //singleton
-    public static function getInstance()
-    {
-        if (self::$instance === null) {
-            // Créer une nouvelle instance si elle n'existe pas encore
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
     /**
      * @var array $res Tableau contenant la réponse utilisateur réduite.
      */
-    public $liste_reponse_reduite;
+    public $res;
 
     /**
-     * @var mixed $titre_prochain_profil_type Élément spécifique utilisé pour le filtrage.
+     * @var mixed $element_de_triage Élément spécifique utilisé pour le filtrage.
      */
-    public $titre_prochain_profil_type;
+    public $element_de_triage;
 
     /**
      * @brief Obtient la liste des réponses utilisateur réduites.
      * @return array La liste des réponses utilisateur réduites.
      */
-    public function get_lst_rep_reduite_user()
+    public function get_lst_rep_u()
     {
-        return $this->liste_reponse_reduite;
+        return $this->res;
     }
 
     /**
      * @brief Filtre les réponses utilisateur pour ne conserver que celles contenant un élément précis.
-     * @param array $lst_rep_user Liste des réponses utilisateur.
+     * @param array $lst_rep_U Liste des réponses utilisateur.
      * @param mixed $elementPrecis Élément précis à rechercher dans les réponses.
      * @return array La liste des réponses utilisateur réduites.
      */
-    public function creer_la_liste_reduite_elem($liste_reponse_reduite, $elementPrecis)
+    public function garder_que_elem($lst_rep_U, $elementPrecis)
     {
-        $this->titre_prochain_profil_type = $elementPrecis; 
-        $this->liste_reponse_reduite = $liste_reponse_reduite;
+        $this->element_de_triage = $elementPrecis; 
+        $this->res = $lst_rep_U;
         $compteur_1reponse = -1;
-        foreach ($this->liste_reponse_reduite as $une_rep)
+        foreach ($this->res as $une_rep)
         {
             $compteur_1reponse++;
             $trouver = false;
@@ -335,10 +248,10 @@ class Element_pref_choisi_par_utilisateur
             }
             if (!$trouver)
             {
-                unset($this->liste_reponse_reduite[$compteur_1reponse]);
+                unset($this->res[$compteur_1reponse]);
             }
         } 
-        return $this->liste_reponse_reduite;
+        return $this->res;
     }
 
     /**
@@ -346,8 +259,8 @@ class Element_pref_choisi_par_utilisateur
      */
     public function toString()
     {
-        echo "<br> les rep U trier pour : ". $this->titre_prochain_profil_type." <br>";
-        foreach ($this->liste_reponse_reduite as $element) 
+        echo "<br> les rep U trier pour : ". $this->element_de_triage." <br>";
+        foreach ($this->res as $element) 
         {
             echo '<ul>';
             foreach ($element as $categorie) {
@@ -361,20 +274,20 @@ class Element_pref_choisi_par_utilisateur
 /**
  * @brief Classe représentant un profil utilisateur (persona) basé sur les réponses utilisateur.
  */
-class Profil_type
+class Persona
 {
     public $rep = [ ["musique",[]],["sport",[]],["culture",[]],["activitees",[]],["restaurants",[]],["soirees",[]] ]; 
     public $lst_poid_totale = [] ;
-    private static $liste_reponse_reduite;
     
+
     /**
      * @brief Crée le profil d'un utilisateur (persona) en fonction des réponses utilisateur.
-     * @param array $lst_rep_user Liste des réponses utilisateur.
+     * @param array $lst_rep_U Liste des réponses utilisateur.
      * @return array Le profil de l'utilisateur (persona) sous forme de tableau.
      */
-    public function profil_type_creer($liste_reponse_reduite) 
+    public function persona_creer($lst_rep_U) 
     {
-        foreach ($liste_reponse_reduite as $element) 
+        foreach ($lst_rep_U as $element) 
         {   // Pour chaque réponse utilisateur
             $compteur_categorie = -1;
             foreach ($element as $categorie) 
@@ -421,7 +334,7 @@ class Profil_type
      * @brief Affiche les informations de l'étape 0 pour la création du profil utilisateur (persona).
      * @param bool $affiche Indique si les informations doivent être affichées (par défaut false).
      */
-    public function calculer_effectif_total($affiche = false)
+    public function afficher_perso_etape_0($affiche = false)
     {
         if ($affiche == true) {
             echo "liste des réponses utilisateur pour persona : <br>";
@@ -476,7 +389,7 @@ class Profil_type
      * @brief Affiche les informations de l'étape 1 pour la création du profil utilisateur (persona).
      * @param bool $affiche Indique si les informations doivent être affichées (par défaut false).
      */
-    public function affectation_pourcentage($affiche = false)
+    public function afficher_perso_etape_1($affiche = false)
     {
         if ($affiche == true) {
             echo "Maintenant avec le calcul des pourcentages arrondis à 2 chiffres après la virgule.<br>";
@@ -529,7 +442,7 @@ class Profil_type
      * @param mixed $b Deuxième élément à comparer.
      * @return int Résultat de la comparaison (positif si $a est plus grand, négatif si $b est plus grand, 0 si égaux).
      */
-    function comparaison_pourcentage($a, $b) {
+    function compareThirdValueDesc($a, $b) {
         return $b[2] - $a[2];
     }
 
@@ -544,7 +457,7 @@ class Profil_type
             // Tri des sous-tableaux par la troisième valeur dans l'ordre décroissant
             //array($this, 'compareThirdValueDesc')
             //usort($category[1], 'compareThirdValueDesc');
-            usort($category[1],array($this, 'comparaison_pourcentage'));
+            usort($category[1],array($this, 'compareThirdValueDesc'));
         }
     }
 
@@ -553,7 +466,7 @@ class Profil_type
      * @brief Affiche les informations de l'étape 2 pour la création du profil utilisateur (persona).
      * @param bool $affiche Indique si les informations doivent être affichées (par défaut false).
      */
-    public function suppr_elements_peu_significatifs($affiche = false)
+    public function afficher_perso_etape_2($affiche = false)
     {
         if ($affiche == true) {
             echo "<br>";
@@ -618,36 +531,32 @@ class Profil_type
     /**
      * @brief Affiche les informations de l'étape 3 pour la création du profil utilisateur (persona).
      */
-    public function affichage_finale()
+    public function afficher_perso_etape_3()
     {
-        echo "<strong> persona complete </strong>";
-        //echo "<br>";
-        echo "<table class='table table-dark table-bordered'>";
-        
-            foreach ($this->rep as $categorie) 
+        echo "<br>";
+        echo "<br>";
+        echo "<strong> Maintenant sans les 50% premiers </strong>";
+        echo "<br>";
+
+        foreach ($this->rep as $categorie) 
+        {
+            echo $categorie[0] . " :\n";
+            
+            if (!empty($categorie[1])) 
             {
-                echo "<tr>";
-                //echo $categorie[0] . " :\n";
-                echo "<td>".$categorie[0]."</td>";
-                
-                if (!empty($categorie[1])) 
+                // Compteur de poids total
+                foreach ($categorie[1] as $element) 
                 {
-                    //compteur  poid totale
-                    foreach ($categorie[1] as $element) 
-                    {
-                        //echo "  [\"{$element[0]}\", {$element[1]} , {$element[2]}     ]\n";
-                        echo "<td>  [\"{$element[0]}\", {$element[1]} , {$element[2]}     ]</td>";
-                    }
-                } 
-                else 
-                {
-                    echo "  (Aucun élément)\n";
+                    echo "  [\"{$element[0]}\", {$element[1]} , {$element[2]}     ]\n";
                 }
-                
-                //echo "\n <br>";
-                echo "<tr>";
-            }  
-            echo "</table>";
+            } 
+            else 
+            {
+                echo "  (Aucun élément)\n";
+            }
+            
+            echo "\n <br>";
+        } 
     }
 
 
@@ -656,20 +565,19 @@ class Profil_type
 /**
  * @brief Classe représentant une liste de réponses possibles pour différentes catégories.
  */
-class Reponse_utilisateur
+class Reponse
 {
-    
-    public $lst_rep_part_preference = [ ["musique",[]],["sport",[]],["culture",[]],["activitees",[]],["restaurants",[]],["soirees",[]] ];
-    public $indices_centres_interets = ["musique" => 0,"sport" => 1,"culture" => 2,"activitees" => 3,"restaurants" => 4,"soirees" => 5];
+    public $lst_rep_possible_categorie = [ ["musique",[]],["sport",[]],["culture",[]],["activitees",[]],["restaurants",[]],["soirees",[]] ];
+    public $num_categorie = ["musique" => 0,"sport" => 1,"culture" => 2,"activitees" => 3,"restaurants" => 4,"soirees" => 5];
 
     /**
      * @brief Ajoute un élément dans la catégorie choisie.
      * @param string $categorie La catégorie dans laquelle ajouter l'élément.
      * @param mixed $element L'élément à ajouter.
      */
-    public function ajouter_elem_dans_centre_interet($categorie,$element) 
+    public function ajouter_elem_cat($categorie,$element) 
     {
-        array_push($this->lst_rep_part_preference[$this->indices_centres_interets[$categorie]][1],$element);
+        array_push($this->lst_rep_possible_categorie[$this->num_categorie[$categorie]][1],$element);
     }
 
     /**
@@ -677,11 +585,11 @@ class Reponse_utilisateur
      * @param string $categorie La catégorie dans laquelle ajouter les éléments.
      * @param array $lst_a_ajouter La liste d'éléments à ajouter.
      */
-    public function ajouter_lst_elem_dans_centre_interet($categorie,$lst_a_ajouter) 
+    public function ajouter_elem_cat_lst($categorie,$lst_a_ajouter) 
     {
         foreach($lst_a_ajouter as $elem)
         {
-            $this->ajouter_elem_dans_centre_interet($categorie,$elem); 
+            $this->ajouter_elem_cat($categorie,$elem); 
         }
     }
 
@@ -692,7 +600,7 @@ class Reponse_utilisateur
      */
     public function get_lst_elem($categorie) 
     {
-        return $this->lst_rep_part_preference[$this->indices_centres_interets[$categorie]][1];
+        return $this->lst_rep_possible_categorie[$this->num_categorie[$categorie]][1];
     }
 
     /**
@@ -701,7 +609,7 @@ class Reponse_utilisateur
     public function toString() 
     {
         echo "Liste des éléments possibles choisisables : <br>";
-        foreach($this->lst_rep_part_preference as $cat)
+        foreach($this->lst_rep_possible_categorie as $cat)
         {
             echo $cat[0]."<br> <ul>";
             foreach ($cat[1] as $elem)
@@ -896,16 +804,16 @@ $liste_reponse_U_en_dur =
     ]
 ];
 
-$lst_rep_pos = new Reponse_utilisateur();
+$lst_rep_pos = new Reponse();
 //ici on rajoute les liste musique sport etc...
-$lst_rep_pos->ajouter_lst_elem_dans_centre_interet("musique",$lst_musique_possible);
-$lst_rep_pos->ajouter_lst_elem_dans_centre_interet("sport",$lst_sport_possible);
-$lst_rep_pos->ajouter_lst_elem_dans_centre_interet("culture",$lst_culture_possible);
-$lst_rep_pos->ajouter_lst_elem_dans_centre_interet("activitees",$lst_activitees_possible);
-$lst_rep_pos->ajouter_lst_elem_dans_centre_interet("restaurants",$lst_restaurants_possible);
-$lst_rep_pos->ajouter_lst_elem_dans_centre_interet("soirees",$lst_soirees_possible);
+$lst_rep_pos->ajouter_elem_cat_lst("musique",$lst_musique_possible);
+$lst_rep_pos->ajouter_elem_cat_lst("sport",$lst_sport_possible);
+$lst_rep_pos->ajouter_elem_cat_lst("culture",$lst_culture_possible);
+$lst_rep_pos->ajouter_elem_cat_lst("activitees",$lst_activitees_possible);
+$lst_rep_pos->ajouter_elem_cat_lst("restaurants",$lst_restaurants_possible);
+$lst_rep_pos->ajouter_elem_cat_lst("soirees",$lst_soirees_possible);
  
-$lst_rep_utilisateur = lst_reponse_utilisateur::getInstance();
+$lst_rep_utilisateur = new lst_reponse_utilisateur();
 //enlever le = quand tu aura mis un get
 $liste_liste_cat_elem = array();
 //,$lst_rep_pos->get_lst_elem("sport")
@@ -916,56 +824,39 @@ array_push($liste_liste_cat_elem,$lst_rep_pos->get_lst_elem("activitees"));
 array_push($liste_liste_cat_elem,$lst_rep_pos->get_lst_elem("restaurants"));
 array_push($liste_liste_cat_elem,$lst_rep_pos->get_lst_elem("soirees"));
 
-//$lst_rep_user = $lst_rep_utilisateur->remplirListeReponseUser($liste_liste_cat_elem);//par defaut 10
+//$lst_rep_U = $lst_rep_utilisateur->remplirListeReponseU($liste_liste_cat_elem);//par defaut 10
 $lst_rep_utilisateur->ajouter_liste_reponse_en_dur($liste_reponse_U_en_dur);//par defaut 10
-echo "<div id='center_tous'>";
 $lst_rep_utilisateur->toString();
 
-$lst_pois = Liste_poids::getInstance();
-$lst_pois->remplir_lst_poids($lst_rep_utilisateur->get_lst_rep_user());
+$lst_pois = new Liste_poids();
+$lst_pois->remplir_lst_poids($lst_rep_utilisateur->get_lst_rep_u());
 $lst_pois->trier_decroissant_lst_poid();
 $lst_pois->toString();
 
-$lst_rep_user_restraint = Element_pref_choisi_par_utilisateur::getInstance();
+$lst_rep_U_restraint = new Reponse_utilisateur_reduite();
 //mettre la boucle sur la moitier des liste poid ici
 $elementPrecis;
 
 //pour le teste c la boucle
 
 $compteur_persona = -1;
-foreach($lst_pois->get_lst_poids() as $elem)
+foreach($lst_pois->get_lst_poid() as $elem)
 {
     $compteur_persona ++;
     if($compteur_persona >= 3)
     {break;}
     $elementPrecis = $elem[0];
 
-    $lst_rep_user_restraint->creer_la_liste_reduite_elem($lst_rep_utilisateur->get_lst_rep_user(),$elementPrecis);
-    //$lst_rep_user_restraint->toString();
+    $lst_rep_U_restraint->garder_que_elem($lst_rep_utilisateur->get_lst_rep_u(),$elementPrecis);
+    //$lst_rep_U_restraint->toString();
     //$lst_rep_pos->toString(); 
     
-    $persona_sans_chiffre = new Profil_type();
-    $persona_pas_calculer = $persona_sans_chiffre->profil_type_creer($lst_rep_user_restraint->get_lst_rep_reduite_user());
-    $persona_sans_chiffre->calculer_effectif_total();
-    $persona_sans_chiffre->affectation_pourcentage();
+    $persona_sans_chiffre = new Persona();
+    $persona_pas_calculer = $persona_sans_chiffre->persona_creer($lst_rep_U_restraint->get_lst_rep_u());
+    $persona_sans_chiffre->afficher_perso_etape_0();
+    $persona_sans_chiffre->afficher_perso_etape_1();
     $persona_sans_chiffre->trier_decroissant();
-    $persona_sans_chiffre->suppr_elements_peu_significatifs();
-    echo "<br> <br>";
-    echo "élément de base : ".$elementPrecis."<br>";
-    $persona_sans_chiffre->affichage_finale();
+    $persona_sans_chiffre->afficher_perso_etape_2();
+    $persona_sans_chiffre->afficher_perso_etape_3();
     
 }    
-echo "</div>";
-
-
-
-//etape 0 afficher et caluler le poid pour moyenne de chaque ligne
-//etape 1 afficher et mettre les % pour chaque elem
-//etape 2 afficher et enlever les 50 % premier
-//etape 3 affichage finale (tableau)
-
-
-
-?>
-</body>
-

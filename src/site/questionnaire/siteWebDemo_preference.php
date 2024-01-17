@@ -96,16 +96,16 @@
 
                 <div id="container3" class="zone-depot" ondrop="drop(event)">
                     <div id="culture1" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Cinéma</div>
-                    <div id="culture2" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Theatre</div>
-                    <div id="culture3" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Musee</div>
+                    <div id="culture2" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Théatre</div>
+                    <div id="culture3" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Musée</div>
                     <div id="culture4" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Zoo</div>
-                    <div id="culture5" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Visite_guidee</div>
+                    <div id="culture5" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Visite_guidée</div>
                     <div id="culture6" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Galerie_art</div>
-                    <div id="culture7" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Mediatheque</div>
+                    <div id="culture7" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Mediathèque</div>
                     <div id="culture8" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Corrida</div>
                     <div id="culture9" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Lecture</div>
                     <div id="culture10" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Voyage</div>
-                    <div id="culture11" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Numerique</div>
+                    <div id="culture11" class="draggable actCultur" draggable="true" ondragstart="drag(event)">Numérique</div>
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
@@ -122,7 +122,7 @@
             <div class="info-preference-container">
                 <label for="reponseActivitesOrganisees"><U>Question 4: Faites glisser les activités organisées que vous voulez voir. Sélectionnez les par ordre de préférence</U></label><br>
                 <div id="container4" class="zone-depot" ondrop="drop(event)">
-                    <div id="orga1" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Tournoi de jeux vidéos</div>
+                    <div id="orga1" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Tournoi_de_jeux_vidéos</div>
                     <div id="orga2" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Loup_garoup</div>
                     <div id="orga3" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Uno</div>
                     <div id="orga4" class="draggable actOrg" draggable="true" ondragstart="drag(event)">Cricket</div>
@@ -144,13 +144,13 @@
             <div class="info-preference-container">
                 <label for="reponseRestaurants"><U>Question 5: Faites glisser les types de restaurants que vous voulez voir. Sélectionnez les par ordre de préférence</U></label><br>
                 <div id="container5" class="zone-depot" ondrop="drop(event)">
-                    <div id="resto1" class="draggable resto" draggable="true" ondragstart="drag(event)">Fast food</div>
+                    <div id="resto1" class="draggable resto" draggable="true" ondragstart="drag(event)">Fast_food</div>
                     <div id="resto2" class="draggable resto" draggable="true" ondragstart="drag(event)">Junk_food</div>
                     <div id="resto3" class="draggable resto" draggable="true" ondragstart="drag(event)">Pizzeria</div>
-                    <div id="resto4" class="draggable resto" draggable="true" ondragstart="drag(event)">Sushis</div>
+                    <div id="resto4" class="draggable resto" draggable="true" ondragstart="drag(event)">Sushi</div>
                     <div id="resto5" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurant_traditionnel</div>
-                    <div id="resto6" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurants_du_monde</div>
-                    <div id="resto7" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurants_vegetariens</div>
+                    <div id="resto6" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurant_du_monde</div>
+                    <div id="resto7" class="draggable resto" draggable="true" ondragstart="drag(event)">Restaurant_vegetarien</div>
                 </div>
                 <!-- Zone de dépôt des réponses glissantes -->
                 <div class="reponses" > 
@@ -163,7 +163,7 @@
 
             </div>
             <!-- <input type="submit" value="Soumettre"> -->
-            <button onClick="submit_le_tout()">soumetre</button>
+            <button onClick="submit_le_tout()">soumettre</button>
 </div>
 <!-- </form> -->
 
