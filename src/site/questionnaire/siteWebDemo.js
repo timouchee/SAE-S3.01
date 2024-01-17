@@ -24,36 +24,40 @@ function allowDrop(event) {
                 (draggedElement.classList.contains('resto') && dropTarget.id.includes('zoneDepotResto')) 
             ) 
             {
-                //Faire en sorte que l'utilisateur doivent respecter l'ordre de réponse
-                var ZonedepotRep = document.getElementsByClassName("reponses");
-                
-                var i=0;
-                while(dropTarget.id.slice(0,-1)!=ZonedepotRep[i].childNodes[1].id.slice(0,-1)&& i<5){
-                    i+=1;
-                    
-                }
-           
-                var longueurIdTarget = dropTarget.id.length;
-                var longueurIdZone = ZonedepotRep[i].childNodes[1].id.length;
-              
-                var y =1;
-                
-                while(dropTarget.id.charAt(longueurIdTarget - 1)!=ZonedepotRep[i].childNodes[y].id.charAt(longueurIdZone - 1)&& y<10){
-                    y+=2;
-                }
-                if(y==1){
-                    if(ZonedepotRep[i].childNodes[3].childElementCount==1 || dropTarget.childElementCount>0 && dropTarget.classList.contains('rep')){
-                        return false;
-                    }else{
-                        return true;
-                    }
+                if(dropTarget.id.includes("container")){
+                    return true;
                 }else{
-                    if(ZonedepotRep[i].childNodes[y-2].childElementCount==0 || dropTarget.childElementCount>0 && dropTarget.classList.contains('rep')){
-                        return false;
-                    }else{
-                        return true;
+                    //Faire en sorte que l'utilisateur doivent respecter l'ordre de réponse
+                    var ZonedepotRep = document.getElementsByClassName("reponses");
+                                    
+                    var i=0;
+                    while(dropTarget.id.slice(0,-1)!=ZonedepotRep[i].childNodes[1].id.slice(0,-1)&& i<5){
+                        i+=1;
+                        
                     }
-                }
+
+                    var longueurIdTarget = dropTarget.id.length;
+                    var longueurIdZone = ZonedepotRep[i].childNodes[1].id.length;
+
+                    var y =1;
+
+                    while(dropTarget.id.charAt(longueurIdTarget - 1)!=ZonedepotRep[i].childNodes[y].id.charAt(longueurIdZone - 1)&& y<10){
+                        y+=2;
+                    }
+                    if(y==1){
+                        if(ZonedepotRep[i].childNodes[3].childElementCount==1 || dropTarget.childElementCount>0 && dropTarget.classList.contains('rep')){
+                            return false;
+                        }else{
+                            return true;
+                        }
+                    }else{
+                        if(ZonedepotRep[i].childNodes[y-2].childElementCount==0 || dropTarget.childElementCount>0 && dropTarget.classList.contains('rep')){
+                            return false;
+                        }else{
+                            return true;
+                        }
+                    }
+                }  
             } else{return false;}
         }
     }
