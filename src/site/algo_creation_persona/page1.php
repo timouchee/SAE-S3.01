@@ -20,20 +20,15 @@
     </header>
 
 <?php
-//a changer :
-/* 
-*/
-  
  
 /**
- * @brief Classe représentant une liste de réponses utilisateur.
+ * @brief Classe représentant un singleton qui contient les toutes réponses des utilisateurs
  */
 class lst_reponse_utilisateur 
 {
     private static $instance;
     private function __construct()
     {}
-    //singleton
     public static function getInstance()
     {
         if (self::$instance === null) {
@@ -74,7 +69,7 @@ class lst_reponse_utilisateur
             $element = array();
             for ($p = 0; $p < $taille; $p++) 
             {               
-                // Catégorie "musique"
+                // par exemple, catégorie "musique"
                 $lst_cat = array($liste_categorie[$p], array());
                 $ensembleEl = array(); // Ensemble pour éviter les doublons
                 $nbel = rand(0,  5 );
@@ -101,14 +96,14 @@ class lst_reponse_utilisateur
      */
     public function toString()
     {
-        echo "<br> <strong> <center> les reponse utilisateur </center></strong>";
+        echo "<br> <strong> <center> Réponses des utilisateurs </center></strong>";
         foreach ($this->lst_rep_user as $element) 
         {
             echo "<table class='table table-dark table-bordered'>";
             foreach ($element as $categorie)
             {
-                echo    "<tr>";
-                echo        "<td>".$categorie[0]."</td>";
+                echo "<tr>";
+                echo "<td>".$categorie[0]."</td>";
                 $compt = 5;
                 foreach ($categorie[1] as $elem)
                 {
@@ -245,15 +240,15 @@ class Liste_poids
      */
     public function toString()
     {
-        echo "<br> <br> <strong>voici la liste des poids dans l'ordre décroissant</strong>  <br>";
+        echo "<br> <br> <strong> <center> Liste des éléments pondérés (liste des poids) </center></strong>  <br>";
         // Afficher la liste triée
         /* foreach ($this->listePoids as $lst_elem)
         {
             echo $lst_elem[0] . " de valeur : ".$lst_elem[1]."<br>";
         } */
         echo "<table class='table table-dark table-bordered'>";
-        echo "<th> nom  élément </th>";
-        echo "<th> valeur en poid </th>";
+        echo "<th> nom de l'élément </th>";
+        echo "<th> Poids de l'élément </th>";
         foreach ($this->listePoids as $lst_elem)
         {
             echo "<tr>";
@@ -346,7 +341,7 @@ class Element_pref_choisi_par_utilisateur
      */
     public function toString()
     {
-        echo "<br> les rep U trier pour : ". $this->titre_prochain_profil_type." <br>";
+        echo "<br> Les réponses des utilisateurs triées selon l'élément : ". $this->titre_prochain_profil_type." <br>";
         foreach ($this->liste_reponse_reduite as $element) 
         {
             echo '<ul>';
@@ -414,7 +409,6 @@ class Profil_type
         }
         return $this->rep;
     }
-
     
     
     /**
@@ -524,7 +518,7 @@ class Profil_type
 
     
     /**
-     * @brief Fonction de comparaison pour trier un tableau par la troisième valeur dans l'ordre décroissant.
+     * @brief Fonction de comparaison pour trier un tableau par la troisième valeur (pourcentage) dans l'ordre décroissant.
      * @param mixed $a Premier élément à comparer.
      * @param mixed $b Deuxième élément à comparer.
      * @return int Résultat de la comparaison (positif si $a est plus grand, négatif si $b est plus grand, 0 si égaux).
@@ -620,7 +614,7 @@ class Profil_type
      */
     public function affichage_finale()
     {
-        echo "<strong> persona complete </strong>";
+        echo "<strong> <center> Profil type complet </center> </strong>";
         //echo "<br>";
         echo "<table class='table table-dark table-bordered'>";
         
@@ -722,6 +716,9 @@ echo "<br>";
 //liste poids
 //rep utilisateur par poids
 
+//MAIN
+
+//Pour chaque centre d'intérêt, listes des éléments possibles
 $lst_musique_possible = array
 (   "Jazz",
     "Classique",
@@ -792,6 +789,8 @@ $lst_soirees_possible = array
     "Boite_de_nuit",
     "Soirees_mousse"
 );
+
+//Liste des réponses insérées en dur : un questionnaire a été rempli par une dizaine d'étudiants de la promotion.
 
 $liste_reponse_U_en_dur = 
 [
@@ -896,6 +895,8 @@ $liste_reponse_U_en_dur =
     ]
 ];
 
+//Insertion des réponses possibles (quels sont les centres d'intérêt disponibles)
+
 $lst_rep_pos = new Reponse_utilisateur();
 //ici on rajoute les liste musique sport etc...
 $lst_rep_pos->ajouter_lst_elem_dans_centre_interet("musique",$lst_musique_possible);
@@ -904,9 +905,10 @@ $lst_rep_pos->ajouter_lst_elem_dans_centre_interet("culture",$lst_culture_possib
 $lst_rep_pos->ajouter_lst_elem_dans_centre_interet("activitees",$lst_activitees_possible);
 $lst_rep_pos->ajouter_lst_elem_dans_centre_interet("restaurants",$lst_restaurants_possible);
 $lst_rep_pos->ajouter_lst_elem_dans_centre_interet("soirees",$lst_soirees_possible);
+
+//Création d'une réponse globale contenant tous les centres d'intérêt
  
 $lst_rep_utilisateur = lst_reponse_utilisateur::getInstance();
-//enlever le = quand tu aura mis un get
 $liste_liste_cat_elem = array();
 //,$lst_rep_pos->get_lst_elem("sport")
 array_push($liste_liste_cat_elem,$lst_rep_pos->get_lst_elem("musique"));
@@ -915,6 +917,8 @@ array_push($liste_liste_cat_elem,$lst_rep_pos->get_lst_elem("culture"));
 array_push($liste_liste_cat_elem,$lst_rep_pos->get_lst_elem("activitees"));
 array_push($liste_liste_cat_elem,$lst_rep_pos->get_lst_elem("restaurants"));
 array_push($liste_liste_cat_elem,$lst_rep_pos->get_lst_elem("soirees"));
+
+//Ajout des réponses en dur dans la liste de toutes les réponses des utilisateurs
 
 //$lst_rep_user = $lst_rep_utilisateur->remplirListeReponseUser($liste_liste_cat_elem);//par defaut 10
 $lst_rep_utilisateur->ajouter_liste_reponse_en_dur($liste_reponse_U_en_dur);//par defaut 10
@@ -951,7 +955,7 @@ foreach($lst_pois->get_lst_poids() as $elem)
     $persona_sans_chiffre->trier_decroissant();
     $persona_sans_chiffre->suppr_elements_peu_significatifs();
     echo "<br> <br>";
-    echo "élément de base : ".$elementPrecis."<br>";
+    echo "Elément à la base du profil type : ".$elementPrecis."<br>";
     $persona_sans_chiffre->affichage_finale();
     
 }    
