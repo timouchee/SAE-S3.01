@@ -1,12 +1,24 @@
-<body id="all_body">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
+<<<<<<< HEAD
+<body>
+
+=======
  
+>>>>>>> 34cfaabe35f4982ec3b8cadb9aa06fedbf0d51b1
 <header>
         <div class="div1">
             <div class="div2">           
@@ -18,6 +30,9 @@
             </div>
         </div>
     </header>
+
+
+    <main>
 
 <?php
  
@@ -97,7 +112,7 @@ class lst_reponse_utilisateur
      */
     public function toString()
     {
-        echo "<br> <strong> <center> Réponses des utilisateurs </center></strong>";
+        echo "<br> <h1> <center> Réponses des utilisateurs </center></h1>";
         foreach ($this->lst_rep_user as $element) 
         {
             echo "<table class='table table-dark table-bordered'>";
@@ -241,7 +256,7 @@ class Liste_poids
      */
     public function toString()
     {
-        echo "<br> <br> <strong> <center> Liste des éléments pondérés (liste des poids) </center></strong>  <br>";
+        echo "<br> <br> <h2> <center> Liste des éléments pondérés (liste des poids) </center> </h2>  <br>";
         // Afficher la liste triée
         /* foreach ($this->listePoids as $lst_elem)
         {
@@ -342,7 +357,7 @@ class Element_pref_choisi_par_utilisateur
      */
     public function toString()
     {
-        echo "<br> Les réponses des utilisateurs triées selon l'élément : ". $this->titre_prochain_profil_type." <br>";
+        echo "<br> <h2> Les réponses des utilisateurs triées selon l'élément : ". $this->titre_prochain_profil_type." </h2> <br>";
         foreach ($this->liste_reponse_reduite as $element) 
         {
             echo '<ul>';
@@ -615,11 +630,15 @@ class Profil_type
      */
     public function affichage_finale()
     {
+<<<<<<< HEAD
+        echo "<h2> <center> Profil type complet </h2> </strong>";
+=======
 
       
 
         echo "<strong> <center> Profil type complet </center> </strong>";
 
+>>>>>>> 34cfaabe35f4982ec3b8cadb9aa06fedbf0d51b1
         //echo "<br>";
         echo "<table class='table table-dark table-bordered'>";
         
@@ -962,9 +981,13 @@ foreach($lst_pois->get_lst_poids() as $elem)
     $persona_sans_chiffre->trier_decroissant();
     $persona_sans_chiffre->suppr_elements_peu_significatifs();
     echo "<br> <br>";
+<<<<<<< HEAD
+    echo "<h3> Elément à la base du profil type : ".$elementPrecis." </h3><br>";
+=======
 
     echo "Elément à la base du profil type : ".$elementPrecis."<br>";
 
+>>>>>>> 34cfaabe35f4982ec3b8cadb9aa06fedbf0d51b1
     $persona_sans_chiffre->affichage_finale();
     
 
@@ -1030,15 +1053,14 @@ foreach($lst_pois->get_lst_poids() as $elem)
 }    
 echo "</div>";
 
-
-
 //etape 0 afficher et caluler le poid pour moyenne de chaque ligne
 //etape 1 afficher et mettre les % pour chaque elem
 //etape 2 afficher et enlever les 50 % premier
 //etape 3 affichage finale (tableau)
 
-
-
 ?>
-</body>
 
+<main>
+
+</body>
+</html>
