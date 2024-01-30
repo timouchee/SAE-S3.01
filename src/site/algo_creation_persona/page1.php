@@ -23,6 +23,7 @@
  
 /**
  * @brief Classe représentant un singleton qui contient les toutes réponses des utilisateurs
+ * 
  */
 class lst_reponse_utilisateur 
 {
