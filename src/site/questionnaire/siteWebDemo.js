@@ -112,7 +112,7 @@ function submit_le_tout()
     var lst_div_contenaire = document.querySelectorAll(".reponses");
 
 
-    console.log("haya");
+    //console.log("haya");
     lst_div_contenaire.forEach(function (contenaire)
     {
 

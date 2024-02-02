@@ -13,12 +13,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<<<<<<< HEAD
 <body>
 
-=======
- 
->>>>>>> 34cfaabe35f4982ec3b8cadb9aa06fedbf0d51b1
 <header>
         <div class="div1">
             <div class="div2">           
@@ -630,15 +626,11 @@ class Profil_type
      */
     public function affichage_finale()
     {
-<<<<<<< HEAD
-        echo "<h2> <center> Profil type complet </h2> </strong>";
-=======
 
       
 
         echo "<strong> <center> Profil type complet </center> </strong>";
 
->>>>>>> 34cfaabe35f4982ec3b8cadb9aa06fedbf0d51b1
         //echo "<br>";
         echo "<table class='table table-dark table-bordered'>";
         
@@ -981,13 +973,9 @@ foreach($lst_pois->get_lst_poids() as $elem)
     $persona_sans_chiffre->trier_decroissant();
     $persona_sans_chiffre->suppr_elements_peu_significatifs();
     echo "<br> <br>";
-<<<<<<< HEAD
-    echo "<h3> Elément à la base du profil type : ".$elementPrecis." </h3><br>";
-=======
 
     echo "Elément à la base du profil type : ".$elementPrecis."<br>";
 
->>>>>>> 34cfaabe35f4982ec3b8cadb9aa06fedbf0d51b1
     $persona_sans_chiffre->affichage_finale();
     
 
