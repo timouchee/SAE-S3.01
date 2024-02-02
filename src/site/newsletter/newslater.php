@@ -15,7 +15,7 @@
             <input type="email" id="email" name="email" required placeholder="Entrez votre e-mail">
             <div class="checkboxes">
                 <label for="checkbox1">
-                    <input type="checkbox" id="checkbox1" name="checkbox1" checked>
+                    <input type="checkbox" id="checkbox1" name="checkbox1">
                     Recevoir les offres spéciales
                 </label>
                 <label for="checkbox2">

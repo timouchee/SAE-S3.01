@@ -3,80 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
     <title>BonPlan&Co</title>
 </head>
-<body>
-    <header>
-
-        <div class="div1">
-            <div class="div2">
-            <div id="mySidenav" class="sidenav">
-            <a id="closeBtn" href="#" class="close">&times;</a>
-            <ul>
-                <li><a href="#">Acceuil</a></li>
-                <li><a href="#">Evénements</a></li>
-                <li><a href="#">Activités</a></li>
-                <li><a href="#">Colocations</a></li>
-                <li><a href="#">Covoiturage</a></li>
-                <li><a href="#">Offres d'emploie</a></li>
-                <li><a href="#">La map</a></li>
-                <li><a href="#">Historique</a></li>
-                <li><a href="#">Publier un Bon plan</a></li>
-                <li><a href="unendroit">Paramètres</a></li>
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+  <nav class="navbar fixed-top " data-bs-theme="dark" style="background-color: rgba(0,2,3,255);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="titre.jpg" alt="img logo"></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Acceuil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../newsletter/newslater.php">newsletter</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <strong>BonPlan</strong>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Activités</a></li>
+              <li><a class="dropdown-item" href="#">Evénements</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Colocation</a></li>
+              <li><a class="dropdown-item" href="#">Covoiturage</a></li>
+              <li><a class="dropdown-item" href="#">Offre d'emploie</a></li>
             </ul>
-            <div><p>Version 5.311</p></div>
-            </div>
-            
-            <a href="#" id="openBtn">
-                <span class="burger-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span> 
-            </a> 
-        </div>
-        <div class="div3">
-            <img src="titre.jpg" alt="Image centrée">
-            <a href="../newslater/newslater.php" class="sidebar-button">newslater</a>
-        </div>
-    </div>
-    
-    
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Historique</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Publier un Bon Plan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Param</i></a>
+          </li>
+        </ul>
         
-        </div>
-
-
-
-
-    </header>
-
-    <div>
-        <input id="searchbar" type="text" name="search" placeholder="Quels événements cherchez-vous ?">
-        <p style="text-align: center;">Événements recommandés pour vous</p>
+      </div>
     </div>
-
-    <div id="popup-overlay"></div>
-
-    <!-- Boîte de dialogue (popup) -->
-    <div id="popup-container">
-        <p>Êtes-vous connecté ?</p>
-        <div id="popup-buttons">
-            <button id="btn-oui">Oui</button>
-            <button id="btn-non">Non</button>
-        </div>
-    </div>
-
-
-    <div id="activité_body">
-
-    </div>
-
-
-      
-
-
-    <script src="script.js"></script>
-
+  </nav>
 </body>
+
 </html>

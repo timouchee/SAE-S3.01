@@ -1,31 +1,38 @@
 
-
-
-
 //===============pour la pop up DEBUT===========================
 document.addEventListener('DOMContentLoaded', function() {
   // Afficher la popup et la superposition
   var popupOverlay = document.getElementById('popup-overlay');
-  var popupContainer = document.getElementById('popup-container');
+  var popupContainer1 = document.getElementById('popup-container1');
+  var popupContainer2 = document.getElementById('popup-container2');
+  var btnSeCo = document.getElementById('btn_se_co');
+  var btnPremiereCo = document.getElementById('btn_premiere_co');
   var btnOui = document.getElementById('btn-oui');
-  var btnNon = document.getElementById('btn-non');
 
   popupOverlay.style.display = 'block';
-  popupContainer.style.display = 'block';
+  popupContainer1.style.display = 'block';
 
   // Désactiver les clics sur la superposition
   popupOverlay.style.pointerEvents = 'auto';
 
   // Écouter les événements des boutons
   btnOui.addEventListener('click', function() {
-      // Si l'utilisateur clique sur "Oui", fermer la popup et la superposition
-      popupOverlay.style.display = 'none';
-      popupContainer.style.display = 'none';
+      // Si l'utilisateur clique sur "Se connecter", fermer la popup et la superposition
+      //popupOverlay.style.display = 'none';
+      popupContainer1.style.display = 'none';
+      popupContainer2.style.display = 'block';
   });
 
-  btnNon.addEventListener('click', function() {
+  // Écouter les événements des boutons
+  btnSeCo.addEventListener('click', function() {
+      // Si l'utilisateur clique sur "Se connecter", fermer la popup et la superposition
+      popupOverlay.style.display = 'none';
+      popupContainer2.style.display = 'none';
+  });
+
+  btnPremiereCo.addEventListener('click', function() {
       // Si l'utilisateur clique sur "Non", rediriger vers une autre page
-      window.location.href = "siteWebDemo_utilisateur.php";
+      window.location.href = "../questionnaire/siteWebDemo_utilisateur.php";
   });
 });
 
