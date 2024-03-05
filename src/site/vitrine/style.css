@@ -192,7 +192,11 @@ body {
     background-color: #357ebd; /* Bleu foncé (optionnel) */
   }
 
-
+  #eventBody{
+    position: absolute;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 
 
 
