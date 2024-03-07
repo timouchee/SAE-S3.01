@@ -29,11 +29,10 @@
     $link->set_charset("utf8mb4");
 
     //Afichage base
-    $query="SELECT libelleBonPlan, detail, adresseBonPlan, 'type', image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
-    FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante";
-    //WHERE idBonPlan = 001
+    $query="SELECT libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
+    FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante
+    ORDER BY type DESC";
     $result = mysqli_query($link, $query);
-    $data = mysqli_fetch_assoc($result);
 
     while ($data = mysqli_fetch_assoc($result))
     {
@@ -52,18 +51,34 @@
       $prenom = $data["prenom"];
 
       //Partie code
-      echo "<div class='card' style='width: 18rem;'>";
-      echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
-      echo "<div class='card-body'>";
-      echo "<h5 class='card-title'>$libelleBonPlan</h5>";
-      echo "<p class='card-text'>$detail</p>";
-      echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
-      echo "</div>";
-      echo "</div>";
+
+      if($type == "Activite")
+      {
+        echo "<div class='card' style='width: 20rem;'>";
+        echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
+        echo "<div class='card-body'>";
+        echo "<h5 class='card-title'>$libelleBonPlan</h5>";
+        echo "<p class='card-text'>$detail</p>";
+        echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
+        echo "</div>";
+        echo "</div>";
+      }
+
+      if($type == "Evenement")
+      {
+        echo "<div class='card' style='width: 30rem;'>";
+        echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
+        echo "<div class='card-body'>";
+        echo "<h5 class='card-title'>$libelleBonPlan</h5>";
+        echo "<p class='card-text'>$detail</p>";
+        echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
+        echo "</div>";
+        echo "</div>";
+      }
+      
 
     }
 
-    
     ?>
 
 </body>
