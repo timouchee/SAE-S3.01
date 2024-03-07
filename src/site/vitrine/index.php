@@ -10,6 +10,7 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="script.js"></script>
     <title>BonPlan&Co</title>
 </head>
 
@@ -60,6 +61,31 @@
       echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
       echo "</div>";
       echo "</div>";
+  <!--pop up de connection >> à lier avec le bouton de connexion-->
+  <div class="modal fade" id="popUpConnection" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"><strong>Connexion</strong></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="verifMDP.php" method="post">  <!--lien vers le script de vérification-->
+            <label for="identifier">Mail de l'utilisateur:</label>
+            <br>
+            <input type="text" id="identifier" name="identifier" required>
+            <br>
+            <label for="password">Mot de passe:</label>
+            <br>
+            <input type="password" id="password" name="password" required>
+            <?php 
+            if (isset($_GET['pasBon'])){
+              echo "<script> erreurRedMDP();</script>";
+            } 
+            if (isset($_GET['utilisateurInexistant'])){
+              echo "<script> erreurRedTout();</script>";
+            }
+            ?>
 
     }
 
@@ -67,14 +93,4 @@
     ?>
 
 </body>
-
-<script>
-  //apparition auto pop up exmplicative
-  document.addEventListener('DOMContentLoaded', function () {
-    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-    myModal.show();
-  });
-</script>
-<script src="script.js"></script>
-
 </html>
