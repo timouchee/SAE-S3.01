@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -103,27 +103,43 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="script.php" method="post">  <!--lien vers le script de vérification-->
-          <label for="identifier">Identifiant de l'utilisateur:</label>
-          <br>
-          <input type="text" id="identifier" name="identifier" required>
-          <br>
-          <label for="password">Mot de passe:</label>
-          <br>
-          <input type="password" id="password" name="password" required>
+          <form action="verifMDP.php" method="post">  <!--lien vers le script de vérification-->
+            <label for="identifier">Mail de l'utilisateur:</label>
+            <br>
+            <?php 
+            if (isset($_GET['pasBon'])){
+              echo "document.getElementById('identifier').style.borderColor = 'black'";
+              echo "document.getElementById('password').style.borderColor = 'red'";
+            }
+            if (isset($_GET['utilisateurInexistant'])){
+              echo "document.getElementById('identifier').style.borderColor = 'red'";
+              echo "document.getElementById('password').style.borderColor = 'red'";
+            }
+            ?>
+            <input type="text" id="identifier" name="identifier" required>
+            <br>
+            <label for="password">Mot de passe:</label>
+            <br>
+            <input type="password" id="password" name="password" required>
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" >Se connecter</button>
-        </div>
-        <div>
-          <a href="../questionnaire/siteWebDemo_utilisateur.php">Première connexion ?</a>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" >Se connecter</button>
+            </div>
+            <div>
+              <a href="../questionnaire/siteWebDemo_utilisateur.php">Première connexion ?</a>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
   <!-- /pop up de connection-->
+  <br>
+  <br>
+  <div class="lstActivite">
+    <img src="#" alt="321">
+  </div>
 
 </body>
 
@@ -134,5 +150,6 @@
     myModal.show();
   });
 </script>
+<script src="script.js"></script>
 
 </html>
