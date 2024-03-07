@@ -10,6 +10,7 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="script.js"></script>
 
     <title>BonPlan&Co</title>
 </head>
@@ -106,21 +107,19 @@
           <form action="verifMDP.php" method="post">  <!--lien vers le script de vérification-->
             <label for="identifier">Mail de l'utilisateur:</label>
             <br>
-            <?php 
-            if (isset($_GET['pasBon'])){
-              echo "document.getElementById('identifier').style.borderColor = 'black'";
-              echo "document.getElementById('password').style.borderColor = 'red'";
-            }
-            if (isset($_GET['utilisateurInexistant'])){
-              echo "document.getElementById('identifier').style.borderColor = 'red'";
-              echo "document.getElementById('password').style.borderColor = 'red'";
-            }
-            ?>
             <input type="text" id="identifier" name="identifier" required>
             <br>
             <label for="password">Mot de passe:</label>
             <br>
             <input type="password" id="password" name="password" required>
+            <?php 
+            if (isset($_GET['pasBon'])){
+              echo "<script> erreurRedMDP();</script>";
+            } 
+            if (isset($_GET['utilisateurInexistant'])){
+              echo "<script> erreurRedTout();</script>";
+            }
+            ?>
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -142,14 +141,4 @@
   </div>
 
 </body>
-
-<script>
-  //apparition auto pop up exmplicative
-  document.addEventListener('DOMContentLoaded', function () {
-    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-    myModal.show();
-  });
-</script>
-<script src="script.js"></script>
-
 </html>
