@@ -13,15 +13,17 @@
 
     <title>BonPlan&Co</title>
 </head>
+
 <body class="p-3 m-0 border-0 bd-example m-0 border-0">
   <!--navbar + dropdown >> mettre en place if else avec verif connection-->
   <nav class="navbar fixed-top" data-bs-theme="dark" style="background-color: rgba(0,2,3,255);">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../vitrine/index.php"><img src="titre.jpg" alt="img logo"></a>
+        
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: rgba(0,2,3,255);">
+        <a class="navbar-brand" href="../vitrine/index.php"><img src="titre.jpg" alt="img logo"></a>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: rgba(0,2,3,255);">
           <div class="offcanvas-header" style="flex-direction: row-reverse;">
             <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="titre.jpg" alt="img logo"></h5> -->
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -29,7 +31,7 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Acceuil</a>
+                <a class="nav-link active" aria-current="page" href="#">Accueil</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../newsletter/newslater.php">Newsletter</a>
@@ -44,7 +46,7 @@
                   <li><hr class="dropdown-divider" /></li>
                   <li><a class="dropdown-item" href="#">Colocation</a></li>
                   <li><a class="dropdown-item" href="#">Covoiturage</a></li>
-                  <li><a class="dropdown-item" href="#">Offre d'emploie</a></li>
+                  <li><a class="dropdown-item" href="#">Offre d'emploi</a></li>
                 </ul>
               </li>
               <li><hr class="nav-divider" style= "color:white;"/></li>
@@ -93,7 +95,7 @@
     </div>
   </div>
   <!--/pop up explicative-->
-
+ 
   <!--pop up de connection >> à lier avec le bouton de connexion-->
   <div class="modal fade" id="popUpConnection" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -134,12 +136,60 @@
       </div>
     </div>
   </div>
+  <br>
+  <br>
+  <br>
   <!-- /pop up de connection-->
-  <br>
-  <br>
-  <div class="lstActivite">
-    <img src="#" alt="321">
-  </div>
+
+
+  <?php
+
+    //Connexion BD
+    $bdd = "nconguisti_bd";
+    $host = "lakartxela.iutbayonne.univ-pau.fr";
+    $user = "nconguisti_bd";
+    $pass = "nconguisti_bd";
+
+    $link = mysqli_connect($host, $user, $pass, $bdd) or die("connexion impossible");
+    $link->set_charset("utf8mb4");
+
+    //Afichage base
+    $query="SELECT libelleBonPlan, detail, adresseBonPlan, 'type', image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
+    FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante";
+    //WHERE idBonPlan = 001
+    $result = mysqli_query($link, $query);
+    $data = mysqli_fetch_assoc($result);
+
+    while ($data = mysqli_fetch_assoc($result))
+    {
+      $libelleBonPlan = $data["libelleBonPlan"];
+      $detail = $data["detail"];
+      $adresseBonPlan = $data["adresseBonPlan"];
+      $type = $data["type"];
+      $image = $data["image"];
+      $dateOuverture = $data["dateOuverture"];
+      $dateFermeture = $data["dateFermeture"];
+      $heureOuverture = $data["heureOuverture"];
+      $heureFermeture = $data["heureFermeture"];
+      $nomVille = $data["nomVille"];
+      $codeCarteEtudiante = $data["codeCarteEtudiante"];
+      $nom = $data["nom"];
+      $prenom = $data["prenom"];
+
+      //Partie code
+      echo "<div class='card' style='width: 18rem;'>";
+      echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
+      echo "<div class='card-body'>";
+      echo "<h5 class='card-title'>$libelleBonPlan</h5>";
+      echo "<p class='card-text'>$detail</p>";
+      echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
+      echo "</div>";
+      echo "</div>";
+
+    }
+
+    
+    ?>
 
 </body>
 
