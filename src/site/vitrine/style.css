@@ -199,5 +199,156 @@ body {
   }
 
 
+  #lst_but
+  {
+    /* background-color:red; */
+    text-align: center; 
+  }
+
+
+
+.but_admin_lst {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #363c79, #2196f3);
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  width: 90%;
+  max-width: 400px; /* Ajustez selon vos besoins */
+  margin: 0 auto;
+  border: none;
+}
+
+/* Au survol du bouton */
+.but_admin_lst:hover {
+  background: linear-gradient(to bottom, #363c79, #1565c0);
+}
+
+#title_up
+{
+  text-align: center; 
+  font-weight: bold;
+  font-size: 23px;
+}
+
+#barre_noire_fine_expand
+{  
+  height: 3px;
+  background-color: black;
+  width: 100%;
+  margin: 0;
+  padding: 0; 
+  
+}
+
+
+
+#item_user {
+  background-color: white;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+#info_utilisateur {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+
+#numero_telephone {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+  margin-top: 5%;
+}
+
+#actions {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+.but_user {
+  /* margin-bottom: 10px; */
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #363c79, #2196f3);
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  /* width: 90%; */
+  max-width: 400px; /* Ajustez selon vos besoins */
+  margin: 0 auto;
+  border: none;
+}
+
+.but_admin_lst:hover {
+  background: linear-gradient(to bottom, #9497b8, #1565c0);
+}
+
+#barre_de_recherche_utilisateur
+{
+  position: relative;
+  text-align: center;
+  /* left: 40%; */
+}
+
+
+.center
+{
+  text-align: center;
+  position: absolute;
+  /* left: 35%; */
+}
+
+
+
+
+#les_info_user_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  margin: 0;
+}
+
+#table_info_user {
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 800px;
+  margin: auto; 
+  background-color: white;
+}
+
+.td_info_user
+{
+  padding: 15px;
+  text-align: center;
+}
+ 
+.th_info_user {
+  background-color: #ffffff;
+}
+
+.tr_info_user:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
+
+.input_info_user
+{
+  text-align: center;
+}
+
+.center_but {
+  display: block;
+  margin: auto;
+}
 
 
