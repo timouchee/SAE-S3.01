@@ -51,6 +51,7 @@ function closeNav() {
 
 
 
+
 function trouver_user() {
   // Récupère la valeur de la barre de recherche
   var searchValue = $('#barre_de_recherche_utilisateur').val();
@@ -103,3 +104,22 @@ function balancer_modif() {
   });
 }
 
+
+//===============pour la gestion d'erreur===========================
+
+function erreurRedTout() {
+  console.log('oui');
+  document.getElementById('identifier').style.borderColor = 'red';
+  document.getElementById('password').style.borderColor = 'red';
+}
+
+function erreurRedMDP() {
+  console.log("non");
+  document.getElementById('identifier').style.borderColor = 'black';
+  document.getElementById('password').style.borderColor= 'red';
+}
+
+//apparition auto pop up explicative
+document.addEventListener('DOMContentLoaded', function () {
+var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+myModal.show();});
