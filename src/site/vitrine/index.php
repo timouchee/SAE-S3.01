@@ -33,6 +33,8 @@
     FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante
     ORDER BY type DESC";
     $result = mysqli_query($link, $query);
+    $compteEvenement = 0;
+    echo "<section id='listeBonsPlans'>";
 
     while ($data = mysqli_fetch_assoc($result))
     {
@@ -58,13 +60,14 @@
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
         echo "<div class='card-body'>";
         echo "<h5 class='card-title'>$libelleBonPlan</h5>";
-        echo "<p class='card-text'>$detail</p>";
+        echo "<p class='card-text'> Par $nom $prenom</p>";
+        echo "<p class='card-text'>$heureOuverture h / $heureFermeture h</p>";
         echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
         echo "</div>";
         echo "</div>";
       }
 
-      if($type == "Evenement")
+      if($type == "Evenement" && $compteEvenement < 1)
       {
         echo "<div class='card' style='width: 30rem;'>";
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
@@ -74,11 +77,11 @@
         echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
         echo "</div>";
         echo "</div>";
+        $compteEvenement +=1;
       }
-      
-
     }
 
+    echo "</section>";
     ?>
 
 </body>

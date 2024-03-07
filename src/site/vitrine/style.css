@@ -199,6 +199,19 @@ body {
     margin-right: 5%;
   }
 
+  /*
+  .navbar{
+    margin-bottom: 20px;
+  }*/
 
+  #listeBonsPlans {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  .card{
+    margin: 20px;
+  }
 
 
