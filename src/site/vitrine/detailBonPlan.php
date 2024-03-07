@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Detail d'un bon plan</title>
 </head>
 <body>
@@ -43,9 +44,17 @@
 
     echo "<h1>$libelleBonPlan</h1>";
     echo "<hr>";
-    echo "<img id='image' src='$image'>";
 
+    echo "<div class='card' style='width: 18rem;'>";
+    echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
+    echo "<div class='card-body'>";
+    echo "<h5 class='card-title'>$libelleBonPlan</h5>";
+    echo "<p class='card-text'>$detail</p>";
+    echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
+    echo "</div>";
+    echo "</div>";
 
+    
     ?>
     
 </body>
