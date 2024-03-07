@@ -10,7 +10,6 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
     <title>BonPlan&Co</title>
 </head>
 
