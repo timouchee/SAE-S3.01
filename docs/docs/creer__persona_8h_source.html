@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projet Bon Plan &amp; Co:  Fichier source de src/jesaispasoumettresa/creer_persona.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projet Bon Plan &amp; Co
+   </div>
+   <div id="projectbrief">Un site par les étudiants pour les étudiants</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d5ad08e03d4adf12443aaae9439c318e.html">jesaispasoumettresa</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">creer_persona.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="creer__persona_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef CREER_PERSONA_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define CREER_PERSONA_H</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;iterator&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_persona.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="class_persona.html">Persona</a>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// ATTRIBUTS</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">string</span> nomPersona;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_typedef" href="creer__persona_8h.html#af4c30124208c62c914c33e64c6fa242d">lstpref1U</a> lstPref;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="creer__persona_8h.html#a1d5700b0e85bee7d95b344de35bede7a">   57</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="creer__persona_8h.html#a1d5700b0e85bee7d95b344de35bede7a">categorie</a> { <a class="code hl_enumvalue" href="creer__persona_8h.html#a1d5700b0e85bee7d95b344de35bede7aa95ce6a7ecaacf82da901f32af6a43193">musique</a>, <a class="code hl_enumvalue" href="creer__persona_8h.html#a1d5700b0e85bee7d95b344de35bede7aa68d7c261b0873ae51200f60e3d136033">restaurant</a> };</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="creer__persona_8h.html#a355239bd056c1ab06a616caed3df4ea9">   63</a></span><span class="keyword">typedef</span> list&lt;string&gt; <a class="code hl_typedef" href="creer__persona_8h.html#a355239bd056c1ab06a616caed3df4ea9">lstelem</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="creer__persona_8h.html#af4c30124208c62c914c33e64c6fa242d">   64</a></span><span class="keyword">typedef</span> map&lt;categorie, lstelem&gt; <a class="code hl_typedef" href="creer__persona_8h.html#af4c30124208c62c914c33e64c6fa242d">lstpref1U</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="creer__persona_8h.html#aa6887b7645440b1aeab169e7be1702d8">   65</a></span><span class="keyword">typedef</span> list&lt;lstpref1U&gt; <a class="code hl_typedef" href="creer__persona_8h.html#aa6887b7645440b1aeab169e7be1702d8">preferenceUtilisateur</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="creer__persona_8h.html#a1c4b20660cd224d09bd824ec4df7e168">   66</a></span><span class="keyword">typedef</span> list&lt;pair&lt;string, int&gt;&gt; <a class="code hl_typedef" href="creer__persona_8h.html#a1c4b20660cd224d09bd824ec4df7e168">type_listPoids</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keywordtype">void</span> <a class="code hl_function" href="creer__persona_8h.html#aefbb54cffab2570dd0d284d5140397a7">remplirListePoids</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="creer__persona_8h.html#aa6887b7645440b1aeab169e7be1702d8">preferenceUtilisateur</a>&amp; lstresU, <a class="code hl_typedef" href="creer__persona_8h.html#a1c4b20660cd224d09bd824ec4df7e168">type_listPoids</a>&amp; listePoids);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><a class="code hl_typedef" href="creer__persona_8h.html#aa6887b7645440b1aeab169e7be1702d8">preferenceUtilisateur</a> <a class="code hl_function" href="creer__persona_8h.html#a8acac4fe750d39cb949ba51568294663">cree_pref_U</a>();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="creer__persona_8h.html#a6e4be034e736be808f90d82fb9a6b093">   72</a></span><a class="code hl_class" href="class_persona.html">Persona</a> <a class="code hl_function" href="creer__persona_8h.html#a6e4be034e736be808f90d82fb9a6b093">creerPersona</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="creer__persona_8h.html#a50a959da90628bcc12652d269b09154c">   74</a></span><a class="code hl_typedef" href="creer__persona_8h.html#a1c4b20660cd224d09bd824ec4df7e168">type_listPoids</a> <a class="code hl_function" href="creer__persona_8h.html#a50a959da90628bcc12652d269b09154c">defPrefUtilisateurs</a>(<a class="code hl_typedef" href="creer__persona_8h.html#af4c30124208c62c914c33e64c6fa242d">lstpref1U</a> );</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="creer__persona_8h.html#a3d051b72eb628f98212377e05e604be4">   76</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="creer__persona_8h.html#a3d051b72eb628f98212377e05e604be4">trouverPersona</a>(<a class="code hl_typedef" href="creer__persona_8h.html#aa6887b7645440b1aeab169e7be1702d8">preferenceUtilisateur</a> lstPref);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_persona_html"><div class="ttname"><a href="class_persona.html">Persona</a></div><div class="ttdoc">la classe Persona permet de representer une personne a partir de ses goûts</div><div class="ttdef"><b>Definition</b> creer_persona.h:29</div></div>
+<div class="ttc" id="acreer__persona_8h_html_a1c4b20660cd224d09bd824ec4df7e168"><div class="ttname"><a href="creer__persona_8h.html#a1c4b20660cd224d09bd824ec4df7e168">type_listPoids</a></div><div class="ttdeci">list&lt; pair&lt; string, int &gt; &gt; type_listPoids</div><div class="ttdef"><b>Definition</b> creer_persona.h:66</div></div>
+<div class="ttc" id="acreer__persona_8h_html_a1d5700b0e85bee7d95b344de35bede7a"><div class="ttname"><a href="creer__persona_8h.html#a1d5700b0e85bee7d95b344de35bede7a">categorie</a></div><div class="ttdeci">categorie</div><div class="ttdoc">L'énumération pour les categorie de préférences permet de définir les goûts d'une personne a partir d...</div><div class="ttdef"><b>Definition</b> creer_persona.h:57</div></div>
+<div class="ttc" id="acreer__persona_8h_html_a1d5700b0e85bee7d95b344de35bede7aa68d7c261b0873ae51200f60e3d136033"><div class="ttname"><a href="creer__persona_8h.html#a1d5700b0e85bee7d95b344de35bede7aa68d7c261b0873ae51200f60e3d136033">restaurant</a></div><div class="ttdeci">@ restaurant</div><div class="ttdef"><b>Definition</b> creer_persona.h:57</div></div>
+<div class="ttc" id="acreer__persona_8h_html_a1d5700b0e85bee7d95b344de35bede7aa95ce6a7ecaacf82da901f32af6a43193"><div class="ttname"><a href="creer__persona_8h.html#a1d5700b0e85bee7d95b344de35bede7aa95ce6a7ecaacf82da901f32af6a43193">musique</a></div><div class="ttdeci">@ musique</div><div class="ttdef"><b>Definition</b> creer_persona.h:57</div></div>
+<div class="ttc" id="acreer__persona_8h_html_a355239bd056c1ab06a616caed3df4ea9"><div class="ttname"><a href="creer__persona_8h.html#a355239bd056c1ab06a616caed3df4ea9">lstelem</a></div><div class="ttdeci">list&lt; string &gt; lstelem</div><div class="ttdoc">Alias pour listes d'éléments et de preferenceUtilisateur.</div><div class="ttdef"><b>Definition</b> creer_persona.h:63</div></div>
+<div class="ttc" id="acreer__persona_8h_html_a3d051b72eb628f98212377e05e604be4"><div class="ttname"><a href="creer__persona_8h.html#a3d051b72eb628f98212377e05e604be4">trouverPersona</a></div><div class="ttdeci">void trouverPersona(preferenceUtilisateur lstPref)</div></div>
+<div class="ttc" id="acreer__persona_8h_html_a50a959da90628bcc12652d269b09154c"><div class="ttname"><a href="creer__persona_8h.html#a50a959da90628bcc12652d269b09154c">defPrefUtilisateurs</a></div><div class="ttdeci">type_listPoids defPrefUtilisateurs(lstpref1U)</div></div>
+<div class="ttc" id="acreer__persona_8h_html_a6e4be034e736be808f90d82fb9a6b093"><div class="ttname"><a href="creer__persona_8h.html#a6e4be034e736be808f90d82fb9a6b093">creerPersona</a></div><div class="ttdeci">Persona creerPersona()</div></div>
+<div class="ttc" id="acreer__persona_8h_html_a8acac4fe750d39cb949ba51568294663"><div class="ttname"><a href="creer__persona_8h.html#a8acac4fe750d39cb949ba51568294663">cree_pref_U</a></div><div class="ttdeci">preferenceUtilisateur cree_pref_U()</div><div class="ttdoc">Fonction pour créer et initialiser les préférences utilisateur.</div><div class="ttdef"><b>Definition</b> creer_persona.cpp:17</div></div>
+<div class="ttc" id="acreer__persona_8h_html_aa6887b7645440b1aeab169e7be1702d8"><div class="ttname"><a href="creer__persona_8h.html#aa6887b7645440b1aeab169e7be1702d8">preferenceUtilisateur</a></div><div class="ttdeci">list&lt; lstpref1U &gt; preferenceUtilisateur</div><div class="ttdef"><b>Definition</b> creer_persona.h:65</div></div>
+<div class="ttc" id="acreer__persona_8h_html_aefbb54cffab2570dd0d284d5140397a7"><div class="ttname"><a href="creer__persona_8h.html#aefbb54cffab2570dd0d284d5140397a7">remplirListePoids</a></div><div class="ttdeci">void remplirListePoids(const preferenceUtilisateur &amp;lstresU, type_listPoids &amp;listePoids)</div><div class="ttdoc">Fonction pour remplir une liste de poids basés sur les preferenceUtilisateur.</div><div class="ttdef"><b>Definition</b> creer_persona.cpp:121</div></div>
+<div class="ttc" id="acreer__persona_8h_html_af4c30124208c62c914c33e64c6fa242d"><div class="ttname"><a href="creer__persona_8h.html#af4c30124208c62c914c33e64c6fa242d">lstpref1U</a></div><div class="ttdeci">map&lt; categorie, lstelem &gt; lstpref1U</div><div class="ttdef"><b>Definition</b> creer_persona.h:64</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
