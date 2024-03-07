@@ -104,7 +104,7 @@
         </div>
         <div class="modal-body">
           <form action="verifMDP.php" method="post">  <!--lien vers le script de vérification-->
-            <label for="identifier">Identifiant de l'utilisateur:</label>
+            <label for="identifier">Mail de l'utilisateur:</label>
             <br>
             <?php 
             if (isset($_GET['pasBon'])){

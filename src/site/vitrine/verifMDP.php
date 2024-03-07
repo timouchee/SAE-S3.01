@@ -11,10 +11,10 @@
         // Comparer les mots de passe hachés
         // Ici, vous devriez récupérer le mot de passe haché stocké dans la base de données et le comparer avec $mot_de_passe_hache
         // Se connecter à la base de données
-        $servername = "localhost"; // Remplacez localhost par l'adresse de votre serveur de base de données
-        $username = "username"; // Remplacez username par votre nom d'utilisateur de base de données
-        $password = "password"; // Remplacez password par votre mot de passe de base de données
-        $dbname = "nom_de_la_base_de_donnees"; // Remplacez nom_de_la_base_de_donnees par le nom de votre base de données
+        $servername = "lakartxela.iutbayonne.univ-pau.fr"; // Remplacez localhost par l'adresse de votre serveur de base de données
+        $username = "nconguisti_bd"; // Remplacez username par votre nom d'utilisateur de base de données
+        $password = "nconguisti_bd"; // Remplacez password par votre mot de passe de base de données
+        $dbname = "nconguisti_bd"; // Remplacez nom_de_la_base_de_donnees par le nom de votre base de données
 
         // Créer une connexion
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -25,7 +25,7 @@
         }
 
         // Préparer la requête SQL pour récupérer le mot de passe haché correspondant à l'identifiant fourni
-        $sql = "SELECT mot_de_passe FROM utilisateurs WHERE identifiant = ?";
+        $sql = "SELECT mot_de_passe FROM utilisateurs WHERE mail = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $identifiant);
         $stmt->execute();
@@ -34,15 +34,24 @@
         if ($result->num_rows == 1) {
             // L'utilisateur existe dans la base de données, récupérer le mot de passe haché
             $row = $result->fetch_assoc();
-            $mot_de_passe_hache_bd = $row["mot_de_passe"];
+            $mot_de_passe_hache_bd = $row["motdepasse"];
+            $ligne = $row;
+            //$type_user = $row["type_user"];
+            echo $row;
 
             // Vérifier si le mot de passe saisi correspond au mot de passe haché récupéré de la base de données
             if (password_verify($mot_de_passe, $mot_de_passe_hache_bd)) {
                 // Mot de passe correct, rediriger l'utilisateur vers une autre page
-                // Vous pouvez ajouter ici des conditions pour déterminer si l'utilisateur est un admin ou un utilisateur normal
-                header("Location: controle_site.php?quelle_compte=user");
-                header("Location: controle_site.php?quelle_compte=admin");
-                exit();
+                // verif admin / user
+                if ($type_user = 'user') {
+                    header("Location: controle_site.php?quelle_compte=user");
+                    exit();
+                }
+                if ($type_user = 'admin') {
+                    header("Location: controle_site.php?quelle_compte=admin");
+                    exit();
+                }
+                
             } else {
                 // Mot de passe incorrect, afficher un message d'erreur par exemple
                 header("Location: index.php?pasBon=true");
