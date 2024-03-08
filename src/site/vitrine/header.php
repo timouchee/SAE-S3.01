@@ -54,7 +54,7 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Se connecter</a>
-                </li>
+                </li> 
             </ul>
           </div>
         </div>
