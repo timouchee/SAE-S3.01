@@ -198,11 +198,20 @@ body {
     margin-left: 5%;
     margin-right: 5%;
   }
-
+  /*-------------- Partie page accueil -------------------- */
   /*
   .navbar{
     margin-bottom: 20px;
   }*/
+
+  .carte, .carte:hover{
+    text-decoration: none;
+    color: black;
+  }
+
+  .horaires{
+    text-align: right;
+  }
 
   #listeBonsPlans {
     display: flex;
