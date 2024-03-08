@@ -107,13 +107,13 @@ function balancer_modif() {
 //==================
 
 function erreurRedTout() {
-  console.log('oui');
+  //console.log('oui');
   document.getElementById('identifier').style.borderColor = 'red';
   document.getElementById('password').style.borderColor = 'red';
 }
 
 function erreurRedMDP() {
-  console.log("non");
+  //console.log("non");
   document.getElementById('identifier').style.borderColor = 'black';
   document.getElementById('password').style.borderColor= 'red';
 }
