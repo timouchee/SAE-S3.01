@@ -70,14 +70,6 @@
 
     echo "<br>";
 
-    echo "<div class='card' style='width: 18rem;'>";
-    echo "<div class='card-body'>";
-    echo "<p class='card-title'>$detail</p>";
-    echo "</div>";
-    echo "</div>";
-
-    echo "<br>";
-
     echo "<button class = 'but_user' style='width:330px'>Participer a cette activité!</button>";
 
     echo "<br>";
@@ -109,7 +101,6 @@
 
     $stmt->close();
 
-    }
     ?>
 </body>
 </html>
