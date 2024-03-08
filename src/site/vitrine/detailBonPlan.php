@@ -59,6 +59,7 @@
         
     //Partie code
 
+    echo "<br>";
     echo "<div class='detailBonPlanContainer'>";
 
     echo "<h1>$libelleBonPlan</h1>";
@@ -81,7 +82,7 @@
     echo "</div>";
     echo "</div>";
 
-    echo "<br>";
+    
 
 
     echo "<div class='card' style='width: 18rem;'>";
@@ -93,7 +94,9 @@
 
     echo "<br>";
 
-    
+    echo "<button class = 'but_user' style='width:330px'>Participer a cette activité!</button>";
+
+    echo "<br>";
 
     echo "<h1>Commentaires</h1>";
 
@@ -118,11 +121,11 @@
     echo "<p class='card-title'>note : $note</p>";
     echo "</div>";
     echo "</div>";
-    echo "<br>";
+ 
 
     }
 
-    echo "</div>";
+    
 //azeazoeaozeo
     ?>
  
