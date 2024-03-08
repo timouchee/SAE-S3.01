@@ -20,6 +20,8 @@
 
     include "header.php";
 
+
+
     //Connexion BD
     $bdd = "nconguisti_bd";
     $host = "lakartxela.iutbayonne.univ-pau.fr";
@@ -57,6 +59,8 @@
         
     //Partie code
 
+    echo "<div class='detailBonPlanContainer'>";
+
     echo "<h1>$libelleBonPlan</h1>";
     echo "<hr>";
 
@@ -69,13 +73,15 @@
     echo "</div>";
     echo "</div>";
 
-
+    echo "<br>";
 
     echo "<div class='card' style='width: 18rem;'>";
     echo "<div class='card-body'>";
     echo "<p class='card-title'>$detail</p>";
     echo "</div>";
     echo "</div>";
+
+    echo "<br>";
 
 
     echo "<div class='card' style='width: 18rem;'>";
@@ -85,11 +91,13 @@
     echo "</div>";
     echo "</div>";
 
+    echo "<br>";
+
     
 
     echo "<h1>Commentaires</h1>";
 
-    $queryCom="SELECT c.Message, c.note
+    $queryCom="SELECT c.Message, c.note, u.prenom, u.nom
     FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante
     JOIN Commentaire c ON b.idBonPlan = c.idBonPlan
     WHERE b.idBonPlan = 001"; // 001 a changer pour l'id du bonplan en question
@@ -97,21 +105,26 @@
 
     while ($data = mysqli_fetch_assoc($resultatCom))
     {
-      
+        $nom = $data["nom"];
+        $prenom = $data["prenom"];
         $message = $data["Message"];
         $note = $data["note"];
 
       //Partie code
-      echo "<div class='card' style='width: 18rem;'>";
+      echo "<p>$nom $prenom</p>";
+      echo "<div class='card' style='width: 25rem;'>";
     echo "<div class='card-body'>";
     echo "<p class='card-title'>$message</p>";
     echo "<p class='card-title'>note : $note</p>";
     echo "</div>";
     echo "</div>";
+    echo "<br>";
 
     }
 
+    echo "</div>";
+//azeazoeaozeo
     ?>
-    
+ 
 </body>
 </html>

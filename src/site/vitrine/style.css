@@ -220,6 +220,12 @@ body {
     text-align: center; 
   }
 
+  .detailBonPlanContainer{
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+  }
+
 
 
 .but_admin_lst {
