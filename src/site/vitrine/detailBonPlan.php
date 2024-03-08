@@ -20,8 +20,6 @@
 
     include "header.php";
 
-
-
     //Connexion BD
     $bdd = "nconguisti_bd";
     $host = "lakartxela.iutbayonne.univ-pau.fr";
@@ -33,33 +31,26 @@
 
     //Afichage base
 
-    $query="SELECT libelleBonPlan, detail, adresseBonPlan, 'type', image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom, c.Message, c.note
+    $idBonPlan = $_GET['idBonPlan'];
+
+    $query="SELECT libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
     FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante
-    JOIN Commentaire c ON b.idBonPlan = c.idBonPlan
-    WHERE b.idBonPlan = 001"; // 001 a changer pour l'id du bonplan en question
+    WHERE b.idBonPlan = ?";
 
-    $result = mysqli_query($link, $query);
+    $stmt = $link->prepare($query);
+    $stmt->bind_param("s", $idBonPlan);
+    $stmt->execute();
+    $stmt->bind_result($libelleBonPlan, $detail, $adresseBonPlan, $type, $image, $dateOuverture, $dateFermeture, $heureOuverture, $heureFermeture, $nomVille, $codeCarteEtudiante, $nom, $prenom);
+    $stmt->fetch();
+    $stmt->close();
 
-    $data = mysqli_fetch_assoc($result);
-        $libelleBonPlan = $data["libelleBonPlan"];
-        $detail = $data["detail"];
-        $adresseBonPlan = $data["adresseBonPlan"];
-        $type = $data["type"];
-        $image = $data["image"];
-        $dateOuverture = $data["dateOuverture"];
-        $dateFermeture = $data["dateFermeture"];
-
-        $heureOuverture = substr($data["heureOuverture"],0,-3);
-        $heureFermeture = substr($data["heureFermeture"],0,-3);
-        $nomVille = $data["nomVille"];
-        $codeCarteEtudiante = $data["codeCarteEtudiante"];
-        $nom = $data["nom"];
-        $prenom = $data["prenom"];
-
-        
     //Partie code
 
+    $heureOuverture = substr($heureOuverture,0,-3);
+    $heureFermeture = substr($heureFermeture,0,-3);
+
     echo "<br>";
+
     echo "<div class='detailBonPlanContainer'>";
 
     echo "<h1>$libelleBonPlan</h1>";
@@ -71,6 +62,9 @@
 
     echo "<h5 class='card-title'>Par $nom $prenom</h5>";
     echo "<p class='card-text'>$heureOuverture h/$heureFermeture h</p>";
+    echo "<hr>";
+    echo "<p class='card-text'>$detail</p>";
+    echo "<p class='card-text'>$adresseBonPlan</p>";
     echo "</div>";
     echo "</div>";
 
@@ -82,52 +76,40 @@
     echo "</div>";
     echo "</div>";
 
-    
-
-
-    echo "<div class='card' style='width: 18rem;'>";
-    echo "<div class='card-body'>";
-    echo "<p class='card-title'>$adresseBonPlan</p>";
-
-    echo "</div>";
-    echo "</div>";
-
     echo "<br>";
 
     echo "<button class = 'but_user' style='width:330px'>Participer a cette activité!</button>";
 
     echo "<br>";
 
+
     echo "<h1>Commentaires</h1>";
 
     $queryCom="SELECT c.Message, c.note, u.prenom, u.nom
-    FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante
-    JOIN Commentaire c ON b.idBonPlan = c.idBonPlan
-    WHERE b.idBonPlan = 001"; // 001 a changer pour l'id du bonplan en question
-    $resultatCom = mysqli_query($link, $queryCom);
+    FROM Utilisateur u
+    JOIN Commentaire c ON c.codeCarteEtudiante = u.codeCarteEtudiante
+    WHERE c.idBonPlan = ?";
 
-    while ($data = mysqli_fetch_assoc($resultatCom))
+    $stmt = $link->prepare($queryCom);
+    $stmt->bind_param("s", $idBonPlan);
+    $stmt->execute();
+    $stmt->bind_result($Message, $note, $prenom, $nom);
+    while ( $stmt->fetch())
     {
-        $nom = $data["nom"];
-        $prenom = $data["prenom"];
-        $message = $data["Message"];
-        $note = $data["note"];
-
-      //Partie code
-      echo "<p>$nom $prenom</p>";
-      echo "<div class='card' style='width: 25rem;'>";
-    echo "<div class='card-body'>";
-    echo "<p class='card-title'>$message</p>";
-    echo "<p class='card-title'>note : $note</p>";
-    echo "</div>";
-    echo "</div>";
- 
-
+        echo "<div class='card' style='width: 25rem;'>";
+        echo "<div class='card-body'>";
+        echo "<h5 class='card-title'> $nom $prenom</h5>";
+        echo "<hr>";
+        echo "<p class='card-text'>$Message</p>";
+        echo "<p class='card-text'>note : $note / 5 </p>";
+        echo "</div>";
+        echo "</div>";
+        echo "<br>";
     }
 
-    
-//azeazoeaozeo
+    $stmt->close();
+
+    }
     ?>
- 
 </body>
 </html>
