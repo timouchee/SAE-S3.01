@@ -123,4 +123,5 @@
       </div>
     </div>
   </div>
+  <br><br>
   <!-- /pop up de connection-->

@@ -13,10 +13,10 @@
     border: none; /* Supprimer la bordure */
     border-radius: 50px;
     background-color: rgba(255, 255, 255, 0.8);
-    background-image: url('images/loupe.webp');
+    /*background-image: url('images/loupe.webp');*/
     background-size: 20px;
     background-position: 10px center;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
     padding-left: 40px;
     width: 90%; /* Ajuster la largeur de l'input */
     box-sizing: border-box; /* Inclure le padding dans la largeur totale */
@@ -73,11 +73,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('images/background.png');
+    /*background-image: url('images/background.png');*/
+    background-image: linear-gradient(to right, rgb(181, 221, 240), rgb(245, 245, 252));
     background-size: cover; /* L'image de fond couvre tout l'élément */
-    background-repeat: no-repeat; /* Empêche la répétition de l'image */
-    background-position: center center;
-    height: 160vh;
+    /*background-repeat: no-repeat; */
+    /*background-position: center center;*/
+    /*height: 160vh;*/
 }
 
 .div1 {
@@ -198,6 +199,20 @@ body {
     margin-right: 5%;
   }
 
+  /*
+  .navbar{
+    margin-bottom: 20px;
+  }*/
+
+  #listeBonsPlans {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  .card{
+    margin: 20px;
+  }
 
   #lst_but
   {
