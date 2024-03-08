@@ -97,21 +97,19 @@
           <form action="verifMDP.php" method="post">  <!--lien vers le script de vérification-->
             <label for="identifier">Mail de l'utilisateur:</label>
             <br>
-            <?php 
-            if (isset($_GET['pasBon'])){
-              echo "document.getElementById('identifier').style.borderColor = 'black'";
-              echo "document.getElementById('password').style.borderColor = 'red'";
-            }
-            if (isset($_GET['utilisateurInexistant'])){
-              echo "document.getElementById('identifier').style.borderColor = 'red'";
-              echo "document.getElementById('password').style.borderColor = 'red'";
-            }
-            ?>
             <input type="text" id="identifier" name="identifier" required>
             <br>
             <label for="password">Mot de passe:</label>
             <br>
             <input type="password" id="password" name="password" required>
+            <?php 
+            if (isset($_GET['pasBon'])){
+              echo "<script>erreurRedMDP()</script>";
+            }
+            if (isset($_GET['utilisateurInexistant'])){
+              echo "<script>erreurRedTout()</script>";
+            }
+            ?>
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -125,4 +123,5 @@
       </div>
     </div>
   </div>
+  <br><br>
   <!-- /pop up de connection-->
