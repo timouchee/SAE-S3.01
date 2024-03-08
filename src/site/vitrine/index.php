@@ -46,8 +46,8 @@
       $image = $data["image"];
       $dateOuverture = $data["dateOuverture"];
       $dateFermeture = $data["dateFermeture"];
-      $heureOuverture = $data["heureOuverture"];
-      $heureFermeture = $data["heureFermeture"];
+      $heureOuverture = substr($data["heureOuverture"],0,-3);
+      $heureFermeture = substr($data["heureFermeture"],0,-3);
       $nomVille = $data["nomVille"];
       $codeCarteEtudiante = $data["codeCarteEtudiante"];
       $nom = $data["nom"];
