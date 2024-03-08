@@ -50,7 +50,25 @@
                       <li><a class="dropdown-item" href="#">Colocation</a></li>
                       <li><a class="dropdown-item" href="#">Covoiturage</a></li>
                       <li><a class="dropdown-item" href="#">Offre d'emploi</a></li>
-                  </ul>
+                    </ul>
+                    </li>
+                    <li><hr class="nav-divider" style= "color:white;"/></li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" aria-disabled="true">Map</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Publier un Bon Plan</a>  <!--lien ver controleur + publier.php-->
+                    </li>
+                    <li><hr class="nav-divider" style= "color:white;"/></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Historique</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Paramètres</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Se connecter</a>
+                    </li> 
                 <?php } else { ?>
                   <!-- envoie la pop up de connection -->
                   <ul class="dropdown-menu">                        
@@ -61,26 +79,26 @@
                       <li class="nav-item"><a class="dropdown-item nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Covoiturage</a></li>
                       <li class="nav-item"><a class="dropdown-item nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Offre d'emploi</a></li>
                   </ul>
+                  </li>
+                  <li><hr class="nav-divider" style= "color:white;"/></li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Map</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Publier un Bon Plan</a>
+                  </li>
+                  <li><hr class="nav-divider" style= "color:white;"/></li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Historique</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" data-bs-toggle="modal" data-bs-target="#popUpConnection">Paramètres</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Se connecter</a>
+                  </li> 
                 <?php } ?>
 
-              </li>
-              <li><hr class="nav-divider" style= "color:white;"/></li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Map</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Publier un Bon Plan</a>
-              </li>
-              <li><hr class="nav-divider" style= "color:white;"/></li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Historique</a>
-              </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Paramètres</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Se connecter</a>
-                </li> 
             </ul>
           </div>
         </div>

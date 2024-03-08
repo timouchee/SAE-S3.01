@@ -22,7 +22,7 @@ if(isset($_GET["quelle_page"]))
             break;
 
         case 'switch_publier_bon_plan': //à faire
-            include "publier_bon_plan.php";     //créer switch pour différent type de publication
+            include "switch_publier_bon_plan.php";     //créer switch pour différent type de publication
             break;
         
         case 'historique':              //pas fais
