@@ -10,6 +10,7 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="script.js"></script>
     <title>BonPlan&Co</title>
 </head>
 
@@ -85,14 +86,4 @@
     ?>
 
 </body>
-
-<script>
-  //apparition auto pop up exmplicative
-  document.addEventListener('DOMContentLoaded', function () {
-    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-    myModal.show();
-  });
-</script>
-<script src="script.js"></script>
-
 </html>
