@@ -30,7 +30,7 @@
     $link->set_charset("utf8mb4");
 
     //Afichage base
-    $query="SELECT libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
+    $query="SELECT idBonPlan, libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
     FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante
     ORDER BY type DESC";
     $result = mysqli_query($link, $query);
@@ -39,6 +39,7 @@
 
     while ($data = mysqli_fetch_assoc($result))
     {
+      $idBonPlan = $data["idBonPlan"];
       $libelleBonPlan = $data["libelleBonPlan"];
       $detail = $data["detail"];
       $adresseBonPlan = $data["adresseBonPlan"];
@@ -55,29 +56,35 @@
 
       //Partie code
 
+      //Rectifiation des horaires (on enlève les secondes)
+      $heureOuverture = substr($data["heureOuverture"],0,-3);
+      $heureFermeture = substr($data["heureFermeture"],0,-3);
+
       if($type == "Activite")
       {
+        echo "<a class='carte' href='detailBonPlan.php?$idBonPlan' >";
         echo "<div class='card' style='width: 20rem;'>";
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
         echo "<div class='card-body'>";
         echo "<h5 class='card-title'>$libelleBonPlan</h5>";
         echo "<p class='card-text'> Par $nom $prenom</p>";
-        echo "<p class='card-text'>$heureOuverture h / $heureFermeture h</p>";
-        echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
+        echo "<p class='card-text horaires'>$heureOuverture h / $heureFermeture h</p>";
         echo "</div>";
         echo "</div>";
+        echo "</a>";
       }
 
       if($type == "Evenement" && $compteEvenement < 1)
       {
+        echo "<a class='carte' href='detailBonPlan.php?$idBonPlan' >";
         echo "<div class='card' style='width: 30rem;'>";
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
         echo "<div class='card-body'>";
         echo "<h5 class='card-title'>$libelleBonPlan</h5>";
         echo "<p class='card-text'>$detail</p>";
-        echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
         echo "</div>";
         echo "</div>";
+        echo "</a>";
         $compteEvenement +=1;
       }
     }
