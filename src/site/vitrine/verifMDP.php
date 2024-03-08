@@ -5,9 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $identifiant = $_POST['identifier'];
     $mot_de_passe = $_POST['password'];
 
-    // Hacher le mot de passe saisi
-    $mot_de_passe_hache = password_hash($mot_de_passe, PASSWORD_DEFAULT);
-
     // Se connecter à la base de données
     $servername = "lakartxela.iutbayonne.univ-pau.fr";
     $username = "nconguisti_bd"; 
@@ -22,11 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Préparer la requête SQL pour récupérer le mot de passe haché correspondant à l'identifiant fourni
+    // Préparer la requête SQL pour récupérer le mot de passe correspondant à l'identifiant fourni
     $sql_utilisateur = "SELECT motdepasse FROM Utilisateur WHERE mail = ?";
     $sql_administrateur = "SELECT motdepasse FROM Administrateur WHERE mail = ?";
     
-    // Exécutez d'abord la requête pour l'utilisateur
+    // Exécuter d'abord la requête pour l'utilisateur
     $stmt = $conn->prepare($sql_utilisateur);
     $stmt->bind_param("s", $identifiant);
     $stmt->execute();
@@ -36,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // L'utilisateur existe dans la table Utilisateur
         $type_user = "user";
     } else {
-        // Essayez la table Administrateur
+        // Essayer la table Administrateur
         $stmt = $conn->prepare($sql_administrateur);
         $stmt->bind_param("s", $identifiant);
         $stmt->execute();
@@ -54,8 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Vérifier le mot de passe pour l'utilisateur trouvé
     $row = $result->fetch_assoc();
-    $mot_de_passe_hache_bd = $row["motdepasse"];
-    if (password_verify($mot_de_passe, $mot_de_passe_hache_bd)) {
+    $mot_de_passe_bd = $row["motdepasse"];
+    if ($mot_de_passe_bd == $mot_de_passe) {
         // Mot de passe correct, rediriger l'utilisateur en fonction de son type
         if ($type_user == "user") {
             header("Location: controle_site.php?quelle_compte=user");
@@ -75,3 +72,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+
