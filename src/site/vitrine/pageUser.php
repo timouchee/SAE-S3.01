@@ -1,3 +1,4 @@
+<?php include "header.php"?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Page Accueil</h1>
+    <br>
+    <h2 style="text-align: center;">Page d'accueil</h2>
 </body>
 </html>

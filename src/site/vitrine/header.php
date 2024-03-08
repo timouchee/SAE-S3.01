@@ -1,5 +1,17 @@
-
-
+<?php if(isset($_GET["quelle_page"]) && $_GET["quelle_page"]=='user'){ ?>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+      <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+      <script src="script.js"></script>
+  </head>
+<?php } ?>
 <!-- HEADER COMMUN-->
 
 
@@ -11,7 +23,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="../vitrine/index.php"><img src="images/logo.jpg" alt="img logo"></a>
-        <a data-bs-toggle="modal" data-bs-target="#popUpConnection"' ><img src='images/icone-non-connect.png' height='40' width='40'> </a>
+        <a data-bs-toggle="modal" data-bs-target="#popUpConnection" ><img src='images/icone-non-connect.png' height='40' width='40'> </a>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: rgba(0,2,3,255);">
           <div class="offcanvas-header" style="flex-direction: row-reverse;">
             <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="titre.jpg" alt="img logo"></h5> -->
@@ -29,14 +41,28 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <strong>BonPlan</strong>
                 </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Activités</a></li>
-                  <li><a class="dropdown-item" href="#">Evénements</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="#">Colocation</a></li>
-                  <li><a class="dropdown-item" href="#">Covoiturage</a></li>
-                  <li><a class="dropdown-item" href="#">Offre d'emploi</a></li>
-                </ul>
+                <?php if(isset($_GET["quelle_page"]) && $_GET["quelle_page"]=='user'){ ?>
+                  <!-- envoie vers les bons liens -->
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Activités</a></li>
+                      <li><a class="dropdown-item" href="#">Evénements</a></li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li><a class="dropdown-item" href="#">Colocation</a></li>
+                      <li><a class="dropdown-item" href="#">Covoiturage</a></li>
+                      <li><a class="dropdown-item" href="#">Offre d'emploi</a></li>
+                  </ul>
+                <?php } else { ?>
+                  <!-- envoie la pop up de connection -->
+                  <ul class="dropdown-menu">                        
+                      <li class="nav-item"><a class="dropdown-item nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Activités</a></li>
+                      <li class="nav-item"><a class="dropdown-item nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Evénements</a></li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li class="nav-item"><a class="dropdown-item nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Colocation</a></li>
+                      <li class="nav-item"><a class="dropdown-item nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Covoiturage</a></li>
+                      <li class="nav-item"><a class="dropdown-item nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Offre d'emploi</a></li>
+                  </ul>
+                <?php } ?>
+
               </li>
               <li><hr class="nav-divider" style= "color:white;"/></li>
               <li class="nav-item">
