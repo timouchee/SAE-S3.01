@@ -1,4 +1,4 @@
-<?php if(isset($_GET["quelle_page"]) && $_GET["quelle_page"]=='user'){ ?>
+<?php if((isset($_GET["quelle_page"]) && $_GET["quelle_page"]=='user') || isset($_GET["publie_quoi"])){ ?>
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +57,7 @@
                       <a class="nav-link disabled" aria-disabled="true">Map</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Publier un Bon Plan</a>  <!--lien ver controleur + publier.php-->
+                      <a class="nav-link" href="switch_publier_bon_plan.php?publie_quoi=default">Publier un Bon Plan</a>  <!--lien ver controleur + publier.php-->
                     </li>
                     <li><hr class="nav-divider" style= "color:white;"/></li>
                     <li class="nav-item">

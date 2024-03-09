@@ -1,3 +1,4 @@
 <?php
-echo "hello"
+include "header.php"
+
 ?>
