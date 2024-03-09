@@ -4,13 +4,28 @@
 <br>
 <div id="lst_but">
     <br>
-    <button type="button" class="but_admin_lst" href="switch_publier_bon_plan.php?publie_quoi=publier_activite">Activité</button>
-    <br><br>
-    <button type="button" class="but_admin_lst" href="switch_publier_bon_plan.php?publie_quoi=publier_event">Evénement</button>
-    <br><br>
-    <button type="button" class="but_admin_lst" href="switch_publier_bon_plan.php?publie_quoi=publier_covoit">Offre de covoiturage</button>
-    <br><br>
-    <button type="button" class="but_admin_lst" href="switch_publier_bon_plan.php?publie_quoi=publier_coloc">Offre de colocation</button>
-    <br><br><br><br><br><br><br><br>
-    <button type="button" class="but_admin_lst" href="switch_publier_bon_plan.php?publie_quoi=question">Une question ?</button>
+    <form action="switch_publier_bon_plan.php" method="get">
+        <input hidden type="text" name="publie_quoi"  value="publier_activite">
+        <button type="submit" class="but_admin_lst" >Activité</button>
+        <br>
+    </form>
+    <form action="switch_publier_bon_plan.php" method="get">
+        <input hidden type="text" name="publie_quoi"  value="publier_event">
+        <button type="submit" class="but_admin_lst">Evénement</button>
+        <br>     
+    </form>
+    <form action="switch_publier_bon_plan.php" method="get">
+        <input hidden type="text" name="publie_quoi"  value="publier_covoit">
+        <button type="submit" class="but_admin_lst">Offre de covoiturage</button>
+        <br>
+    </form>
+    <form action="switch_publier_bon_plan.php" method="get">
+        <input hidden type="text" name="publie_quoi"  value="publier_coloc">
+        <button type="submit" class="but_admin_lst">Offre de colocation</button>
+        <br><br><br><br><br><br><br>
+    </form>
+    <form action="switch_publier_bon_plan.php" method="get">
+        <input hidden type="text" name="publie_quoi"  value="question">
+        <button type="submit" class="but_admin_lst">Une question ?</button>
+    </form>
 </div>  

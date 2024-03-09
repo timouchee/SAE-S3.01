@@ -18,9 +18,9 @@ if(isset($_GET["publie_quoi"]))
         include "publier_covoit.php";
         break;
 
-    case 'publier_offre_emploi':
+    /* case 'publier_offre_emploi':
         include "recherchpublier_offre_emploi.php";
-        break;
+        break; */
 
     case 'publier_event':
         include "publier_event.php";     //créer switch pour différent type de publication
