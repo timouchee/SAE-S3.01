@@ -3,8 +3,11 @@
 <div id="barre_noire_fine_expand"></div>
 <br>
 <div id="lst_but">
-    <button type="button" class="but_admin_lst">lancer la création de <br> persona manuel</button>
-    <br><br><br>
+    <form action="switch_admin.php" method="get">    
+        <input hidden type="text" name="quelle_page"  value="admin_creation_persona_manuel">
+        <button type="submit" class="but_admin_lst">lancer la création de <br> persona manuel</button>
+        </form>
+        <br><br><br>
     <form action="switch_admin.php" method="get">
         <input hidden type="text" name="quelle_page"  value="admin_search_user">
         <button type="submit"  class="but_admin_lst">chercher des <br> information utiisateur</button>

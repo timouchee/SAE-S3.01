@@ -381,4 +381,9 @@ body {
   margin: auto;
 }
 
+.but_retour_barre_recherche
+{
+  height: 30%;
+  width: 30%;
+}
 

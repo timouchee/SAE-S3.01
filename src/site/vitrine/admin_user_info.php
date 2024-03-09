@@ -1,21 +1,14 @@
 <?php
 //fait la requete
 
-    if(isset($_SESSION["requete_modif_user_demander"]) && $_SESSION["requete_modif_user_demander"]==true)
-    {
-        /* $requete = $connexion->prepare("INSERT INTO Utilisateur () VALUES () WHERE condition = :valeur");
-        $valeur = "valeur_reelle";
-        $requete->bindParam(':valeur', $valeur);
-        $requete->execute();
-        $resultats = $requete->fetchAll(PDO::FETCH_ASSOC); */
-    }
+    
 
-echo " <br> <br>  code carte etudiant : ".$_GET["codeCarteEtudiante"]." <br> ";
-$requete = $connexion->query("SELECT * FROM Utilisateur WHERE codeCarteEtudiante=".$_GET["codeCarteEtudiante"]." ; ");
-$info_user_res_requeste = $requete->fetchAll(PDO::FETCH_ASSOC);
+    echo " <br> <br>  code carte etudiant : ".$_GET["codeCarteEtudiante"]." <br> ";
+    $requete = $connexion->query("SELECT * FROM Utilisateur WHERE codeCarteEtudiante=".$_GET["codeCarteEtudiante"]." ; ");
+    $info_user_res_requeste = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-$info_user_res_requeste=$info_user_res_requeste[0];
-echo "<br> la requete a été effectuer <br>";
+    $info_user_res_requeste=$info_user_res_requeste[0];
+    echo "<br> la requete select a été effectuer <br>";
 
 ?>
 
@@ -25,6 +18,11 @@ echo "<br> la requete a été effectuer <br>";
 <p id="title_up">information utilsiateur</p>
 
 <div id="barre_noire_fine_expand"></div>
+<br>
+<form action="switch_admin.php" method="get">  
+    <input hidden type="text" name="quelle_page"  value="admin_accueil">
+    <button type="submit" class="but_user center_but but_retour_barre_recherche" >Retour</button>
+</form>
 <br>
 
 <div id="les_info_user_container">
@@ -80,7 +78,14 @@ echo "<br> la requete a été effectuer <br>";
 
 
 <br>
-<button type="button" class="but_admin_lst center_but" onclick="balancer_modif()">valider les modification</button>
 
+<!-- la il y a un PB le formulaire envoie pas au bon endroit
+ --> 
+ <form action="switch_admin.php" method="get" id="le_formulaire_reuqte_modif_info_user">
+    <input type="text" name="quelle_page" value="admin_search_user" hidden >
+    <button type="submit" class="but_admin_lst center_but" onclick="balancer_modif()">valider les modification</button>
+</form> 
 <div id="tes_rep"></div>
 
+
+ 

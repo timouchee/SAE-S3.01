@@ -47,8 +47,8 @@
       $image = $data["image"];
       $dateOuverture = $data["dateOuverture"];
       $dateFermeture = $data["dateFermeture"];
-      $heureOuverture = $data["heureOuverture"];
-      $heureFermeture = $data["heureFermeture"];
+      $heureOuverture = substr($data["heureOuverture"],0,-3);
+      $heureFermeture = substr($data["heureFermeture"],0,-3);
       $nomVille = $data["nomVille"];
       $codeCarteEtudiante = $data["codeCarteEtudiante"];
       $nom = $data["nom"];
@@ -62,7 +62,7 @@
 
       if($type == "Activite")
       {
-        echo "<a class='carte' href='detailBonPlan.php?$idBonPlan' >";
+        echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
         echo "<div class='card' style='width: 20rem;'>";
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
         echo "<div class='card-body'>";
@@ -76,7 +76,7 @@
 
       if($type == "Evenement" && $compteEvenement < 1)
       {
-        echo "<a class='carte' href='detailBonPlan.php?$idBonPlan' >";
+        echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
         echo "<div class='card' style='width: 30rem;'>";
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
         echo "<div class='card-body'>";

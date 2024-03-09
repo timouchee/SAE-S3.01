@@ -167,5 +167,5 @@
       </div>
     </div>
   </div>
-  <br><br>
+  <br><br><br>
   <!-- /pop up de connection-->
