@@ -1,4 +1,3 @@
-<?php include "header.php"?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">

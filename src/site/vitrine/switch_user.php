@@ -1,4 +1,5 @@
 <?php
+include "header.php";
 //quelle page ?
 if(isset($_GET["quelle_page"]))
 {
