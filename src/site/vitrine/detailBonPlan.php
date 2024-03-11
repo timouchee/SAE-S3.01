@@ -70,11 +70,12 @@
 
     echo "<br>";
 
-    $co = true;
-    if($co) //RECUP L'ID USER
+    if(isset($_GET['codeCarteEtudiante']))
     {
+        $codeCarteEtudiante = $_GET['codeCarteEtudiante'];
+
         echo "<form action='insertions.php' method='post'>";
-        echo "<input type='hidden' name='idUser' value='$user'>";
+        echo "<input type='hidden' name='idUser' value='$codeCarteEtudiante'>";
         echo "<input type='hidden' name='idBonPlan' value='$idBonPlan'>";
         echo "<button class='but_admin_lst' style='width:330px' type='submit' name='Participation'>Participer a cette activité</button>";
         echo "</form>";

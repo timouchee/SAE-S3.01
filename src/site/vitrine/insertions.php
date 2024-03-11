@@ -22,15 +22,10 @@ function insertion_participation_bon_plan($idUser, $idBonPlan)
     }
 }
 
-//$_POST['idUser'] && $_POST['idBonPlan']
-
-
-//Récupération des POST
-$true = false;
 //L'utilisateur participe à une activité
 if(isset($_POST['Participartion'])) {
     
-    if($true)
+    if($_POST['idUser'] && $_POST['idBonPlan'])
     {
         echo "oui";
         $idUser = $_POST['idUser'];

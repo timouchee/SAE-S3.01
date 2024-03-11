@@ -1,170 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <script src="script.js"></script>
-    <title>BonPlan&Co</title>
-</head>
+<?php
+//quelle page ?
+session_start();
+if(isset($_GET["quelle_compte"]))
+{
+  //echo $_GET["quelle_page"]." ";
+  switch ($_GET["quelle_compte"]) 
+  {
+    case 'user':
+      include "switch_user.php";
+      break;
 
-<body class="p-3 m-0 border-0 bd-example m-0 border-0">
-
-  <?php
-
-  include "header.php";
-
-    //Connexion BD
-    $bdd = "nconguisti_bd";
+    case 'admin':
+      //echo "2";
+      include "switch_admin.php";
+      break;
     
-    $host = "lakartxela.iutbayonne.univ-pau.fr";
-    //$host = "localhost";
-    $user = "nconguisti_bd";
-    //$user = "root";
-    $pass = "nconguisti_bd";
-    //$pass = "";
+    default:
+      # cmettre un message d'erreur :/
+      //echo "3";
+      include "accueil.php";
+      break;
+  }
+}
+else
+{
+  include "accueil.php";
+}
+?>
 
-    $link = mysqli_connect($host, $user, $pass, $bdd) or die("connexion impossible");
-    $link->set_charset("utf8mb4");
-
-    //une autre connexion cette fois en PDO
-
-    //if la dessus si le mec est connecter
-    $connexion = new PDO("mysql:host=$host;dbname=$bdd", $user, $pass);
-
-    $by_pass_if_persona  = isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user' ? true : false;
-    $les_element_persona_wanted = array();
-    if($by_pass_if_persona)
-    {
-      //echo "je suis connecter";
-      //recup le profils type de l'utilsiateur ID
-      $requete = $connexion->prepare("SELECT idProfilType FROM Utilisateur WHERE codeCarteEtudiante =:codeCarte");
-      $requete->bindParam(':codeCarte',  $_GET["carteEtudiante"]);
-      $requete->execute();
-      $id_persona_user = $requete->fetchAll(PDO::FETCH_COLUMN);
-
-
-      //recup les element de la persona
-      $requete = $connexion->prepare("SELECT E.nom FROM ContenirElement C JOIN Elements E on E.idElement = C.idElement WHERE C.idProfilType = :idProfilType");    
-      //$id_persona_user = "1";//le recup si le mec est connecter
-      //print_r($id_persona_user);
-      $requete->bindParam(':idProfilType', $id_persona_user[0]);
-      $requete->execute();
-      $les_element_persona_wanted = $requete->fetchAll(PDO::FETCH_COLUMN);
-    }
-    else
-    {
-      //echo "je suis pas connecter";
-    }
-
-    //print_r($resultats);
-    //echo " la : ".in_array("Cinema", $resultats)." ";
-    //la j'ai toute les categorie d'element que l'utilisateur aime personnament
-    //faut mtn changer la requete en bas pour prendre les bon plan 
-
-
-
-    //Afichage base
-    $query="SELECT idBonPlan, libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
-    FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante
-    ORDER BY type DESC";
-    $result = mysqli_query($link, $query);
-    $compteEvenement = 0;
-    echo "<section id='listeBonsPlans'>";
-
-
-    while ($data = mysqli_fetch_assoc($result))
-    {
-      $idBonPlan = $data["idBonPlan"];
-      
-      $requete = $connexion->prepare("SELECT E.nom FROM AvoirTheme A JOIN Elements E on E.idElement = A.idElement WHERE A.idBonPlan = :idBonPlan");  
-      $requete->bindParam(':idBonPlan', $idBonPlan);
-      $requete->execute();
-      $les_element_bonPlan = $requete->fetchAll(PDO::FETCH_COLUMN);
-
-      /* echo "il y a sa dans les element bonPlan :";
-      print_r($les_element_bonPlan);
-      echo " la verif => ";
-      print_r(  array_intersect($les_element_bonPlan, $les_element_persona_wanted)) ;
-      echo "  <br>"; 
-      */
-      if(array_intersect($les_element_bonPlan, $les_element_persona_wanted)|| mt_rand(1, 10)==1 || $by_pass_if_persona)// 
-      {
-        //echo " <br> le if passe <br>";
-        
-        
-        $libelleBonPlan = $data["libelleBonPlan"];
-        $detail = $data["detail"];
-        $adresseBonPlan = $data["adresseBonPlan"];
-          $type = $data["type"];
-          $image = $data["image"];
-          $dateOuverture = $data["dateOuverture"];
-          $dateFermeture = $data["dateFermeture"];
-          $heureOuverture = substr($data["heureOuverture"],0,-3);
-          $heureFermeture = substr($data["heureFermeture"],0,-3);
-          $nomVille = $data["nomVille"];
-          $codeCarteEtudiante = $data["codeCarteEtudiante"];
-          $nom = $data["nom"];
-          $prenom = $data["prenom"];
-          
-          //Partie code
-          
-          //Rectifiation des horaires (on enlève les secondes)
-          $heureOuverture = substr($data["heureOuverture"],0,-3);
-          $heureFermeture = substr($data["heureFermeture"],0,-3);
-          
-          if($type == "Activite")
-          {
-            echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
-            echo "<div class='card' style='width: 20rem;'>";
-            echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
-            echo "<div class='card-body'>";
-            echo "<h5 class='card-title'>$libelleBonPlan</h5>";
-            echo "<p class='card-text'> Par $nom $prenom</p>";
-            echo "<p class='card-text horaires'>$heureOuverture h / $heureFermeture h</p>";
-            echo "</div>";
-            echo "</div>";
-            echo "</a>";
-          }
-    
-          else if($type == "Evenement" && $compteEvenement < 1)
-          {
-            echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
-            echo "<div class='card' style='width: 30rem;'>";
-            echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
-            echo "<div class='card-body'>";
-            echo "<h5 class='card-title'>$libelleBonPlan</h5>";
-            echo "<p class='card-text'>$detail</p>";
-            echo "</div>";
-            echo "</div>";
-            echo "</a>";
-            $compteEvenement +=1;
-          }
-          /* else
-          {
-            echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
-            echo "<div class='card' style='width: 20rem;'>";
-            echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
-            echo "<div class='card-body'>";
-            echo "<h5 class='card-title'>$libelleBonPlan</h5>";
-            echo "<p class='card-text'> Par $nom $prenom</p>";
-            echo "</div>";
-            echo "</div>";
-            echo "</a>";
-          }  */
-        }
-    }
-
-    echo "</section>";
-
-     $connexion = null;
-    ?>
-
-</body>
-</html>
