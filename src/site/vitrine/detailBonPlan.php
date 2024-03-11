@@ -115,7 +115,9 @@
         echo "<br>";
     }
 
+
     $stmt->close();
+
 
     ?>
 </body>
