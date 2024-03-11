@@ -33,14 +33,14 @@
 
     $idBonPlan = $_GET['idBonPlan'];
 
-    $query="SELECT libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
+    $query="SELECT idBonPlan, libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
     FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante
     WHERE b.idBonPlan = ?";
 
     $stmt = $link->prepare($query);
     $stmt->bind_param("s", $idBonPlan);
     $stmt->execute();
-    $stmt->bind_result($libelleBonPlan, $detail, $adresseBonPlan, $type, $image, $dateOuverture, $dateFermeture, $heureOuverture, $heureFermeture, $nomVille, $codeCarteEtudiante, $nom, $prenom);
+    $stmt->bind_result($idBonPlan, $libelleBonPlan, $detail, $adresseBonPlan, $type, $image, $dateOuverture, $dateFermeture, $heureOuverture, $heureFermeture, $nomVille, $codeCarteEtudiante, $nom, $prenom);
     $stmt->fetch();
     $stmt->close();
 
@@ -70,9 +70,24 @@
 
     echo "<br>";
 
-    echo "<button class = 'but_user' style='width:330px'>Participer a cette activité!</button>";
+    $co = true;
+    if($co) //RECUP L'ID USER
+    {
+        echo "<form action='insertions.php' method='post'>";
+        echo "<input type='hidden' name='idUser' value='$user'>";
+        echo "<input type='hidden' name='idBonPlan' value='$idBonPlan'>";
+        echo "<button class='but_admin_lst' style='width:330px' type='submit' name='Participation'>Participer a cette activité</button>";
+        echo "</form>";
+    }
+    else
+    {
+        echo "<a data-bs-toggle='modal' data-bs-target='#popUpConnection' class='but_admin_lst' style='width:330px' >Participer a cette activité</a>";
+    }
+    
 
     echo "<br>";
+
+    echo "<hr>";
 
 
     echo "<h1>Commentaires</h1>";
