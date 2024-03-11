@@ -22,19 +22,29 @@ function insertion_participation_bon_plan($idUser, $idBonPlan)
     }
 }
 
-
+//$_POST['idUser'] && $_POST['idBonPlan']
 
 
 //Récupération des POST
-
+$true = false;
 //L'utilisateur participe à une activité
 if(isset($_POST['Participartion'])) {
     
-    if($_POST['idUser'] && $_POST['idBonPlan'])
+    if($true)
     {
+        echo "oui";
         $idUser = $_POST['idUser'];
         $idBonPlan = $_POST['idBonPlan'];
         insertion_participation_bon_plan($idUser, $idBonPlan);
+        header("Location: ./detailBonPlan.php");
+    }
+    else
+    {
+        echo "non";
+        header("Location: ./index.php");
     }
 }
+ 
+
+
 ?>
