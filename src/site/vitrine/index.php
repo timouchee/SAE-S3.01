@@ -1,7 +1,7 @@
 <?php
 //quelle page ?
 session_start();
-if(isset($_GET["quelle_compte"]))
+if(isset($_GET["quelle_compte"])) 
 {
   //echo $_GET["quelle_page"]." ";
   switch ($_GET["quelle_compte"]) 
@@ -18,13 +18,27 @@ if(isset($_GET["quelle_compte"]))
     default:
       # cmettre un message d'erreur :/
       //echo "3";
-      include "accueil.php";
+      if( isset($_GET["quelle_page"]) && $_GET["quelle_page"]=="detailBonPlan" )
+      {
+        include "detailBonPlan.php";
+      }
+      else
+      {
+        include "accueil.php";
+      }
       break;
   }
 }
 else
 {
-  include "accueil.php";
+  if( isset($_GET["quelle_page"]) && $_GET["quelle_page"]=="detailBonPlan" )
+  {
+    include "detailBonPlan.php";
+  }
+  else
+  {
+    include "accueil.php";
+  }
 }
 ?>
 

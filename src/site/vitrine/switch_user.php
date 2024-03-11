@@ -4,10 +4,10 @@ include "header.php";
 if(isset($_GET["quelle_page"]))
 {
   //echo $_GET["quelle_page"]." ";
-    switch ($_GET["quelle_page"]) 
+    switch ($_GET["quelle_page"])   
     {
-        case 'info_activite':           //fait
-            include "info_activite.php";
+        case 'detailBonPlan':           //fait
+            include "detailBonPlan.php";
             break;
 
         case 'recherche_coloc':         //pas fais
