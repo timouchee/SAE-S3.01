@@ -18,6 +18,13 @@
 
     <?php
 
+    //Si on a participé à un bon plan :
+    if(isset($_GET['participation']))
+    {
+        $participation = $_GET['participation'];
+        echo "$participation";
+    }
+
     include "header.php";
 
     //Connexion BD
@@ -116,6 +123,25 @@
     }
 
     $stmt->close();
+
+    echo "<br>";
+
+    if(isset($_GET['codeCarteEtudiante']))
+    {
+        $codeCarteEtudiante = $_GET['codeCarteEtudiante'];
+
+        echo "<form action='insertions.php' method='post'>";
+        echo "<input type='hidden' name='idUser' value='$codeCarteEtudiante'>";
+        echo "<input type='hidden' name='idBonPlan' value='$idBonPlan'>";
+        echo "<input name='message'>"; //LA INPUT
+        echo "<input name='note'>"; //LA INPUT
+        echo "<button class='but_admin_lst' style='width:330px' type='submit' name='Commenter'>Commenter ce bon plan</button>";
+        echo "</form>";
+    }
+    else
+    {
+        echo "<a data-bs-toggle='modal' data-bs-target='#popUpConnection' class='but_admin_lst' style='width:330px' >Commenter ce bon plan</a>";
+    }
 
     ?>
 </body>

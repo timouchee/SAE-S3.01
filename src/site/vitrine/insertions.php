@@ -1,6 +1,7 @@
 <?php
 
 //Connexion BD
+
 $bdd = "nconguisti_bd";
 $host = "lakartxela.iutbayonne.univ-pau.fr";
 $user = "nconguisti_bd";
@@ -11,35 +12,74 @@ $link->set_charset("utf8mb4");
 
 //Déclaration de toutes les fonctions d'insertions
 
-function insertion_participation_bon_plan($idUser, $idBonPlan)
+function insertion_participation_bon_plan($link, $idUser, $idBonPlan)
 {
-    $query="INSERT INTO PARTICIPER VALUES (?, ?)";
+    $query="INSERT INTO Participer VALUES (?, ?, DEFAULT)";
 
     if ($stmt = mysqli_prepare($link, $query)) {
-        mysqli_stmt_bind_param($stmt, "i", $idUser, $idBonPlan);
-        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_param($stmt, "ii", $idUser, $idBonPlan);
+        if(!(mysqli_stmt_execute($stmt)))
+        {
+            header("Location: ./index.php");
+        }
         mysqli_stmt_close($stmt);
-    }
-}
-
-//L'utilisateur participe à une activité
-if(isset($_POST['Participartion'])) {
-    
-    if($_POST['idUser'] && $_POST['idBonPlan'])
-    {
-        echo "oui";
-        $idUser = $_POST['idUser'];
-        $idBonPlan = $_POST['idBonPlan'];
-        insertion_participation_bon_plan($idUser, $idBonPlan);
-        header("Location: ./detailBonPlan.php");
+        return $participation = true;
     }
     else
     {
-        echo "non";
-        header("Location: ./index.php");
+        header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan");
+        return $participation = false;
     }
 }
- 
+
+function insertion_commenter_bon_plan($link, $idUser, $idBonPlan) ///CELLE LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+{
+    $query="INSERT INTO Commentaire VALUES (--------)";
+
+    if ($stmt = mysqli_prepare($link, $query)) {
+        mysqli_stmt_bind_param($stmt, "ii", $idUser, $idBonPlan);
+        if(!(mysqli_stmt_execute($stmt)))
+        {
+            header("Location: ./index.php");
+        }
+        mysqli_stmt_close($stmt);
+    }
+    else
+    {
+        header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan");
+    }
+}
 
 
+//L'utilisateur participe à un bon plan
+if(isset($_POST['Participation'])) {
+    
+    if($_POST['idBonPlan'] && $_POST['idUser'])
+    {
+        $idUser = $_POST['idUser'];
+        $idBonPlan = $_POST['idBonPlan'];
+        $participation = insertion_participation_bon_plan($link, $idUser, $idBonPlan);
+        header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan&participation=$participation");
+    }
+    else
+    {
+        header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan");
+    }
+}
+
+//L'utilisateur commente un bon plan
+if(isset($_POST['Commenter'])) {
+    
+    if($_POST['idBonPlan'] && $_POST['idUser'])
+    {
+        $idUser = $_POST['idUser'];
+        $idBonPlan = $_POST['idBonPlan'];
+        insertion_commenter_bon_plan($link, $idUser, $idBonPlan);
+        header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan");
+    }
+    else
+    {
+        header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan");
+    }
+}
 ?>

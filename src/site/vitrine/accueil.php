@@ -89,7 +89,7 @@
       if($type == "Activite")
       {
         echo "<a class='carte' href='index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
-        echo "<div class='card' style='width: 20rem;'>";
+        echo "<div class='card' style='width: 90%;'>";
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
         echo "<div class='card-body'>";
         echo "<h5 class='card-title'>$libelleBonPlan</h5>";
@@ -103,7 +103,7 @@
       if($type == "Evenement" && $compteEvenement < 1)
       {
         echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
-        echo "<div class='card' style='width: 30rem;'>";
+        echo "<div class='card' style='width: 90%;'>";
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
         echo "<div class='card-body'>";
         echo "<h5 class='card-title'>$libelleBonPlan</h5>";
