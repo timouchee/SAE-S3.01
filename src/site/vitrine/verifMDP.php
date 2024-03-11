@@ -65,10 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($mot_de_passe_bd == $mot_de_passe) {
         // Mot de passe correct, rediriger l'utilisateur en fonction de son type
         if ($type_user == "user") {
-            header("Location: controle_site.php?quelle_compte=user&quelle_page=default&codeCarteEtudiante=" . $carte_etudiante);
+            header("Location: index.php?quelle_compte=user&quelle_page=default&codeCarteEtudiante=" . $carte_etudiante);
             exit();
         } elseif ($type_user == "admin") {
-            header("Location: controle_site.php?quelle_compte=admin&quelle_page=default");
+            header("Location: index.php?quelle_compte=admin&quelle_page=default");
             exit();
         }
     } else {

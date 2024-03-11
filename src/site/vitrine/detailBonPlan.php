@@ -77,7 +77,7 @@
 
     echo "<br>";
 
-    if(isset($_GET['codeCarteEtudiante']))
+    if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user')
     {
         $codeCarteEtudiante = $_GET['codeCarteEtudiante'];
 
@@ -122,6 +122,7 @@
         echo "<br>";
     }
 
+
     $stmt->close();
 
     echo "<br>";
@@ -142,6 +143,7 @@
     {
         echo "<a data-bs-toggle='modal' data-bs-target='#popUpConnection' class='but_admin_lst' style='width:330px' >Commenter ce bon plan</a>";
     }
+
 
     ?>
 </body>

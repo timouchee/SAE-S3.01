@@ -1,8 +1,8 @@
 <?php
 //quelle page ?
-session_start();
 if(isset($_GET["quelle_compte"])) 
 {
+  session_start();
   //echo $_GET["quelle_page"]." ";
   switch ($_GET["quelle_compte"]) 
   {
