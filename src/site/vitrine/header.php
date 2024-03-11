@@ -1,4 +1,4 @@
-<?php if((isset($_GET["quelle_page"]) && $_GET["quelle_page"]=='user') || isset($_GET["publie_quoi"])){ ?>
+<?php if((isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') || isset($_GET["publie_quoi"])){ ?>
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <strong>BonPlan</strong>
                 </a>
-                <?php if(isset($_GET["quelle_page"]) && $_GET["quelle_page"]=='user'){ ?>
+                <?php if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user'){ ?>
                   <!-- envoie vers les bons liens -->
                   <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Activités</a></li>
