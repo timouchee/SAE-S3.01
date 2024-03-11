@@ -318,7 +318,7 @@ body {
   border: none;
 }
 
-.but_admin_lst:hover {
+.but_user:hover {
   background: linear-gradient(to bottom, #9497b8, #1565c0);
 }
 
