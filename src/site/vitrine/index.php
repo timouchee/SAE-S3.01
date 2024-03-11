@@ -38,11 +38,31 @@
     //if la dessus si le mec est connecter
     $connexion = new PDO("mysql:host=$host;dbname=$bdd", $user, $pass);
 
-    $requete = $connexion->prepare("SELECT E.nom FROM Contenirelement C JOIN Elements E on E.idElement = C.idElement WHERE C.idProfilType = :idProfilType");    
-    $id_user = "1";//le recup si le mec est connecter
-    $requete->bindParam(':idProfilType', $id_user);
-    $requete->execute();
-    $les_element_persona_wanted = $requete->fetchAll(PDO::FETCH_COLUMN);
+    $by_pass_if_persona  = isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user' ? true : false;
+    $les_element_persona_wanted = array();
+    if($by_pass_if_persona)
+    {
+      //echo "je suis connecter";
+      //recup le profils type de l'utilsiateur ID
+      $requete = $connexion->prepare("SELECT idProfilType FROM Utilisateur WHERE codeCarteEtudiante =:codeCarte");
+      $requete->bindParam(':codeCarte',  $_GET["carteEtudiante"]);
+      $requete->execute();
+      $id_persona_user = $requete->fetchAll(PDO::FETCH_COLUMN);
+
+
+      //recup les element de la persona
+      $requete = $connexion->prepare("SELECT E.nom FROM ContenirElement C JOIN Elements E on E.idElement = C.idElement WHERE C.idProfilType = :idProfilType");    
+      //$id_persona_user = "1";//le recup si le mec est connecter
+      //print_r($id_persona_user);
+      $requete->bindParam(':idProfilType', $id_persona_user[0]);
+      $requete->execute();
+      $les_element_persona_wanted = $requete->fetchAll(PDO::FETCH_COLUMN);
+    }
+    else
+    {
+      //echo "je suis pas connecter";
+    }
+
     //print_r($resultats);
     //echo " la : ".in_array("Cinema", $resultats)." ";
     //la j'ai toute les categorie d'element que l'utilisateur aime personnament
@@ -61,58 +81,84 @@
 
     while ($data = mysqli_fetch_assoc($result))
     {
-      /* if(in_array($data["un atribut a rajotuer dans bon plan"], $resultats) || mt_rand(1, 10)==1)
-      {
-        mettre tous le code dans le if
-      } */
       $idBonPlan = $data["idBonPlan"];
-      $libelleBonPlan = $data["libelleBonPlan"];
-      $detail = $data["detail"];
-      $adresseBonPlan = $data["adresseBonPlan"];
-      $type = $data["type"];
-      $image = $data["image"];
-      $dateOuverture = $data["dateOuverture"];
-      $dateFermeture = $data["dateFermeture"];
-      $heureOuverture = substr($data["heureOuverture"],0,-3);
-      $heureFermeture = substr($data["heureFermeture"],0,-3);
-      $nomVille = $data["nomVille"];
-      $codeCarteEtudiante = $data["codeCarteEtudiante"];
-      $nom = $data["nom"];
-      $prenom = $data["prenom"];
+      
+      $requete = $connexion->prepare("SELECT E.nom FROM AvoirTheme A JOIN Elements E on E.idElement = A.idElement WHERE A.idBonPlan = :idBonPlan");  
+      $requete->bindParam(':idBonPlan', $idBonPlan);
+      $requete->execute();
+      $les_element_bonPlan = $requete->fetchAll(PDO::FETCH_COLUMN);
 
-      //Partie code
-
-      //Rectifiation des horaires (on enlève les secondes)
-      $heureOuverture = substr($data["heureOuverture"],0,-3);
-      $heureFermeture = substr($data["heureFermeture"],0,-3);
-
-      if($type == "Activite")
+      /* echo "il y a sa dans les element bonPlan :";
+      print_r($les_element_bonPlan);
+      echo " la verif => ";
+      print_r(  array_intersect($les_element_bonPlan, $les_element_persona_wanted)) ;
+      echo "  <br>"; 
+      */
+      if(array_intersect($les_element_bonPlan, $les_element_persona_wanted)|| mt_rand(1, 10)==1 || $by_pass_if_persona)// 
       {
-        echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
-        echo "<div class='card' style='width: 20rem;'>";
-        echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
-        echo "<div class='card-body'>";
-        echo "<h5 class='card-title'>$libelleBonPlan</h5>";
-        echo "<p class='card-text'> Par $nom $prenom</p>";
-        echo "<p class='card-text horaires'>$heureOuverture h / $heureFermeture h</p>";
-        echo "</div>";
-        echo "</div>";
-        echo "</a>";
-      }
-
-      if($type == "Evenement" && $compteEvenement < 1)
-      {
-        echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
-        echo "<div class='card' style='width: 30rem;'>";
-        echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
-        echo "<div class='card-body'>";
-        echo "<h5 class='card-title'>$libelleBonPlan</h5>";
-        echo "<p class='card-text'>$detail</p>";
-        echo "</div>";
-        echo "</div>";
-        echo "</a>";
-        $compteEvenement +=1;
-      }
+        //echo " <br> le if passe <br>";
+        
+        
+        $libelleBonPlan = $data["libelleBonPlan"];
+        $detail = $data["detail"];
+        $adresseBonPlan = $data["adresseBonPlan"];
+          $type = $data["type"];
+          $image = $data["image"];
+          $dateOuverture = $data["dateOuverture"];
+          $dateFermeture = $data["dateFermeture"];
+          $heureOuverture = substr($data["heureOuverture"],0,-3);
+          $heureFermeture = substr($data["heureFermeture"],0,-3);
+          $nomVille = $data["nomVille"];
+          $codeCarteEtudiante = $data["codeCarteEtudiante"];
+          $nom = $data["nom"];
+          $prenom = $data["prenom"];
+          
+          //Partie code
+          
+          //Rectifiation des horaires (on enlève les secondes)
+          $heureOuverture = substr($data["heureOuverture"],0,-3);
+          $heureFermeture = substr($data["heureFermeture"],0,-3);
+          
+          if($type == "Activite")
+          {
+            echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
+            echo "<div class='card' style='width: 20rem;'>";
+            echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
+            echo "<div class='card-body'>";
+            echo "<h5 class='card-title'>$libelleBonPlan</h5>";
+            echo "<p class='card-text'> Par $nom $prenom</p>";
+            echo "<p class='card-text horaires'>$heureOuverture h / $heureFermeture h</p>";
+            echo "</div>";
+            echo "</div>";
+            echo "</a>";
+          }
+    
+          else if($type == "Evenement" && $compteEvenement < 1)
+          {
+            echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
+            echo "<div class='card' style='width: 30rem;'>";
+            echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
+            echo "<div class='card-body'>";
+            echo "<h5 class='card-title'>$libelleBonPlan</h5>";
+            echo "<p class='card-text'>$detail</p>";
+            echo "</div>";
+            echo "</div>";
+            echo "</a>";
+            $compteEvenement +=1;
+          }
+          /* else
+          {
+            echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
+            echo "<div class='card' style='width: 20rem;'>";
+            echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
+            echo "<div class='card-body'>";
+            echo "<h5 class='card-title'>$libelleBonPlan</h5>";
+            echo "<p class='card-text'> Par $nom $prenom</p>";
+            echo "</div>";
+            echo "</div>";
+            echo "</a>";
+          }  */
+        }
     }
 
     echo "</section>";
