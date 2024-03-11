@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Préparer la requête SQL pour récupérer le mot de passe correspondant à l'identifiant fourni
     $sql_utilisateur = "SELECT motdepasse FROM Utilisateur WHERE mail = ?";
     $sql_administrateur = "SELECT motdepasse FROM Administrateur WHERE mail = ?";
+    $sql_carte_etudiante = "SELECT codeCarteEtudiante FROM Utilisateur WHERE  mail = ?"
     
     // Exécuter d'abord la requête pour l'utilisateur
     $stmt = $conn->prepare($sql_utilisateur);
@@ -56,6 +57,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Mot de passe correct, rediriger l'utilisateur en fonction de son type
         if ($type_user == "user") {
             header("Location: controle_site.php?quelle_compte=user&quelle_page=default");
+            $stmt = $conn->prepare($sql_carte_etudiante);
+            $stmt->bind_param("s", $identifiant);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $_POST($result[0]);
             exit();
         } elseif ($type_user == "admin") {
             header("Location: controle_site.php?quelle_compte=admin&quelle_page=default");
