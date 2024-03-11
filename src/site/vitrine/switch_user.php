@@ -36,7 +36,7 @@ if(isset($_GET["quelle_page"]))
 
         default:
         # cmettre un message d'erreur :/
-        include "index.php";   //page d'accueil
+        include "accueil.php";   //page d'accueil
         break;
     }
 }
