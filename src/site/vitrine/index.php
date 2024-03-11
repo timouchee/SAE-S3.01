@@ -1,89 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <script src="script.js"></script>
-    <title>BonPlan&Co</title>
-</head>
+<?php
+//quelle page ?
+session_start();
+if(isset($_GET["quelle_compte"])) 
+{
+  //echo $_GET["quelle_page"]." ";
+  switch ($_GET["quelle_compte"]) 
+  {
+    case 'user':
+      include "switch_user.php";
+      break;
 
-<body class="p-3 m-0 border-0 bd-example m-0 border-0">
-
-  <?php
-
-  include "header.php";
-
-    //Connexion BD
-    $bdd = "nconguisti_bd";
-    $host = "lakartxela.iutbayonne.univ-pau.fr";
-    $user = "nconguisti_bd";
-    $pass = "nconguisti_bd";
-
-    $link = mysqli_connect($host, $user, $pass, $bdd) or die("connexion impossible");
-    $link->set_charset("utf8mb4");
-
-    //Afichage base
-    $query="SELECT libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
-    FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante
-    ORDER BY type DESC";
-    $result = mysqli_query($link, $query);
-    $compteEvenement = 0;
-    echo "<section id='listeBonsPlans'>";
-
-    while ($data = mysqli_fetch_assoc($result))
-    {
-      $libelleBonPlan = $data["libelleBonPlan"];
-      $detail = $data["detail"];
-      $adresseBonPlan = $data["adresseBonPlan"];
-      $type = $data["type"];
-      $image = $data["image"];
-      $dateOuverture = $data["dateOuverture"];
-      $dateFermeture = $data["dateFermeture"];
-      $heureOuverture = substr($data["heureOuverture"],0,-3);
-      $heureFermeture = substr($data["heureFermeture"],0,-3);
-      $nomVille = $data["nomVille"];
-      $codeCarteEtudiante = $data["codeCarteEtudiante"];
-      $nom = $data["nom"];
-      $prenom = $data["prenom"];
-
-      //Partie code
-
-      if($type == "Activite")
+    case 'admin':
+      //echo "2";
+      include "switch_admin.php";
+      break;
+    
+    default:
+      # cmettre un message d'erreur :/
+      //echo "3";
+      if( isset($_GET["quelle_page"]) && $_GET["quelle_page"]=="detailBonPlan" )
       {
-        echo "<div class='card' style='width: 20rem;'>";
-        echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
-        echo "<div class='card-body'>";
-        echo "<h5 class='card-title'>$libelleBonPlan</h5>";
-        echo "<p class='card-text'> Par $nom $prenom</p>";
-        echo "<p class='card-text'>$heureOuverture h / $heureFermeture h</p>";
-        echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
-        echo "</div>";
-        echo "</div>";
+        include "detailBonPlan.php";
       }
-
-      if($type == "Evenement" && $compteEvenement < 1)
+      else
       {
-        echo "<div class='card' style='width: 30rem;'>";
-        echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
-        echo "<div class='card-body'>";
-        echo "<h5 class='card-title'>$libelleBonPlan</h5>";
-        echo "<p class='card-text'>$detail</p>";
-        echo "<a href='...' class='btn btn-primary'>Go somewhere</a>";
-        echo "</div>";
-        echo "</div>";
-        $compteEvenement +=1;
+        include "accueil.php";
       }
-    }
+      break;
+  }
+}
+else
+{
+  if( isset($_GET["quelle_page"]) && $_GET["quelle_page"]=="detailBonPlan" )
+  {
+    include "detailBonPlan.php";
+  }
+  else
+  {
+    include "accueil.php";
+  }
+}
+?>
 
-    echo "</section>";
-    ?>
-
-</body>
-</html>

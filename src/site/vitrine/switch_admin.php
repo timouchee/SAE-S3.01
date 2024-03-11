@@ -1,9 +1,18 @@
 <?php session_start();
 
-  /* if(isset($_SESSION["type_user"]) ||$_SESSION["type_user"]!="admin"  )
+  $var_teste_1=false;
+  if(isset($_SESSION["type_user"]) )
   {
-      header('Location: index.php');
-  } */
+    if($_SESSION["type_user"]!="admin" )
+    {
+      $var_teste_1 = true;
+      echo " <br> le mec n'est pas admin et sera rediriger quand t'auras changer ce code <br> <br>";
+      //header('Location: index.php');
+    }
+    
+  } 
+  else
+  {$var_teste_1 = true;}
 
 
 ?>
@@ -12,7 +21,6 @@ change le get de search_user_info vers switch_admin
 pask faut pas passer les info codecartetuidant
 en claire ok !!!!
 
- 
  -->
 
 
@@ -33,13 +41,13 @@ en claire ok !!!!
 
     <title>BonPlan&Co</title>
 </head>
-<body>  
+<body>   
      
     <div class="p-3 m-0 border-0 bd-example m-0 border-0">
       
       <nav class="navbar fixed-top" data-bs-theme="dark" style="background-color: rgba(0,2,3,255);">
           <div class="container-fluid">
-            <a class="navbar-brand" href="../vitrine/index.php"><img src="titre.jpg" alt="img logo"></a>
+            <a class="navbar-brand" href="../vitrine/index.php"><img src="images/titre.jpg" alt="img logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -142,6 +150,10 @@ en claire ok !!!!
           case 'admin_accueil':
             include "admin_accueil.php";
             break;
+
+          case 'admin_creation_persona_manuel':
+            include "admin_creation_persona_manuel.php";
+            break;
   
           case 'admin_search_user':
             include "admin_search_user.php";
@@ -153,7 +165,11 @@ en claire ok !!!!
           
           default:
             # cmettre un message d'erreur :/
-            echo "<br> <br> CECI N EST PAS NORMAL valeur quelle_page incorrect<br> <br>";
+            echo "<br> <br> CECI EST PAS NORMAL valeur quelle_page incorrect<br> <br>";
+            if($var_teste_1)
+            {echo " <br> le mec n'est pas admin et sera rediriger quand t'auras changer ce code <br> <br>";}
+            else
+            {echo "y a rien";}
             include "admin_accueil.php";
             break;
         }
@@ -161,6 +177,10 @@ en claire ok !!!!
       else
       {
         echo "<br> <br> CECI N EST PAS NORMAL TROUVER L ERREUR (surement dans le get)<br> <br>";
+        if($var_teste_1)
+        {echo " <br> le mec n'est pas admin et sera rediriger quand t'auras changer ce code <br> <br>";}
+        else
+        {echo "y a rien";}
         include "admin_accueil.php";
       }
 

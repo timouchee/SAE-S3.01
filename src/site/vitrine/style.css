@@ -198,11 +198,20 @@ body {
     margin-left: 5%;
     margin-right: 5%;
   }
-
+  /*-------------- Partie page accueil -------------------- */
   /*
   .navbar{
     margin-bottom: 20px;
   }*/
+
+  .carte, .carte:hover{
+    text-decoration: none;
+    color: black;
+  }
+
+  .horaires{
+    text-align: right;
+  }
 
   #listeBonsPlans {
     display: flex;
@@ -309,7 +318,7 @@ body {
   border: none;
 }
 
-.but_admin_lst:hover {
+.but_user:hover {
   background: linear-gradient(to bottom, #9497b8, #1565c0);
 }
 
@@ -372,4 +381,9 @@ body {
   margin: auto;
 }
 
+.but_retour_barre_recherche
+{
+  height: 30%;
+  width: 30%;
+}
 

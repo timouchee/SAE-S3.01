@@ -22,7 +22,7 @@
 </header>
 <div class = "div_du_centre">
     <h1>Questionnaire</h1>
-    <form action="siteWebDemo_preference.php" method="post">
+    <form action="quMusique.php" method="post">
     <!-- <form action="" method="post"> -->
         <!-- Partie Utilisateur -->
         <h2>Informations Utilisateur</h2>

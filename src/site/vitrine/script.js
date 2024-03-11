@@ -1,5 +1,5 @@
 
-
+ 
 
 //===============pour la pop up DEBUT===========================
 document.addEventListener('DOMContentLoaded', function() {
@@ -76,7 +76,8 @@ function redirigerVersSwitchAdmin(codeCarteEtudiante) {
 }
 
 
-function balancer_modif() {
+function balancer_modif() 
+{
   // Sérialise toutes les valeurs du formulaire sous forme d'un tableau d'objets
   var formDataArray = $('#table_info_user input').map(function() {
     return {
@@ -100,20 +101,26 @@ function balancer_modif() {
       $('#tes_rep').html(response);
     }
   });
-}
 
+  /* 
+  ptdr y a rien qui va
+  console.log("apigoi");
+  document.getElementById("le_formulaire_reuqte_modif_info_user").submit(); */
+
+  
+}
 
 
 //==================
 
 function erreurRedTout() {
-  //console.log('oui');
+  console.log('oui');
   document.getElementById('identifier').style.borderColor = 'red';
   document.getElementById('password').style.borderColor = 'red';
 }
 
 function erreurRedMDP() {
-  //console.log("non");
+  console.log("non");
   document.getElementById('identifier').style.borderColor = 'black';
   document.getElementById('password').style.borderColor= 'red';
 }
