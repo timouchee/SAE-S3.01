@@ -1,12 +1,12 @@
 <?php
 //quelle page ?
+session_start();
 if(isset($_GET["quelle_compte"]))
 {
   //echo $_GET["quelle_page"]." ";
   switch ($_GET["quelle_compte"]) 
   {
     case 'user':
-      //echo "1";
       include "switch_user.php";
       break;
 
