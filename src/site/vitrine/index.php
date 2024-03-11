@@ -22,12 +22,33 @@
 
     //Connexion BD
     $bdd = "nconguisti_bd";
+    
     $host = "lakartxela.iutbayonne.univ-pau.fr";
+    //$host = "localhost";
     $user = "nconguisti_bd";
+    //$user = "root";
     $pass = "nconguisti_bd";
+    //$pass = "";
 
     $link = mysqli_connect($host, $user, $pass, $bdd) or die("connexion impossible");
     $link->set_charset("utf8mb4");
+
+    //une autre connexion cette fois en PDO
+
+    //if la dessus si le mec est connecter
+    $connexion = new PDO("mysql:host=$host;dbname=$bdd", $user, $pass);
+
+    $requete = $connexion->prepare("SELECT E.nom FROM Contenirelement C JOIN Elements E on E.idElement = C.idElement WHERE C.idProfilType = :idProfilType");    
+    $id_user = "1";//le recup si le mec est connecter
+    $requete->bindParam(':idProfilType', $id_user);
+    $requete->execute();
+    $les_element_persona_wanted = $requete->fetchAll(PDO::FETCH_COLUMN);
+    //print_r($resultats);
+    //echo " la : ".in_array("Cinema", $resultats)." ";
+    //la j'ai toute les categorie d'element que l'utilisateur aime personnament
+    //faut mtn changer la requete en bas pour prendre les bon plan 
+
+
 
     //Afichage base
     $query="SELECT idBonPlan, libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
@@ -37,8 +58,13 @@
     $compteEvenement = 0;
     echo "<section id='listeBonsPlans'>";
 
+
     while ($data = mysqli_fetch_assoc($result))
     {
+      /* if(in_array($data["un atribut a rajotuer dans bon plan"], $resultats) || mt_rand(1, 10)==1)
+      {
+        mettre tous le code dans le if
+      } */
       $idBonPlan = $data["idBonPlan"];
       $libelleBonPlan = $data["libelleBonPlan"];
       $detail = $data["detail"];
@@ -90,6 +116,8 @@
     }
 
     echo "</section>";
+
+     $connexion = null;
     ?>
 
 </body>
