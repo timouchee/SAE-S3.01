@@ -70,7 +70,7 @@
 
     echo "<br>";
 
-    if(isset($_GET['codeCarteEtudiante']))
+    if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user')
     {
         $codeCarteEtudiante = $_GET['codeCarteEtudiante'];
 

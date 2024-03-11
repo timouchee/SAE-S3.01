@@ -88,7 +88,13 @@
 
       if($type == "Activite")
       {
-        echo "<a class='carte' href='index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
+        if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') {
+          echo "<a class='carte' href='index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
+        }
+        else {
+          echo "<a class='carte' href='index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
+        }
+
         echo "<div class='card' style='width: 20rem;'>";
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
         echo "<div class='card-body'>";
@@ -102,7 +108,13 @@
 
       if($type == "Evenement" && $compteEvenement < 1)
       {
-        echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
+        if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') {
+          $codeCarte = $_GET['codeCarteEtudiante'];
+          echo "<a class='carte' href='detailBonPlan.php?quelle_compte=user&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte'>";
+        }
+        else {
+          echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
+        }
         echo "<div class='card' style='width: 30rem;'>";
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
         echo "<div class='card-body'>";
