@@ -26,7 +26,7 @@ function insertion_participation_bon_plan($link, $idUser, $idBonPlan)
         return $participation = true;
     }
     else
-    {
+    { 
         header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan");
         return $participation = false;
     }
@@ -34,10 +34,12 @@ function insertion_participation_bon_plan($link, $idUser, $idBonPlan)
 
 function insertion_commenter_bon_plan($link, $idUser, $idBonPlan) ///CELLE LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 {
-    $query="INSERT INTO Commentaire VALUES (--------)";
+    $score = $_POST["score"];
+    $msg = $_POST["message"];
+    $query="INSERT INTO Commentaire VALUES (DEFAULT, ?,?,?,?)";
 
     if ($stmt = mysqli_prepare($link, $query)) {
-        mysqli_stmt_bind_param($stmt, "ii", $idUser, $idBonPlan);
+        mysqli_stmt_bind_param($stmt, "iiii",$msg,$score, $idUser, $idBonPlan);
         if(!(mysqli_stmt_execute($stmt)))
         {
             header("Location: ./index.php");
@@ -46,7 +48,7 @@ function insertion_commenter_bon_plan($link, $idUser, $idBonPlan) ///CELLE LAAAA
     }
     else
     {
-        header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan");
+        header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan&codeCarteEtudiante=$idUser");
     }
 }
 

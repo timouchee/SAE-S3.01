@@ -388,3 +388,9 @@ body {
   width: 30%;
 }
 
+#barre_de_recherche_bonplan
+{
+  position: fixed;
+  z-index: 1;
+}
+
