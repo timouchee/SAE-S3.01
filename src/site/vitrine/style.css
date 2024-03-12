@@ -24,7 +24,7 @@
     height: 35px; /* Ajuster la hauteur de l'input */
     
 }
-
+ 
 #activité_body
 {
     border: solid;
@@ -217,6 +217,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 90%;
 }
 
   .card{
@@ -389,7 +390,16 @@ body {
 
 #barre_de_recherche_bonplan
 {
-  position: fixed;
-  z-index: 1;
+  width: 90%;
+  padding: 5px; 
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: #f0f0f0;  couleur de fond pour illustrer la couverture */
 }
 

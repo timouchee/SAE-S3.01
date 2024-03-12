@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src="script.js"></script>
@@ -48,7 +50,7 @@
     //la j'ai toute les categorie d'element que l'utilisateur aime personnament
     //faut mtn changer la requete en bas pour prendre les bon plan 
 
-
+ 
 
     //Afichage base
     $query="SELECT idBonPlan, libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
@@ -56,6 +58,14 @@
     ORDER BY type DESC";
     $result = mysqli_query($link, $query);
     $compteEvenement = 0;
+
+    //echo "<div class='center center_but'>";
+    echo "<div id='container'>";
+    echo "<input type='text' id='barre_de_recherche_bonplan' class='' placeholder='Recherche' oninput='trouver_bonplan()'>";
+    echo "</div>";
+    //echo "</div>";
+
+
     echo "<section id='listeBonsPlans'>";
 
 
@@ -87,10 +97,12 @@
       $heureFermeture = substr($data["heureFermeture"],0,-3);
 
       if($type == "Activite")
-      {        
+      {
 
         if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') {
-          echo "<a class='carte' href='index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
+          $codeCarte = $_GET['codeCarteEtudiante'];
+          //$codeCarte = $_SESSION["codeCarteEtudiante"];
+          echo "<a class='carte' href='index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte' >";
         }
         else {
           echo "<a class='carte' href='index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
@@ -112,11 +124,11 @@
 
         if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') {
           $codeCarte = $_GET['codeCarteEtudiante'];
-          echo "<a class='carte' href='detailBonPlan.php?quelle_compte=user&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte'>";
+          echo "<a class='carte' href='index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte'>";
         }
         else {
-          echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
-          
+          echo "<a class='carte' href='index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
+
         }
         echo "<div class='card' style='width: 90%;'>";
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";

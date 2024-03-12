@@ -69,6 +69,29 @@ function trouver_user() {
   });
 }
 
+function trouver_bonplan() 
+{
+  // Récupère la valeur de la barre de recherche
+  var searchValue = $('#barre_de_recherche_bonplan').val();// document.getElementById("barre_de_recherche_bonplan").value; //$('#barre_de_recherche_bonplan').val();
+  //console.log("passer par la fonction javascript");
+  document.getElementById("listeBonsPlans").textContent = null ;
+
+  // Effectue la requête AJAX 
+  $.ajax({
+    type: 'POST',
+    url: 'search_client_ajax.php', // Fichier PHP qui traitera la recherche
+    data: {
+      search: searchValue,
+      nom_requete_ajax: 'chercher_bonPlan'
+    },
+    success: function(response) {
+      // Met à jour les résultats dans la div #results
+      $('#listeBonsPlans').html(response);
+    }
+  });
+}
+
+
 
 function redirigerVersSwitchAdmin(codeCarteEtudiante) {
   var url = 'switch_admin.php?quelle_page=admin_user_info&codeCarteEtudiante=' + codeCarteEtudiante;
