@@ -32,10 +32,11 @@ function insertion_participation_bon_plan($link, $idUser, $idBonPlan)
     }
 }
 
-function insertion_commenter_bon_plan($link, $idUser, $idBonPlan) ///CELLE LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+function insertion_commenter_bon_plan($link, $idUser, $idBonPlan)
 {
     $score = $_POST["score"];
     $msg = $_POST["message"];
+    var_dump($msg);
     $query="INSERT INTO Commentaire VALUES (DEFAULT, ?,?,?,?)";
 
     if ($stmt = mysqli_prepare($link, $query)) {

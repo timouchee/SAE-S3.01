@@ -19,29 +19,27 @@
     <?php
 
   //Si on a participé à un bon plan :
-if(isset($_GET['participation']))
+if(isset($_GET['participation']) && $_GET['participation'] == 1)
 {
     $participation = $_GET['participation'];
     //echo "$participation";
     //Afficher fenetre modale
     echo '<script type="text/javascript">
-            // Attendre que la page soit chargée
-            document.addEventListener("DOMContentLoaded", function()
-            {
-                // Sélectionner la fenêtre modale par son ID
-                var modal = document.getElementById("popUpParticipation");
-                
-                // Afficher la fenêtre modale
-                modal.style.display = "block";
-                
-                // Fermer la fenêtre modale lorsque l utilisateur clique sur le bouton de fermeture
-                var span = document.getElementsByClassName("close")[0];
-                span.onclick = function()
-                {
+    // Attendre que la page soit chargée
+    document.addEventListener("DOMContentLoaded", function() {
+        // Sélectionner la fenêtre modale par son ID
+        let modal = document.getElementById("popUpParticipation");
+            
+        // Afficher la fenêtre modale
+        modal.style.display = "block";
+
+        // Fermer la fenêtre modale lorsque l utilisateur clique sur le bouton de fermeture
+                let span = document.getElementById("fermer");
+                span.onclick = function() {
                     modal.style.display = "none";
                 }
-            };
-          </script>';
+    });
+  </script>';
 }
 
     include "header.php";
@@ -98,6 +96,9 @@ if(isset($_GET['participation']))
 
     if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user')
     {
+
+      if(isset($_GET['codeCarteEtudiante']))
+      {
         $codeCarteEtudiante = $_GET['codeCarteEtudiante'];
 
         echo "<form action='insertions.php' method='post'>";
@@ -105,13 +106,14 @@ if(isset($_GET['participation']))
         echo "<input type='hidden' name='idBonPlan' value='$idBonPlan'>";
         echo "<button class='but_admin_lst' style='width:330px' type='submit' name='Participation'>Participer a cette activité</button>";
         echo "</form>";
+      }
+        
     }
     else
     {
         echo "<a data-bs-toggle='modal' data-bs-target='#popUpConnection' class='but_admin_lst' style='width:330px' >Participer a cette activité</a>";
     }
     
-
     echo "<br>";
 
     echo "<hr>";
@@ -150,15 +152,34 @@ if(isset($_GET['participation']))
     {
         $codeCarteEtudiante = $_GET['codeCarteEtudiante'];
 
+
+        echo "<div class='alignerSaisie'>";
+        echo "<div class='centered-horizontally'>";
+
         echo "<form action='insertions.php' method='post'>";
         echo "<input type='hidden' name='idUser' value='$codeCarteEtudiante'>";
         echo "<input type='hidden' name='idBonPlan' value='$idBonPlan'>";
-        echo " <br> <input name='message' placeholder='commenter ici'> <br>"; //LA INPUT
-        echo "<label for='score'>Choisissez une note</label> <br>";
-        echo "<input type='number' id='score' name='score' min='1' max='5' value='3'> <br>";
+        echo "<br><textarea name='message' placeholder='Commenter ici' rows='5' cols='50'></textarea><br>";
+
+
+        echo "<label for='score'>Choisir une note</label>";
+
+            echo "<select name='score' id='score'>";
+            echo "<option value='1'>1</option>";
+            echo "<option value='2'>2</option>";
+            echo "<option value='3'>3</option>";
+            echo "<option value='4'>4</option>";
+            echo "<option value='5'>5</option>";
+
+            echo "</select>";
+        echo "<br>";
 
         echo "<button class='but_admin_lst' style='width:330px' type='submit' name='Commenter'>Commenter ce bon plan</button>";
         echo "</form>";
+
+        echo "</div>";
+        echo "</div>";
+
     }
     else
     {
@@ -169,44 +190,21 @@ if(isset($_GET['participation']))
     ?>
 
 
-      <!--pop up de validation pour la participation à un bon plan -->
-  <div class="modal fade" id="popUpParticipation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel"><strong>Félicitation, vous avez participé !</strong></h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="verifMDP.php" method="post">  <!--lien vers le script de vérification-->
-            <label for="identifier">Mail de l'utilisateur:</label>
-            <br>
-            <input type="text" id="identifier" name="identifier" required>
-            <br>
-            <label for="password">Mot de passe:</label>
-            <br>
-            <input type="password" id="password" name="password" required>
-            <?php 
-            if (isset($_GET['pasBon'])){
-              echo "<script>erreurRedMDP()</script>";
-            }
-            if (isset($_GET['utilisateurInexistant'])){
-              echo "<script>erreurRedTout()</script>";
-            }
-            ?>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-              <button type="submit" class="btn btn-primary" >Se connecter</button>
-            </div>
-            <div>
-              <a href="../questionnaire/siteWebDemo_utilisateur.php">Première connexion ?</a>
-            </div>
-          </form>
-        </div>
+<div class="modal" id="popUpParticipation" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Merci pour ta participation</h5>
+      </div>
+      <div class="modal-body">
+        <p>N'oublie pas de commenter ce bon plan. <br> Bonne aventure !</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id='fermer' class="btn btn-primary">J'ai compris</button>
       </div>
     </div>
   </div>
+</div>
 
 
 </body>

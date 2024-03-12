@@ -98,9 +98,9 @@
       {
 
         if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') {
-          //$codeCarte = $_GET['codeCarteEtudiante'];
-          $codeCarte = $_SESSION["codeCarteEtudiante"];
-          echo "<a class='carte' href='index.php?quelle_compte=user&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte' >";
+          $codeCarte = $_GET['codeCarteEtudiante'];
+          //$codeCarte = $_SESSION["codeCarteEtudiante"];
+          echo "<a class='carte' href='index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte' >";
         }
         else {
           echo "<a class='carte' href='index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
@@ -122,10 +122,10 @@
 
         if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') {
           $codeCarte = $_GET['codeCarteEtudiante'];
-          echo "<a class='carte' href='detailBonPlan.php?quelle_compte=user&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte'>";
+          echo "<a class='carte' href='index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte'>";
         }
         else {
-          echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
+          echo "<a class='carte' href='index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
 
         }
         echo "<div class='card' style='width: 90%;'>";
