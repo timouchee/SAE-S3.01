@@ -1,4 +1,7 @@
-<?php if((isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') || isset($_GET["publie_quoi"])){ ?>
+<?php if((isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') || isset($_GET["publie_quoi"]))
+{ 
+  $connecter = true;
+  ?>
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +26,25 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="../vitrine/index.php"><img src="images/logo.jpg" alt="img logo"></a>
-        <a data-bs-toggle="modal" data-bs-target="#popUpConnection" ><img src='images/icone-non-connect.png' height='40' width='40'> </a>
+        <?php 
+        if(isset($connecter)&&$connecter == true)
+        {
+          //connecter
+          echo "<a href='deconnexion.php'  ><img src='images/icone_conected.png' height='40' width='40'> </a>";
+          
+        } 
+        else
+        {
+          //pas connecter
+          echo "<a data-bs-toggle='modal' data-bs-target='#popUpConnection' ><img src='images/icone-non-connect.png' height='40' width='40'> </a>";
+        }  
+          
+          
+          ?>
+
+        
+
+        
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: rgba(0,2,3,255);">
           <div class="offcanvas-header" style="flex-direction: row-reverse;">
             <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="titre.jpg" alt="img logo"></h5> -->
