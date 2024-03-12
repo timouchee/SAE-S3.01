@@ -1,18 +1,22 @@
-<?php session_start();
+<?php //session_start();
+//index.php?quelle_page=admin_accueil&quelle_compte=admin
 
   $var_teste_1=false;
-  if(isset($_SESSION["type_user"]) )
+  if(isset($_GET["quelle_compte"]) )
   {
-    if($_SESSION["type_user"]!="admin" )
+    if($_GET["quelle_compte"]!="admin" )
     {
       $var_teste_1 = true;
-      echo " <br> le mec n'est pas admin et sera rediriger quand t'auras changer ce code <br> <br>";
+      //echo " <br> le mec n'est pas admin et sera rediriger quand t'auras changer ce code <br> <br>";
       //header('Location: index.php');
     }
     
-  } 
+  }  
   else
-  {$var_teste_1 = true;}
+  {
+    //header('Location: index.php');
+    $var_teste_1 = true;
+  }
 
 
 ?>
@@ -164,12 +168,7 @@ en claire ok !!!!
             break;
           
           default:
-            # cmettre un message d'erreur :/
-            echo "<br> <br> CECI EST PAS NORMAL valeur quelle_page incorrect<br> <br>";
-            if($var_teste_1)
-            {echo " <br> le mec n'est pas admin et sera rediriger quand t'auras changer ce code <br> <br>";}
-            else
-            {echo "y a rien";}
+            
             include "admin_accueil.php";
             break;
         }
