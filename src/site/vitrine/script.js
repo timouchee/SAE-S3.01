@@ -76,13 +76,16 @@ function trouver_bonplan()
   //console.log("passer par la fonction javascript");
   document.getElementById("listeBonsPlans").textContent = null ;
 
+
   // Effectue la requête AJAX 
   $.ajax({
     type: 'POST',
     url: 'search_client_ajax.php', // Fichier PHP qui traitera la recherche
     data: {
       search: searchValue,
-      nom_requete_ajax: 'chercher_bonPlan'
+      nom_requete_ajax: 'chercher_bonPlan',
+      quelle_compte: document.getElementById("hidden_connected").value,
+      codeCarteEtudiante: document.getElementById("hidden_codeCarteEtudiante").value
     },
     success: function(response) {
       // Met à jour les résultats dans la div #results
