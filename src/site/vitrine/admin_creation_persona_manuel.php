@@ -19,8 +19,9 @@
         
     <div id='barre_noire_fine_expand'></div>
     <br>
-    <form action="switch_admin.php" method="get">  
+    <form action="index.php" method="get">  
         <input hidden type="text" name="quelle_page"  value="admin_accueil">
+        <input hidden type="text" name="quelle_compte"  value="admin" hidden>
         <button type="submit" class="but_user but_retour_barre_recherche center_but"  >Retour</button>
     </form>
 

@@ -1,18 +1,18 @@
 <?php session_start();
+    $serveur = "lakartxela.iutbayonne.univ-pau.fr";
+    $nomUtilisateur = "nconguisti_bd";
+    $motDePasse = "nconguisti_bd";
+    $nomBaseDeDonnees = "nconguisti_bd";
+    $connexion = new PDO("mysql:host=$serveur;dbname=$nomBaseDeDonnees", $nomUtilisateur, $motDePasse);
 
     switch ($_POST['nom_requete_ajax']) 
     {
         case 'chercher_user_pour_info':
             # code...
             // Remplace ces valeurs par les tiennes
-            $serveur = "lakartxela.iutbayonne.univ-pau.fr";
-            $nomUtilisateur = "nconguisti_bd";
-            $motDePasse = "nconguisti_bd";
-            $nomBaseDeDonnees = "nconguisti_bd";
         
             try {
                 // Connexion à la base de données avec PDO
-                $connexion = new PDO("mysql:host=$serveur;dbname=$nomBaseDeDonnees", $nomUtilisateur, $motDePasse);
         
                 
                 $requete = $connexion->query("SELECT * FROM Utilisateur");
@@ -30,7 +30,8 @@
                 $search_value = $_POST['search']==''?"7":$_POST['search'];
                 
                 
-                if (strpos(strtoupper($ligne["nom"]), strtoupper($search_value)) !== false || strpos(strtoupper($ligne["prenom"]), strtoupper($search_value)) !== false)        { 
+                if (strpos(strtoupper($ligne["nom"]), strtoupper($search_value)) !== false || strpos(strtoupper($ligne["prenom"]), strtoupper($search_value)) !== false)        
+                { 
                     echo "<div id='item_user'>";
                     echo    "<div id='info_utilisateur'>" . $ligne["nom"] ." <br>". $ligne["prenom"];            
                     echo    "</div>";
@@ -60,7 +61,7 @@
                 function containsSQLKeywordInArray($formDataArray, $sqlKeywords) 
                 {
                     for ($i = 1; $i <= 9; $i++) {
-                        $value = $dataArray[$i]['value'];
+                        $value = $formDataArray[$i]['value'];
                 
                         foreach ($sqlKeywords as $keyword) {
                             if (stripos($value, $keyword) !== false) {
@@ -90,7 +91,39 @@
                     $_SESSION["requete_modif_user_demander"]=true;
                 }
 
-                //print_r($_SESSION);
+                //echo $_SESSION["requete_modif_user_demander"];
+                if(isset($_SESSION["requete_modif_user_demander"]) && $_SESSION["requete_modif_user_demander"]==true)
+                {
+
+                    $requete = $connexion->prepare("UPDATE Utilisateur SET 
+                        nom = :nom,
+                        prenom = :prenom, 
+                        dateNaiss = :dateNaiss,
+                        moyenTransportPrincipal = :moyenTransportPrincipal,
+                        moyenTransportSecondaire = :moyenTransportSecondaire,
+                        numTel = :numTel,
+                        adresseUtilisateur = :adresseUtilisateur,
+                        mail = :mail,
+                        sexe = :sexe
+                        WHERE codeCarteEtudiante = :codeCarteEtudiante"); 
+                    
+                    $requete->bindParam(':nom', $_SESSION["nom"]);
+                    $requete->bindParam(':prenom', $_SESSION["prenom"]);
+                    $requete->bindParam(':dateNaiss', $_SESSION["dateNaiss"]);
+                    $requete->bindParam(':moyenTransportPrincipal', $_SESSION["moyenTransportPrincipal"]);
+                    $requete->bindParam(':moyenTransportSecondaire', $_SESSION["moyenTransportSecondaire"]);
+                    $requete->bindParam(':numTel', $_SESSION["numTel"]);
+                    $requete->bindParam(':adresseUtilisateur', $_SESSION["adresseUtilisateur"]);
+                    $requete->bindParam(':mail', $_SESSION["mail"]);
+                    $requete->bindParam(':sexe', $_SESSION["sexe"]);
+                    $requete->bindParam(':codeCarteEtudiante', $_SESSION["code_carte_etudiant"]); 
+
+                    //print_r($requete) ;
+
+                    $requete->execute();
+
+                    //echo "<br> la requete update a été effectuer <br>";
+                }
  
             break;
 
@@ -150,11 +183,12 @@
                     
                     /* echo "<br> '$search_value'  dans :$libelleBonPlan  => ";
                     echo stripos($libelleBonPlan, $search_value); */
-    
+                    
                     if(stripos($libelleBonPlan, $search_value) !== false || $bypass)
                     {
                         if($type == "Activite")
                         {
+
                             //print_r($_POST);
                             if(isset($_POST["quelle_compte"]) && $_POST["quelle_compte"]=='user') {
                             $codeCarte = $_POST['codeCarteEtudiante'];
@@ -164,7 +198,7 @@
                             else {
                             echo "<a class='carte' href='index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
                             }
-
+                          
                             echo "<div class='card' style='width: 90%;'>";
                             echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
                             echo "<div class='card-body'>";
@@ -175,6 +209,7 @@
                             echo "</div>";
                             echo "</a>";
                         }
+
 
                         if($type == "Evenement" && $compteEvenement < 1)
                         {

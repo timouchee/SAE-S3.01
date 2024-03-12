@@ -53,7 +53,7 @@ function closeNav() {
 function trouver_user() {
   // Récupère la valeur de la barre de recherche
   var searchValue = $('#barre_de_recherche_utilisateur').val();
-
+  //console.log("passer par javascript");
   // Effectue la requête AJAX
   $.ajax({
     type: 'POST',
@@ -97,7 +97,7 @@ function trouver_bonplan()
 
 
 function redirigerVersSwitchAdmin(codeCarteEtudiante) {
-  var url = 'switch_admin.php?quelle_page=admin_user_info&codeCarteEtudiante=' + codeCarteEtudiante;
+  var url = 'index.php?quelle_compte=admin&quelle_page=admin_user_info&codeCarteEtudiante=' + codeCarteEtudiante;
   window.location.href = url;
 }
 
