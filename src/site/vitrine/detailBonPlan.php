@@ -18,12 +18,31 @@
 
     <?php
 
-    //Si on a participé à un bon plan :
-    if(isset($_GET['participation']))
-    {
-        $participation = $_GET['participation'];
-        echo "$participation";
-    }
+  //Si on a participé à un bon plan :
+if(isset($_GET['participation']))
+{
+    $participation = $_GET['participation'];
+    //echo "$participation";
+    //Afficher fenetre modale
+    echo '<script type="text/javascript">
+            // Attendre que la page soit chargée
+            document.addEventListener("DOMContentLoaded", function()
+            {
+                // Sélectionner la fenêtre modale par son ID
+                var modal = document.getElementById("popUpParticipation");
+                
+                // Afficher la fenêtre modale
+                modal.style.display = "block";
+                
+                // Fermer la fenêtre modale lorsque l utilisateur clique sur le bouton de fermeture
+                var span = document.getElementsByClassName("close")[0];
+                span.onclick = function()
+                {
+                    modal.style.display = "none";
+                }
+            };
+          </script>';
+}
 
     include "header.php";
 
@@ -146,5 +165,47 @@
 
 
     ?>
+
+
+      <!--pop up de validation pour la participation à un bon plan -->
+  <div class="modal fade" id="popUpParticipation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"><strong>Félicitation, vous avez participé !</strong></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="verifMDP.php" method="post">  <!--lien vers le script de vérification-->
+            <label for="identifier">Mail de l'utilisateur:</label>
+            <br>
+            <input type="text" id="identifier" name="identifier" required>
+            <br>
+            <label for="password">Mot de passe:</label>
+            <br>
+            <input type="password" id="password" name="password" required>
+            <?php 
+            if (isset($_GET['pasBon'])){
+              echo "<script>erreurRedMDP()</script>";
+            }
+            if (isset($_GET['utilisateurInexistant'])){
+              echo "<script>erreurRedTout()</script>";
+            }
+            ?>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              <button type="submit" class="btn btn-primary" >Se connecter</button>
+            </div>
+            <div>
+              <a href="../questionnaire/siteWebDemo_utilisateur.php">Première connexion ?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </body>
 </html>

@@ -90,7 +90,9 @@
       {
 
         if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') {
-          echo "<a class='carte' href='index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
+          //$codeCarte = $_GET['codeCarteEtudiante'];
+          $codeCarte = $_SESSION["codeCarteEtudiante"];
+          echo "<a class='carte' href='index.php?quelle_compte=user&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte' >";
         }
         else {
           echo "<a class='carte' href='index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
