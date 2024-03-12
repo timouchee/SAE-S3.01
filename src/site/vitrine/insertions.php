@@ -36,14 +36,13 @@ function insertion_commenter_bon_plan($link, $idUser, $idBonPlan)
 {
     $score = $_POST["score"];
     $msg = $_POST["message"];
-    var_dump($msg);
     $query="INSERT INTO Commentaire VALUES (DEFAULT, ?,?,?,?)";
 
     if ($stmt = mysqli_prepare($link, $query)) {
-        mysqli_stmt_bind_param($stmt, "siii",$msg,$score, $idUser, $idBonPlan);
+        mysqli_stmt_bind_param($stmt, "siii",$msg, $score, $idUser, $idBonPlan);
         if(!(mysqli_stmt_execute($stmt)))
         {
-            header("Location: ./index.php");
+            header("Location: index.php");
         }
         mysqli_stmt_close($stmt);
     }

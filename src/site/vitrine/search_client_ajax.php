@@ -188,14 +188,17 @@
                     {
                         if($type == "Activite")
                         {
-    
-                            if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') {
-                            echo "<a class='carte' href='index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
+
+                            //print_r($_POST);
+                            if(isset($_POST["quelle_compte"]) && $_POST["quelle_compte"]=='user') {
+                            $codeCarte = $_POST['codeCarteEtudiante'];
+                            //$codeCarte = $_SESSION["codeCarteEtudiante"];
+                            echo "<a class='carte' href='index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte' >";
                             }
                             else {
                             echo "<a class='carte' href='index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
                             }
-    
+                          
                             echo "<div class='card' style='width: 90%;'>";
                             echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
                             echo "<div class='card-body'>";
@@ -206,17 +209,18 @@
                             echo "</div>";
                             echo "</a>";
                         }
-    
+
+
                         if($type == "Evenement" && $compteEvenement < 1)
                         {
-    
-                            if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') {
-                            $codeCarte = $_GET['codeCarteEtudiante'];
-                            echo "<a class='carte' href='detailBonPlan.php?quelle_compte=user&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte'>";
+
+                            if(isset($_POST["quelle_compte"]) && $_POST["quelle_compte"]=='user') {
+                            $codeCarte = $_POST['codeCarteEtudiante'];
+                            echo "<a class='carte' href='index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan&codeCarteEtudiante=$codeCarte'>";
                             }
                             else {
-                            echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
-    
+                            echo "<a class='carte' href='index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
+
                             }
                             echo "<div class='card' style='width: 90%;'>";
                             echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
