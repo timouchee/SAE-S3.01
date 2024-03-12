@@ -50,7 +50,6 @@ function insertion_commenter_bon_plan($link, $idUser, $idBonPlan) ///CELLE LAAAA
     }
 }
 
-
 //L'utilisateur participe à un bon plan
 if(isset($_POST['Participation'])) {
     
