@@ -48,7 +48,7 @@
     //la j'ai toute les categorie d'element que l'utilisateur aime personnament
     //faut mtn changer la requete en bas pour prendre les bon plan 
 
-
+ 
 
     //Afichage base
     $query="SELECT idBonPlan, libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
@@ -57,11 +57,11 @@
     $result = mysqli_query($link, $query);
     $compteEvenement = 0;
 
-    echo "<div class='center center_but'>";
-
-    echo "<input type='text' id='barre_de_recherche_bonplan' class='center center_but' placeholder='Recherche' oninput='trouver_bonplan()' >";
-    
+    //echo "<div class='center center_but'>";
+    echo "<div id='container'>";
+    echo "<input type='text' id='barre_de_recherche_bonplan' class='' placeholder='Recherche' oninput='trouver_bonplan()' >";
     echo "</div>";
+    //echo "</div>";
 
 
     echo "<section id='listeBonsPlans'>";
