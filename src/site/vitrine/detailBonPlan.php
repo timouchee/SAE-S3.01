@@ -18,12 +18,29 @@
 
     <?php
 
-    //Si on a participé à un bon plan :
-    if(isset($_GET['participation']))
-    {
-        $participation = $_GET['participation'];
-        echo "$participation";
-    }
+  //Si on a participé à un bon plan :
+if(isset($_GET['participation']) && $_GET['participation'] == 1)
+{
+    $participation = $_GET['participation'];
+    //echo "$participation";
+    //Afficher fenetre modale
+    echo '<script type="text/javascript">
+    // Attendre que la page soit chargée
+    document.addEventListener("DOMContentLoaded", function() {
+        // Sélectionner la fenêtre modale par son ID
+        let modal = document.getElementById("popUpParticipation");
+            
+        // Afficher la fenêtre modale
+        modal.style.display = "block";
+
+        // Fermer la fenêtre modale lorsque l utilisateur clique sur le bouton de fermeture
+                let span = document.getElementById("fermer");
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+    });
+  </script>';
+}
 
     include "header.php";
 
@@ -79,6 +96,9 @@
 
     if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user')
     {
+
+      if(isset($_GET['codeCarteEtudiante']))
+      {
         $codeCarteEtudiante = $_GET['codeCarteEtudiante'];
 
         echo "<form action='insertions.php' method='post'>";
@@ -86,13 +106,14 @@
         echo "<input type='hidden' name='idBonPlan' value='$idBonPlan'>";
         echo "<button class='but_admin_lst' style='width:330px' type='submit' name='Participation'>Participer a cette activité</button>";
         echo "</form>";
+      }
+        
     }
     else
     {
         echo "<a data-bs-toggle='modal' data-bs-target='#popUpConnection' class='but_admin_lst' style='width:330px' >Participer a cette activité</a>";
     }
     
-
     echo "<br>";
 
     echo "<hr>";
@@ -131,15 +152,34 @@
     {
         $codeCarteEtudiante = $_GET['codeCarteEtudiante'];
 
+
+        echo "<div class='alignerSaisie'>";
+        echo "<div class='centered-horizontally'>";
+
         echo "<form action='insertions.php' method='post'>";
         echo "<input type='hidden' name='idUser' value='$codeCarteEtudiante'>";
         echo "<input type='hidden' name='idBonPlan' value='$idBonPlan'>";
-        echo " <br> <input name='message' placeholder='commenter ici'> <br>"; //LA INPUT
-        echo "<label for='score'>Choisissez une note</label> <br>";
-        echo "<input type='number' id='score' name='score' min='1' max='5' value='3'> <br>";
+        echo "<br><textarea name='message' placeholder='Commenter ici' rows='5' cols='50'></textarea><br>";
+
+
+        echo "<label for='score'>Choisir une note</label>";
+
+            echo "<select name='score' id='score'>";
+            echo "<option value='1'>1</option>";
+            echo "<option value='2'>2</option>";
+            echo "<option value='3'>3</option>";
+            echo "<option value='4'>4</option>";
+            echo "<option value='5'>5</option>";
+
+            echo "</select>";
+        echo "<br>";
 
         echo "<button class='but_admin_lst' style='width:330px' type='submit' name='Commenter'>Commenter ce bon plan</button>";
         echo "</form>";
+
+        echo "</div>";
+        echo "</div>";
+
     }
     else
     {
@@ -148,5 +188,24 @@
 
 
     ?>
+
+
+<div class="modal" id="popUpParticipation" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Merci pour ta participation</h5>
+      </div>
+      <div class="modal-body">
+        <p>N'oublie pas de commenter ce bon plan. <br> Bonne aventure !</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id='fermer' class="btn btn-primary">J'ai compris</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
 </html>
