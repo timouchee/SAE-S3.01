@@ -22,12 +22,20 @@
 </header>
 <div class = "div_du_centre">
     <h1>Questionnaire</h1>
-    <form action="quMusique.php" method="post">
+    <form action="siteWebDemo_preference.php" method="post">
     <!-- <form action="" method="post"> -->
         <!-- Partie Utilisateur -->
         <h2>Informations Utilisateur</h2>
         <!-- Conteneur principal pour aligner en colonne -->
         <div class="info-utilisateur-container">
+            <!-- mail -->
+            <label class="label-utilisateur" for="mail">Mail: </label>
+            <input type="email" id="mail" name="mail" class="info-utilisateur" required>
+            <br>
+            <!-- mdp -->
+            <label class="label-utilisateur" for="mdp">Mot de passe: </label>
+            <input type="password" name="mdp" id="mdp" required>
+            <br>
             <!-- Sexe -->
             <label class="label-utilisateur" for="sexe">En tant que: </label>
             <ul>
@@ -57,17 +65,9 @@
             <label class="label-utilisateur" for="dateNaiss">Date de naissance (jj/mm/aaaa): </label>
             <input type="text" id="dateNaiss" name="dateNaiss" class="info-utilisateur" required>
             <br>
-            <!-- mail -->
-            <label class="label-utilisateur" for="mail">Mail: </label>
-            <input type="email" id="mail" name="mail" class="info-utilisateur" required>
-            <br>
             <!-- adresse -->
             <label class="label-utilisateur" for="adresse">Adresse (Ville, numeroRue nomRue): </label>
             <input type="text" id="adresse" name="adresse" class="info-utilisateur" required>
-            <br>
-            <!-- niveau d'etude -->
-            <label class="label-utilisateur" for="etude">Niveau d'étude: </label>
-            <input type="text" id="etude" name="etude" class="info-utilisateur" required>
             <br>
             <!-- moyen de transport -->
             <label for="choixMoyenTransport">Choisissez le moyen de transport: </label>
@@ -79,7 +79,7 @@
             </select>
         </div>
        
-        <button type="submit">soumetre</button>
+        <button type="submit" class = "btn_submit">soumetre</button>
         </form>
 </div>
 <!-- </form> -->
