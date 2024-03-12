@@ -27,12 +27,12 @@
         //print_r($_POST);
         echo "<span id='shadow_post'>";
         echo "<input type='text' id='title' value=".$_POST['title']." hidden>";
+        echo "<input type='text' id='mdp' value=".$_POST['mdp']." hidden>";
         echo "<input type='text' id='nom' value=".$_POST['nom']." hidden>";
         echo "<input type='text' id='prenom' value=".$_POST['prenom']." hidden>";
         echo "<input type='text' id='dateNaiss' value=".$_POST['dateNaiss']." hidden>";
         echo "<input type='text' id='mail' value=".$_POST['mail']." hidden>";
         echo "<input type='text' id='adresse' value=".$_POST['adresse']." hidden>";
-        echo "<input type='text' id='etude' value=".$_POST['etude']." hidden>";
         echo "<input type='text' id='choixMoyenTransport' value=".$_POST['choixMoyenTransport']." hidden>";
         echo "</span>";
     ?>
@@ -62,7 +62,7 @@
                 <div id="zoneDepotMusique5" class="zone-depot rep" ondrop="drop(event)">5</div>
             </div>
 
-        </div>
+        </div> 
             <!-- Question 2 -->
             <div class="info-preference-container">
                 <label for="reponseSport"><U>Question 2: Faites glisser les sports que vous voulez voir. Sélectionnez les par ordre de préférence</U></label><br>
