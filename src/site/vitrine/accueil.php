@@ -56,6 +56,14 @@
     ORDER BY type DESC";
     $result = mysqli_query($link, $query);
     $compteEvenement = 0;
+
+    echo "<div class='center center_but'>";
+
+    echo "<input type='text' id='barre_de_recherche_bonplan' class='center center_but' placeholder='Recherche' oninput='trouver_bonplan()' >";
+    
+    echo "</div>";
+
+
     echo "<section id='listeBonsPlans'>";
 
 
