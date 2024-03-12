@@ -40,7 +40,7 @@ function insertion_commenter_bon_plan($link, $idUser, $idBonPlan)
     $query="INSERT INTO Commentaire VALUES (DEFAULT, ?,?,?,?)";
 
     if ($stmt = mysqli_prepare($link, $query)) {
-        mysqli_stmt_bind_param($stmt, "iiii",$msg,$score, $idUser, $idBonPlan);
+        mysqli_stmt_bind_param($stmt, "siii",$msg,$score, $idUser, $idBonPlan);
         if(!(mysqli_stmt_execute($stmt)))
         {
             header("Location: ./index.php");
@@ -49,7 +49,7 @@ function insertion_commenter_bon_plan($link, $idUser, $idBonPlan)
     }
     else
     {
-        header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan&codeCarteEtudiante=$idUser");
+        header("Location: index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan&codeCarteEtudiante=$idUser");
     }
 }
 
@@ -61,7 +61,7 @@ if(isset($_POST['Participation'])) {
         $idUser = $_POST['idUser'];
         $idBonPlan = $_POST['idBonPlan'];
         $participation = insertion_participation_bon_plan($link, $idUser, $idBonPlan);
-        header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan&participation=$participation");
+        header("Location: index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan&participation=$participation&codeCarteEtudiante=$idUser");
     }
     else
     {
@@ -76,8 +76,9 @@ if(isset($_POST['Commenter'])) {
     {
         $idUser = $_POST['idUser'];
         $idBonPlan = $_POST['idBonPlan'];
+        $participation = 0;
         insertion_commenter_bon_plan($link, $idUser, $idBonPlan);
-        header("Location: index.php?quelle_page=detailBonPlan&idBonPlan=$idBonPlan");
+        header("Location: index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan&participation=$participation&codeCarteEtudiante=$idUser");
     }
     else
     {
