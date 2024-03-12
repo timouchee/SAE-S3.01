@@ -87,7 +87,7 @@
       $heureFermeture = substr($data["heureFermeture"],0,-3);
 
       if($type == "Activite")
-      {        
+      {
 
         if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user') {
           echo "<a class='carte' href='index.php?quelle_compte=user&quelle_page=detailBonPlan&idBonPlan=$idBonPlan' >";
@@ -116,7 +116,7 @@
         }
         else {
           echo "<a class='carte' href='detailBonPlan.php?idBonPlan=$idBonPlan' >";
-          
+
         }
         echo "<div class='card' style='width: 90%;'>";
         echo "<img class='card-img-top' src='$image' alt='Card image cap'>";
