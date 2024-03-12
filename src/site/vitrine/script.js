@@ -72,8 +72,8 @@ function trouver_user() {
 function trouver_bonplan() 
 {
   // Récupère la valeur de la barre de recherche
-  var searchValue = document.getElementById("barre_de_recherche_bonplan").value; //$('#barre_de_recherche_bonplan').val();
-
+  var searchValue = $('#barre_de_recherche_bonplan').val();// document.getElementById("barre_de_recherche_bonplan").value; //$('#barre_de_recherche_bonplan').val();
+  //console.log("passer par la fonction javascript");
   document.getElementById("listeBonsPlans").textContent = null ;
 
   // Effectue la requête AJAX 

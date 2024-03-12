@@ -95,6 +95,9 @@
             break;
 
             case 'chercher_bonPlan':
+                
+
+                //echo "h zuig^phoujôkte";
 
                 $search_value = $_POST['search'];
                 $bypass = false;
