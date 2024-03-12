@@ -8,13 +8,13 @@
     {
       $var_teste_1 = true;
       //echo " <br> le mec n'est pas admin et sera rediriger quand t'auras changer ce code <br> <br>";
-      //header('Location: index.php');
+      header('Location: index.php');
     }
     
   }  
   else
   {
-    //header('Location: index.php');
+    header('Location: index.php');
     $var_teste_1 = true;
   }
 
@@ -47,32 +47,10 @@ en claire ok !!!!
 </head>
 <body>   
      
-    <div class="p-3 m-0 border-0 bd-example m-0 border-0">
-      
-      <nav class="navbar fixed-top" data-bs-theme="dark" style="background-color: rgba(0,2,3,255);">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="../vitrine/index.php"><img src="images/titre.jpg" alt="img logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: rgba(0,2,3,255);">
-              <div class="offcanvas-header" style="flex-direction: row-reverse;">
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div> 
-              <div class="offcanvas-body">    
-                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#popUpConnection">Se connecter</a>
-              </div>          
-            </div>
-          </div>          
-        </nav>
-    </div>  
 
-    
-    <br>
-    <br>
     <?php
 
-      
+    include "header.php"; 
 
       // Remplace ces valeurs par les tiennes
       $serveur = "lakartxela.iutbayonne.univ-pau.fr";
@@ -175,11 +153,7 @@ en claire ok !!!!
       }
       else
       {
-        echo "<br> <br> CECI N EST PAS NORMAL TROUVER L ERREUR (surement dans le get)<br> <br>";
-        if($var_teste_1)
-        {echo " <br> le mec n'est pas admin et sera rediriger quand t'auras changer ce code <br> <br>";}
-        else
-        {echo "y a rien";}
+
         include "admin_accueil.php";
       }
 

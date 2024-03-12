@@ -60,11 +60,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
-    $carte_etudiante = $row["codeCarteEtudiante"];
+  
 
     if ($mot_de_passe_bd == $mot_de_passe) {
         // Mot de passe correct, rediriger l'utilisateur en fonction de son type
         if ($type_user == "user") {
+            $carte_etudiante = $row["codeCarteEtudiante"];
             $_SESSION['codeCarteEtudiante'] = $carte_etudiante;
             header("Location: index.php?quelle_compte=user&quelle_page=default&codeCarteEtudiante=" . $carte_etudiante);
             exit();

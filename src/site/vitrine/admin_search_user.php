@@ -1,5 +1,5 @@
 
-<p id="title_up">information utilisateur</p>
+<p id="title_up">Information des utilisateurs</p>
 
 <div id="barre_noire_fine_expand"></div>
 <br>
@@ -15,7 +15,7 @@
     <button type="submit" class="but_user but_retour_barre_recherche"  >Retour</button>
   </form>
   <br>
-  <input type="text" id="barre_de_recherche_utilisateur" placeholder="Recherche" oninput="trouver_user()">
+  <input type="text" id="barre_de_recherche_utilisateur" placeholder="Entrez un nom d'utilisateur" oninput="trouver_user()">
   <br>
   <br>
   <div id="results"></div>

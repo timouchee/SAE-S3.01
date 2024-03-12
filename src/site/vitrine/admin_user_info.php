@@ -15,7 +15,7 @@
  
 
 
-<p id="title_up">information utilsiateur</p>
+<p id="title_up">Informations des utilsiateurs</p>
 
 <div id="barre_noire_fine_expand"></div>
 <br>
@@ -30,8 +30,8 @@
     <table border="1" id="table_info_user">
         <thead>
             <tr class="tr_info_user">
-                <th class="th_info_user td_info_user">Colonne 1</th>
-                <th class="th_info_user td_info_user">Colonne 2</th>
+                <th class="th_info_user td_info_user">Attributs</th>
+                <th class="th_info_user td_info_user">Attributs des utilisateurs</th>
             </tr>
         </thead>
         <tbody>
@@ -57,7 +57,7 @@
                 <td class="td_info_user"><input type="text" class="input_info_user" id="info_user_transport_2" value="<?php echo $info_user_res_requeste["moyenTransportSecondaire"]; ?>"></td>
             </tr>
             <tr class="tr_info_user">
-                <td class="td_info_user">numeros de telephone</td>
+                <td class="td_info_user">numero de telephone</td>
                 <td class="td_info_user"><input type="text" class="input_info_user" id="info_user_num_tel" value="<?php echo $info_user_res_requeste["numTel"]; ?>"></td>
             </tr>
             <tr class="tr_info_user">
@@ -88,7 +88,7 @@
     <input type="text" name="quelle_compte" value="admin" hidden >
     <input type="text" name="codeCarteEtudiante" value="admin" hidden > -->
 
-    <button type="submit" class="but_admin_lst center_but" onclick="balancer_modif()">valider les modification</button>
+    <button type="submit" class="but_admin_lst center_but" onclick="balancer_modif()">Valider les modifications</button>
 <!-- </form>  -->
 <div id="tes_rep"></div>
 

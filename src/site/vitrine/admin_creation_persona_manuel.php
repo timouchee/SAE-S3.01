@@ -15,7 +15,7 @@
 
 <body>
 
-    <p id='title_up'>Création de profils-type manuelle</p>
+    <p id='title_up'>Création de profils types manuelle</p>
         
     <div id='barre_noire_fine_expand'></div>
     <br>
