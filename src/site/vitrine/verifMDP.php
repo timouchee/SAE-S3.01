@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Préparer la requête SQL pour récupérer le mot de passe correspondant à l'identifiant fourni
+    
     $sql_utilisateur = "SELECT motdepasse FROM Utilisateur WHERE mail = ?";
     $sql_administrateur = "SELECT motdepasse FROM Administrateur WHERE mail = ?";
     
@@ -60,11 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
-    $carte_etudiante = $row["codeCarteEtudiante"];
 
-    if ($mot_de_passe_bd == $mot_de_passe) {
+    if (password_verify($mot_de_passe, $mot_de_passe_bd)) {
         // Mot de passe correct, rediriger l'utilisateur en fonction de son type
         if ($type_user == "user") {
+            $carte_etudiante = $row["codeCarteEtudiante"];
             $_SESSION['codeCarteEtudiante'] = $carte_etudiante;
             header("Location: index.php?quelle_compte=user&quelle_page=default&codeCarteEtudiante=" . $carte_etudiante);
             exit();
@@ -74,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Mot de passe incorrect
-        header("Location: index.php?pasBon=true"); // Rediriger avec un message d'erreur
+        header("Location: index.php?pasBon=true&motdepasse=". $mot_de_passe. "&motdepassebd=". $mot_de_passe_bd."&result=".password_verify($mot_de_passe, $mot_de_passe_bd).""); // Rediriger avec un message d'erreur
         exit();
     }
 

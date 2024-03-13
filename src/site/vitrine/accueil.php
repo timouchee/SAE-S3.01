@@ -19,7 +19,6 @@
 <body class="p-3 m-0 border-0 bd-example m-0 border-0">
 
   <?php
-
   include "header.php";
 
     //Connexion BD
