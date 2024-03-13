@@ -49,8 +49,18 @@
     //la j'ai toute les categorie d'element que l'utilisateur aime personnament
     //faut mtn changer la requete en bas pour prendre les bon plan 
 
- 
+    if(isset($_GET["quelle_compte"]) && $_GET["quelle_compte"]=='user')
+    {
+      echo "<input type='text' id='hidden_connected' name='quelle_compte' value='user' hidden>";
+      echo "<input type='text' id='hidden_codeCarteEtudiante' name='codeCarteEtudiante' value='".$_GET["codeCarteEtudiante"]."' hidden>";
+    }
+    else
+    {
+      echo "<input type='text' id='hidden_connected' name='quelle_compte' value='default' hidden>";
+      echo "<input type='text' id='hidden_codeCarteEtudiante' name='codeCarteEtudiante' value='1' hidden>";
+    }
 
+    
     //Afichage base
     $query="SELECT idBonPlan, libelleBonPlan, detail, adresseBonPlan, type, image, dateOuverture, dateFermeture, heureOuverture, heureFermeture, b.nomVille, b.codeCarteEtudiante, u.prenom, u.nom
     FROM BonPlan b JOIN Utilisateur u ON b.codeCarteEtudiante = u.codeCarteEtudiante

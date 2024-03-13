@@ -1,19 +1,21 @@
-<p id="title_up">administration</p>
+<p id="title_up">Administration</p>
     
 <div id="barre_noire_fine_expand"></div>
 <br>
 <div id="lst_but">
-    <form action="switch_admin.php" method="get">    
+    <form action="index.php" method="get">   
         <input hidden type="text" name="quelle_page"  value="admin_creation_persona_manuel">
-        <button type="submit" class="but_admin_lst">lancer la création de <br> persona manuel</button>
+        <input hidden type="text" name="quelle_compte"  value="admin" hidden>
+        <button type="submit" class="but_admin_lst">Lancer la création de <br> profils types manuellement</button>
         </form>
         <br><br><br>
-    <form action="switch_admin.php" method="get">
+    <form action="index.php" method="get">
         <input hidden type="text" name="quelle_page"  value="admin_search_user">
-        <button type="submit"  class="but_admin_lst">chercher des <br> information utiisateur</button>
+        <input hidden type="text" name="quelle_compte"  value="admin" hidden>
+        <button type="submit"  class="but_admin_lst">Chercher des <br> informations utilisateur</button>
     </form>
     <br><br><br>
-    <button type="button" class="but_admin_lst">Réinitialiser les <br> préférences utilisateurs</button>
+    <button type="button" class="but_admin_lst">Réinitialiser les <br> préférences utilisateur</button>
     <br><br><br>
-    <button type="button" class="but_admin_lst">aider un utilisateur</button>
+    <button type="button" class="but_admin_lst">Aider un utilisateur</button>
 </div>  

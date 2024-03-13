@@ -53,7 +53,7 @@ function closeNav() {
 function trouver_user() {
   // Récupère la valeur de la barre de recherche
   var searchValue = $('#barre_de_recherche_utilisateur').val();
-
+  //console.log("passer par javascript");
   // Effectue la requête AJAX
   $.ajax({
     type: 'POST',
@@ -76,13 +76,16 @@ function trouver_bonplan()
   //console.log("passer par la fonction javascript");
   document.getElementById("listeBonsPlans").textContent = null ;
 
+
   // Effectue la requête AJAX 
   $.ajax({
     type: 'POST',
     url: 'search_client_ajax.php', // Fichier PHP qui traitera la recherche
     data: {
       search: searchValue,
-      nom_requete_ajax: 'chercher_bonPlan'
+      nom_requete_ajax: 'chercher_bonPlan',
+      quelle_compte: document.getElementById("hidden_connected").value,
+      codeCarteEtudiante: document.getElementById("hidden_codeCarteEtudiante").value
     },
     success: function(response) {
       // Met à jour les résultats dans la div #results
@@ -94,7 +97,7 @@ function trouver_bonplan()
 
 
 function redirigerVersSwitchAdmin(codeCarteEtudiante) {
-  var url = 'switch_admin.php?quelle_page=admin_user_info&codeCarteEtudiante=' + codeCarteEtudiante;
+  var url = 'index.php?quelle_compte=admin&quelle_page=admin_user_info&codeCarteEtudiante=' + codeCarteEtudiante;
   window.location.href = url;
 }
 

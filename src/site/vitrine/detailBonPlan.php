@@ -104,7 +104,16 @@ if(isset($_GET['participation']) && $_GET['participation'] == 1)
         echo "<form action='insertions.php' method='post'>";
         echo "<input type='hidden' name='idUser' value='$codeCarteEtudiante'>";
         echo "<input type='hidden' name='idBonPlan' value='$idBonPlan'>";
-        echo "<button class='but_admin_lst' style='width:330px' type='submit' name='Participation'>Participer a cette activité</button>";
+
+        if(isset($_GET['participation']) && $_GET['participation'] == 1)
+        {
+          echo "<button class='but_admin_lst_rouge' style='width:330px' type='submit' name='Participation'>Annuler votre participation</button>";
+        }
+        else
+        {
+          echo "<button class='but_admin_lst' style='width:330px' type='submit' name='Participation'>Participer a cette activité</button>";
+        }
+      
         echo "</form>";
       }
         
